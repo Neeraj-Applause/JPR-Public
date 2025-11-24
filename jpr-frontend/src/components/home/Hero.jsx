@@ -91,7 +91,7 @@ export default function Hero() {
       <h1
         className="
           text-2xl      
-          sm:text-4xl   
+          sm:text-5xl   
           lg:text-5xl   
           font-bold leading-tight
         "
@@ -116,7 +116,7 @@ export default function Hero() {
   <img
     src={bannerMiddle}
     alt="Crash Analysis Diagram"
-    className="w-56 sm:w-64 mx-auto"
+    className="w-100 sm:w-100 mx-auto"
   />
 </div>
 
