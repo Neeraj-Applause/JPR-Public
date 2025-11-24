@@ -3,7 +3,7 @@ import youtubeIcon from "../../assets/icons/social/youtube.png";
 import facebookIcon from "../../assets/icons/social/facebook.png";
 import newsletterIcon from "../../assets/icons/social/newsletter.png";
 import twitterIcon from "../../assets/icons/social/x.png";
-import linkedinIcon from "../../assets/icons/social/linkedin.png";
+import linkedinIcon from "../../assets/icons/social/linkedIn.png";
 
 const socials = [
   { id: 1, name: "YouTube", icon: youtubeIcon, href: "#" },
