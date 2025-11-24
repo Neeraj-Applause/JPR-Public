@@ -56,11 +56,15 @@ export default function Hero() {
             {/* Mobile: gradient only */}
             <div className="block md:hidden h-full w-full bg-gradient-to-br from-[#0A0F1C] to-[#7A0D0D]"></div>
 
-            {/* Desktop: normal banner */}
+            {/* Desktop: first banner should FIT */}
             <img
               src={activeSlide.image}
               alt="Hero Banner"
-              className="hidden md:block h-full w-full object-cover"
+              className={`hidden md:block h-full w-full ${
+                activeSlide.id === 0
+                  ? "object-contain bg-black"
+                  : "object-cover"
+              }`}
             />
           </>
         ) : (
@@ -87,9 +91,9 @@ export default function Hero() {
             {/* Main title */}
             <h1
               className="
-          text-2xl      
-          sm:text-5xl   
-          lg:text-5xl   
+          text-2xl
+          sm:text-4xl
+          lg:text-4xl
           font-bold leading-tight
         "
             >
@@ -99,9 +103,9 @@ export default function Hero() {
             {/* Subtitle */}
             <p
               className="
-          text-xs        
-          sm:text-base   
-          lg:text-lg      
+          text-xs
+          sm:text-base
+          lg:text-lg
           text-white/90 max-w-xl mx-auto lg:mx-0
         "
             >
@@ -164,13 +168,13 @@ export default function Hero() {
       <div className="absolute bottom-6 right-6 sm:right-10 flex gap-3 z-10">
         <button
           onClick={() => goTo(activeIndex - 1)}
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-white transition"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-primary transition hover:text-white"
         >
           <ChevronLeft size={20} />
         </button>
         <button
           onClick={() => goTo(activeIndex + 1)}
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-white transition"
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-white/90 text-primary shadow-md hover:bg-primary hover:text-white transition"
         >
           <ChevronRight size={20} />
         </button>

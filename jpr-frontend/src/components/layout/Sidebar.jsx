@@ -98,7 +98,6 @@ export default function Sidebar() {
 
   const handleSelect = (item) => {
     setActive(item.label);
-    setIsOpen(false);
     setMobileOpen(false);
     // TODO: hook up navigation here (e.g. react-router navigate(item.href))
   };
@@ -177,7 +176,6 @@ export default function Sidebar() {
           shadow-[8px_0_30px_rgba(0,0,0,0.10)]
           z-40
         "
-        onMouseEnter={() => setIsOpen(true)}
       >
         {/* Logo */}
         <div className="pt-8 pb-4">
@@ -198,21 +196,25 @@ export default function Sidebar() {
         </div>
       </aside>
 
-      {/* ➡ DESKTOP ARROW TOGGLE */}
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="
-          hidden md:flex
-          fixed top-1/2 left-20
-          -translate-x-1/2 -translate-y-1/2
-          w-10 h-10 rounded-full bg-primary text-white
-          items-center justify-center
-          shadow-md z-50
-          transition-transform duration-300 ease-out
-        "
-      >
-        {isOpen ? <FiChevronLeft size={18} /> : <FiChevronRight size={18} />}
-      </button>
+
+<button
+  onClick={() => setIsOpen((prev) => !prev)}
+  style={{
+    left: isOpen ? "18rem" : "5rem",
+  }}
+  className="
+    hidden md:flex
+    fixed top-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-10 h-10 rounded-full bg-primary text-white
+    items-center justify-center
+    shadow-md z-[999]
+    transition-all duration-300 ease-out
+  "
+>
+  {isOpen ? <FiChevronLeft size={18} /> : <FiChevronRight size={18} />}
+</button>
+
 
       {/* 🧾 DESKTOP EXPANDING PANEL */}
       <div
@@ -224,7 +226,6 @@ export default function Sidebar() {
           transition-transform duration-300 ease-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
-        onMouseLeave={() => setIsOpen(false)}
       >
         <div className="flex flex-col h-full">
           {/* Logo aligned with rail logo */}
