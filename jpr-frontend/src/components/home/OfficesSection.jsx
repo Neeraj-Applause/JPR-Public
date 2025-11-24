@@ -13,35 +13,114 @@ const offices = [
     id: "coimbatore",
     title: "India Head Office – Coimbatore",
     addressLines: [
-      "No.95, 2nd Floor, Chinnasamy Road,",
-      "New Siddapudur, Coimbatore – 641 044",
-      "India.",
+      "No.95, 2nd Floor,",
+      "Chinnasamy Road, New Siddapudur,",
+      "Coimbatore - 641 044 India.",
     ],
-    phones: ["+91 422 352 9616", "+91 96263 62633"],
+    phones: ["+91 422 352 9616", "+91 96 2636 2633"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
+
   {
     id: "pune",
     title: "Registered Office – Pune",
+    addressLines: [
+      "Office No.504, S.No.128,",
+      "Seasons Business Square, Seasons Road,",
+      "Sanewadi, Aundh,",
+      "Pune - 411 007 Maharashtra.",
+    ],
+    phones: ["+91 70 6602 7860", "+91 88 0694 3991"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
   },
+
   {
     id: "ahmedabad",
     title: "Branch Office – Ahmedabad",
+    addressLines: [
+      "33, Kalindi Complex, Nr. Old High Court,",
+      "Near Income Tax Circle, Navrangpura,",
+      "Ahmedabad - 380 014 India.",
+    ],
+    phones: ["+91 79 4007 7715 / 16"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
   },
+
   {
     id: "kolkata",
     title: "Branch Office – Kolkata",
+    addressLines: [
+      "Corner Desk, Cabin #1,",
+      "4th Floor, Premise no.10,",
+      "Raja Subodh Mullick Square,",
+      "Kolkata - 700 013 India.",
+    ],
+    phones: ["+91 70 4463 9376"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
   },
+
   {
     id: "jaipur",
     title: "Branch Office – Jaipur",
+    addressLines: [
+      "Pheobusin, Crop's Arcade,",
+      "K-12, Malviya Marg,",
+      "C Scheme, Ashok Nagar,",
+      "Jaipur - 302 001 Rajasthan.",
+    ],
+    phones: ["+91 96 3648 6449"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
   },
+
   {
     id: "nagpur",
     title: "Branch Office – Nagpur",
+    addressLines: [
+      "157, 1st Floor, Shrija Enclave,",
+      "Opp. Babhulkar Hospital,",
+      "WHC Road, Shankar Nagar,",
+      "Nagpur - 440 010 Maharashtra.",
+    ],
+    phones: ["+91 7066027007"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
+  },
+
+  {
+    id: "dehradun",
+    title: "Branch Office – Dehradun",
+    addressLines: [
+      "Office no. 20, Ground floor,",
+      "Transport Commissioner Office,",
+      "Near Luther W. New Jr. Theological college,",
+      "Sahastradhara road, Kulhan,",
+      "Dehradun - 248 001 Uttarakhand.",
+    ],
+    phones: ["+91 9054514953"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
+  },
+
+  {
+    id: "dindigul",
+    title: "Branch Office – Dindigul",
+    addressLines: [
+      "No. 8, Malligai Nagar,",
+      "Ayyappan temple back side,",
+      "Seelapadi post,",
+      "Dindigul - 624 005 Tamilnadu.",
+    ],
+    phones: ["+91 96 2636 2633"],
+    website: "www.jpri.in",
+    email: "contact@jpri.in",
   },
 ];
+
 
 export default function OfficesSection() {
   const [openId, setOpenId] = useState("coimbatore");
