@@ -13,6 +13,8 @@ import {
   Briefcase,
   FolderOpenDot,
   PhoneCall,
+  Menu,
+  X,
 } from "lucide-react";
 
 const menuItems = [
@@ -35,9 +37,7 @@ function MenuButton({ item, isActive, variant, onClick }) {
     return (
       <button
         onClick={onClick}
-        className={`
-          relative flex items-center justify-center
-          h-12 text-2xl
+        className={`relative flex items-center justify-center h-12 text-2xl
           transition-all duration-200
           ${
             isActive
@@ -63,8 +63,7 @@ function MenuButton({ item, isActive, variant, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`
-        relative w-full flex items-center gap-3
+      className={`relative w-full flex items-center gap-3
         h-12 px-4 text-sm font-medium
         rounded-r-2xl rounded-l-md
         transition-all duration-200
@@ -94,22 +93,87 @@ function MenuButton({ item, isActive, variant, onClick }) {
 
 export default function Sidebar() {
   const [active, setActive] = useState("Home");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);        // desktop expand panel
+  const [mobileOpen, setMobileOpen] = useState(false); // mobile drawer
 
   const handleSelect = (item) => {
     setActive(item.label);
-    setIsOpen(false); // collapse expanded panel on click
-    // TODO: hook up react-router navigation here (navigate(item.href))
+    setIsOpen(false);
+    setMobileOpen(false);
+    // TODO: hook up navigation here (e.g. react-router navigate(item.href))
   };
 
   return (
     <>
-      {/* SLIM RAIL (always visible) */}
+      {/* 🌐 MOBILE HEADER (top bar) */}
+      <header
+        className="
+          fixed top-0 left-0 right-0 h-16 bg-white
+          flex items-center justify-between
+          px-4 shadow-md z-50
+          md:hidden
+        "
+      >
+        <div className="flex items-center gap-3">
+          <img src="/logo.png" alt="JPR" className="w-16" />
+        </div>
+
+        <button
+          onClick={() => setMobileOpen((prev) => !prev)}
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white shadow-md"
+        >
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </header>
+
+      {/* 📱 MOBILE SLIDE-OUT MENU */}
+      <div
+        className={`
+          fixed inset-0 z-40 md:hidden
+          transition-opacity duration-300
+          ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+        `}
+      >
+        {/* dark overlay */}
+        <div
+          className="absolute inset-0 bg-black/40"
+          onClick={() => setMobileOpen(false)}
+        />
+        {/* menu panel */}
+        <div
+          className={`
+            absolute left-0 top-0 h-full w-64 bg-white
+            shadow-[8px_0_30px_rgba(0,0,0,0.25)]
+            pt-6 pb-8 flex flex-col
+            transform transition-transform duration-300
+            ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
+          `}
+        >
+          <div className="px-6 mb-6">
+            <img src="/logo.png" alt="JPR" className="w-24" />
+          </div>
+
+          <nav className="flex-1 flex flex-col gap-4 px-4 overflow-y-auto">
+            {menuItems.map((item) => (
+              <MenuButton
+                key={item.label}
+                item={item}
+                variant="full"
+                isActive={active === item.label}
+                onClick={() => handleSelect(item)}
+              />
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* 💻 DESKTOP SLIM RAIL (left) */}
       <aside
         className="
           fixed inset-y-0 left-0
           w-20 bg-white text-secondary
-          flex flex-col items-center
+          hidden md:flex
+          flex-col items-center
           shadow-[8px_0_30px_rgba(0,0,0,0.10)]
           z-40
         "
@@ -120,7 +184,7 @@ export default function Sidebar() {
           <img src="/logo.png" alt="JPR" className="w-12" />
         </div>
 
-        {/* Menu – same vertical rhythm as expanded */}
+        {/* Menu with same spacing as expanded */}
         <div className="flex-1 flex flex-col items-center gap-5 pb-10">
           {menuItems.map((item) => (
             <MenuButton
@@ -134,14 +198,15 @@ export default function Sidebar() {
         </div>
       </aside>
 
-      {/* ARROW TOGGLE – centered, half in / half out */}
+      {/* ➡ DESKTOP ARROW TOGGLE */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         className="
+          hidden md:flex
           fixed top-1/2 left-20
           -translate-x-1/2 -translate-y-1/2
           w-10 h-10 rounded-full bg-primary text-white
-          flex items-center justify-center
+          items-center justify-center
           shadow-md z-50
           transition-transform duration-300 ease-out
         "
@@ -149,9 +214,10 @@ export default function Sidebar() {
         {isOpen ? <FiChevronLeft size={18} /> : <FiChevronRight size={18} />}
       </button>
 
-      {/* EXPANDING PANEL */}
+      {/* 🧾 DESKTOP EXPANDING PANEL */}
       <div
         className={`
+          hidden md:block
           fixed inset-y-0 left-0
           w-72 bg-white shadow-[8px_0_30px_rgba(0,0,0,0.15)]
           z-50

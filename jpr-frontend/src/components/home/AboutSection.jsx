@@ -2,8 +2,13 @@ import aboutIllustration from "../../assets/images/home/about_us.png";
 
 export default function AboutSection() {
   return (
-    <section className="w-full bg-[#f8f8f8] py-16">
-      <div className="max-w-6xl mx-auto px-6 lg:px-0">
+    <section
+      className="
+        w-full bg-[#f8f8f8] py-16
+        px-4 sm:px-6 md:px-8 md:pl-24 xl:px-0
+      "
+    >
+      <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary">
