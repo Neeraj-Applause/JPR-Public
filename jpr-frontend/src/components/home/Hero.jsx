@@ -62,7 +62,7 @@ export default function Hero() {
               alt="Hero Banner"
               className={`hidden md:block h-full w-full ${
                 activeSlide.id === 0
-                  ? "object-contain bg-black"
+                  ? "object-fit bg-black"
                   : "object-cover"
               }`}
             />
