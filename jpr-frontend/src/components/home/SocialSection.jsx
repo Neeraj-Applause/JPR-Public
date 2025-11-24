@@ -1,9 +1,9 @@
 // SOCIAL SECTION WITH SECONDARY HOVER EFFECTS
-import youtubeIcon from "../../assets/icons/social/youtube.png";
-import facebookIcon from "../../assets/icons/social/facebook.png";
-import newsletterIcon from "../../assets/icons/social/newsletter.png";
-import twitterIcon from "../../assets/icons/social/x.png";
-import linkedinIcon from "../../assets/icons/social/linkedIn.png";
+import youtubeIcon from "../../assets/icons/social/youtube.svg";
+import facebookIcon from "../../assets/icons/social/facebook.svg";
+import newsletterIcon from "../../assets/icons/social/newsletter.svg";
+import twitterIcon from "../../assets/icons/social/x.svg";
+import linkedinIcon from "../../assets/icons/social/linkedIn.svg";
 
 const socials = [
   { id: 1, name: "YouTube", icon: youtubeIcon, href: "#" },

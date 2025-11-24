@@ -1,7 +1,7 @@
-import crashIcon from "../../assets/icons/our_services/Crash_Investigation.png";
-import roadIcon from "../../assets/icons/our_services/Road_Safety_Engineering.png";
-import dataIcon from "../../assets/icons/our_services/Data_Analytics.png";
-import trainingIcon from "../../assets/icons/our_services/Training.png";
+import crashIcon from "../../assets/icons/our_services/Crash_Investigation.svg";
+import roadIcon from "../../assets/icons/our_services/Road_Safety_Engineering.svg";
+import dataIcon from "../../assets/icons/our_services/Data_Analytics.svg";
+import trainingIcon from "../../assets/icons/our_services/Training.svg";
 
 export default function ServicesSection() {
   const services = [

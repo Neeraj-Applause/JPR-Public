@@ -48,8 +48,6 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-[90vh] md:min-h-screen overflow-hidden bg-black">
-
-      
       {/* Background Layer */}
       <div className="absolute inset-0">
         {/* FIRST SLIDE — mobile gradient instead of image */}
@@ -75,82 +73,77 @@ export default function Hero() {
         )}
       </div>
 
-{/* Content overlay – only on first slide */}
-{activeSlide.hasContent && (
-  <div className="relative z-10 flex items-start min-h-screen px-4 sm:px-8 lg:px-20 pt-16 sm:pt-20 pb-6">
-    <div className="max-w-2xl text-white space-y-3 sm:space-y-5 text-center lg:text-left">
+      {/* Content overlay – only on first slide */}
+      {activeSlide.hasContent && (
+        <div className="relative z-10 flex items-start min-h-screen px-4 sm:px-8 lg:px-20 sm:pt-20 pb-6">
+          <div className="max-w-2xl text-white space-y-3 sm:space-y-5 text-center lg:text-left mt-24">
+            {/* Badge */}
+            <div className="inline-block bg-white px-4 py-1.5 sm:px-5 sm:py-2 shadow-md">
+              <p className="text-primary font-semibold text-sm sm:text-lg tracking-tight">
+                {activeSlide.titleBadge}
+              </p>
+            </div>
 
-      {/* Badge */}
-      <div className="inline-block bg-white px-4 py-1.5 sm:px-5 sm:py-2 shadow-md">
-        <p className="text-primary font-semibold text-sm sm:text-lg tracking-tight">
-          {activeSlide.titleBadge}
-        </p>
-      </div>
-
-      {/* Main title */}
-      <h1
-        className="
+            {/* Main title */}
+            <h1
+              className="
           text-2xl      
           sm:text-5xl   
           lg:text-5xl   
           font-bold leading-tight
         "
-      >
-        {activeSlide.title}
-      </h1>
+            >
+              {activeSlide.title}
+            </h1>
 
-      {/* Subtitle */}
-      <p
-        className="
+            {/* Subtitle */}
+            <p
+              className="
           text-xs        
           sm:text-base   
           lg:text-lg      
           text-white/90 max-w-xl mx-auto lg:mx-0
         "
-      >
-        {activeSlide.subtitle}
-      </p>
+            >
+              {activeSlide.subtitle}
+            </p>
 
-     {/* MIDDLE GRAPHIC — ONLY Mobile */}
-<div className="flex justify-center pt-4 md:hidden">
-  <img
-    src={bannerMiddle}
-    alt="Crash Analysis Diagram"
-    className="w-100 sm:w-100 mx-auto"
-  />
-</div>
+            {/* MIDDLE GRAPHIC — ONLY Mobile */}
+            <div className="flex justify-center pt-4 md:hidden">
+              <img
+                src={bannerMiddle}
+                alt="Crash Analysis Diagram"
+                className="w-100 sm:w-100 mx-auto"
+              />
+            </div>
 
-
-      {/* CTAs */}
-      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-6">
-        <button
-          className="
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-6">
+              <button
+                className="
             px-4 py-2     
             sm:px-6 sm:py-3
             bg-primary text-white text-sm sm:text-base
             font-semibold rounded-md shadow-md hover:bg-primary/90 transition
           "
-        >
-          Explore Our Work
-        </button>
+              >
+                Explore Our Work
+              </button>
 
-        <button
-          className="
+              <button
+                className="
             px-4 py-2
             sm:px-6 sm:py-3
             bg-white text-primary text-sm sm:text-base
             font-semibold rounded-md shadow-md hover:bg-white/90 transition
           "
-        >
-          Contact Us
-        </button>
-      </div>
-
-    </div>
-  </div>
-)}
-
-
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Dots */}
       <div className="absolute bottom-7 left-6 sm:left-10 flex gap-3 z-10">

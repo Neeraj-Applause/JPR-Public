@@ -1,7 +1,7 @@
-import Crash_Cases from "../../assets/icons/statsstrip/Crash_Cases.png";
-import Expertise_Area from "../../assets/icons/statsstrip/Expertise_Area.png";
-import Research_Network from "../../assets/icons/statsstrip/Research_Network.png";
-import Safety_Insights from "../../assets/icons/statsstrip/Safety_Insights.png";
+import Crash_Cases from "../../assets/icons/statsstrip/Crash_Cases.svg";
+import Expertise_Area from "../../assets/icons/statsstrip/Expertise_Area.svg";
+import Research_Network from "../../assets/icons/statsstrip/Research_Network.svg";
+import Safety_Insights from "../../assets/icons/statsstrip/Safety_Insights.svg";
 
 const stats = [
   {
