@@ -1,5 +1,9 @@
 // src/components/about/HistoryTimeline.jsx
 import { Clock3 } from "lucide-react";
+import image1 from "../../assets/images/history/2006.png";
+import image2 from "../../assets/images/history/2008.png";
+import image3 from "../../assets/images/history/2010.png";
+import image4 from "../../assets/images/history/today.png";
 
 const milestones = [
   {
@@ -7,24 +11,28 @@ const milestones = [
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
       "As India crossed 100,000 annual road fatalities, JP Research India Pvt. Ltd. was founded by Mrs. Jeya Padmanaban to address the lack of in-depth crash data. From the outset, JPRI focused on automotive safety workshops and initiating scientific crash investigations in partnership with agencies and manufacturers.",
+    image: image1,
   },
   {
     year: "2008",
     title: "Crash investigations – the journey begins",
     description:
       "After several unsuccessful attempts to start crash investigations with government agencies and OEMs, JPRI independently launched its first on-site crash investigation pilot with the support of Tamil Nadu Police on a national highway near Chennai. The success of this project led to a second, two-year pilot in Coimbatore Rural District, deepening insights into human, vehicle and infrastructure factors.",
+    image: image2,
   },
   {
     year: "2010",
     title: "Head Office established in Coimbatore, Tamil Nadu",
     description:
       "JPRI set up its India headquarters in Coimbatore to conduct continuous on-site crash investigations. Today, the company operates branches across India, collecting in-depth crash data on highways, towns and cities, and publishing its findings in national and international conferences through the RASSI Consortium public–private partnership model.",
+    image: image3,
   },
   {
     year: "Today",
     title: "Our journey continues… towards safer Indian roads",
     description:
       "JPRI now leads forensic crash investigations, road safety engineering, data analytics and capacity building initiatives. Working with governments, NGOs, OEMs and other stakeholders, we provide technical assistance and cost-effective safety solutions, while sharing insights through conferences, meetings and media to drive evidence-based decision making.",
+    image: image4,
   },
 ];
 
@@ -88,31 +96,82 @@ export default function HistoryTimeline() {
                     <span className="h-2 w-2 rounded-full bg-gradient-to-br from-primary to-red-500" />
                   </span>
 
-                  {/* CARD WRAPPER */}
-                  <div
-                    className={`
-                      w-full md:w-1/2
-                      ${isLeft ? "md:pr-10 md:mr-auto" : "md:pl-10 md:ml-auto"}
-                    `}
-                  >
-                    {/* Card */}
-                    <article className="relative rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-md p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                      {/* Year pill inside card */}
-                      <div className="inline-flex items-center rounded-full bg-slate-900 text-white px-3 py-1 text-xs sm:text-[13px] font-semibold shadow-md">
-                        {item.year}
+                  {/* IMAGE on opposite side of card (desktop only) */}
+                  {isLeft ? (
+                    // Card is on left, image on right
+                    <>
+                      {/* Card side */}
+                      <div
+                        className="
+                          w-full md:w-1/2
+                          md:pr-10 md:mr-auto
+                        "
+                      >
+                        <article className="relative rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-md p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                          <div className="inline-flex items-center rounded-full bg-slate-900 text-white px-3 py-1 text-xs sm:text-[13px] font-semibold shadow-md">
+                            {item.year}
+                          </div>
+
+                          <h3 className="mt-3 text-base sm:text-lg font-semibold text-slate-900">
+                            {item.title}
+                          </h3>
+                          <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700">
+                            {item.description}
+                          </p>
+
+                          <div className="pointer-events-none absolute inset-x-6 bottom-0 h-1 rounded-t-full bg-gradient-to-r from-primary/40 via-red-400/40 to-primary/40 opacity-70" />
+                        </article>
                       </div>
 
-                      <h3 className="mt-3 text-base sm:text-lg font-semibold text-slate-900">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700">
-                        {item.description}
-                      </p>
+                      {/* Image side */}
+                      <div className="hidden md:flex md:w-1/2 md:pl-10 md:ml-auto items-center justify-center">
+                        <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="h-64 w-full object-contain"
+                          />
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    // Card is on right, image on left
+                    <>
+                      {/* Image side */}
+                      <div className="hidden md:flex md:w-1/2 md:pr-10 md:mr-auto items-center justify-center">
+                        <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="h-80 w-full object-contain"
+                          />
+                        </div>
+                      </div>
 
-                      {/* subtle gradient accent at bottom */}
-                      <div className="pointer-events-none absolute inset-x-6 bottom-0 h-1 rounded-t-full bg-gradient-to-r from-primary/40 via-red-400/40 to-primary/40 opacity-70" />
-                    </article>
-                  </div>
+                      {/* Card side */}
+                      <div
+                        className="
+                          w-full md:w-1/2
+                          md:pl-10 md:ml-auto
+                        "
+                      >
+                        <article className="relative rounded-2xl border border-slate-200/60 bg-white/80 backdrop-blur-md p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                          <div className="inline-flex items-center rounded-full bg-slate-900 text-white px-3 py-1 text-xs sm:text-[13px] font-semibold shadow-md">
+                            {item.year}
+                          </div>
+
+                          <h3 className="mt-3 text-base sm:text-lg font-semibold text-slate-900">
+                            {item.title}
+                          </h3>
+                          <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700">
+                            {item.description}
+                          </p>
+
+                          <div className="pointer-events-none absolute inset-x-6 bottom-0 h-1 rounded-t-full bg-gradient-to-r from-primary/40 via-red-400/40 to-primary/40 opacity-70" />
+                        </article>
+                      </div>
+                    </>
+                  )}
                 </li>
               );
             })}
