@@ -54,7 +54,7 @@ export default function Hero() {
         {activeSlide.id === 0 ? (
           <>
             {/* Mobile: gradient only */}
-            <div className="block md:hidden h-full w-full bg-gradient-to-br from-[#0A0F1C] to-[#7A0D0D]"></div>
+            <div className="block md:hidden h-full w-full bg-gradient-to-br from-[#201D1E] to-[#A01E21]"></div>
 
             {/* Desktop: first banner should FIT */}
             <img

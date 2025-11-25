@@ -16,6 +16,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom"; // 👈 IMPORTANT
 
 const menuItems = [
   { icon: FiHome, label: "Home", href: "/" },
@@ -92,15 +93,18 @@ function MenuButton({ item, isActive, variant, onClick }) {
 }
 
 export default function Sidebar() {
-  const [active, setActive] = useState("Home");
+  const navigate = useNavigate();          // ✅ router hook
+  const location = useLocation();          // ✅ router hook
+
   const [isOpen, setIsOpen] = useState(false);        // desktop expand panel
   const [mobileOpen, setMobileOpen] = useState(false); // mobile drawer
 
   const handleSelect = (item) => {
-    setActive(item.label);
-    setMobileOpen(false);
-    // TODO: hook up navigation here (e.g. react-router navigate(item.href))
+    navigate(item.href);    // ✅ actually change route
+    setMobileOpen(false);   // close mobile menu on click
   };
+
+  const isItemActive = (item) => location.pathname === item.href;
 
   return (
     <>
@@ -130,7 +134,11 @@ export default function Sidebar() {
         className={`
           fixed inset-0 z-40 md:hidden
           transition-opacity duration-300
-          ${mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+          ${
+            mobileOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }
         `}
       >
         {/* dark overlay */}
@@ -158,7 +166,7 @@ export default function Sidebar() {
                 key={item.label}
                 item={item}
                 variant="full"
-                isActive={active === item.label}
+                isActive={isItemActive(item)}          // ✅ uses location
                 onClick={() => handleSelect(item)}
               />
             ))}
@@ -189,32 +197,30 @@ export default function Sidebar() {
               key={item.label}
               item={item}
               variant="icon"
-              isActive={active === item.label}
+              isActive={isItemActive(item)}          // ✅ uses location
               onClick={() => handleSelect(item)}
             />
           ))}
         </div>
       </aside>
 
-
-<button
-  onClick={() => setIsOpen((prev) => !prev)}
-  style={{
-    left: isOpen ? "18rem" : "5rem",
-  }}
-  className="
-    hidden md:flex
-    fixed top-1/2
-    -translate-x-1/2 -translate-y-1/2
-    w-10 h-10 rounded-full bg-primary text-white
-    items-center justify-center
-    shadow-md z-[999]
-    transition-all duration-300 ease-out
-  "
->
-  {isOpen ? <FiChevronLeft size={18} /> : <FiChevronRight size={18} />}
-</button>
-
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        style={{
+          left: isOpen ? "18rem" : "5rem",
+        }}
+        className="
+          hidden md:flex
+          fixed top-1/2
+          -translate-x-1/2 -translate-y-1/2
+          w-10 h-10 rounded-full bg-primary text-white
+          items-center justify-center
+          shadow-md z-[999]
+          transition-all duration-300 ease-out
+        "
+      >
+        {isOpen ? <FiChevronLeft size={18} /> : <FiChevronRight size={18} />}
+      </button>
 
       {/* 🧾 DESKTOP EXPANDING PANEL */}
       <div
@@ -240,7 +246,7 @@ export default function Sidebar() {
                 key={item.label}
                 item={item}
                 variant="full"
-                isActive={active === item.label}
+                isActive={isItemActive(item)}        // ✅ uses location
                 onClick={() => handleSelect(item)}
               />
             ))}
