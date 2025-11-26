@@ -21,7 +21,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "pune",
     title: "Registered Office – Pune",
@@ -35,7 +34,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "ahmedabad",
     title: "Branch Office – Ahmedabad",
@@ -48,7 +46,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "kolkata",
     title: "Branch Office – Kolkata",
@@ -62,7 +59,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "jaipur",
     title: "Branch Office – Jaipur",
@@ -76,7 +72,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "nagpur",
     title: "Branch Office – Nagpur",
@@ -90,7 +85,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "dehradun",
     title: "Branch Office – Dehradun",
@@ -105,7 +99,6 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },
-
   {
     id: "dindigul",
     title: "Branch Office – Dindigul",
@@ -120,7 +113,6 @@ const offices = [
     email: "contact@jpri.in",
   },
 ];
-
 
 export default function OfficesSection() {
   const [openId, setOpenId] = useState("coimbatore");
@@ -160,6 +152,7 @@ export default function OfficesSection() {
                   <button
                     type="button"
                     onClick={() => toggleOffice(office.id)}
+                    aria-expanded={isOpen}
                     className="
                       w-full flex items-center justify-between
                       px-10 py-4 text-left
@@ -175,9 +168,16 @@ export default function OfficesSection() {
                     )}
                   </button>
 
-                  {/* Details row – single line on desktop */}
-                  {isOpen && office.addressLines && (
-                    <div className="border-t border-[#e4e4e4] px-6 py-4">
+                  {/* Details row – animated expand / collapse */}
+                  {office.addressLines && (
+                    <div
+                      className={`
+                        border-t border-[#e4e4e4] px-6
+                        overflow-hidden
+                        transition-all duration-300 ease-in-out
+                        ${isOpen ? "py-4 max-h-[350px] opacity-100" : "py-0 max-h-0 opacity-0"}
+                      `}
+                    >
                       <div
                         className="
                           flex flex-col gap-4
@@ -198,18 +198,17 @@ export default function OfficesSection() {
                         {/* Phone */}
                         <div className="flex items-start gap-2 min-w-[170px]">
                           <Phone className="mt-0.5 text-primary" size={18} />
-
                           <div className="flex flex-col leading-relaxed">
                             {office.phones?.map((ph) => (
                               <a
                                 key={ph}
                                 href={`tel:${ph.replace(/\s+/g, "")}`}
                                 className="
-          text-primary
-          hover:underline
-          hover:text-primary/80
-          transition
-        "
+                                  text-primary
+                                  hover:underline
+                                  hover:text-primary/80
+                                  transition
+                                "
                               >
                                 {ph}
                               </a>

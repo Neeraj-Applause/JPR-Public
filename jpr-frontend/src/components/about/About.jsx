@@ -5,6 +5,7 @@ import VisionMissionSection from "./VisionMissionSection";
 import HistoryTimeline from "./HistoryTimeline";
 import CorporateReturnsSection from "./CorporateReturnsSection";
 import LeadershipPreview from "./LeadershipPreview";
+import NeedHelpSection from "./NeedHelpSection";
 
 export default function About() {
   return (
@@ -15,6 +16,7 @@ export default function About() {
       <HistoryTimeline />
       <CorporateReturnsSection />
       <LeadershipPreview />
+      <NeedHelpSection />
       {/* Narrow container for body sections */}
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 space-y-20"></div>
     </main>
