@@ -15,13 +15,36 @@ import {
   PhoneCall,
   Menu,
   X,
+  ChevronDown,
 } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom"; // 👈 IMPORTANT
+import { useNavigate, useLocation } from "react-router-dom";
 
 const menuItems = [
   { icon: FiHome, label: "Home", href: "/" },
   { icon: FiInfo, label: "About", href: "/about" },
-  { icon: Briefcase, label: "Services", href: "/services" },
+  {
+    icon: Briefcase,
+    label: "Services",
+    href: "/services",
+    children: [
+      {
+        label: "Crash Investigations",
+        href: "/services#crash-investigations",
+      },
+      {
+        label: "Data Analytics",
+        href: "/services#data-analytics",
+      },
+      {
+        label: "Road Safety Engineering",
+        href: "/services#road-safety-engineering",
+      },
+      {
+        label: "Training",
+        href: "/services#training",
+      },
+    ],
+  },
   { icon: BookOpenCheck, label: "Publications", href: "/publications" },
   { icon: FiCalendar, label: "News", href: "/news" },
   { icon: FolderOpenDot, label: "Projects", href: "/projects" },
@@ -30,7 +53,14 @@ const menuItems = [
 ];
 
 // Shared button for both collapsed & expanded variants
-function MenuButton({ item, isActive, variant, onClick }) {
+function MenuButton({
+  item,
+  isActive,
+  variant,
+  onClick,
+  hasChildren,
+  expanded,
+}) {
   const Icon = item.icon;
 
   if (variant === "icon") {
@@ -38,7 +68,7 @@ function MenuButton({ item, isActive, variant, onClick }) {
     return (
       <button
         onClick={onClick}
-        className={`relative flex items-center justify-center h-12 text-2xl
+        className={`relative flex items-center justify-center h-10 text-2xl
           transition-all duration-200
           ${
             isActive
@@ -51,21 +81,22 @@ function MenuButton({ item, isActive, variant, onClick }) {
           <span
             className="
               absolute left-0 top-1/2 -translate-y-1/2
-              h-7 w-1.5 bg-secondary rounded-r-full
+              h-10 w-1 bg-secondary rounded-r-full
             "
           />
         )}
-        <Icon className="relative z-10" />
+        <Icon className="relative z-10 w-5 h-5" />
       </button>
     );
   }
 
-  // EXPANDED – icon + label, but same height & vertical rhythm
+  // EXPANDED – icon + label (+ optional dropdown chevron)
   return (
     <button
+      type="button"
       onClick={onClick}
-      className={`relative w-full flex items-center gap-3
-        h-12 px-4 text-sm font-medium
+      className={`relative w-full flex items-center justify-between
+        h-10 px-4 text-sm font-medium
         rounded-r-2xl rounded-l-md
         transition-all duration-200
         ${
@@ -75,36 +106,57 @@ function MenuButton({ item, isActive, variant, onClick }) {
         }
       `}
     >
-      {isActive && (
-        <span
-          className="
-            absolute left-0 top-0 bottom-0
-            w-1.5 bg-secondary rounded-r-full
-          "
+      <div className="flex items-center gap-3">
+        {isActive && (
+          <span
+            className="
+              absolute left-0 top-0 bottom-0
+              w-1 bg-secondary rounded-r-full
+            "
+          />
+        )}
+
+        <Icon className="w-5 h-5 relative z-10" />
+        <span className="whitespace-nowrap relative z-10">
+          {item.label}
+        </span>
+      </div>
+
+      {hasChildren && (
+        <ChevronDown
+          className={`h-4 w-4 mr-1 transition-transform ${
+            expanded ? "rotate-180" : "rotate-0"
+          }`}
         />
       )}
-
-      <Icon className="text-lg relative z-10" />
-      <span className="whitespace-nowrap relative z-10">
-        {item.label}
-      </span>
     </button>
   );
 }
 
 export default function Sidebar() {
-  const navigate = useNavigate();          // ✅ router hook
-  const location = useLocation();          // ✅ router hook
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const [isOpen, setIsOpen] = useState(false);        // desktop expand panel
+  const [isOpen, setIsOpen] = useState(false); // desktop expand panel
   const [mobileOpen, setMobileOpen] = useState(false); // mobile drawer
+  const [openSection, setOpenSection] = useState(null); // which parent menu is expanded (Services)
 
   const handleSelect = (item) => {
-    navigate(item.href);    // ✅ actually change route
-    setMobileOpen(false);   // close mobile menu on click
+    navigate(item.href);
+    setMobileOpen(false); // close mobile drawer on navigation
   };
 
-  const isItemActive = (item) => location.pathname === item.href;
+  const toggleSection = (label) => {
+    setOpenSection((prev) => (prev === label ? null : label));
+  };
+
+  const isItemActive = (item) => {
+    if (item.label === "Services") {
+      // treat any /services route as active
+      return location.pathname.startsWith("/services");
+    }
+    return location.pathname === item.href;
+  };
 
   return (
     <>
@@ -160,16 +212,43 @@ export default function Sidebar() {
             <img src="/logo.png" alt="JPR" className="w-24" />
           </div>
 
-          <nav className="flex-1 flex flex-col gap-4 px-4 overflow-y-auto">
-            {menuItems.map((item) => (
-              <MenuButton
-                key={item.label}
-                item={item}
-                variant="full"
-                isActive={isItemActive(item)}          // ✅ uses location
-                onClick={() => handleSelect(item)}
-              />
-            ))}
+          <nav className="flex-1 flex flex-col gap-2 px-4 overflow-y-auto">
+            {menuItems.map((item) => {
+              const hasChildren = !!item.children?.length;
+              const expanded = openSection === item.label;
+
+              return (
+                <div key={item.label}>
+                  <MenuButton
+                    item={item}
+                    variant="full"
+                    isActive={isItemActive(item)}
+                    hasChildren={hasChildren}
+                    expanded={expanded}
+                    onClick={() =>
+                      hasChildren
+                        ? toggleSection(item.label)
+                        : handleSelect(item)
+                    }
+                  />
+
+                  {/* Mobile submenu for Services */}
+                  {hasChildren && expanded && (
+                    <div className="mt-1 ml-7 rounded-2xl bg-primary/5 py-2">
+                      {item.children.map((child) => (
+                        <button
+                          key={child.label}
+                          onClick={() => handleSelect(child)}
+                          className="w-full text-left px-4 py-1.5 text-xs font-medium text-slate-700 hover:text-primary hover:bg-white/70 rounded-xl"
+                        >
+                          {child.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
         </div>
       </div>
@@ -197,13 +276,14 @@ export default function Sidebar() {
               key={item.label}
               item={item}
               variant="icon"
-              isActive={isItemActive(item)}          // ✅ uses location
-              onClick={() => handleSelect(item)}
+              isActive={isItemActive(item)}
+              onClick={() => handleSelect(item)} // rail just navigates
             />
           ))}
         </div>
       </aside>
 
+      {/* ➡ DESKTOP ARROW TOGGLE */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         style={{
@@ -240,16 +320,43 @@ export default function Sidebar() {
           </div>
 
           {/* Menu – same item height & gap as rail */}
-          <nav className="flex-1 flex flex-col gap-5 px-4 pb-10">
-            {menuItems.map((item) => (
-              <MenuButton
-                key={item.label}
-                item={item}
-                variant="full"
-                isActive={isItemActive(item)}        // ✅ uses location
-                onClick={() => handleSelect(item)}
-              />
-            ))}
+          <nav className="flex-1 flex flex-col gap-3 px-4 pb-10">
+            {menuItems.map((item) => {
+              const hasChildren = !!item.children?.length;
+              const expanded = openSection === item.label;
+
+              return (
+                <div key={item.label}>
+                  <MenuButton
+                    item={item}
+                    variant="full"
+                    isActive={isItemActive(item)}
+                    hasChildren={hasChildren}
+                    expanded={expanded}
+                    onClick={() =>
+                      hasChildren
+                        ? toggleSection(item.label)
+                        : handleSelect(item)
+                    }
+                  />
+
+                  {/* Desktop submenu for Services */}
+                  {hasChildren && expanded && (
+                    <div className="mt-1 ml-6 rounded-2xl bg-primary/5 py-2">
+                      {item.children.map((child) => (
+                        <button
+                          key={child.label}
+                          onClick={() => handleSelect(child)}
+                          className="w-full text-left px-4 py-1.5 text-xs font-medium text-slate-700 hover:text-primary hover:bg-white/80 rounded-xl"
+                        >
+                          {child.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
         </div>
       </div>
