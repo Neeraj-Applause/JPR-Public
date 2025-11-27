@@ -6,18 +6,18 @@ import Safety_Insights from "../../assets/icons/statsstrip/Safety_Insights.svg";
 const stats = [
   {
     icon: Crash_Cases,
-    highlight: "4000+",
+    highlight: "9000+",
     title: "Crash Cases Investigated",
   },
   {
     icon: Expertise_Area,
     highlight: "Pan - India",
-    title: "Of Expertise",
+    title: "Presence",
   },
   {
     icon: Safety_Insights,
     highlight: "14 Years",
-    title: "Research Network",
+    title: "Of In Depth Research",
   },
   {
     icon: Research_Network,

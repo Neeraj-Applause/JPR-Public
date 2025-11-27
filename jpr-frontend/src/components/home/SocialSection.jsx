@@ -8,7 +8,6 @@ import linkedinIcon from "../../assets/icons/social/linkedIn.svg";
 const socials = [
   { id: 1, name: "YouTube", icon: youtubeIcon, href: "#" },
   { id: 2, name: "Facebook", icon: facebookIcon, href: "#" },
-  { id: 3, name: "Newsletter", icon: newsletterIcon, href: "#" },
   { id: 4, name: "Twitter", icon: twitterIcon, href: "#" },
   { id: 5, name: "LinkedIn", icon: linkedinIcon, href: "#" },
 ];
@@ -32,7 +31,7 @@ export default function SocialSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
+        <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-4 px-20">
           {socials.map(({ id, name, icon, href }) => (
             <a
               key={id}
@@ -40,7 +39,7 @@ export default function SocialSection() {
               target="_blank"
               rel="noreferrer"
               className="
-                group rounded-3xl border border-[#e3e3e3] bg-white
+                group rounded-2xl border border-[#e3e3e3] bg-white
                 shadow-[0_8px_18px_rgba(0,0,0,0.06)]
                 overflow-hidden flex flex-col cursor-pointer
                 transition-all duration-300

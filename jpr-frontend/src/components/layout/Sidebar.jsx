@@ -63,32 +63,41 @@ function MenuButton({
 }) {
   const Icon = item.icon;
 
-  if (variant === "icon") {
-    // COLLAPSED – only icon
-    return (
+if (variant === "icon") {
+  return (
+    <div className="relative group">
       <button
         onClick={onClick}
         className={`relative flex items-center justify-center h-10 text-2xl
           transition-all duration-200
           ${
             isActive
-              ? "bg-primary text-white w-16 rounded-r-full rounded-l-md shadow-[0_4px_10px_rgba(0,0,0,0.18)]"
-              : "w-12 text-primary rounded-xl hover:bg-primary hover:text-white hover:shadow-[0_4px_10px_rgba(0,0,0,0.18)]"
+              ? "bg-primary text-white w-16 rounded-r-full rounded-l-md shadow"
+              : "w-12 text-primary rounded-xl hover:bg-primary hover:text-white hover:shadow"
           }
         `}
       >
-        {isActive && (
-          <span
-            className="
-              absolute left-0 top-1/2 -translate-y-1/2
-              h-10 w-1 bg-secondary rounded-r-full
-            "
-          />
-        )}
         <Icon className="relative z-10 w-5 h-5" />
       </button>
-    );
-  }
+
+      {/* Tooltip */}
+      <span
+        className="
+          absolute left-full top-1/2 -translate-y-1/2 ml-3
+          opacity-0 group-hover:opacity-100
+          pointer-events-none
+          whitespace-nowrap
+          bg-gray-900 text-white text-xs font-medium
+          py-1.5 px-3 rounded-md shadow-lg
+          transition-all duration-200
+        "
+      >
+        {item.label}
+      </span>
+    </div>
+  );
+}
+
 
   // EXPANDED – icon + label (+ optional dropdown chevron)
   return (
@@ -342,12 +351,12 @@ export default function Sidebar() {
 
                   {/* Desktop submenu for Services */}
                   {hasChildren && expanded && (
-                    <div className="mt-1 ml-6 rounded-2xl bg-primary/5 py-2">
+                    <div className="mt-1 rounded-2xl bg-primary/5 py-4">
                       {item.children.map((child) => (
                         <button
                           key={child.label}
                           onClick={() => handleSelect(child)}
-                          className="w-full text-left px-4 py-1.5 text-xs font-medium text-slate-700 hover:text-primary hover:bg-white/80 rounded-xl"
+                          className="w-full text-left px-4 py-2 text-xs font-medium text-slate-700 hover:text-primary hover:bg-white rounded-xl"
                         >
                           {child.label}
                         </button>

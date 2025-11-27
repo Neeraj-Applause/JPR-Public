@@ -14,7 +14,7 @@ export default function About() {
       <VisionMissionSection />
       <ServicesSummary />
       <HistoryTimeline />
-      <CorporateReturnsSection />
+      {/* <CorporateReturnsSection /> */}
       <LeadershipPreview />
       <NeedHelpSection />
       {/* Narrow container for body sections */}

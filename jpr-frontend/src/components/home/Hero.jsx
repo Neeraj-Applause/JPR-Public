@@ -5,6 +5,8 @@ import banner1 from "../../assets/images/banners/banner1.png"; // desktop hero
 import banner2 from "../../assets/images/banners/banner2.jpg";
 import banner3 from "../../assets/images/banners/banner3.png";
 import bannerMiddle from "../../assets/images/banners/mobile/banner1-mobile.png";
+import logo from "../../assets/logos/logo.png";
+import logo2 from "../../assets/logos/rassi.png";
 
 const slides = [
   {
@@ -76,6 +78,27 @@ export default function Hero() {
           />
         )}
       </div>
+
+        {/* Logos glass card – desktop only */}
+  <div className="hidden md:flex absolute top-6 right-6 z-20">
+    <div className="flex items-center gap-3 px-5 py-3 rounded-2xl
+                    bg-white/10 border border-white/20 shadow-lg
+                    backdrop-blur-md">
+      <img
+        src={logo}
+        alt="JP Research logo"
+        className="h-20 w-auto object-contain"
+      />
+
+      <span className="h-16 w-px bg-white/30" />
+
+      <img
+        src={logo2}
+        alt="RASSI logo"
+        className="h-12 w-auto object-contain"
+      />
+    </div>
+  </div>
 
       {/* Content overlay – only on first slide */}
       {activeSlide.hasContent && (

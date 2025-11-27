@@ -5,7 +5,7 @@ export default function NeedHelpSection() {
   return (
     <section
       id="need-help"
-      className="relative py-12 sm:py-14"
+      className="relative py-8 sm:py-8"
       aria-labelledby="need-help-heading"
     >
       {/* soft background accent */}
@@ -35,7 +35,7 @@ export default function NeedHelpSection() {
           {/* Card side */}
           <div className="relative">
             <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-primary/60 via-red-400/50 to-primary/70 opacity-80 blur-md" />
-            <div className="relative rounded-3xl bg-white px-5 py-6 sm:px-7 sm:py-7 shadow-xl border border-white/60">
+            <div className="relative rounded-3xl bg-white px-5 py-6 sm:px-7 sm:py-7 shadow-x0.5 border border-white/60">
               <div className="space-y-4">
                 {/* <p className="text-sm text-slate-600 leading-relaxed">
                   Please feel free to contact us to discuss your requirement.
