@@ -79,26 +79,38 @@ export default function Hero() {
         )}
       </div>
 
-        {/* Logos glass card – desktop only */}
-  <div className="hidden md:flex absolute top-6 right-6 z-20">
-    <div className="flex items-center gap-3 px-5 py-3 rounded-2xl
-                    bg-white/10 border border-white/20 shadow-lg
-                    backdrop-blur-md">
-      <img
-        src={logo}
-        alt="JP Research logo"
-        className="h-20 w-auto object-contain"
-      />
+{/* Logos glass card – desktop only */}
+<div className="hidden md:flex absolute top-6 right-6 z-20">
+  <div
+    className="flex items-center gap-3 px-5 py-3 rounded-2xl
+               bg-white/10 border border-white/20 shadow-lg
+               backdrop-blur-md"
+  >
+    {/* JP Research Logo (no link) */}
+    <img
+      src={logo}
+      alt="JP Research logo"
+      className="h-20 w-auto object-contain"
+    />
 
-      <span className="h-16 w-px bg-white/30" />
+    <span className="h-16 w-px bg-white/30" />
 
+    {/* RASSI Logo with hyperlink */}
+    <a
+      href="https://www.rassi.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="transition hover:opacity-80"
+    >
       <img
         src={logo2}
         alt="RASSI logo"
         className="h-12 w-auto object-contain"
       />
-    </div>
+    </a>
   </div>
+</div>
+
 
       {/* Content overlay – only on first slide */}
       {activeSlide.hasContent && (

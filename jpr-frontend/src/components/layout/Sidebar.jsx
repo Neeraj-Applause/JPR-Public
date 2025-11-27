@@ -25,11 +25,11 @@ const menuItems = [
   {
     icon: Briefcase,
     label: "Services",
-    href: "/services",
+    href: "/services/crash-investigations",
     children: [
       {
         label: "Crash Investigations",
-        href: "/services#crash-investigations",
+        href: "/services/crash-investigations",
       },
       {
         label: "Data Analytics",
