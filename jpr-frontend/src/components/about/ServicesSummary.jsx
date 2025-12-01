@@ -14,28 +14,28 @@ const services = [
     title: "Crash Investigations",
     description:
       "On-site and in-depth crash data collection to understand real-world crash scenarios.",
-    href: "/services#crash-investigations",
+    href: "/services/crash-investigations",
   },
   {
     icon: BarChart3,
     title: "Data Analytics",
     description:
       "Advanced statistical models and analytics that turn complex crash data into clear decisions.",
-    href: "/services#data-analytics",
+    href: "/services/data-analytics",
   },
   {
     icon: Route,
     title: "Road Safety Engineering",
     description:
       "Evidence-based engineering recommendations to improve road design and infrastructure safety.",
-    href: "/services#road-safety-engineering",
+    href: "/services/road-safety-engineering",
   },
   {
     icon: GraduationCap,
     title: "Training & Capacity Building",
     description:
       "Workshops and training programs that embed scientific, data-driven road safety practices.",
-    href: "/services#training",
+    href: "/services/training",
   },
 ];
 
