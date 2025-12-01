@@ -10,6 +10,8 @@ import CrashInvestigationsPage from "./pages/services/CrashInvestigationsPage.js
 import DataAnalyticsPage from "./pages/services/DataAnalyticsPage.jsx";
 import RoadSafetyPage from "./pages/services/RoadSafetyPage.jsx";
 import TrainingPage from "./pages/services/TrainingPage.jsx";
+import DataCollectionPage from "./pages/services/DataCollectionPage.jsx";
+import CrashReconstructionPage from "./pages/services/CrashReconstructionPage.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +26,8 @@ function App() {
     <Route path='/services/data-analytics' element={<DataAnalyticsPage />} />
     <Route path='/services/road-safety-engineering' element={<RoadSafetyPage />} />
     <Route path='/services/training' element={<TrainingPage />} />
+    <Route path='/services/data-collection' element={<DataCollectionPage />} />
+    <Route path='/services/crash-reconstructions' element={<CrashReconstructionPage />} />
   </Routes>
 
  </div>

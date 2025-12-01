@@ -10,7 +10,7 @@ export default function CrashInvestigationCards() {
     {
       title: "Data Collection",
       image: image1,
-      href: "/services/crash-investigations/data-collection",
+      href: "/services/data-collection",
       gradient: "from-[#9F1F1F] to-[#D04B4B]",
       description:
         "Structured on-site capture of scene, vehicle and human factors — measurements, photos and interviews to create reliable datasets.",
@@ -18,7 +18,7 @@ export default function CrashInvestigationCards() {
     {
       title: "Crash Reconstructions",
       image: image2,
-      href: "/services/crash-investigations/crash-reconstructions",
+      href: "/services/crash-reconstructions",
       gradient: "from-[#2E6B6B] to-[#7FB9B9]",
       description:
         "Physics-informed reconstructions combining vehicle damage, scene evidence and biomechanics to recreate event sequences.",
@@ -26,7 +26,7 @@ export default function CrashInvestigationCards() {
     {
       title: "Injury Analysis",
       image: image3,
-      href: "/services/crash-investigations/injury-analysis",
+      href: "/services/injury-analysis",
       gradient: "from-[#6B2E4A] to-[#B86A8C]",
       description:
         "Forensic injury assessment linking occupant kinematics and contacts to injury causation for design, medical and legal use.",

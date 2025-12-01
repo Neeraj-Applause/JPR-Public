@@ -14,7 +14,7 @@ export default function Footer() {
         "
       >
         {/* Logo */}
-        <div className="flex-shrink-0 flex justify-center md:justify-start">
+        <div className="flex-shrink-0 flex justify-center md:justify-start ml-12">
           <img src={footerLogo} alt="JPRI Logo" className="w-32" />
         </div>
 
