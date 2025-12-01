@@ -4,60 +4,57 @@ export default function CrashInvestigationsSection() {
   return (
     <section
       id="forensic-crash-investigations"
-      className="relative bg-white py-16 text-slate-900 sm:py-20"
+      className="relative py-16 sm:py-20"
     >
-      {/* soft background accents */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-6 top-6 h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute right-10 bottom-0 h-48 w-48 rounded-full bg-secondary/10 blur-3xl" />
-      </div>
+      {/* soft background glow */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-primary/5 to-transparent" />
 
-      <div className="mx-auto flex max-w-5xl flex-col gap-10 px-6 lg:px-8">
-        {/* Section label + title */}
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-0 space-y-10">
+        {/* Section tag + title */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
-          className="space-y-3"
+          className="space-y-3 text-center"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold tracking-[0.16em] text-primary uppercase">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
+          <p className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
             Crash Investigations
-          </div>
+          </p>
 
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
             Forensic &amp; Special Crash Investigations
           </h2>
 
-          <p className="max-w-2xl text-sm text-slate-600 sm:text-base">
+          <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-600">
             Detailed, evidence-based crash investigations that support safer
             vehicles, safer roads, and better-informed decisions.
           </p>
         </motion.div>
 
-        {/* Content cards */}
-        <div className="grid gap-8 md:grid-cols-2">
+        {/* Cards */}
+        <div className="grid gap-6 md:grid-cols-2">
           {/* Forensic Crash Investigations */}
           <motion.article
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white/80 p-6 shadow-sm ring-1 ring-slate-100/70 backdrop-blur-sm sm:p-7"
+            className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white/80 p-6 sm:p-7 shadow-sm backdrop-blur transition-transform duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
           >
-            <div className="absolute inset-y-6 left-0 w-1 rounded-full bg-gradient-to-b from-primary to-secondary" />
+            {/* Accent bar */}
+            <span className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-primary to-secondary rounded-l-2xl" />
 
-            <div className="pl-5">
-              <h3 className="text-lg font-semibold sm:text-xl">
+            <div className="space-y-2">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 Forensic Crash Investigations
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">
+              <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700">
                 Be it a quick consultation to understand an accident or
                 full-fledged investigations to reconstruct and understand injury
-                causation, we deliver easily understandable and evidence based
+                causation, we deliver easily understandable and evidence-based
                 explanations of the sequence of events leading up to any road
-                traffic accidents.
+                traffic accident.
               </p>
             </div>
           </motion.article>
@@ -68,23 +65,20 @@ export default function CrashInvestigationsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white/80 p-6 shadow-sm ring-1 ring-slate-100/70 backdrop-blur-sm sm:p-7"
+            className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white/80 p-6 sm:p-7 shadow-sm backdrop-blur transition-transform duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
           >
-            <div className="absolute inset-y-6 left-0 w-1 rounded-full bg-gradient-to-b from-secondary to-primary" />
+            {/* Accent bar */}
+            <span className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-secondary to-primary rounded-l-2xl" />
 
-            <div className="pl-5">
-              <h3 className="text-lg font-semibold sm:text-xl">
+            <div className="space-y-2">
+              <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 Special Crash Investigations
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">
+              <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700">
                 The intent of such crash investigations is to examine unique
-                real-world crashes anywhere in India and perform a detailed
-                examination in a timely manner that can be used by the safety
-                community to understand, evaluate and improve the performance of
-                existing safety systems. Past cases have triggered interest from
-                individual companies and the industry as a whole to improve the
-                safety performance of motor vehicles and highway safety
-                engineering.
+                real-world crashes across India and perform detailed, timely
+                examinations that help the safety community improve vehicle
+                safety systems and highway engineering.
               </p>
             </div>
           </motion.article>

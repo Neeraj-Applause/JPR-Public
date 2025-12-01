@@ -33,15 +33,15 @@ const menuItems = [
       },
       {
         label: "Data Analytics",
-        href: "/services#data-analytics",
+        href: "/services/data-analytics",
       },
       {
         label: "Road Safety Engineering",
-        href: "/services#road-safety-engineering",
+        href: "/services/road-safety-engineering",
       },
       {
         label: "Training",
-        href: "/services#training",
+        href: "/services/training",
       },
     ],
   },
@@ -270,13 +270,9 @@ export default function Sidebar() {
           hidden md:flex
           flex-col items-center
           shadow-[8px_0_30px_rgba(0,0,0,0.10)]
-          z-40
+          z-40 mt-8
         "
       >
-        {/* Logo */}
-        <div className="pt-8 pb-4">
-          <img src="/logo.png" alt="JPR" className="w-12" />
-        </div>
 
         {/* Menu with same spacing as expanded */}
         <div className="flex-1 flex flex-col items-center gap-5 pb-10">

@@ -23,37 +23,29 @@ export default function CrashInvestigationsHero() {
         {/* Bottom-focused overlay for readability */}
         <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
       </div>
- {/* Logos glass card – desktop only */}
-<div className="hidden md:flex absolute top-6 right-6 z-20">
-  <div
-    className="flex items-center gap-3 px-5 py-3 rounded-2xl
-               bg-white/10 border border-white/20 shadow-lg
-               backdrop-blur-md"
-  >
-    {/* JP Research Logo (no link) */}
-    <img
-      src={logo}
-      alt="JP Research logo"
-      className="h-20 w-auto object-contain"
-    />
-
-    <span className="h-16 w-px bg-white/30" />
-
-    {/* RASSI Logo with hyperlink */}
-    <a
-      href="https://www.rassi.in"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="transition hover:opacity-80"
-    >
-      <img
-        src={logo2}
-        alt="RASSI logo"
-        className="h-12 w-auto object-contain"
-      />
-    </a>
-  </div>
-</div>
+ {/* TOP-LEFT LOGO (desktop only) */}
+       <div className="hidden md:flex absolute top-6 left-6 z-30">
+         <div
+           className="flex items-center gap-3 px-4 py-4 rounded-2xl
+                bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
+         >
+           <a href="/" aria-label="JP Research home">
+             <img src={logo} alt="JP Research logo" className="h-20 w-auto object-contain" />
+           </a>
+         </div>
+       </div>
+ 
+       {/* TOP-RIGHT RASSI LOGO (desktop only) */}
+       <div className="hidden md:flex absolute top-6 right-6 z-30">
+         <div
+           className="flex items-center gap-3 px-4 py-4 rounded-2xl
+                bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
+         >
+           <a href="https://www.rassi.in" target="_blank" rel="noopener noreferrer" aria-label="RASSI website">
+             <img src={logo2} alt="RASSI logo" className="h-14 w-auto object-contain" />
+           </a>
+         </div>
+       </div>
 
 
       {/* Content bottom-aligned */}
