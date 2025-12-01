@@ -17,7 +17,7 @@ const offices = [
       "Chinnasamy Road, New Siddapudur,",
       "Coimbatore - 641 044 India.",
     ],
-    phones: ["+91 422 352 9616", "+91 96 2636 2633"],
+    phones: ["0 422 352 9616", "+91 96 2636 2633"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
   },

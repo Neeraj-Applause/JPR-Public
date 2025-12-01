@@ -4,6 +4,8 @@ import image1 from "../../assets/images/history/2006.png";
 import image2 from "../../assets/images/history/2008.png";
 import image3 from "../../assets/images/history/2010.png";
 import image4 from "../../assets/images/history/today.png";
+import crash from "../../assets/images/history/crash.jpg";
+import team from "../../assets/images/history/group.jpg";
 
 const milestones = [
   {
@@ -11,14 +13,14 @@ const milestones = [
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
       "As India crossed 100,000 annual road fatalities, JP Research India Pvt. Ltd. was founded by Mrs. Jeya Padmanaban to address the lack of in-depth crash data. From the outset, JPRI focused on automotive safety workshops and initiating scientific crash investigations in partnership with agencies and manufacturers.",
-    image: image1,
+    image: team,
   },
   {
     year: "2008",
     title: "Crash investigations – the journey begins",
     description:
       "After several unsuccessful attempts to start crash investigations with government agencies and OEMs, JPRI independently launched its first on-site crash investigation pilot with the support of Tamil Nadu Police on a national highway near Chennai. The success of this project led to a second, two-year pilot in Coimbatore Rural District, deepening insights into human, vehicle and infrastructure factors.",
-    image: image2,
+    image: crash,
   },
   {
     year: "2010",
@@ -129,7 +131,7 @@ export default function HistoryTimeline() {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="h-64 w-full object-contain"
+                            className="h-72 w-full object-contain"
                           />
                         </div>
                       </div>
@@ -143,7 +145,7 @@ export default function HistoryTimeline() {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="h-80 w-full object-contain"
+                            className="h-72 w-full object-contain"
                           />
                         </div>
                       </div>

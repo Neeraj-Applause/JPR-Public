@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import banner1 from "../../assets/images/banners/banner1.png"; // desktop hero
-import banner2 from "../../assets/images/banners/banner2.jpg";
+import banner2 from "../../assets/images/banners/banner2.png";
 import banner3 from "../../assets/images/banners/banner3.png";
 import banner4 from "../../assets/images/banners/banner4.jpeg";
 import banner5 from "../../assets/images/banners/banner5.png";
@@ -57,7 +57,7 @@ const slides = [
     id: 5,
     hasContent: false,
     image: banner6,
-    caption: "", // Banner-6 -> '-' (no caption)
+    caption: "Next-Gen RASSI. Tablet-Driven Innovation",
   },
   {
     id: 6,
@@ -131,8 +131,8 @@ export default function Hero() {
             />
 
             {/* Apply same subtle vignette + bottom-focused overlay used in CrashInvestigationsHero */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/10" />
-            <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/6 to-black/6" />
+<div className="absolute inset-x-0 bottom-0 h-[40%] md:h-[35%] lg:h-[30%] bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
           </>
         )}
       </div>
@@ -144,19 +144,32 @@ export default function Hero() {
                bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
         >
           <a href="/" aria-label="JP Research home">
-            <img src={logo} alt="JP Research logo" className="h-20 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="JP Research logo"
+              className="h-20 w-auto object-contain"
+            />
           </a>
         </div>
       </div>
 
-      {/* TOP-RIGHT RASSI LOGO (desktop only) */}
-      <div className="hidden md:flex absolute top-6 right-6 z-30">
+      {/* TOP-RIGHT RASSI LOGO (always clickable) */}
+      <div className="hidden md:flex absolute top-6 right-6 z-50">
         <div
           className="flex items-center gap-3 px-4 py-4 rounded-2xl
-               bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
+         bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
         >
-          <a href="https://www.rassi.in" target="_blank" rel="noopener noreferrer" aria-label="RASSI website">
-            <img src={logo2} alt="RASSI logo" className="h-14 w-auto object-contain" />
+          <a
+            href="https://www.rassi.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="RASSI website"
+          >
+            <img
+              src={logo2}
+              alt="RASSI logo"
+              className="h-14 w-auto object-contain cursor-pointer"
+            />
           </a>
         </div>
       </div>
@@ -233,28 +246,27 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Caption block (bottom-aligned) — styled exactly like CrashInvestigationsHero */}
-      {activeSlide.id !== 0 && activeSlide.caption && (
-        <div className="relative z-30">
-          <div className="relative mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="space-y-4 max-w-2xl"
-            >
+     {/* Caption block (bottom-aligned) — styled exactly like CrashInvestigationsHero */}
+{activeSlide.id !== 0 && activeSlide.caption && (
+  <div className="relative z-30">
+    <div className="relative mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="space-y-4 max-w-2xl"
+      >
+        {/* Smaller caption headline */}
+        <h2 className="text-xl sm:text-2xl lg:text-[1.6rem] font-semibold leading-tight">
+          <span className="text-white">{activeSlide.caption}</span>
+        </h2>
 
-              {/* Caption as bottom headline (large) */}
-              <h2 className="text-2xl sm:text-3xl lg:text-[2.6rem] font-semibold leading-tight">
-                <span className="text-white">{activeSlide.caption}</span>
-              </h2>
+        <p className="text-sm text-slate-200/90 max-w-md"></p>
+      </motion.div>
+    </div>
+  </div>
+)}
 
-              {/* optional helper — kept empty to not change anything else */}
-              <p className="text-sm sm:text-base text-slate-200/90 max-w-md"></p>
-            </motion.div>
-          </div>
-        </div>
-      )}
 
       {/* Dots */}
       <div className="absolute bottom-7 left-6 sm:left-10 flex gap-3 z-40">

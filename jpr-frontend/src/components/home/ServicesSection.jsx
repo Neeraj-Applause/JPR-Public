@@ -2,8 +2,11 @@ import crashIcon from "../../assets/icons/our_services/Crash_Investigation.svg";
 import roadIcon from "../../assets/icons/our_services/Road_Safety_Engineering.svg";
 import dataIcon from "../../assets/icons/our_services/Data_Analytics.svg";
 import trainingIcon from "../../assets/icons/our_services/Training.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function ServicesSection() {
+  const navigate = useNavigate();
+
   const services = [
     {
       id: 1,
@@ -11,6 +14,7 @@ export default function ServicesSection() {
       description:
         "Expert analysis of road traffic crashes using scientific methodologies and advanced tools.",
       icon: crashIcon,
+      path: "/services/crash-investigations",
     },
     {
       id: 2,
@@ -18,6 +22,7 @@ export default function ServicesSection() {
       description:
         "Comprehensive road safety audits and engineering solutions to prevent crashes.",
       icon: roadIcon,
+      path: "/services/road-safety-engineering",
     },
     {
       id: 3,
@@ -25,6 +30,7 @@ export default function ServicesSection() {
       description:
         "Advanced analytics of crash data to identify patterns and develop preventive measures.",
       icon: dataIcon,
+      path: "/services/data-analytics",
     },
     {
       id: 4,
@@ -32,6 +38,7 @@ export default function ServicesSection() {
       description:
         "Professional training programs for crash investigation and road safety management.",
       icon: trainingIcon,
+      path: "/services/training",
     },
   ];
 
@@ -53,9 +60,10 @@ export default function ServicesSection() {
 
         {/* Cards */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ id, title, description, icon }) => (
+          {services.map(({ id, title, description, icon, path }) => (
             <article
               key={id}
+              onClick={() => navigate(path)}
               className="
                 group bg-white rounded-2xl border border-[#e3e3e3]
                 px-6 py-6 flex flex-col justify-between h-full
@@ -64,6 +72,11 @@ export default function ServicesSection() {
                 hover:bg-primary hover:shadow-[0_18px_40px_rgba(0,0,0,0.28)]
                 hover:-translate-y-1 cursor-pointer
               "
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") navigate(path);
+              }}
             >
               <div>
                 {/* Icon Circle */}
@@ -105,12 +118,15 @@ export default function ServicesSection() {
                 </p>
               </div>
 
-              {/* Learn More */}
               <button
+                onClick={(e) => {
+                  e.stopPropagation(); // prevents card click from firing twice
+                  navigate(path);
+                }}
                 className="
                   mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary
                   transition-all duration-300
-                  group-hover:text-white
+                  group-hover:text-white cursor-pointer
                 "
               >
                 Learn More →

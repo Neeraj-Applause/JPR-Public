@@ -1,6 +1,9 @@
 import aboutIllustration from "../../assets/images/home/about_us.png";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutSection() {
+  const navigate = useNavigate();
+
   return (
     <section
       className="
@@ -58,8 +61,10 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Read more button */}
-            <button className="mt-10 inline-flex px-8 py-3 bg-primary text-white font-semibold rounded-md shadow-md hover:bg-primary/90 transition">
+            <button
+              onClick={() => navigate("/about")}
+              className="mt-10 inline-flex px-8 py-3 bg-primary text-white font-semibold rounded-md shadow-md hover:bg-primary/90 transition cursor-pointer"
+            >
               Read More
             </button>
           </div>

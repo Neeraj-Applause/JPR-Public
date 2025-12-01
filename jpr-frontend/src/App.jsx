@@ -12,6 +12,7 @@ import RoadSafetyPage from "./pages/services/RoadSafetyPage.jsx";
 import TrainingPage from "./pages/services/TrainingPage.jsx";
 import DataCollectionPage from "./pages/services/DataCollectionPage.jsx";
 import CrashReconstructionPage from "./pages/services/CrashReconstructionPage.jsx";
+import LeadershipDetailPage from "./pages/LeadershipDetailPage.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,7 @@ function App() {
     <Route path='/services/training' element={<TrainingPage />} />
     <Route path='/services/data-collection' element={<DataCollectionPage />} />
     <Route path='/services/crash-reconstructions' element={<CrashReconstructionPage />} />
+    <Route path='/leadership/:slug' element={<LeadershipDetailPage />} />
   </Routes>
 
  </div>

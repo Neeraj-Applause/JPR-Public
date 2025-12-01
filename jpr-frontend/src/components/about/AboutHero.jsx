@@ -76,13 +76,13 @@ export default function AboutHero() {
                   <p className="text-[11px] uppercase tracking-wide text-white/60">
                     In-depth crashes
                   </p>
-                  <p className="text-lg font-semibold text-white">100k+</p>
+                  <p className="text-lg font-semibold text-white">9000+</p>
                 </div>
                 <div className="rounded-xl bg-black/40 px-3 py-2">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">
                     Years of data
                   </p>
-                  <p className="text-lg font-semibold text-white">18+</p>
+                  <p className="text-lg font-semibold text-white">15+</p>
                 </div>
                 <div className="rounded-xl bg-black/40 px-3 py-2">
                   <p className="text-[11px] uppercase tracking-wide text-white/60">

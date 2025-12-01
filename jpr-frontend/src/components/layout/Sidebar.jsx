@@ -1,5 +1,5 @@
 // src/components/layout/Sidebar.jsx
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   FiHome,
   FiInfo,
@@ -18,6 +18,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { createPortal } from "react-dom";
 
 const menuItems = [
   { icon: FiHome, label: "Home", href: "/" },
@@ -63,40 +64,90 @@ function MenuButton({
 }) {
   const Icon = item.icon;
 
+// icon-variant MenuButton — replace your current icon block with this
 if (variant === "icon") {
-  return (
-    <div className="relative group">
-      <button
-        onClick={onClick}
-        className={`relative flex items-center justify-center h-10 text-2xl
-          transition-all duration-200
-          ${
-            isActive
-              ? "bg-primary text-white w-16 rounded-r-full rounded-l-md shadow"
-              : "w-12 text-primary rounded-xl hover:bg-primary hover:text-white hover:shadow"
-          }
-        `}
-      >
-        <Icon className="relative z-10 w-5 h-5" />
-      </button>
+  const btnRef = useRef(null);
+  const [showTip, setShowTip] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
 
-      {/* Tooltip */}
-      <span
-        className="
-          absolute left-full top-1/2 -translate-y-1/2 ml-3
-          opacity-0 group-hover:opacity-100
-          pointer-events-none
-          whitespace-nowrap
-          bg-gray-900 text-white text-xs font-medium
-          py-1.5 px-3 rounded-md shadow-lg
-          transition-all duration-200
-        "
-      >
-        {item.label}
-      </span>
-    </div>
+  // recompute position based on the button's bounding rect (viewport coords)
+  const computePos = () => {
+    if (!btnRef.current) return;
+    const rect = btnRef.current.getBoundingClientRect();
+    // Use rect values directly because the tooltip is position: fixed (viewport coords)
+    const top = rect.top + rect.height / 2; // center vertically on the button
+    const left = rect.right + 12; // 12px gap to the right
+    setPos({ top, left });
+  };
+
+  useEffect(() => {
+    if (!showTip) return;
+
+    // compute immediately when tooltip opens
+    computePos();
+
+    // update while visible — keeps tooltip in the right place during scroll/resize/shift
+    const onScroll = () => computePos();
+    const onResize = () => computePos();
+    const onMove = () => computePos();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+    window.addEventListener("mousemove", onMove);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("mousemove", onMove);
+    };
+  }, [showTip]);
+
+  return (
+    <>
+      <div className="relative">
+        <button
+          ref={btnRef}
+          onMouseEnter={() => setShowTip(true)}
+          onMouseLeave={() => setShowTip(false)}
+          onFocus={() => setShowTip(true)}
+          onBlur={() => setShowTip(false)}
+          onClick={onClick}
+          className={`relative flex items-center justify-center h-10 text-2xl
+            transition-all duration-200
+            ${
+              isActive
+                ? "bg-primary text-white w-16 rounded-r-full rounded-l-md shadow"
+                : "w-12 text-primary rounded-xl hover:bg-primary hover:text-white hover:shadow"
+            }
+          `}
+        >
+          <Icon className="relative z-10 w-5 h-5" />
+        </button>
+      </div>
+
+      {showTip &&
+        createPortal(
+          <div
+            role="tooltip"
+            aria-hidden={!showTip}
+            className="fixed bg-gray-900 text-white text-xs font-medium py-1.5 px-3 rounded-md shadow-lg pointer-events-none"
+            style={{
+              top: pos.top,               // viewport Y
+              left: pos.left,             // viewport X
+              transform: "translateY(-50%)",
+              whiteSpace: "nowrap",
+              zIndex: 99999,              // above rail (1100), arrow (1150), panel (1120)
+            }}
+          >
+            {item.label}
+          </div>,
+          document.body
+        )}
+    </>
   );
 }
+
+
 
 
   // EXPANDED – icon + label (+ optional dropdown chevron)
@@ -270,7 +321,7 @@ export default function Sidebar() {
           hidden md:flex
           flex-col items-center
           shadow-[8px_0_30px_rgba(0,0,0,0.10)]
-          z-40 mt-8
+          z-[1100] mt-8
         "
       >
 
@@ -300,7 +351,7 @@ export default function Sidebar() {
           -translate-x-1/2 -translate-y-1/2
           w-10 h-10 rounded-full bg-primary text-white
           items-center justify-center
-          shadow-md z-[999]
+          shadow-md z-[1150]
           transition-all duration-300 ease-out
         "
       >
@@ -313,7 +364,7 @@ export default function Sidebar() {
           hidden md:block
           fixed inset-y-0 left-0
           w-72 bg-white shadow-[8px_0_30px_rgba(0,0,0,0.15)]
-          z-50
+          z-[1120]
           transition-transform duration-300 ease-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
