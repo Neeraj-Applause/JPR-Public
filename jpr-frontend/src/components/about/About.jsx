@@ -12,7 +12,7 @@ export default function About() {
     <main className="bg-white text-slate-900">
       <AboutHero />
       <VisionMissionSection />
-      <ServicesSummary />
+      {/* <ServicesSummary /> */}
       <HistoryTimeline />
       {/* <CorporateReturnsSection /> */}
       <LeadershipPreview />
