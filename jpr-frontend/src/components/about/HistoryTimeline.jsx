@@ -5,6 +5,7 @@ import image2 from "../../assets/images/history/2008.png";
 import image3 from "../../assets/images/history/2010.png";
 import image4 from "../../assets/images/history/today.png";
 import crash from "../../assets/images/history/crash.jpg";
+import group from "../../assets/images/history/group.jpg";
 
 
 const milestones = [
@@ -13,7 +14,7 @@ const milestones = [
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
       "As India crossed 100,000 annual road fatalities, JP Research India Pvt. Ltd. was founded by Mrs. Jeya Padmanaban to address the lack of in-depth crash data. From the outset, JPRI focused on automotive safety workshops and initiating scientific crash investigations in partnership with agencies and manufacturers.",
-    image: image1,
+    image: group,
   },
   {
     year: "2008",
@@ -60,7 +61,7 @@ export default function HistoryTimeline() {
             id="history-heading"
             className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900"
           >
-            History of JP Research India
+            How JPRI has grown over the years
           </h2>
 
           <p className="mt-2 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">

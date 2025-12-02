@@ -24,7 +24,7 @@ export default function CrashInvestigationsHero() {
         <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
       </div>
  {/* TOP-LEFT LOGO (desktop only) */}
-       <div className="hidden md:flex absolute top-6 left-6 z-30">
+       {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
          <div
            className="flex items-center gap-3 px-4 py-4 rounded-2xl
                 bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -34,9 +34,9 @@ export default function CrashInvestigationsHero() {
            </a>
          </div>
        </div>
- 
+  */}
        {/* TOP-RIGHT RASSI LOGO (desktop only) */}
-       <div className="hidden md:flex absolute top-6 right-6 z-30">
+       {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
          <div
            className="flex items-center gap-3 px-4 py-4 rounded-2xl
                 bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -45,7 +45,7 @@ export default function CrashInvestigationsHero() {
              <img src={logo2} alt="RASSI logo" className="h-14 w-auto object-contain" />
            </a>
          </div>
-       </div>
+       </div> */}
 
 
       {/* Content bottom-aligned */}

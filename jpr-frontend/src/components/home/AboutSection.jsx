@@ -7,7 +7,7 @@ export default function AboutSection() {
   return (
     <section
       className="
-        w-full bg-[#f8f8f8] py-16
+        w-full bg-[#f8f8f8] py-12
         px-4 sm:px-6 md:px-8 md:pl-24 xl:px-0
       "
     >
@@ -42,7 +42,7 @@ export default function AboutSection() {
             </p>
 
             {/* Vision / Mission */}
-            <div className="mt-10 grid gap-8 md:grid-cols-2">
+            {/* <div className="mt-10 grid gap-8 md:grid-cols-2">
               <div className="border-l-4 border-primary pl-6">
                 <h3 className="font-semibold text-lg mb-2">Our Vision</h3>
                 <p className="text-sm text-primary leading-relaxed">
@@ -59,7 +59,7 @@ export default function AboutSection() {
                   that will provide high quality data.
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <button
               onClick={() => navigate("/about")}
@@ -74,7 +74,7 @@ export default function AboutSection() {
             <img
               src={aboutIllustration}
               alt="Traffic safety research illustration"
-              className="w-full max-w-md lg:max-w-lg h-auto object-contain"
+              className="w-100 max-w-md lg:max-w-lg h-auto object-cover mr-16"
             />
           </div>
         </div>

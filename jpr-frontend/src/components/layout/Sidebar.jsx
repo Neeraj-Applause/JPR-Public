@@ -361,7 +361,7 @@ export default function Sidebar() {
     <div
   className={`
     hidden md:block
-    fixed top-16 bottom-0 left-0
+    fixed top-20 bottom-0 left-0
     w-72 bg-white shadow-[8px_0_30px_rgba(0,0,0,0.15)]
     z-[1120]
     transition-transform duration-300
@@ -370,13 +370,13 @@ export default function Sidebar() {
 >
 
         <div className="flex flex-col h-full">
-          {/* Logo aligned with rail logo */}
-          <div className="px-6 pt-8 pb-4">
+
+          {/* <div className="px-6 pt-8 pb-4">
             <img src="/logo.png" alt="JPR" className="w-24" />
-          </div>
+          </div> */}
 
           {/* Menu – same item height & gap as rail */}
-          <nav className="flex-1 flex flex-col gap-3 px-4 pb-10">
+          <nav className="flex-1 flex flex-col gap-3 px-4 pb-10 mt-6">
             {menuItems.map((item) => {
               const hasChildren = !!item.children?.length;
               const expanded = openSection === item.label;

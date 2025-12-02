@@ -26,16 +26,16 @@ export default function CrashReconstructionHero() {
       </div>
 
       {/* LEFT Logo */}
-      <div className="hidden md:flex absolute top-6 left-6 z-30">
+      {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
         <div className="flex items-center gap-3 px-4 py-4 rounded-2xl bg-white/8 backdrop-blur-md border border-white/10 shadow-sm">
           <a href="/" aria-label="JP Research home">
             <img src={logo} alt="JP Research logo" className="h-20 w-auto object-contain" />
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* RIGHT Logo */}
-      <div className="hidden md:flex absolute top-6 right-6 z-30">
+      {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
         <div className="flex items-center gap-3 px-4 py-4 rounded-2xl bg-white/8 backdrop-blur-md border border-white/10 shadow-sm">
           <a
             href="https://www.rassi.in"
@@ -46,7 +46,7 @@ export default function CrashReconstructionHero() {
             <img src={logo2} alt="RASSI logo" className="h-14 w-auto object-contain" />
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* HERO CONTENT */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">

@@ -26,7 +26,7 @@ export default function TrainingHero() {
       </div>
 
      {/* TOP-LEFT LOGO (desktop only) */}
-           <div className="hidden md:flex absolute top-6 left-6 z-30">
+           {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
              <div
                className="flex items-center gap-3 px-4 py-4 rounded-2xl
                     bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -36,9 +36,9 @@ export default function TrainingHero() {
                </a>
              </div>
            </div>
-     
+      */}
            {/* TOP-RIGHT RASSI LOGO (desktop only) */}
-           <div className="hidden md:flex absolute top-6 right-6 z-30">
+           {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
              <div
                className="flex items-center gap-3 px-4 py-4 rounded-2xl
                     bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -47,7 +47,7 @@ export default function TrainingHero() {
                  <img src={logo2} alt="RASSI logo" className="h-14 w-auto object-contain" />
                </a>
              </div>
-           </div>
+           </div> */}
 
       {/* Content bottom aligned */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
