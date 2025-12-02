@@ -148,8 +148,6 @@ if (variant === "icon") {
 }
 
 
-
-
   // EXPANDED – icon + label (+ optional dropdown chevron)
   return (
     <button
@@ -315,15 +313,16 @@ export default function Sidebar() {
 
       {/* 💻 DESKTOP SLIM RAIL (left) */}
       <aside
-        className="
-          fixed inset-y-0 left-0
-          w-20 bg-white text-secondary
-          hidden md:flex
-          flex-col items-center
-          shadow-[8px_0_30px_rgba(0,0,0,0.10)]
-          z-[1100] mt-8
-        "
-      >
+  className="
+    fixed top-16 bottom-0 left-0
+    w-20 bg-white text-secondary
+    hidden md:flex flex-col items-center
+    mt-8
+    shadow-[8px_0_30px_rgba(0,0,0,0.10)]
+    z-[1100]
+  "
+>
+
 
         {/* Menu with same spacing as expanded */}
         <div className="flex-1 flex flex-col items-center gap-5 pb-10">
@@ -359,16 +358,17 @@ export default function Sidebar() {
       </button>
 
       {/* 🧾 DESKTOP EXPANDING PANEL */}
-      <div
-        className={`
-          hidden md:block
-          fixed inset-y-0 left-0
-          w-72 bg-white shadow-[8px_0_30px_rgba(0,0,0,0.15)]
-          z-[1120]
-          transition-transform duration-300 ease-out
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}
-        `}
-      >
+    <div
+  className={`
+    hidden md:block
+    fixed top-16 bottom-0 left-0
+    w-72 bg-white shadow-[8px_0_30px_rgba(0,0,0,0.15)]
+    z-[1120]
+    transition-transform duration-300
+    ${isOpen ? "translate-x-0" : "-translate-x-full"}
+  `}
+>
+
         <div className="flex flex-col h-full">
           {/* Logo aligned with rail logo */}
           <div className="px-6 pt-8 pb-4">

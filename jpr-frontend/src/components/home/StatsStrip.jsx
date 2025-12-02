@@ -17,7 +17,7 @@ const stats = [
   {
     icon: Safety_Insights,
     highlight: "14 Years",
-    title: "Of In Depth Research",
+    title: "of In Depth Research",
   },
   {
     icon: Research_Network,
