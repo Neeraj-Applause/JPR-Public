@@ -6,7 +6,7 @@ import banner1old from "../../assets/images/banners/banner1.png"; // desktop her
 import banner1 from "../../assets/images/banners/banner1.jpg"; // desktop hero
 import banner2 from "../../assets/images/banners/banner2.jpg";
 import banner3 from "../../assets/images/banners/banner3.jpg";
-import banner4 from "../../assets/images/banners/banner4.jpg";
+import banner4 from "../../assets/images/banners/banner4.JPG";
 import banner5 from "../../assets/images/banners/banner5.jpg";
 import bannerMiddle from "../../assets/images/banners/mobile/banner1-mobile.png";
 import logo from "../../assets/logos/logo.png";
