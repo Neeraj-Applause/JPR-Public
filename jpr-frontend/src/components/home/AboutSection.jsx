@@ -22,7 +22,7 @@ export default function AboutSection() {
         <div className="grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
           {/* Left – text + button */}
           <div>
-            <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed mb-4 sm:mb-6">
+            <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed mb-4 sm:mb-6 [text-align:justify]">
               If you are looking for expertise in road traffic crash
               investigations, crash data analysis, crash reconstructions, road
               safety surveys and audits, or any road safety research activity,
@@ -30,7 +30,7 @@ export default function AboutSection() {
               information you seek or simply give us a call and let us know how
               we can help you.
             </p>
-            <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed">
+            <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
               JP Research India is a wholly owned subsidiary of JP Research
               Inc., a California, USA based company and can be reached at
               jpresearch.com.

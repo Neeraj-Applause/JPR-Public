@@ -25,7 +25,6 @@ const menuItems = [
   { label: "News", href: "/news" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
-  { label: "Login", href: "/login" },
 ];
 
 export default function HeaderTop() {
@@ -211,17 +210,18 @@ export default function HeaderTop() {
         <div className="lg:hidden">
           {/* Backdrop */}
           <div
-            className="fixed inset-0 z-40 bg-slate-900/40 animate-in fade-in duration-300"
+            className="fixed inset-0 z-30 bg-slate-900/40 animate-in fade-in duration-300"
             onClick={() => setMobileOpen(false)}
           />
 
           {/* Sheet */}
-          <div className="fixed inset-x-4 top-16 md:top-20 z-50 rounded-2xl border border-slate-100 bg-white/98 p-6 shadow-2xl animate-in slide-in-from-top-5 duration-300">
+          <div className="fixed inset-x-4 top-16 md:top-20 z-40 rounded-2xl border border-slate-100 bg-white/98 p-6 shadow-2xl animate-in slide-in-from-top-5 duration-300">
             <nav
               className="flex flex-col gap-1"
               aria-label="Mobile navigation"
             >
               {menuItems.map((item) => {
+                const active = isItemActive(item);
                 const hasChildren = !!item.children?.length;
 
                 if (!hasChildren) {
@@ -229,7 +229,12 @@ export default function HeaderTop() {
                     <button
                       key={item.label}
                       onClick={() => goTo(item.href)}
-                      className="w-full rounded-xl px-4 py-3.5 text-left text-[15px] font-semibold text-slate-8 00 transition-all duration-300 hover:bg-slate-50 hover:text-primary active:bg-slate-100"
+                      className={`w-full rounded-xl px-4 py-2 text-left text-[15px] font-semibold transition-all duration-300 hover:bg-slate-50 hover:text-primary active:bg-slate-100
+                        ${
+                          active
+                            ? "text-primary bg-primary/5"
+                            : "text-slate-800"
+                        }`}
                     >
                       {item.label}
                     </button>
@@ -240,7 +245,12 @@ export default function HeaderTop() {
                   <div key={item.label} className="w-full">
                     <button
                       onClick={() => setMobileServicesOpen((prev) => !prev)}
-                      className="flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left text-[15px] font-semibold text-slate-800 transition-all duration-300 hover:bg-slate-50 hover:text-primary active:bg-slate-100"
+                      className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left text-[15px] font-semibold transition-all duration-300 hover:bg-slate-50 hover:text-primary active:bg-slate-100
+                        ${
+                          active
+                            ? "text-primary bg-primary/5"
+                            : "text-slate-800"
+                        }`}
                     >
                       <span>{item.label}</span>
                       <ChevronDown
@@ -251,15 +261,24 @@ export default function HeaderTop() {
                     </button>
                     {mobileServicesOpen && (
                       <div className="mt-2 ml-3 flex flex-col gap-1.5 border-l-2 border-primary/20 pl-4">
-                        {item.children.map((child) => (
-                          <button
-                            key={child.label}
-                            onClick={() => goTo(child.href)}
-                            className="w-full rounded-lg px-3 py-2.5 text-left text-sm font-medium text-slate-600 transition-all duration-300 hover:bg-primary/5 hover:text-primary hover:pl-4 active:bg-primary/10"
-                          >
-                            {child.label}
-                          </button>
-                        ))}
+                        {item.children.map((child) => {
+                          const childActive =
+                            location.pathname === child.href;
+                          return (
+                            <button
+                              key={child.label}
+                              onClick={() => goTo(child.href)}
+                              className={`w-full rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-all duration-300 hover:bg-primary/5 hover:text-primary hover:pl-4 active:bg-primary/10
+                                ${
+                                  childActive
+                                    ? "text-primary bg-primary/5"
+                                    : "text-slate-600"
+                                }`}
+                            >
+                              {child.label}
+                            </button>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
