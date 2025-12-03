@@ -20,7 +20,7 @@ export default function SocialSection() {
         {/* Heading */}
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary">
-            What is JPRI team up to?
+           Follow JPRI
           </h2>
           <div className="mt-3 mb-4 flex justify-center">
             <span className="h-[3px] w-24 bg-primary rounded-full" />

@@ -5,16 +5,11 @@ export default function AboutSection() {
   const navigate = useNavigate();
 
   return (
-    <section
-      className="
-        w-full bg-[#f8f8f8] py-12
-        px-4 sm:px-6 md:px-8 md:pl-24 xl:px-0
-      "
-    >
+    <section className="w-full bg-[#f8f8f8] py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
             JP Research India Pvt. Ltd. (JPRI)
           </h2>
 
@@ -24,10 +19,10 @@ export default function AboutSection() {
         </div>
 
         {/* Content */}
-        <div className="grid lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-10 items-start">
-          {/* Left – text + vision/mission + button */}
+        <div className="grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
+          {/* Left – text + button */}
           <div>
-            <p className="text-sm sm:text-base text-[#333] leading-relaxed mb-6">
+            <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed mb-4 sm:mb-6">
               If you are looking for expertise in road traffic crash
               investigations, crash data analysis, crash reconstructions, road
               safety surveys and audits, or any road safety research activity,
@@ -35,46 +30,26 @@ export default function AboutSection() {
               information you seek or simply give us a call and let us know how
               we can help you.
             </p>
-            <p className="text-sm sm:text-base text-[#333] leading-relaxed">
+            <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed">
               JP Research India is a wholly owned subsidiary of JP Research
               Inc., a California, USA based company and can be reached at
               jpresearch.com.
             </p>
 
-            {/* Vision / Mission */}
-            {/* <div className="mt-10 grid gap-8 md:grid-cols-2">
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="font-semibold text-lg mb-2">Our Vision</h3>
-                <p className="text-sm text-primary leading-relaxed">
-                  To be a world-renowned traffic safety research and training
-                  center, that will focus on conducting traffic safety research.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-primary pl-6">
-                <h3 className="font-semibold text-lg mb-2">Our Mission</h3>
-                <p className="text-sm text-primary leading-relaxed">
-                  To conduct traffic safety research activities with an
-                  unbiased, scientific, evidence-based and data-driven approach
-                  that will provide high quality data.
-                </p>
-              </div>
-            </div> */}
-
             <button
               onClick={() => navigate("/about")}
-              className="mt-10 inline-flex px-8 py-3 bg-primary text-white font-semibold rounded-md shadow-md hover:bg-primary/90 transition cursor-pointer"
+              className="mt-8 sm:mt-10 inline-flex px-8 py-3 bg-primary text-white text-sm sm:text-base font-semibold rounded-md shadow-md hover:bg-primary/90 transition cursor-pointer"
             >
               Read More
             </button>
           </div>
 
           {/* Right – illustration */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="mt-4 lg:mt-0 flex justify-center lg:justify-end">
             <img
               src={aboutIllustration}
               alt="Traffic safety research illustration"
-              className="w-100 max-w-md lg:max-w-lg h-auto object-cover mr-16"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
             />
           </div>
         </div>

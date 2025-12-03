@@ -23,7 +23,7 @@ export default function NeedHelpSection() {
               id="need-help-heading"
               className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900"
             >
-              Need Help?
+             Need more information?
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
               Please feel free to contact us to discuss your requirement. We

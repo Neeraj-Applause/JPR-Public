@@ -1,33 +1,20 @@
-import Sidebar from "./Sidebar";
+// src/components/layout/Layout.jsx
 import Footer from "./Footer";
 import HeaderTop from "./HeaderTop";
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-white relative">
-      
-      {/* Desktop top header strip */}
+    <div className="bg-white min-h-screen flex flex-col">
+      {/* Fixed header */}
       <HeaderTop />
 
-      {/* Sidebar + mobile header */}
-      <Sidebar />
+      {/* Main content */}
+      <main className="flex-1 mt-8">
+        {children}
+      </main>
 
-      {/* Main Content */}
-      <div className="min-h-screen flex flex-col">
-        <main
-          className="
-            flex-1
-             pt-8         /* space for mobile header */
-                    /* space for desktop header + sidebar */
-            md:pl-20           /* desktop sidebar */
-            transition-all
-          "
-        >
-          {children}
-        </main>
-
-        <Footer />
-      </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

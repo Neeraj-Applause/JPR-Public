@@ -4,13 +4,13 @@ import heroGraphic from "../../assets/images/about/about-hero-graphic.jpg"; // y
 export default function AboutHero() {
   return (
 <section className="relative isolate overflow-hidden bg-gradient-to-br from-secondary from-40% to-primary text-white">
-    
+
       {/* Full height but a bit smaller on mobile */}
       <div className="mx-auto flex min-h-[80vh] md:min-h-screen max-w-6xl items-center px-4 sm:px-6 lg:px-8 py-16">
         {/* LEFT: Text */}
         <div className="w-full md:w-1/2 space-y-6">
           <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-primary-100 backdrop-blur">
-            About JPR India
+            about JP Research India
             <span className="h-1 w-1 rounded-full bg-red-400" />
           </p>
 

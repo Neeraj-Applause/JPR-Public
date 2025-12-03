@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import banner1 from "../../assets/images/banners/banner1.png"; // desktop hero
-import banner2 from "../../assets/images/banners/banner2.png";
-import banner3 from "../../assets/images/banners/banner3.png";
-import banner4 from "../../assets/images/banners/banner4.jpeg";
-import banner5 from "../../assets/images/banners/banner5.png";
-import banner6 from "../../assets/images/banners/banner6.jpg";
-import banner7 from "../../assets/images/banners/banner7.jpg";
-import banner8 from "../../assets/images/banners/banner8.jpg";
-import banner9 from "../../assets/images/banners/banner9.jpg";
+import banner1old from "../../assets/images/banners/banner1.png"; // desktop hero
+import banner1 from "../../assets/images/banners/banner1.jpg"; // desktop hero
+import banner2 from "../../assets/images/banners/banner2.jpg";
+import banner3 from "../../assets/images/banners/banner3.jpg";
+import banner4 from "../../assets/images/banners/banner4.jpg";
+import banner5 from "../../assets/images/banners/banner5.jpg";
 import bannerMiddle from "../../assets/images/banners/mobile/banner1-mobile.png";
 import logo from "../../assets/logos/logo.png";
 import logo2 from "../../assets/logos/rassi.png";
@@ -19,27 +16,26 @@ const slides = [
   {
     id: 0,
     hasContent: true,
-    mobileGradient: true,
+    mobileGradient: true, // <-- enable gradient for mobile
     titleBadge: "14 Years of",
     title: "In-Depth Indian Crash Data",
     subtitle:
       "Advancing Road Safety Through Scientific Research And Real World Crash Investigations",
-    image: banner1,
-    caption: "",
+    mobileGradient: true,
+    image: banner1old,
+    caption: "", // first slide keeps existing content overlay; no bottom caption
   },
-  { id: 1, hasContent: false, image: banner2, caption: "" },
+  { id: 1, hasContent: false, image: banner1, caption: "Pioneering In-Depth Crash Investigations In India." },
   {
     id: 2,
     hasContent: false,
-    image: banner3,
+    image: banner2,
     caption:
-      "Road Safety Excellence Award – 2024",
+      "Crash Analysis",
   },
-  { id: 3, hasContent: false, image: banner4, caption: "JPRI @ 69th AAAM Conference, USA 2025" },
-  { id: 4, hasContent: false, image: banner5, caption: "Award winning change makers" },
-  { id: 6, hasContent: false, image: banner7, caption: "Pioneering on-site crash investigations" },
-  { id: 7, hasContent: false, image: banner8, caption: "Over a decade of road safety research in India" },
-  { id: 8, hasContent: false, image: banner9, caption: "On Site Crash Investigations" },
+  { id: 3, hasContent: false, image: banner3, caption: "Pushing for data-driven decision making" },
+  { id: 4, hasContent: false, image: banner4, caption: "Award winning change makers" },
+  { id: 5, hasContent: false, image: banner5, caption: "Preparing next-gen for a safer tomorrow" },
 ];
 
 export default function Hero() {

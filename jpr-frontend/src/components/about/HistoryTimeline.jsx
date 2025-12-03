@@ -62,7 +62,7 @@ export default function HistoryTimeline() {
             id="history-heading"
             className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900"
           >
-            How JPRI has grown over the years
+            JP Research India journey till now
           </h2>
 
           <p className="mt-2 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
