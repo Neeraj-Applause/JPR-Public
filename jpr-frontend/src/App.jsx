@@ -13,6 +13,7 @@
   import DataCollectionPage from "./pages/services/DataCollectionPage.jsx";
   import CrashReconstructionPage from "./pages/services/CrashReconstructionPage.jsx";
   import LeadershipDetailPage from "./pages/LeadershipDetailPage.jsx";
+  import ScrollToTop from "./components/ScrollToTop.jsx";
 
   function App() {
     const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@
     return (
       <>
   <div className='container-fluid font-inter'>
+    <ScrollToTop />
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/about' element={<AboutPage />} />

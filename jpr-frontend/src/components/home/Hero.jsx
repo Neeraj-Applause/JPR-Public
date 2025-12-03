@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import banner1old from "../../assets/images/banners/banner1.png"; // desktop hero
 import banner1 from "../../assets/images/banners/banner1.jpg"; // desktop hero
-import banner2 from "../../assets/images/banners/banner2.jpg";
+import banner2 from "../../assets/images/banners/banner2.png";
 import banner3 from "../../assets/images/banners/banner3.jpg";
 import banner4 from "../../assets/images/banners/banner4.JPG";
 import banner5 from "../../assets/images/banners/banner5.jpg";
@@ -78,7 +78,7 @@ export default function Hero() {
             <img
               src={activeSlide.image}
               alt="Hero Banner"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-fit object-top"
             />
 
             {/* Apply same subtle vignette + bottom-focused overlay used in CrashInvestigationsHero */}
