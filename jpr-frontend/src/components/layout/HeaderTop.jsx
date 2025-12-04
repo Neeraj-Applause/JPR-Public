@@ -68,10 +68,7 @@ export default function HeaderTop() {
 
         {/* CENTER: Desktop navigation */}
         <div className="flex-1 hidden lg:flex items-center justify-center">
-          <nav
-            className="flex items-center gap-1"
-            aria-label="Main navigation"
-          >
+          <nav className="flex items-center gap-1" aria-label="Main navigation">
             {menuItems.map((item) => {
               const active = isItemActive(item);
               const hasChildren = !!item.children?.length;
@@ -112,9 +109,7 @@ export default function HeaderTop() {
                 >
                   <button
                     // keep click toggle for keyboard users
-                    onClick={() =>
-                      setDesktopServicesOpen((prev) => !prev)
-                    }
+                    onClick={() => setDesktopServicesOpen((prev) => !prev)}
                     onMouseEnter={() => setHoveredItem(item.label)}
                     onMouseLeave={() => setHoveredItem(null)}
                     className={`flex items-center gap-2 px-4 py-2 text-[15px] font-semibold tracking-wide cursor-pointer transition-all duration-300 rounded-lg
@@ -179,11 +174,18 @@ export default function HeaderTop() {
 
         {/* RIGHT: Rassi logo + Mobile menu toggle */}
         <div className="flex items-center gap-4 ml-auto">
-          <img
-            src={RassiLogo}
-            alt="RASSI"
-            className="h-8 md:h-12 w-auto object-contain transition-all duration-300 cursor-pointer"
-          />
+          <a
+            href="https://www.rassi.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex"
+          >
+            <img
+              src={RassiLogo}
+              alt="RASSI"
+              className="h-8 md:h-12 w-auto object-contain transition-all duration-300 cursor-pointer hover:scale-[1.04]"
+            />
+          </a>
 
           {/* Mobile menu button (modern toggle) */}
           <button
@@ -205,9 +207,7 @@ export default function HeaderTop() {
               />
               <span
                 className={`block h-[2px] w-5 rounded-full bg-slate-900 transition-all duration-300 ${
-                  mobileOpen
-                    ? "-rotate-45 -translate-y-[1px]"
-                    : "translate-y-1"
+                  mobileOpen ? "-rotate-45 -translate-y-[1px]" : "translate-y-1"
                 }`}
               />
             </span>
@@ -226,10 +226,7 @@ export default function HeaderTop() {
 
           {/* Sheet */}
           <div className="fixed inset-x-4 top-16 md:top-20 z-40 rounded-2xl border border-slate-100 bg-white/98 p-6 shadow-2xl animate-in slide-in-from-top-5 duration-300">
-            <nav
-              className="flex flex-col gap-1"
-              aria-label="Mobile navigation"
-            >
+            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
               {menuItems.map((item) => {
                 const active = isItemActive(item);
                 const hasChildren = !!item.children?.length;
@@ -272,8 +269,7 @@ export default function HeaderTop() {
                     {mobileServicesOpen && (
                       <div className="mt-2 ml-3 flex flex-col gap-1.5 border-l-2 border-primary/20 pl-4">
                         {item.children.map((child) => {
-                          const childActive =
-                            location.pathname === child.href;
+                          const childActive = location.pathname === child.href;
                           return (
                             <button
                               key={child.label}
