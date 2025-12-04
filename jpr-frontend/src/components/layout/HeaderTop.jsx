@@ -140,7 +140,7 @@ export default function HeaderTop() {
               bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
               ${
                 active
-                  ? "text-primary"
+                  ? "text-white"
                   : "text-slate-100 hover:text-primary"
               }`}
             aria-haspopup="true"
@@ -161,7 +161,7 @@ export default function HeaderTop() {
 
           {/* Dropdown (unchanged) */}
           <div
-            className={`absolute left-0 top-full z-50 min-w-[220px] max-w-xs origin-top-left rounded-xl border border-slate-700 bg-slate-900/95 px-2 py-2 shadow-xl shadow-black/40 backdrop-blur-xl transition-all duration-200
+            className={`absolute left-0 top-full z-50 min-w-[220px] max-w-xs origin-top-left rounded-xl border border-slate-700 bg-secondary px-2 py-2 shadow-xl shadow-black/40 backdrop-blur-xl transition-all duration-200
               ${
                 desktopServicesOpen
                   ? "pointer-events-auto translate-y-0 opacity-100"
@@ -179,10 +179,12 @@ export default function HeaderTop() {
                       ${
                         childActive
                           ? "text-primary"
-                          : "text-slate-100 hover:text-primary hover:bg-slate-800"
+                          : "text-slate-100 hover:text-primary hover:bg-secondary"
                       }`}
                   >
                     {child.label}
+
+                    
                   </button>
                 );
               })}
