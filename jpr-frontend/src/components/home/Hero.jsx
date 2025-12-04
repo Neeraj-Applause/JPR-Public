@@ -7,6 +7,8 @@ import banner2 from "../../assets/images/banners/banner2.png";
 import banner3 from "../../assets/images/banners/banner3.jpg";
 import banner4 from "../../assets/images/banners/banner4.JPG";
 import banner5 from "../../assets/images/banners/banner5.jpg";
+import banner6 from "../../assets/images/banners/banner6.png";
+import banner7 from "../../assets/images/banners/banner7.jpg";
 
 const slides = [
   { id: 0, image: banner1, caption: "Pioneering In-Depth Crash Investigations In India." },
@@ -14,6 +16,8 @@ const slides = [
   { id: 2, image: banner3, caption: "Pushing for data-driven decision making" },
   { id: 3, image: banner4, caption: "Award winning change makers" },
   { id: 4, image: banner5, caption: "Preparing next-gen for a safer tomorrow" },
+  { id: 5, image: banner6, caption: "Road Safety Engineering" },
+  { id: 6, image: banner7, caption: "Capacity Building Training" },
 ];
 
 export default function Hero() {
@@ -112,7 +116,7 @@ export default function Hero() {
   }}
   className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
 >
-  <ChevronDown className="h-4 w-4 animate-bounce" />
+  <ChevronDown className="h-10 w-10 animate-bounce" />
   <span>Scroll to learn more</span>
 </button>
 

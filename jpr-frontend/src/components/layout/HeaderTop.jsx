@@ -57,21 +57,21 @@ export default function HeaderTop() {
       <div className="relative h-16 md:h-20">
         {/* LEFT red wedge with visible diagonal gradient */}
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 w-64"
+          className="pointer-events-none absolute inset-y-0 left-0 w-100"
           style={{
             clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)",
             background:
-              "linear-gradient(135deg, #b91c1c 0%, rgba(185,28,28,0.3) 40%, rgba(0,0,0,0) 75%)",
+              "linear-gradient(135deg, #9e1b32 0%, rgba(185,28,28,0.3) 40%, rgba(0,0,0,0) 75%)",
           }}
         />
 
         {/* RIGHT red wedge with visible diagonal gradient */}
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 w-80"
+          className="pointer-events-none absolute inset-y-0 right-0 w-110"
           style={{
             clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0 100%)",
             background:
-              "linear-gradient(-135deg, #b91c1c 0%, rgba(185,28,28,0.3) 40%, rgba(0,0,0,0) 75%)",
+              "linear-gradient(-135deg, #9e1b32 0%, rgba(185,28,28,0.3) 40%, rgba(0,0,0,0) 75%)",
           }}
         />
 
@@ -92,6 +92,7 @@ export default function HeaderTop() {
           </button>
 
 {/* CENTER: Desktop navigation */}
+{/* CENTER: Desktop navigation */}
 <div className="relative z-10 hidden flex-1 items-center justify-center lg:flex">
   <nav className="flex items-center gap-6" aria-label="Main navigation">
     {menuItems.map((item) => {
@@ -108,18 +109,20 @@ export default function HeaderTop() {
             className={`relative px-2 py-1.5 text-[13px] tracking-wide transition-all duration-200
               cursor-pointer bg-transparent
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
-              ${
-                active
-                  ? "text-white"
-                  : "text-slate-100 hover:text-primary"
-              }`}
+              ${active ? "text-white" : "text-slate-100"}`}
           >
             {item.label}
 
-            {/* Active underline */}
-            {active && (
-              <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-primary" />
-            )}
+            {/* Underline: animated from left on hover / active */}
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary origin-left
+                transition-transform duration-200
+                ${
+                  active || hoveredItem === item.label
+                    ? "scale-x-100"
+                    : "scale-x-0"
+                }`}
+            />
           </button>
         );
       }
@@ -137,26 +140,29 @@ export default function HeaderTop() {
             onMouseEnter={() => setHoveredItem(item.label)}
             onMouseLeave={() => setHoveredItem(null)}
             className={`relative flex items-center gap-1 px-2 py-1.5 text-[14px] tracking-wide cursor-pointer transition-all duration-200
-              bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
-              ${
-                active
-                  ? "text-white"
-                  : "text-slate-100 hover:text-primary"
-              }`}
+              bg-transparent
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
+              ${active ? "text-white" : "text-slate-100"}`}
             aria-haspopup="true"
             aria-expanded={desktopServicesOpen}
           >
             <span>{item.label}</span>
             <ChevronDown
               className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                desktopServicesOpen ? "rotate-180 text-primary" : ""
+                desktopServicesOpen ? "rotate-180" : ""
               }`}
             />
 
-            {/* Active underline */}
-            {active && (
-              <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-primary" />
-            )}
+            {/* Underline: animated from left on hover / active */}
+            <span
+              className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary origin-left
+                transition-transform duration-200
+                ${
+                  active || hoveredItem === item.label
+                    ? "scale-x-100"
+                    : "scale-x-0"
+                }`}
+            />
           </button>
 
           {/* Dropdown (unchanged) */}
@@ -183,8 +189,6 @@ export default function HeaderTop() {
                       }`}
                   >
                     {child.label}
-
-                    
                   </button>
                 );
               })}
@@ -195,7 +199,6 @@ export default function HeaderTop() {
     })}
   </nav>
 </div>
-
 
           {/* RIGHT: Rassi logo over right wedge + Mobile menu toggle */}
           <div className="relative z-10 ml-auto flex items-center gap-3">
@@ -246,21 +249,24 @@ export default function HeaderTop() {
       </div>
 
       {/* MOBILE NAV OVERLAY (unchanged) */}
-{mobileOpen && (
-  <div className="lg:hidden">
-    <div
-      className="fixed inset-0 z-30 bg-black/60 animate-in fade-in duration-300"
-      onClick={() => setMobileOpen(false)}
-    />
+      {mobileOpen && (
+        <div className="lg:hidden">
+          <div
+            className="fixed inset-0 z-30 bg-black/60 animate-in fade-in duration-300"
+            onClick={() => setMobileOpen(false)}
+          />
 
-    <div
-      className="fixed inset-x-4 top-16 md:top-20 z-40
+          <div
+            className="fixed inset-x-4 top-16 md:top-20 z-40
       rounded-2xl border border-slate-700 bg-slate-900/98
       p-6 shadow-2xl animate-in slide-in-from-top-5 duration-300
       max-h-[calc(100vh-100px)] overflow-y-auto overscroll-contain
-      scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
-      
-      <nav className="flex flex-col gap-1 pb-6" aria-label="Mobile navigation">
+      scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent"
+          >
+            <nav
+              className="flex flex-col gap-1 pb-6"
+              aria-label="Mobile navigation"
+            >
               {menuItems.map((item) => {
                 const active = isItemActive(item);
                 const hasChildren = !!item.children?.length;

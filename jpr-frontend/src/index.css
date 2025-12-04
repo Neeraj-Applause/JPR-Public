@@ -1,9 +1,37 @@
-@import "tailwindcss";
-@import './styles/variable.css';
-@import './styles/global.css';
+/* src/index.css */
 
+/* 1) Load Tailwind (v4 style) */
+@import "tailwindcss";
+
+/* 2) Define design tokens (colors + fonts) */
 @theme {
-  --color-primary: #A01E21;
+  --color-primary: #9e1b32;
   --color-secondary: #201D1E;
-  --font-family-base: 'Inter', sans-serif;
+
+  /* Tailwind font tokens */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;         /* Proxima Nova-ish */
+  --font-heading: "Poppins", system-ui, -apple-system, sans-serif;    /* Gibson-ish */
 }
+
+/* 3) Global base styles using those tokens */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.01em;
+  }
+}
+
+/* 4) (Optional) import your extra CSS files AFTER Tailwind so they can override */
+@import "./styles/global.css";
+@import "./styles/variable.css";

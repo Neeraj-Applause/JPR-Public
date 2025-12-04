@@ -12,7 +12,7 @@ export default function ServicesSection() {
       id: 1,
       title: "Crash Investigation",
       description:
-        "Expert analysis of road traffic crashes using scientific methodologies and advanced tools.",
+        "Expert in-depth analysis of road traffic crashes using scientific principles and proprietary methodologies.",
       icon: crashIcon,
       path: "/services/crash-investigations",
     },
@@ -20,7 +20,7 @@ export default function ServicesSection() {
       id: 2,
       title: "Road Safety Engineering",
       description:
-        "Comprehensive road safety audits and engineering solutions to prevent crashes.",
+        "Comprehensive services including road safety audits, blackspot studies, and traffic studies for safer road infrastructure.",
       icon: roadIcon,
       path: "/services/road-safety-engineering",
     },
@@ -36,7 +36,7 @@ export default function ServicesSection() {
       id: 4,
       title: "Training",
       description:
-        "Professional training programs for crash investigation and road safety management.",
+        "Detailed training programs and workshops on crash investigations, crash analysis, and road safety engineering.",
       icon: trainingIcon,
       path: "/services/training",
     },
@@ -98,7 +98,7 @@ export default function ServicesSection() {
                 {/* Title */}
                 <h3
                   className="
-                    text-lg font-semibold mb-2 text-[#111]
+                    text-md font-semibold mb-2 text-[#111]
                     transition-all duration-300
                     group-hover:text-white
                   "

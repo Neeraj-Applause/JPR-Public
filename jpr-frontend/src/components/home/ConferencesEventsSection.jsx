@@ -73,7 +73,7 @@ function EventCard({ event }) {
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -3 }}
       transition={{ duration: 0.35 }}
-      className="bg-secondary rounded-xl overflow-hidden shadow-lg shadow-black/25 border border-slate-800/80 hover:border-primary/50 hover:bg-slate-900 backdrop-blur-sm transition-all duration-300 group flex flex-col"
+      className="bg-white rounded-xl overflow-hidden shadow-lg shadow-black/25 border border-secondary hover:border-primary/50 backdrop-blur-sm transition-all duration-300 group flex flex-col"
     >
       {/* Image slider */}
       <div className="relative h-44 overflow-hidden">
@@ -143,23 +143,23 @@ function EventCard({ event }) {
 
       {/* Content */}
       <div className="p-4 flex flex-col gap-2.5">
-        <div className="flex items-center justify-between gap-3 text-xs text-slate-300">
+        <div className="flex items-center justify-between gap-3 text-xs text-secondary">
           <div className="flex items-center gap-1.5">
             <CalendarDays className="w-3.5 h-3.5 text-primary" />
             <span>{event.date}</span>
           </div>
-          <div className="flex items-center gap-1 text-slate-400">
+          <div className="flex items-center gap-1 text-secondary">
             <MapPin className="w-3.5 h-3.5" />
             <span className="truncate max-w-[140px]">{event.location}</span>
           </div>
         </div>
 
-        <h3 className="text-base sm:text-md font-semibold text-white group-hover:text-primary transition-colors leading-snug">
+        <h3 className="text-base sm:text-md font-semibold text-black group-hover:text-primary transition-colors leading-snug">
           {event.title}
         </h3>
 
         <p
-          className={`text-[13px] text-slate-300 leading-relaxed transition-all ${
+          className={`text-[13px] text-secondary leading-relaxed transition-all ${
             expanded ? "" : "line-clamp-3"
           }`}
         >
@@ -181,7 +181,7 @@ function EventCard({ event }) {
 
 export default function ConferencesEventsSection() {
   return (
-   <section className="py-12 text-white relative bg-gradient-to-r from-primary to-secondary">
+   <section className="py-12 text-white relative bg-primary">
 
       {/* Section Title */}
       <div className="max-w-6xl mx-auto px-4 text-center mb-12">
@@ -192,6 +192,9 @@ export default function ConferencesEventsSection() {
         >
           Conferences & Events
         </motion.h2>
+        <div className="mt-3 mb-4 flex justify-center">
+            <span className="h-[3px] w-24 bg-white rounded-full" />
+          </div>
       </div>
 
       {/* Cards Grid */}
