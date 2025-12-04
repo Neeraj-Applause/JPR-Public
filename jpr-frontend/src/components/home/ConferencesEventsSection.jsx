@@ -55,6 +55,7 @@ const events = [
 function EventCard({ event }) {
   const Icon = event.icon;
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
   const hasMultipleImages = event.images && event.images.length > 1;
 
@@ -70,109 +71,113 @@ function EventCard({ event }) {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="bg-secondary rounded-2xl overflow-hidden shadow-xl shadow-black/30 border border-slate-800/80 hover:border-primary/60 hover:bg-slate-900 backdrop-blur-sm transition-all duration-300 group flex flex-col"
+      whileHover={{ y: -3 }}
+      transition={{ duration: 0.35 }}
+      className="bg-secondary rounded-xl overflow-hidden shadow-lg shadow-black/25 border border-slate-800/80 hover:border-primary/50 hover:bg-slate-900 backdrop-blur-sm transition-all duration-300 group flex flex-col"
     >
       {/* Image slider */}
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-44 overflow-hidden">
         <motion.img
           key={currentImage}
           src={currentImage}
           alt={event.title}
           initial={{ opacity: 0.4, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
 
-        {/* Gradient overlay */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
 
-        {/* Tag pill */}
-        <div className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-3 py-1 text-[11px] font-medium text-slate-100 border border-white/10 backdrop-blur-sm">
-          <Icon className="w-3.5 h-3.5" />
+        <div className="absolute top-2.5 left-2.5 inline-flex items-center gap-1 rounded-full bg-slate-950/70 px-2.5 py-0.5 text-[10px] font-medium text-slate-100 border border-white/10 backdrop-blur-sm">
+          <Icon className="w-3 h-3" />
           <span>{event.tag}</span>
         </div>
 
-        {/* Slider controls */}
         {hasMultipleImages && (
           <>
-            {/* Arrows */}
-            <div className="absolute inset-x-0 bottom-3 flex items-center justify-between px-3">
+            <div className="absolute inset-x-0 bottom-2.5 flex items-center justify-between px-2.5">
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToImage(activeImageIndex - 1);
                 }}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/60 border border-white/10 text-slate-100 hover:bg-primary hover:text-slate-950 transition text-xs"
+                className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-950/60 border border-white/10 text-slate-100 hover:bg-primary hover:text-slate-950 transition"
               >
-                <ChevronLeft className="w-3.5 h-3.5" />
+                <ChevronLeft className="w-3 h-3" />
               </button>
+
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToImage(activeImageIndex + 1);
                 }}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/60 border border-white/10 text-slate-100 hover:bg-primary hover:text-slate-950 transition text-xs"
+                className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-950/60 border border-white/10 text-slate-100 hover:bg-primary hover:text-slate-950 transition"
               >
-                <ChevronRight className="w-3.5 h-3.5" />
+                <ChevronRight className="w-3 h-3" />
               </button>
             </div>
 
-            {/* Dots & image count */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none">
-              <div className="flex gap-1.5 pointer-events-auto">
-                {event.images.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      goToImage(idx);
-                    }}
-                    className={`h-1.5 w-1.5 rounded-full transition-all ${
-                      idx === activeImageIndex
-                        ? "bg-primary w-3"
-                        : "bg-white/40 hover:bg-white/70"
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/60">
-                {activeImageIndex + 1} / {event.images.length}
-              </span>
+            <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1">
+              {event.images.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToImage(idx);
+                  }}
+                  className={`h-1.5 w-1.5 rounded-full transition-all ${
+                    idx === activeImageIndex
+                      ? "bg-primary w-3"
+                      : "bg-white/40 hover:bg-white/70"
+                  }`}
+                />
+              ))}
             </div>
           </>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-5 sm:p-6 flex flex-col gap-3">
-        <div className="flex items-center justify-between gap-3 text-sm text-slate-300">
-          <div className="flex items-center gap-2">
-            <CalendarDays className="w-4 h-4 text-primary" />
+      <div className="p-4 flex flex-col gap-2.5">
+        <div className="flex items-center justify-between gap-3 text-xs text-slate-300">
+          <div className="flex items-center gap-1.5">
+            <CalendarDays className="w-3.5 h-3.5 text-primary" />
             <span>{event.date}</span>
           </div>
-          <div className="flex items-center gap-1.5 text-slate-400">
+          <div className="flex items-center gap-1 text-slate-400">
             <MapPin className="w-3.5 h-3.5" />
-            <span className="truncate max-w-[160px]">{event.location}</span>
+            <span className="truncate max-w-[140px]">{event.location}</span>
           </div>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-primary transition-colors">
+        <h3 className="text-base sm:text-md font-semibold text-white group-hover:text-primary transition-colors leading-snug">
           {event.title}
         </h3>
 
-        <p className="text-sm text-slate-300 leading-relaxed">
+        <p
+          className={`text-[13px] text-slate-300 leading-relaxed transition-all ${
+            expanded ? "" : "line-clamp-3"
+          }`}
+        >
           {event.description}
         </p>
+
+        {/* ✅ Read More Button */}
+        <button
+          onClick={() => setExpanded((prev) => !prev)}
+          className="mt-1 self-start text-xs font-semibold text-primary hover:underline underline-offset-4 transition"
+        >
+          {expanded ? "Read Less" : "Read More"}
+        </button>
       </div>
     </motion.div>
   );
 }
+
 
 export default function ConferencesEventsSection() {
   return (
@@ -183,7 +188,7 @@ export default function ConferencesEventsSection() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-4"
+          className="text-2xl sm:text-3xl font-bold text-white mb-4"
         >
           Conferences & Events
         </motion.h2>
