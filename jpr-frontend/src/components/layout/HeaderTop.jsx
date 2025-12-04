@@ -55,45 +55,42 @@ export default function HeaderTop() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/60 bg-secondary text-white shadow-md">
       {/* Wrapper to draw the red stripes behind everything */}
       <div className="relative h-16 md:h-20">
-        {/* LEFT red wedge with visible diagonal gradient */}
+        {/* LEFT red wedge - solid color */}
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 w-100"
+          className="pointer-events-none absolute inset-y-0 left-0 w-[200px]"
           style={{
-            clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)",
-            background:
-              "linear-gradient(135deg, #9e1b32 0%, rgba(185,28,28,0.3) 40%, rgba(0,0,0,0) 75%)",
+            clipPath: "polygon(0 0, 100% 0, 75% 100%, 0 100%)",
+            backgroundColor: "#9e1b32",
           }}
         />
 
-        {/* RIGHT red wedge with visible diagonal gradient */}
+        {/* RIGHT red wedge - solid color */}
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 w-110"
+          className="pointer-events-none absolute inset-y-0 right-0 w-[220px]"
           style={{
-            clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0 100%)",
-            background:
-              "linear-gradient(-135deg, #9e1b32 0%, rgba(185,28,28,0.3) 40%, rgba(0,0,0,0) 75%)",
+            clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0 100%)",
+            backgroundColor: "#9e1b32",
           }}
         />
 
         {/* Actual header content sits above stripes */}
-        <div className="relative mx-auto flex h-full max-w-7xl items-center gap-6 px-4 sm:px-6">
-          {/* LEFT: JP Logo (no own background so wedge shows) */}
+        <div className="relative flex h-full w-full items-center justify-between px-2 sm:px-6 md:px-8 lg:px-12">
+          {/* LEFT: JP Logo */}
           <button
             onClick={() => goTo("/")}
-            className="relative z-10 flex h-full items-center gap-3 px-2 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className="relative z-10 flex h-full items-center py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             onMouseEnter={() => setHoveredItem("logo")}
             onMouseLeave={() => setHoveredItem(null)}
           >
             <img
               src={JPLogo}
               alt="JP Research"
-              className="h-10 md:h-14 w-auto object-contain"
+              className="h-8 sm:h-10 md:h-14 w-auto object-contain"
             />
           </button>
 
 {/* CENTER: Desktop navigation */}
-{/* CENTER: Desktop navigation */}
-<div className="relative z-10 hidden flex-1 items-center justify-center lg:flex">
+<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:flex">
   <nav className="flex items-center gap-6" aria-label="Main navigation">
     {menuItems.map((item) => {
       const active = isItemActive(item);
@@ -106,7 +103,7 @@ export default function HeaderTop() {
             onClick={() => goTo(item.href)}
             onMouseEnter={() => setHoveredItem(item.label)}
             onMouseLeave={() => setHoveredItem(null)}
-            className={`relative px-2 py-1.5 text-[13px] tracking-wide transition-all duration-200
+            className={`relative px-1 py-1.5 text-[14px] tracking-wide whitespace-nowrap transition-all duration-200
               cursor-pointer bg-transparent
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
               ${active ? "text-white" : "text-slate-100"}`}
@@ -139,7 +136,7 @@ export default function HeaderTop() {
             onClick={() => setDesktopServicesOpen((prev) => !prev)}
             onMouseEnter={() => setHoveredItem(item.label)}
             onMouseLeave={() => setHoveredItem(null)}
-            className={`relative flex items-center gap-1 px-2 py-1.5 text-[14px] tracking-wide cursor-pointer transition-all duration-200
+            className={`relative flex items-center gap-1 px-1 py-1.5 text-[14px] tracking-wide whitespace-nowrap cursor-pointer transition-all duration-200
               bg-transparent
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
               ${active ? "text-white" : "text-slate-100"}`}
@@ -200,24 +197,25 @@ export default function HeaderTop() {
   </nav>
 </div>
 
-          {/* RIGHT: Rassi logo over right wedge + Mobile menu toggle */}
-          <div className="relative z-10 ml-auto flex items-center gap-3">
+
+          {/* RIGHT: Rassi logo + Mobile menu toggle */}
+          <div className="relative z-10 flex items-center gap-2 sm:gap-3">
             <a
               href="https://www.rassi.in/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-1"
+              className="inline-flex items-center"
             >
               <img
                 src={RassiLogo}
                 alt="RASSI"
-                className="h-8 md:h-12 w-auto object-contain"
+                className="h-6 sm:h-8 md:h-12 w-auto object-contain"
               />
             </a>
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-600 bg-slate-800 shadow-sm transition-all duration-200 hover:border-primary/60 hover:bg-slate-700 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+              className="lg:hidden inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full border border-slate-600 bg-slate-800 shadow-sm transition-all duration-200 hover:border-primary/60 hover:bg-slate-700 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
               onClick={() => setMobileOpen((prev) => !prev)}
               aria-label="Toggle navigation"
             >
