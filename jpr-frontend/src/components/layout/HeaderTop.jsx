@@ -246,14 +246,21 @@ export default function HeaderTop() {
       </div>
 
       {/* MOBILE NAV OVERLAY (unchanged) */}
-      {mobileOpen && (
-        <div className="lg:hidden">
-          <div
-            className="fixed inset-0 z-30 bg-black/60 animate-in fade-in duration-300"
-            onClick={() => setMobileOpen(false)}
-          />
-          <div className="fixed inset-x-4 top-16 md:top-20 z-40 rounded-2xl border border-slate-700 bg-slate-900/98 p-6 shadow-2xl animate-in slide-in-from-top-5 duration-300">
-            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
+{mobileOpen && (
+  <div className="lg:hidden">
+    <div
+      className="fixed inset-0 z-30 bg-black/60 animate-in fade-in duration-300"
+      onClick={() => setMobileOpen(false)}
+    />
+
+    <div
+      className="fixed inset-x-4 top-16 md:top-20 z-40
+      rounded-2xl border border-slate-700 bg-slate-900/98
+      p-6 shadow-2xl animate-in slide-in-from-top-5 duration-300
+      max-h-[calc(100vh-100px)] overflow-y-auto overscroll-contain
+      scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+      
+      <nav className="flex flex-col gap-1 pb-6" aria-label="Mobile navigation">
               {menuItems.map((item) => {
                 const active = isItemActive(item);
                 const hasChildren = !!item.children?.length;
