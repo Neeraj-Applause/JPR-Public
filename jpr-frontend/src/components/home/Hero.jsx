@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 import banner1 from "../../assets/images/banners/banner1.jpg";
 import banner2 from "../../assets/images/banners/banner2.png";
@@ -98,6 +98,24 @@ export default function Hero() {
           <ChevronRight size={20} />
         </button>
       </div>
+
+{/* Modern Scroll Cue */}
+<button
+  type="button"
+  onClick={() => {
+    const target = document.getElementById("main-content");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+    }
+  }}
+  className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
+>
+  <ChevronDown className="h-4 w-4 animate-bounce" />
+  <span>Scroll to learn more</span>
+</button>
+
     </section>
   );
 }

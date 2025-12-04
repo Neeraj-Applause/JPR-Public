@@ -5,6 +5,7 @@ import AboutSection from "./AboutSection";
 import ServicesSection from "./ServicesSection";
 import SocialSection from "./SocialSection";
 import OfficesSection from "./OfficesSection";
+import ConferencesEventsSection from "./ConferencesEventsSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <StatsStrip />
       <AboutSection />
       <ServicesSection />
+      <ConferencesEventsSection />
       <SocialSection />
       <OfficesSection />
       {/* other sections will go here later */}
