@@ -101,9 +101,9 @@ export default function DataWorkforceQuote() {
 
                   {/* Text */}
                   <div className="pl-1">
-                    <p className="text-lg md:text-xl font-semibold text-slate-900 leading-tight">
+                    <div className="text-lg md:text-xl font-semibold text-slate-900 leading-tight">
                       {s.text}
-                    </p>
+                    </div>
                   </div>
 
                   {/* vertical connector for md+ */}

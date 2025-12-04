@@ -25,9 +25,9 @@ export default function SocialSection() {
           <div className="mt-3 mb-4 flex justify-center">
             <span className="h-[3px] w-24 bg-primary rounded-full" />
           </div>
-          <p className="text-sm sm:text-base text-[#555]">
+          <div className="text-sm sm:text-base text-[#555]">
             Our Social Handles
-          </p>
+          </div>
         </div>
 
         {/* Cards */}

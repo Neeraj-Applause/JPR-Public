@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import JPLogo from "../../assets/logos/logo.png";
 import RassiLogo from "../../assets/logos/rassi.png";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, LogIn } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -34,7 +34,7 @@ export default function HeaderTop() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
-  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false); // NEW
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
 
   const isItemActive = (item) => {
     if (item.label === "Services") {
@@ -46,7 +46,7 @@ export default function HeaderTop() {
   const goTo = (href) => {
     navigate(href);
     setMobileOpen(false);
-    setDesktopServicesOpen(false); // close dropdown when navigating
+    setDesktopServicesOpen(false);
   };
 
   return (
@@ -102,9 +102,16 @@ export default function HeaderTop() {
                 );
               }
 
+              // SERVICES DROPDOWN (desktop)
               return (
-                <div key={item.label} className="relative">
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setDesktopServicesOpen(true)}
+                  onMouseLeave={() => setDesktopServicesOpen(false)}
+                >
                   <button
+                    // keep click toggle for keyboard users
                     onClick={() =>
                       setDesktopServicesOpen((prev) => !prev)
                     }
@@ -119,6 +126,7 @@ export default function HeaderTop() {
                           : "text-slate-700 hover:bg-slate-50"
                       }`}
                     aria-haspopup="true"
+                    aria-expanded={desktopServicesOpen}
                   >
                     <span>{item.label}</span>
                     <ChevronDown
@@ -132,30 +140,32 @@ export default function HeaderTop() {
                     <span className="absolute left-1/2 -bottom-1 h-[3px] w-8 -translate-x-1/2 rounded-full bg-primary" />
                   )}
 
-                  {/* Dropdown */}
+                  {/* COMPACT, LEFT-ALIGNED DROPDOWN */}
                   <div
-                    className={`absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 origin-top rounded-xl border border-slate-100 bg-white/98 p-2 shadow-2xl shadow-slate-300/20 ring-1 ring-slate-100 backdrop-blur-xl transition-all duration-300
+                    className={`absolute left-0 top-full z-50 min-w-[220px] max-w-xs origin-top-left rounded-xl border border-slate-100 bg-white/95 px-2 py-2 shadow-xl shadow-slate-900/5 ring-1 ring-slate-900/5 backdrop-blur-xl transition-all duration-200
                       ${
                         desktopServicesOpen
-                          ? "scale-100 opacity-100 pointer-events-auto"
-                          : "scale-95 opacity-0 pointer-events-none"
+                          ? "opacity-100 translate-y-0 pointer-events-auto"
+                          : "opacity-0 -translate-y-1 pointer-events-none"
                       }`}
                   >
-                    <div className="flex flex-col gap-1 py-1">
+                    <div className="flex flex-col gap-1">
                       {item.children.map((child) => {
                         const childActive = location.pathname === child.href;
                         return (
                           <button
                             key={child.label}
                             onClick={() => goTo(child.href)}
-                            className={`w-full rounded-lg px-4 py-3 text-left text-sm transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:pl-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30
+                            className={`group flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-left text-[13px] font-medium transition-all duration-200
                               ${
                                 childActive
                                   ? "bg-primary/10 text-primary"
-                                  : "text-slate-700"
+                                  : "text-secondary hover:bg-secondary/20 hover:text-primary"
                               }`}
                           >
-                            {child.label}
+                            <span className="flex items-center gap-2">
+                              <span>{child.label}</span>
+                            </span>
                           </button>
                         );
                       })}
@@ -167,7 +177,7 @@ export default function HeaderTop() {
           </nav>
         </div>
 
-        {/* RIGHT: Rassi logo + Login */}
+        {/* RIGHT: Rassi logo + Mobile menu toggle */}
         <div className="flex items-center gap-4 ml-auto">
           <img
             src={RassiLogo}

@@ -132,9 +132,9 @@ export default function OfficesSection() {
           <div className="mt-3 mb-4 flex justify-center">
             <span className="h-[3px] w-24 bg-primary rounded-full" />
           </div>
-          <p className="text-sm sm:text-base text-[#555]">
+          <div className="text-sm sm:text-base text-[#555]">
             Our offices across India
-          </p>
+          </div>
         </div>
 
         {/* Panel */}
