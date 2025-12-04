@@ -57,7 +57,7 @@ export default function HeaderTop() {
       <div className="relative h-16 md:h-20">
         {/* LEFT red wedge - solid color */}
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 w-[200px]"
+          className="pointer-events-none absolute inset-y-0 left-0 w-[220px]"
           style={{
             clipPath: "polygon(0 0, 100% 0, 75% 100%, 0 100%)",
             backgroundColor: "#9e1b32",
@@ -66,7 +66,7 @@ export default function HeaderTop() {
 
         {/* RIGHT red wedge - solid color */}
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 w-[220px]"
+          className="pointer-events-none absolute inset-y-0 right-0 w-[230px]"
           style={{
             clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0 100%)",
             backgroundColor: "#9e1b32",
