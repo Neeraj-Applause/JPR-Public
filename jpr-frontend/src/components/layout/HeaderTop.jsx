@@ -52,9 +52,9 @@ export default function HeaderTop() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/60 bg-secondary text-white shadow-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/60 bg-[#1D252A] text-white shadow-md">
       {/* Wrapper to draw the red stripes behind everything */}
-      <div className="relative h-16 md:h-20">
+      <div className="relative h-14 md:h-18">
         {/* LEFT red wedge - solid color */}
         <div
           className="pointer-events-none absolute inset-y-0 left-0 w-[220px]"
