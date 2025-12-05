@@ -114,11 +114,13 @@ export default function Hero() {
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
     }
   }}
-className="absolute bottom-10 right-80 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
+  className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
 >
-  <ChevronDown className="h-10 w-10 animate-bounce rounded-full bg-primary/80" />
+  {/* move arrow up a bit, text stays */}
+  <ChevronDown className="h-10 w-10 animate-bounce relative -top-6 text-white/80" />
   <span>Scroll to learn more</span>
 </button>
+
 
     </section>
   );
