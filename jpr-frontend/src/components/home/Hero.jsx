@@ -17,7 +17,7 @@ const slides = [
   { id: 3, image: banner4, caption: "Award winning change makers" },
   { id: 4, image: banner5, caption: "Preparing next-gen for a safer tomorrow" },
   { id: 5, image: banner6, caption: "Road Safety Engineering" },
-  { id: 6, image: banner7, caption: "Capacity Building Training" },
+  { id: 6, image: banner7, caption: "Capacity Building" },
 ];
 
 export default function Hero() {

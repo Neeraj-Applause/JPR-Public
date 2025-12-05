@@ -28,8 +28,7 @@ export default function AboutSection() {
                 investigations, crash data analysis, crash reconstructions, road
                 safety surveys and audits, or any road safety research activity,
                 you have reached the right place. Look around our website for the
-                information you seek or simply give us a call and let us know how
-                we can help you.
+                information you seek or simply reach out to us through the contact given below for any queries.
               </p>
 
               <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
