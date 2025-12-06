@@ -135,7 +135,7 @@ export default function AboutHero() {
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
     }
   }}
-  className="absolute bottom-11 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
+  className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
 >
   {/* move arrow up a bit, text stays */}
   <ChevronDown className="h-10 w-10 animate-bounce relative text-white/80" />
