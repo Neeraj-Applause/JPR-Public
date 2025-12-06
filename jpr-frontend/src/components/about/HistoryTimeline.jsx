@@ -62,16 +62,11 @@ export default function HistoryTimeline() {
             id="history-heading"
             className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900"
           >
-            JP Research India journey till now
+           JP Research India’s journey till today
           </h2>
 
           <p className="mt-2 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
-            JP Research India is a wholly owned subsidiary of JP Research, Inc.
-            (USA), a leading statistical, engineering research and data analysis
-            firm specializing in automotive safety. Since 2006, JPRI has worked
-            with government bodies, manufacturers and organizations to build
-            awareness, collect in-depth crash data and advance evidence-based
-            road safety in India.
+           JP Research India is a wholly owned subsidiary of JP Research, Inc. (USA), a leading statistical, engineering research and data analysis firm specializing in automotive safety. Since 2006, JPRI has worked with government bodies, manufacturers and organizations to build awareness, collect in-depth crash data and advance evidence-based road safety in India.
           </p>
         </div>
 
