@@ -139,11 +139,16 @@ export default function HistoryTimeline() {
                       {/* Image side */}
                       <div className="hidden md:flex md:w-1/2 md:pr-10 md:mr-auto items-center justify-center">
                         <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="h-72 w-full object-contain"
-                          />
+                        <img
+  src={item.image}
+  alt={item.title}
+  className={`w-full object-contain ${
+    item.year === "Today"
+      ? "h-150 sm:h-[20rem]"
+      : "h-72"
+  }`}
+/>
+
                         </div>
                       </div>
 
