@@ -14,6 +14,7 @@
   import CrashReconstructionPage from "./pages/services/CrashReconstructionPage.jsx";
   import LeadershipDetailPage from "./pages/LeadershipDetailPage.jsx";
   import ScrollToTop from "./components/ScrollToTop.jsx";
+  import InjuryAnalysisPage from "./pages/services/InjuryAnalysisPage.jsx";
 
   function App() {
     const [count, setCount] = useState(0);
@@ -32,6 +33,7 @@
       <Route path='/services/data-collection' element={<DataCollectionPage />} />
       <Route path='/services/crash-reconstructions' element={<CrashReconstructionPage />} />
       <Route path='/leadership/:slug' element={<LeadershipDetailPage />} />
+      <Route path='/services/injury-analysis' element={<InjuryAnalysisPage />} />
     </Routes>
 
   </div>
