@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
-import heroGraphic from "../../assets/images/about/about-hero-graphic.jpg"; // your illustration
+import heroGraphic from "../../assets/images/about/about-hero-graphic.jfif"; // your illustration
 import { ChevronDown } from "lucide-react";
 
 export default function AboutHero() {
@@ -67,61 +67,56 @@ export default function AboutHero() {
           </div>
         </div>
 
-        {/* RIGHT: Illustration / data visual (more compact) */}
-        <div className="hidden md:flex w-1/2 justify-end">
-          <div className="relative w-full max-w-md group">
-            {/* Soft glow + gradient ring behind card */}
-            <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-primary to-secondary blur-2xl opacity-80" />
+{/* RIGHT: Compact + Slightly Bigger */}
+<div className="hidden md:flex w-1/2 justify-end">
+  <div className="relative w-full max-w-md group">
 
-            <div className="relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-gradient-to-br from-white/10 via-white/5 to-black/30 shadow-2xl backdrop-blur-xl p-4 sm:p-5 lg:p-6">
-              {/* Main graphic with subtle motion */}
-              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10 mix-blend-overlay pointer-events-none" />
-                <img
-                  src={heroGraphic}
-                  alt="Crash data visualisation"
-                  className="h-full w-full object-cover rounded-2xl transform transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                />
-              </div>
+    {/* Soft glow ring */}
+    <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-primary/70 to-secondary/70 blur-2xl opacity-80" />
 
-              {/* Stat cards */}
-              <div className="mt-4 grid grid-cols-2 gap-3 text-xs">
-                <div className="rounded-2xl bg-white/20 px-3 py-2 shadow-md shadow-black/40">
-                  <p className="text-[11px] tracking-[0.16em] text-white/55">
-                    In-depth crashes
-                  </p>
-                  <p className="mt-1 text-md font-semibold sm:text-lg text-white">
-                      9000+
-                    </p>
-                  </div>
-                  <div className="rounded-2xl bg-white/20 px-3 py-2 shadow-md shadow-black/40">
-                  <p className="text-[11px] tracking-[0.16em] text-white/55">
-                    Years of data
-                  </p>
-                  <p className="mt-1 text-md font-semibold sm:text-lg text-white">
-                    15+
-                  </p>
-                </div>
-                  <div className="rounded-2xl bg-white/20 px-3 py-2 shadow-md shadow-black/40">
-                  <p className="text-[11px] tracking-[0.16em] text-white/55">
-                    States & cities
-                  </p>
-                  <p className="mt-1 text-base font-semibold sm:text-md text-white">
-                    Multi-state
-                  </p>
-                </div>
-                  <div className="rounded-2xl bg-white/20 px-3 py-2 shadow-md shadow-black/40">
-                  <p className="text-[11px] tracking-[0.16em] text-white/55">
-                    Partner organizations
-                  </p>
-                  <p className="mt-1 text-base font-semibold sm:text-md text-white">
-                    20+ OEMs
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="relative overflow-hidden rounded-[1.75rem] border border-white/12 bg-gradient-to-br from-white/10 to-black/30 shadow-2xl backdrop-blur-xl p-5">
+
+      {/* Graphic */}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/15 via-transparent to-white/10 mix-blend-overlay pointer-events-none" />
+        <img
+          src={heroGraphic}
+          alt="Crash data visualization"
+          className="h-full w-full object-cover rounded-2xl transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+        />
+      </div>
+
+      {/* Stats */}
+      <div className="mt-4 grid grid-cols-2 gap-3 text-[12px] leading-tight">
+
+        <div className="rounded-xl bg-white/15 px-3 py-2 shadow">
+          <p className="tracking-wide text-white/55 text-[11px]">In-depth crashes studied</p>
+          <p className="mt-1 text-base font-semibold text-white">9000+</p>
         </div>
+
+        <div className="rounded-xl bg-white/15 px-3 py-2 shadow">
+          <p className="tracking-wide text-white/55 text-[11px]">Research covering</p>
+          <p className="mt-1 text-base font-semibold text-white">~20 years</p>
+        </div>
+
+        <div className="rounded-xl bg-white/15 px-3 py-2 shadow">
+          <p className="tracking-wide text-white/55 text-[11px]">Presence</p>
+          <p className="mt-1 text-base font-semibold text-white">Pan India</p>
+        </div>
+
+        <div className="rounded-xl bg-white/15 px-3 py-2 shadow">
+          <p className="tracking-wide text-white/55 text-[11px]">Partner Organizations</p>
+          <p className="mt-1 text-[11px] font-medium text-white">
+            Government, Automotive OEMs, Insurance, Road Infrastructure agencies
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
       </div>
 
     {/* Modern Scroll Cue */}
@@ -135,7 +130,7 @@ export default function AboutHero() {
       window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
     }
   }}
-  className="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
+  className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
 >
   {/* move arrow up a bit, text stays */}
   <ChevronDown className="h-10 w-10 animate-bounce relative text-white/80" />
