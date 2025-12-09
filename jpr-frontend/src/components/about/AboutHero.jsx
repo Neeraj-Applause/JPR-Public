@@ -51,19 +51,38 @@ export default function AboutHero() {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <a
-              href="#history"
+            <button
+              type="button"
+              onClick={() => {
+                const section = document.getElementById("history");
+                if (section) {
+                  section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
               className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm sm:text-base font-semibold text-white shadow-md hover:bg-primary/90 transition"
             >
               Explore our journey
               <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-            <a
-              href="#team"
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                const section = document.getElementById("leadership");
+                if (section) {
+                  section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }
+              }}
               className="inline-flex items-center justify-center rounded-md border border-white/40 px-4 py-2.5 text-sm sm:text-base font-medium text-white/90 hover:bg-white/10 transition"
             >
               Meet the team
-            </a>
+            </button>
           </div>
         </div>
 

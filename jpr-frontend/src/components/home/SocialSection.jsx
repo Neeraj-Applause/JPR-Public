@@ -7,7 +7,7 @@ import linkedinIcon from "../../assets/icons/social/linkedIn.svg";
 
 const socials = [
   { id: 1, name: "YouTube", icon: youtubeIcon, href: "#" },
-  { id: 2, name: "Facebook", icon: facebookIcon, href: "#" },
+  { id: 2, name: "Facebook", icon: facebookIcon, href: "https://www.facebook.com/profile.php?id=100066643505081" },
   { id: 4, name: "Twitter", icon: twitterIcon, href: "#" },
   { id: 5, name: "LinkedIn", icon: linkedinIcon, href: "#" },
 ];
@@ -61,7 +61,6 @@ export default function SocialSection() {
                   className="
                     h-16 object-contain transition-transform duration-300
                     group-hover:scale-110 group-hover:drop-shadow-md
-                    
                   "
                 />
               </div>
