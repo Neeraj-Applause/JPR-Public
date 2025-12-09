@@ -39,7 +39,7 @@ const HeaderTop = () => {
         {user && (
           <div className="flex items-center gap-3">
             {/* avatar */}
-            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-primary to-red-600 text-white flex items-center justify-center text-xs font-semibold shadow-md">
+            <div className="h-9 w-9 rounded-full bg-primary text-white flex items-center justify-center text-xs font-semibold shadow-md">
               {initials || "AD"}
             </div>
 

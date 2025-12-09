@@ -17,7 +17,7 @@ const Sidebar = ({ isCollapsed }) => {
     `group flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all
      ${
        isActive
-         ? "bg-gradient-to-r from-primary to-red-700 text-white shadow-lg shadow-red-900/30"
+         ? "bg-primary text-white shadow-lg shadow-red-900/30"
          : "text-slate-300 hover:bg-white/10 hover:text-white"
      }`;
 

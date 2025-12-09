@@ -44,7 +44,7 @@ export default function SocialSection() {
                 overflow-hidden flex flex-col cursor-pointer
                 transition-all duration-300
                 hover:shadow-[0_16px_30px_rgba(0,0,0,0.18)]
-                hover:bg-primary/70
+                hover:bg-gradient-to-r from-primary via-primary/60 to-secondary
               "
             >
               {/* Icon section */}
@@ -72,7 +72,7 @@ export default function SocialSection() {
                   bg-primary text-white text-center
                   py-3 text-sm sm:text-base font-semibold
                   transition-all duration-300
-                  group-hover:bg-secondary/80 group-hover:text-white
+                  group-hover:bg-white group-hover:text-secondary
                 "
               >
                 {name}
