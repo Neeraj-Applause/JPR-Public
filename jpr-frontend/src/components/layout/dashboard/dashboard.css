@@ -1,0 +1,56 @@
+/* Full-height flex layout: sidebar + main area */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Sidebar wrapper - allows button to overflow */
+.sidebar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  z-index: 100;
+  transition: width 300ms ease;
+}
+
+/* Sidebar styling */
+.dashboard-sidebar {
+  background-color: #111827; /* dark gray */
+  color: #f9fafb;           /* white-ish */
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* Right side (header + content) */
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  background-color: #f3f4f6; /* light gray background */
+  position: relative;
+  z-index: 10; /* Lower than sidebar */
+}
+
+/* Top header bar */
+.dashboard-header {
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* Scrollable content area */
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.5rem;
+}

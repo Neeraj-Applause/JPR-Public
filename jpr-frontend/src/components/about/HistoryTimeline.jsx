@@ -8,6 +8,7 @@ import crash from "../../assets/images/history/crash.jpg";
 import group from "../../assets/images/history/group.JPG";
 import image5 from "../../assets/images/history/2011-2016.png";
 import image6 from "../../assets/images/history/2016-onwards.png";
+import map from "../../assets/images/history/map.png";
 
 const milestones = [
   {
@@ -15,7 +16,7 @@ const milestones = [
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
       "As India crossed 100,000 annual road fatalities, JP Research India Pvt. Ltd. was founded by Mrs. Jeya Padmanaban to address the lack of in-depth crash data. From the outset, JPRI focused on automotive safety workshops and initiating scientific crash investigations in partnership with agencies and manufacturers.",
-    image: group,
+    image: image1,
   },
   {
     year: "2008",
@@ -29,14 +30,14 @@ const milestones = [
     title: "Head Office established in Coimbatore, Tamil Nadu",
     description:
       "JPRI set up its India headquarters in Coimbatore to conduct continuous on-site crash investigations. Today, the company operates branches across India, collecting in-depth crash data on highways, towns and cities, and publishing its findings in national and international conferences through the RASSI Consortium public–private partnership model.",
-    image: image3,
+    image: group,
   },
   {
     year: "2011 to 2016",
     title: "Furthering Indian Road Safety Research Through Strategic Expansion",
     description:
       "Through the RASSI project, JPRI expands its in-depth crash investigation and road safety research activities to different regions of the country including Maharashtra, Gujarat, West Bengal, and Rajasthan. Road safety research extended to different road scenarios such as Expressways & Urban regions in both Metro and Tier 1 cities.",
-    image: image5,
+    image: map,
   },
   {
     year: "2016 onwards",
@@ -167,7 +168,7 @@ export default function HistoryTimeline() {
                             alt={item.title}
                             className={`w-full object-contain ${
                               item.year === "Today"
-                                ? "h-150 sm:h-[20rem]"
+                                ? "h-96 sm:h-[22rem]"
                                 : "h-80"
                             }`}
                           />
