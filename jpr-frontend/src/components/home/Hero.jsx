@@ -85,7 +85,9 @@ export default function Hero() {
       whitespace-nowrap
       overflow
       max-w-full
-      text-[clamp(0.9rem,2.5vw,1.6rem)]
+     text-[16px] sm:text-xs md:text-md lg:text-lg
+
+
     "
                 >
                   {activeSlide.caption}
@@ -140,7 +142,7 @@ export default function Hero() {
             window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
           }
         }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
+        className="hidden sm:flex absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
       >
         {/* move arrow up a bit, text stays */}
         <ChevronDown className="h-10 w-10 animate-bounce relative -top-6 text-white/80" />
