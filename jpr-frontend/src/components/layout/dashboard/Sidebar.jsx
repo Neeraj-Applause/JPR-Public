@@ -32,26 +32,13 @@ const Sidebar = ({ isCollapsed }) => {
     <div className="h-full bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white flex flex-col shadow-2xl shadow-black/40 transition-all duration-300">
      <div className="px-4 py-5 border-b border-white/10 border-r border-white/10 flex items-center gap-3">
   {/* LOGO */}
-  <div className="flex items-center justify-center">
+  <div className="flex items-center justify-center w-full ">
     <img
       src={Logo}
       alt="JP Research"
       className={`transition-all duration-300 object-contain
-        ${isCollapsed ? "h-8 w-8" : "h-20 w-20"}`}
+        ${isCollapsed ? "h-10 w-10" : "h-24 w-24"}`}
     />
-  </div>
-
-  {/* TEXT */}
-  <div
-    className={`overflow-hidden transition-all duration-300
-      ${isCollapsed ? "w-0 opacity-0" : "w-full opacity-100"}`}
-  >
-    <h2 className="text-lg font-semibold tracking-wide leading-tight">
-      JP Research
-    </h2>
-    <p className="text-xs uppercase tracking-[0.3em] text-slate-400 mt-0.5">
-      Admin Panel
-    </p>
   </div>
 </div>
 
@@ -128,7 +115,7 @@ const Sidebar = ({ isCollapsed }) => {
       </nav>
 
       {/* FOOTER */}
-      <div className={`px-6 py-4 border-t border-r border-white/10 text-xs text-slate-400 transition-opacity duration-300 ${isCollapsed ? "opacity-0" : "opacity-100"}`}>
+      <div className={`px-6 py-4 border-t border-r border-white/10 text-xs text-slate-400 transition-opacity duration-300 text-center ${isCollapsed ? "opacity-0" : "opacity-100"}`}>
         {!isCollapsed && (
           <>
             <p className="leading-tight">© {new Date().getFullYear()} JP Research</p>

@@ -13,7 +13,7 @@ export default function AboutSection() {
             JP Research India Pvt. Ltd. (JPRI)
           </h2>
 
-            <div className="mt-3 mb-4 flex justify-center">
+          <div className="mt-3 mb-4 flex justify-center">
             <span className="h-[3px] w-24 bg-primary rounded-full" />
           </div>
         </div>
@@ -24,9 +24,28 @@ export default function AboutSection() {
             {/* Left – text + button */}
             <div className="space-y-4 sm:space-y-5">
               <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
-               If you are looking for expertise in road traffic crash investigations, crash data analysis, crash reconstructions, road safety surveys and audits, toll-plaza safety assessments, junction designs, speed/volume analysis etc, or any road safety research activity, you have reached the right place. Look around our website for the information you seek or simply reach out to us through the contact given below for any queries.
+                If you are looking for expertise in road traffic crash
+                investigations, crash data analysis, crash reconstructions, road
+                safety surveys and audits, toll-plaza safety assessments,
+                junction designs, speed/volume analysis etc, or any road safety
+                research activity, you have reached the right place. Look around
+                our website for the information you seek or simply reach out to
+                us through the contact given below for any queries.{" "}
               </p>
 
+              <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
+                JP Research India is a wholly owned subsidiary of JP Research
+                Inc., a California, USA based company and can be reached at{" "}
+                <a
+                  href="https://www.jpresearch.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline underline-offset-2 hover:opacity-80 transition"
+                >
+                  jpresearch.com
+                </a>
+                .
+              </p>
 
               <button
                 onClick={() => navigate("/about")}
@@ -37,7 +56,7 @@ export default function AboutSection() {
             </div>
 
             {/* Right – illustration */}
-            <div className="mt-4 lg:mt-0 flex justify-center lg:justify-end">
+            <div className="mt-4 lg:-mt-6 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg overflow-hidden rounded-2xl border border-slate-200/80 shadow-lg shadow-slate-900/10 bg-slate-50">
                 <img
                   src={aboutIllustration}

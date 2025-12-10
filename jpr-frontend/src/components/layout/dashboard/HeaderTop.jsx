@@ -24,12 +24,8 @@ const HeaderTop = () => {
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-semibold text-slate-800">
-              Admin Dashboard
+              JP Research
             </h1>
-            <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/40 bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-              <ShieldCheck className="h-3 w-3" />
-              Secure
-            </span>
           </div>
         </div>
       </div>

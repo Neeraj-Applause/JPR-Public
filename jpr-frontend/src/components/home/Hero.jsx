@@ -11,12 +11,28 @@ import banner6 from "../../assets/images/banners/banner6.png";
 import banner7 from "../../assets/images/banners/banner7.jpg";
 
 const slides = [
-  { id: 0, image: banner1, caption: "Pioneers of In-depth/scientific crash investigations in India" },
-  { id: 1, image: banner2, caption: "Crash analysis to identify contributing factors to a crash" },
+  {
+    id: 0,
+    image: banner1,
+    caption: "Pioneers of In-depth/scientific crash investigations in India",
+  },
+  {
+    id: 1,
+    image: banner2,
+    caption: "Crash analysis to identify contributing factors to a crash",
+  },
   { id: 2, image: banner3, caption: "Promoting data driven decision making" },
   { id: 3, image: banner4, caption: "Awards & Recognitions" },
-  { id: 5, image: banner6, caption: "Road Safety Audits & Blackspot mitigation services " },
-  { id: 6, image: banner7, caption: "Capacity building for Govt departments & traffic police" },
+  {
+    id: 5,
+    image: banner6,
+    caption: "Road Safety Audits & Blackspot mitigation services ",
+  },
+  {
+    id: 6,
+    image: banner7,
+    caption: "Capacity building for Govt departments & traffic police",
+  },
 ];
 
 export default function Hero() {
@@ -61,8 +77,19 @@ export default function Hero() {
               transition={{ duration: 0.7 }}
               className="space-y-4 max-w-2xl"
             >
-              <h2 className="text-xl sm:text-2xl lg:text-[1.6rem] font-semibold leading-tight">
-                <span className="text-white">{activeSlide.caption}</span>
+              <h2 className="font-semibold leading-tight">
+                <span
+                  className="
+      block
+      text-white
+      whitespace-nowrap
+      overflow
+      max-w-full
+      text-[clamp(0.9rem,2.5vw,1.6rem)]
+    "
+                >
+                  {activeSlide.caption}
+                </span>
               </h2>
 
               <p className="text-sm text-slate-200/90 max-w-md"></p>
@@ -102,25 +129,23 @@ export default function Hero() {
         </button>
       </div>
 
-{/* Modern Scroll Cue */}
-<button
-  type="button"
-  onClick={() => {
-    const target = document.getElementById("main-content");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-    }
-  }}
-  className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
->
-  {/* move arrow up a bit, text stays */}
-  <ChevronDown className="h-10 w-10 animate-bounce relative -top-6 text-white/80" />
-  <span>Scroll to learn more</span>
-</button>
-
-
+      {/* Modern Scroll Cue */}
+      <button
+        type="button"
+        onClick={() => {
+          const target = document.getElementById("main-content");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          } else {
+            window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+          }
+        }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-1 text-[11px] tracking-wide text-white hover:text-white transition"
+      >
+        {/* move arrow up a bit, text stays */}
+        <ChevronDown className="h-10 w-10 animate-bounce relative -top-6 text-white/80" />
+        <span>Scroll to learn more</span>
+      </button>
     </section>
   );
 }

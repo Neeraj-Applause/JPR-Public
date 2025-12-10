@@ -11,35 +11,36 @@ import {
 const AdminHome = () => {
   // Later you can replace these with real API data
   const stats = [
-    {
-      label: "News & Events",
-      value: 12,
-      change: "+3 this month",
-      icon: Newspaper,
-      accent: "from-sky-500/80 to-sky-400/80",
-    },
-    {
-      label: "Publications",
-      value: 28,
-      change: "+1 new",
-      icon: BookOpen,
-      accent: "from-violet-500/80 to-violet-400/80",
-    },
-    {
-      label: "Projects",
-      value: 19,
-      change: "2 in progress",
-      icon: BarChart3,
-      accent: "from-amber-500/80 to-amber-400/80",
-    },
-    {
-      label: "Open Roles",
-      value: 4,
-      change: "Hiring now",
-      icon: Briefcase,
-      accent: "from-emerald-500/80 to-emerald-400/80",
-    },
-  ];
+  {
+    label: "News & Events",
+    value: 12,
+    change: "+3 this month",
+    icon: Newspaper,
+    accent: "from-primary/80 to-primary/60",
+  },
+  {
+    label: "Publications",
+    value: 28,
+    change: "+1 new",
+    icon: BookOpen,
+    accent: "from-primary/80 to-primary/60",
+  },
+  {
+    label: "Projects",
+    value: 19,
+    change: "2 in progress",
+    icon: BarChart3,
+    accent: "from-primary/80 to-primary/60",
+  },
+  {
+    label: "Open Roles",
+    value: 4,
+    change: "Hiring now",
+    icon: Briefcase,
+    accent: "from-primary/80 to-primary/60",
+  },
+];
+
 
   const shortcuts = [
     { label: "Add News Article", href: "/admin/news" },
@@ -101,7 +102,7 @@ const AdminHome = () => {
                 <p className="mt-1 text-xl font-semibold text-slate-900">
                   {value}
                 </p>
-                <p className="mt-1 text-[11px] text-slate-500">{change}</p>
+                <p className="mt-1 text-[11px] text-primary">{change}</p>
               </div>
               <div className="h-10 w-10 rounded-xl bg-primary text-white flex items-center justify-center shadow-md">
                 <Icon className="h-5 w-5" />

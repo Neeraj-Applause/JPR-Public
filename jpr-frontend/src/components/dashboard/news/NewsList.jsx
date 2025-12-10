@@ -7,6 +7,8 @@ import {
   Edit2,
 } from "lucide-react";
 
+
+
 const NewsList = ({
   news,
   loading,
@@ -72,7 +74,9 @@ const NewsList = ({
         ) : (
           <ul className="divide-y divide-slate-100 text-xs bg-white rounded-2xl">
             {news.map((item) => {
-              const imagesArray = Array.isArray(item.images) ? item.images : [];
+              const imagesArray = Array.isArray(item.images) 
+                ? item.images.filter(img => img && img !== null) 
+                : [];
               const firstImage =
                 imagesArray.length > 0
                   ? imagesArray[0]

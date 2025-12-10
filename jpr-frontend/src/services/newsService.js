@@ -27,6 +27,21 @@ const newsService = {
     const res = await api.delete(`/news/${id}`);
     return res.data;
   },
+
+  async createMultipart(data) {
+    const res = await api.post("/news", data, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    return res.data;
+  },
+
+  async updateMultipart(id, data) {
+    const res = await api.put(`/news/${id}`, data, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    return res.data;
+  }
+
 };
 
 export default newsService;

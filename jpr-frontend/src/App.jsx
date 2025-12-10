@@ -15,6 +15,7 @@
   import LeadershipDetailPage from "./pages/LeadershipDetailPage.jsx";
   import ScrollToTop from "./components/ScrollToTop.jsx";
   import InjuryAnalysisPage from "./pages/services/InjuryAnalysisPage.jsx";
+  import NewsPage from "./pages/NewsPage.jsx";
 
   import AdminLogin from "./pages/dashboard/AdminLogin.jsx";
   import DashboardLayout from "./components/layout/dashboard/Layout.jsx";
@@ -42,6 +43,7 @@
       <Route path='/services/crash-reconstructions' element={<div className='container-fluid font-inter'><CrashReconstructionPage /></div>} />
       <Route path='/leadership/:slug' element={<div className='container-fluid font-inter'><LeadershipDetailPage /></div>} />
       <Route path='/services/injury-analysis' element={<div className='container-fluid font-inter'><InjuryAnalysisPage /></div>} />
+      <Route path='/news' element={<div className='container-fluid font-inter'><NewsPage /></div>} />
 
       {/* Admin login without container */}
       <Route path="/admin/login" element={<AdminLogin />} />

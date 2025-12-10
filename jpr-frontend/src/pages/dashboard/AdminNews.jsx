@@ -37,6 +37,9 @@ const AdminNews = () => {
     (pagination.total || 0) / (pagination.limit || 10)
   );
 
+  const [files, setFiles] = useState([]);
+const [previews, setPreviews] = useState([]);
+
   const loadNews = async (page = 1) => {
     try {
       setLoading(true);
@@ -67,6 +70,13 @@ const AdminNews = () => {
     loadNews(1);
   };
 
+const handleImageChange = (e) => {
+  const selectedFiles = Array.from(e.target.files);
+  console.log("Selected files:", selectedFiles.length);
+  setFiles(selectedFiles);
+  setPreviews(selectedFiles.map((file) => URL.createObjectURL(file)));
+};
+
   const handleSearchChange = (value) => {
     setSearch(value);
   };
@@ -85,13 +95,23 @@ const AdminNews = () => {
 
   const handleEdit = (item) => {
     setEditingId(item.id);
+    
+    // Format date for input field (YYYY-MM-DD)
+    let formattedDate = "";
+    if (item.event_date) {
+      const date = new Date(item.event_date);
+      if (!isNaN(date.getTime())) {
+        formattedDate = date.toISOString().split('T')[0];
+      }
+    }
+    
     setForm({
       id: item.id,
       title: item.title || "",
       summary: item.summary || "",
       content: item.content || "",
       category: item.category || "",
-      event_date: item.event_date || "",
+      event_date: formattedDate,
       imagesText: Array.isArray(item.images) ? item.images.join("\n") : "",
     });
     setViewMode("form");
@@ -101,43 +121,47 @@ const AdminNews = () => {
   const handleResetForm = () => {
     setEditingId(null);
     setForm(emptyForm);
+    setFiles([]);
+    setPreviews([]);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSaving(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSaving(true);
 
-    const images =
-      form.imagesText
-        .split("\n")
-        .map((s) => s.trim())
-        .filter(Boolean) || [];
+  const formData = new FormData();
+  
+  // Add form fields to FormData
+  formData.append('title', form.title);
+  formData.append('summary', form.summary);
+  formData.append('content', form.content);
+  formData.append('category', form.category);
+  formData.append('event_date', form.event_date);
 
-    const payload = {
-      title: form.title,
-      summary: form.summary,
-      content: form.content,
-      category: form.category,
-      event_date: form.event_date || null,
-      images,
-    };
+  // Add image files
+  files.forEach((file) => {
+    formData.append("images", file);
+  });
 
-    try {
-      if (editingId) {
-        await newsService.update(editingId, payload);
-      } else {
-        await newsService.create(payload);
-      }
-      await loadNews(pagination.page);
-      handleResetForm();
-      setViewMode("list"); // ✅ back to list after save
-    } catch (err) {
-      console.error(err);
-      alert("Failed to save news");
-    } finally {
-      setSaving(false);
+  try {
+    if (editingId) {
+      await newsService.updateMultipart(editingId, formData);
+      alert("News updated successfully!");
+    } else {
+      await newsService.createMultipart(formData);
+      alert("News created successfully!");
     }
-  };
+
+    await loadNews(pagination.page);
+    setViewMode("list");
+    handleResetForm();
+  } catch (err) {
+    console.error("Error saving news:", err);
+    alert(`Failed to save news: ${err.response?.data?.error || err.message}`);
+  } finally {
+    setSaving(false);
+  }
+};
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this news item?")) return;
@@ -253,6 +277,8 @@ const AdminNews = () => {
             onChange={handleChange}
             onSubmit={handleSubmit}
             onReset={handleResetForm}
+            onImageChange={handleImageChange}
+            previews={previews}
           />
         </div>
       )}
