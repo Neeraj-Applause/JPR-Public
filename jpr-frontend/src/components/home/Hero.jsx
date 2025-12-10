@@ -11,13 +11,12 @@ import banner6 from "../../assets/images/banners/banner6.png";
 import banner7 from "../../assets/images/banners/banner7.jpg";
 
 const slides = [
-  { id: 0, image: banner1, caption: "Pioneering In-Depth Crash Investigations In India." },
-  { id: 1, image: banner2, caption: "Crash Analysis" },
-  { id: 2, image: banner3, caption: "Pushing for data-driven decision making" },
-  { id: 3, image: banner4, caption: "Award winning change makers" },
-  { id: 4, image: banner5, caption: "Preparing next-gen for a safer tomorrow" },
-  { id: 5, image: banner6, caption: "Road Safety Engineering" },
-  { id: 6, image: banner7, caption: "Capacity Building" },
+  { id: 0, image: banner1, caption: "Pioneers of In-depth/scientific crash investigations in India" },
+  { id: 1, image: banner2, caption: "Crash analysis to identify contributing factors to a crash" },
+  { id: 2, image: banner3, caption: "Promoting data driven decision making" },
+  { id: 3, image: banner4, caption: "Awards & Recognitions" },
+  { id: 5, image: banner6, caption: "Road Safety Audits & Blackspot mitigation services " },
+  { id: 6, image: banner7, caption: "Capacity building for Govt departments & traffic police" },
 ];
 
 export default function Hero() {

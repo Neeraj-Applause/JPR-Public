@@ -24,26 +24,9 @@ export default function AboutSection() {
             {/* Left – text + button */}
             <div className="space-y-4 sm:space-y-5">
               <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
-                If you are looking for expertise in road traffic crash
-                investigations, crash data analysis, crash reconstructions, road
-                safety surveys and audits, or any road safety research activity,
-                you have reached the right place. Look around our website for the
-                information you seek or simply reach out to us through the contact given below for any queries.
+               If you are looking for expertise in road traffic crash investigations, crash data analysis, crash reconstructions, road safety surveys and audits, toll-plaza safety assessments, junction designs, speed/volume analysis etc, or any road safety research activity, you have reached the right place. Look around our website for the information you seek or simply reach out to us through the contact given below for any queries.
               </p>
 
-              <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
-                JP Research India is a wholly owned subsidiary of JP Research
-                Inc., a California, USA based company and can be reached at{" "}
-                <a
-                  href="https://www.jpresearch.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary underline underline-offset-2 hover:opacity-80 transition"
-                >
-                  jpresearch.com
-                </a>
-                .
-              </p>
 
               <button
                 onClick={() => navigate("/about")}

@@ -1,0 +1,263 @@
+import { useEffect, useState } from "react";
+import { Filter, Plus, ArrowLeft } from "lucide-react";
+import newsService from "../../services/newsService";
+import NewsForm from "../../components/dashboard/news/NewsForm";
+import NewsList from "../../components/dashboard/news/NewsList";
+
+const emptyForm = {
+  id: null,
+  title: "",
+  summary: "",
+  content: "",
+  category: "",
+  event_date: "",
+  imagesText: "",
+};
+
+const AdminNews = () => {
+  const [news, setNews] = useState([]);
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: 10,
+    total: 0,
+  });
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("event_date");
+  const [order, setOrder] = useState("desc");
+  const [loading, setLoading] = useState(false);
+
+  const [form, setForm] = useState(emptyForm);
+  const [saving, setSaving] = useState(false);
+  const [editingId, setEditingId] = useState(null);
+
+  // "list" | "form"
+  const [viewMode, setViewMode] = useState("list");
+
+  const totalPages = Math.ceil(
+    (pagination.total || 0) / (pagination.limit || 10)
+  );
+
+  const loadNews = async (page = 1) => {
+    try {
+      setLoading(true);
+      const res = await newsService.list({
+        search,
+        sort,
+        order,
+        page,
+        limit: pagination.limit,
+      });
+      setNews(res.data || []);
+      setPagination(res.pagination || { page: 1, limit: 10, total: 0 });
+    } catch (err) {
+      console.error(err);
+      alert("Failed to load news");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadNews(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sort, order]);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    loadNews(1);
+  };
+
+  const handleSearchChange = (value) => {
+    setSearch(value);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleAddNew = () => {
+    setEditingId(null);
+    setForm(emptyForm);
+    setViewMode("form");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleEdit = (item) => {
+    setEditingId(item.id);
+    setForm({
+      id: item.id,
+      title: item.title || "",
+      summary: item.summary || "",
+      content: item.content || "",
+      category: item.category || "",
+      event_date: item.event_date || "",
+      imagesText: Array.isArray(item.images) ? item.images.join("\n") : "",
+    });
+    setViewMode("form");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleResetForm = () => {
+    setEditingId(null);
+    setForm(emptyForm);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSaving(true);
+
+    const images =
+      form.imagesText
+        .split("\n")
+        .map((s) => s.trim())
+        .filter(Boolean) || [];
+
+    const payload = {
+      title: form.title,
+      summary: form.summary,
+      content: form.content,
+      category: form.category,
+      event_date: form.event_date || null,
+      images,
+    };
+
+    try {
+      if (editingId) {
+        await newsService.update(editingId, payload);
+      } else {
+        await newsService.create(payload);
+      }
+      await loadNews(pagination.page);
+      handleResetForm();
+      setViewMode("list"); // ✅ back to list after save
+    } catch (err) {
+      console.error(err);
+      alert("Failed to save news");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this news item?")) return;
+    try {
+      await newsService.remove(id);
+      await loadNews(pagination.page);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to delete news");
+    }
+  };
+
+  const handlePageChange = (newPage) => {
+    loadNews(newPage);
+  };
+
+  const goBackToList = () => {
+    setViewMode("list");
+    handleResetForm();
+  };
+
+  return (
+    <div className="w-full h-full px-6 py-6 space-y-4 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100">
+      {/* Header row */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+            News Manager
+          </div>
+          <h2 className="mt-2 text-xl md:text-2xl font-semibold text-slate-900">
+            {viewMode === "list" ? "News & Events" : editingId ? "Edit news" : "Add news"}
+          </h2>
+          <p className="text-xs md:text-sm text-slate-500 mt-1">
+            {viewMode === "list"
+              ? "Filter, search and manage all news shown on the website."
+              : "Fill in the details below and save to publish or update this news item."}
+          </p>
+        </div>
+
+        {/* Right header controls */}
+        <div className="flex flex-col items-end gap-2 text-xs">
+          {viewMode === "list" && (
+            <>
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-sm">
+                <Filter className="h-3.5 w-3.5 text-slate-400" />
+                <span className="text-slate-500">Sort by</span>
+                <select
+                  className="border-none bg-transparent text-slate-800 focus:outline-none cursor-pointer"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                >
+                  <option value="event_date">Event date</option>
+                  <option value="created_at">Created at</option>
+                  <option value="title">Title</option>
+                </select>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOrder((o) => (o === "asc" ? "desc" : "asc"))
+                  }
+                  className="ml-1 rounded-full bg-slate-900 text-white px-2 py-0.5 text-[10px]"
+                >
+                  {order === "asc" ? "Oldest → Newest" : "Newest → Oldest"}
+                </button>
+              </div>
+              <p className="text-[10px] text-slate-400">
+                Total items: {pagination.total || 0}
+              </p>
+              <button
+                type="button"
+                onClick={handleAddNew}
+                className="mt-1 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-red-600 px-4 py-1.5 text-[11px] font-semibold text-white shadow-md hover:brightness-110"
+              >
+                <Plus className="h-3.5 w-3.5" />
+                Add news
+              </button>
+            </>
+          )}
+
+          {viewMode === "form" && (
+            <button
+              type="button"
+              onClick={goBackToList}
+              className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[11px] text-slate-600 hover:bg-slate-50"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Back to list
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Content area */}
+      {viewMode === "list" ? (
+        <NewsList
+          news={news}
+          loading={loading}
+          pagination={pagination}
+          totalPages={totalPages}
+          search={search}
+          onSearchChange={handleSearchChange}
+          onSearchSubmit={handleSearchSubmit}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+          onPageChange={handlePageChange}
+        />
+      ) : (
+        <div className="max-w-4xl">
+          <NewsForm
+            form={form}
+            editingId={editingId}
+            saving={saving}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+            onReset={handleResetForm}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default AdminNews;

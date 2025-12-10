@@ -20,6 +20,8 @@
   import DashboardLayout from "./components/layout/dashboard/Layout.jsx";
   import AdminHome from "./pages/dashboard/AdminHome.jsx";
   import ProtectedRoute from "./services/ProtectedRoute.jsx";
+  import AdminNews from "./pages/dashboard/AdminNews.jsx";
+
 
 
   function App() {
@@ -54,7 +56,7 @@
         }
       >
         <Route index element={<AdminHome />} />
-        {/* <Route path="news" element={<AdminNews />} /> */}
+        <Route path="news" element={<AdminNews />} />
         {/* <Route path="publications" element={<AdminPublications />} /> */}
         {/* <Route path="projects" element={<AdminProjects />} /> */}
         {/* <Route path="careers" element={<AdminCareers />} /> */}
