@@ -125,7 +125,7 @@ export default function Hero() {
               whitespace-nowrap
               overflow
               max-w-full
-              text-[18px]       /* increased base size */
+              text-[11px]       /* increased base size */
               sm:text-md        /* slightly larger on small screens */
               md:text-xl        /* even larger on medium screens */
               lg:text-2xl       /* larger on big screens */
