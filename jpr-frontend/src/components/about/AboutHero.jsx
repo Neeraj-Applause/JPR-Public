@@ -19,20 +19,21 @@ export default function AboutHero() {
             <span className="text-red-300"> through science & data.</span>
           </h1>
 
-          <p className="max-w-xl text-sm sm:text-base text-white/90 text-justify">
-            JP Research India is a research company dedicated to improve road
-            and automotive safety in India with a focus on field data
-            collection, analysis, and engineering services. Established in 2006,
-            JP Research India has worked to initiate awareness of road safety
-            issues among government bodies, auto manufacturers, and other
-            agencies, organizations, and entities having a stake in the shaping
-            of safer, modern Indian roads. The company has accomplished this
-            through accident investigation and data collection activities, by
-            bringing diverse industries together through our annual road safety
-            seminars, and by disseminating knowledge and encouraging public
-            participation in groundbreaking research programs presented in our
-            quarterly newsletters.
-          </p>
+        <p className="max-w-xl text-[11px] sm:text-sm text-white/90 text-justify">
+
+  JP Research India, a fully owned subsidy of JPR Inc is pioneer in scientific crash investigations
+  and data driven interventions for improving road safety in India. The company, with its strong
+  leadership and well trained and dedicated researchers has established itself as a primary agency
+  for data driven research in automotive domain and other associated verticals like road safety
+  engineering, data analytics and forensic/fire crash investigations. JPRI engages with Government
+  bodies and other stakeholders at all levels to share the findings and promote data driven
+  interventions with an overall objective of reducing crashes and fatalities on Indian roads.
+  JPRI is also the initiator and coordinator of ‘Road Accident Sampling System India” (RASSI),
+  <a href="https://www.rassi.in/" target="_blank" rel="noopener noreferrer">  https://www.rassi.in </a>
+  a one of its kind initiative, which brings auto-industry OEMs, component manufacturers and
+  research agencies on one platform to support data driven research and policy facilitation.
+</p>
+
 
           {/* Small meta / stats row */}
           <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-white/70">

@@ -5,7 +5,7 @@ import leader3 from "../assets/images/team/Pradeep_Photo.jpg";
 import leader4 from "../assets/images/team/Mr-Murtuza-Shabbir-Painter.jpg";
 import leader5 from "../assets/images/team/Dr-Ahamedali-Hassan.jpg";
 import leader6 from "../assets/images/team/Mr-Phillip-Jordan.jpg";
-import leader7 from "../assets/images/team/Milind-Keshav-Joshi.jpg";
+import leader7 from "../assets/images/team/Mr-Supratik-Biswas.png";
 
 export const leaders = [
   {
@@ -78,17 +78,20 @@ With experience in almost 40 countries, including most of the South Asia and SE 
 
 Phillip advises the Road Safety Engineering Division of JP Research India Pvt. Ltd. on a variety of road safety engineering matters, including the cost effective treatment of hazardous locations and road safety audits.`
   },
-  {
-    slug: "mr-milind-joshi",
-    name: "Mr Milind Joshi",
-    role: "Advisor and Consultant to JPRI",
-    photo: leader7,
-    bio: `An insurer by training, Milind has learned quite a lot from his team members, particularly about motor, accidents and motor insurance. Young boys and girls with a background in auto industry, automobile engineering, garages, repair workshops and the field of survey have taught him whole heartedly and he was limited in his learning only by his inabilities.
+ {
+  slug: "mr-supratik-biswas",
+  name: "Mr Supratik Biswas",
+  role: "Advisor and Consultant to JPRI",
+  photo: leader7,
+  bio: `Mr Supratik Biswas Advisor and Consultant to JPRI
 
-A Pharmacy Honors graduate from BITS Pilani, Milind entered the field of general insurance in the year 1982, worked in various offices of United India Insurance Co. Ltd., set up the motor claims department of Tata AIG General Insurance Co. Ltd., an insurer he served as head of north zone in business later, and then worked to set up the operations, claims, contact centre and customer support departments of Bharti Axa General Insurance Co. Ltd.. He had a brief stint in Zambia as an Executive Director of Professional Insurance Corporation Zambia Ltd.. Subsequently, he started on his own and as on date works through his companies, namely Visla Consulting LLP and Futureforce Training Academy LLP in the fields of insurance & IT consulting and training. He operates through an eco system of over 30 associate consultants.
+A Chartered Accountant by training, Supratik joined the non life insurance industry in 1983 in a Financial role. During his long journey in the insurance arena he has worked in different rolls which includes, finance, marine, motor, property and liability underwriting and claims. He has a great exposure in handling claims and customer service and have gained 360 degrees view on insurance through his journey. During this time, he has gone through a great learning process from all his colleagues.
 
-Have designed and delivered India specific Motor Estimation Training for two of his previous employers and one of the general insurance companies as an independent consultant. He is a Fellow of Insurance Institute of India, Diploma Chartered Insurance Institute and a Chartered Property & Casualty Underwriter of the American Institutes, known as The Institutes. He has done his diploma in Automobile Estimation and Star Alignment Systems from Vale National, Pennsylvania, USA. He loves questions, particularly the ones which he cannot answer.`
-  },
+Having started his career with United India Insurance Co where his assignments included head of profit center, Supratik worked with Royal Sundaram, Reliance General and L & T General Insurance Co where he primarily have handled Claims which is the most sensitive of insurance customer service. Supratik had a long stint in Africa where he managed non life insurance companies in Tanzania and Namibia .
+
+He has led as Subject Matter Expert and helped develop Claims software program for Reliance General Insurance and have participated in various software implementation programs with other companies. He is a team player who likes to lead from the front`
+},
+
 ];
 
 export default leaders;

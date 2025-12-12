@@ -36,7 +36,6 @@ const BannerCollage = () => {
   );
 };
 
-
 const slides = [
   {
     id: 0,
@@ -48,12 +47,11 @@ const slides = [
     image: banner2,
     caption: "Crash analysis to identify contributing factors to a crash",
   },
-  { 
-  id: 2, 
-  image: BannerCollage,   // <-- using collage instead of a static image
-  caption: "Promoting data driven decision making"
-},
-
+  {
+    id: 2,
+    image: BannerCollage, // <-- using collage instead of a static image
+    caption: "Promoting data driven decision making",
+  },
 
   { id: 3, image: banner4, caption: "Awards & Recognitions" },
   {
@@ -71,11 +69,7 @@ const slides = [
     image: banner8,
     caption: "Team Outing – JPRI team at Kutch-Gujarat – Nov 2025",
   },
-
 ];
-
-
-
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -98,54 +92,56 @@ export default function Hero() {
     <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden bg-black">
       {/* Background Layer */}
       <div className="absolute inset-0">
-       {typeof activeSlide.image === "function" ? (
-  <activeSlide.image />
-) : (
-  <img
-    src={activeSlide.image}
-    alt="Hero Banner"
-    className="h-full w-full object-cover object-top"
-  />
-)}
-
+        {typeof activeSlide.image === "function" ? (
+          <activeSlide.image />
+        ) : (
+          <img
+            src={activeSlide.image}
+            alt="Hero Banner"
+            className="h-full w-full object-cover object-top"
+          />
+        )}
 
         {/* Vignette + bottom-focused overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/6 to-black/6" />
         <div className="absolute inset-x-0 bottom-0 h-[40%] md:h-[35%] lg:h-[30%] bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
       </div>
 
-      {/* Caption block (bottom-aligned) */}
-      {activeSlide.caption && (
-        <div className="relative z-30">
-          <div className="relative mx-auto flex min-h-[55vh] md:min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="space-y-4 max-w-2xl"
-            >
-              <h2 className="font-semibold leading-tight">
-                <span
-                  className="
-      block
-      text-white
-      whitespace-nowrap
-      overflow
-      max-w-full
-     text-[16px] sm:text-xs md:text-md lg:text-lg
+     {/* Caption block (bottom-aligned) */}
+{activeSlide.caption && (
+  <div className="relative z-30">
+    <div className="relative mx-auto flex min-h-[55vh] md:min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="space-y-4 max-w-2xl text-left"  // <-- ensures left alignment
+      >
+        <h2 className="font-semibold leading-tight text-left">
+          <span
+            className="
+              block
+              text-white
+              whitespace-nowrap
+              overflow
+              max-w-full
+              text-[18px]       /* increased base size */
+              sm:text-md        /* slightly larger on small screens */
+              md:text-xl        /* even larger on medium screens */
+              lg:text-2xl       /* larger on big screens */
+              xl:text-3xl       /* optional: extra large screens */
+            "
+          >
+            {activeSlide.caption}
+          </span>
+        </h2>
 
+        <p className="text-sm text-slate-200/90 max-w-md"></p>
+      </motion.div>
+    </div>
+  </div>
+)}
 
-    "
-                >
-                  {activeSlide.caption}
-                </span>
-              </h2>
-
-              <p className="text-sm text-slate-200/90 max-w-md"></p>
-            </motion.div>
-          </div>
-        </div>
-      )}
 
       {/* Dots */}
       <div className="absolute bottom-8 sm:bottom-10 left-6 sm:left-10 flex gap-3 z-40">

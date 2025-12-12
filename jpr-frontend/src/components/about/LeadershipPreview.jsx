@@ -8,7 +8,7 @@ import leader3 from "../../assets/images/team/Pradeep_Photo.jpg";
 import leader4 from "../../assets/images/team/Mr-Murtuza-Shabbir-Painter.jpg";
 import leader5 from "../../assets/images/team/Dr-Ahamedali-Hassan.jpg";
 import leader6 from "../../assets/images/team/Mr-Phillip-Jordan.jpg";
-import leader7 from "../../assets/images/team/Milind-Keshav-Joshi.jpg";
+import leader7 from "../../assets/images/team/Mr-Supratik-Biswas.png";
 
 /**
  * Note: slugs are used for routing to the detail page:
@@ -53,10 +53,10 @@ const leaders = [
     slug: "mr-phillip-jordan",
   },
   {
-    name: "Mr Milind Joshi",
+    name: "Mr Supratik Biswas",
     role: "Advisor and Consultant to JPRI",
     photo: leader7,
-    slug: "mr-milind-joshi",
+    slug: "mr-supratik-biswas",
   },
 ];
 
