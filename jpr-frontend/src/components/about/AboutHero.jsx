@@ -40,7 +40,7 @@ export default function AboutHero() {
               <p className="font-semibold text-white">
                 Promoting road safety research in India
               </p>
-              <p>For almost 20 years</p>
+              <p>Since 2006</p>
             </div>
             <div className="h-10 w-px bg-white/20 hidden sm:block" />
             <div>

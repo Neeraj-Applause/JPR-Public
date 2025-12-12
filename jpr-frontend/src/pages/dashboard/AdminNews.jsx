@@ -25,6 +25,7 @@ const AdminNews = () => {
   const [sort, setSort] = useState("event_date");
   const [order, setOrder] = useState("desc");
   const [loading, setLoading] = useState(false);
+  const [searchLoading, setSearchLoading] = useState(false);
 
   const [form, setForm] = useState(emptyForm);
   const [saving, setSaving] = useState(false);
@@ -40,9 +41,15 @@ const AdminNews = () => {
   const [files, setFiles] = useState([]);
 const [previews, setPreviews] = useState([]);
 
-  const loadNews = async (page = 1) => {
+  const loadNews = async (page = 1, isSearch = false) => {
     try {
-      setLoading(true);
+      // For search, use a separate loading state with delay
+      if (isSearch) {
+        setSearchLoading(true);
+      } else {
+        setLoading(true);
+      }
+      
       const res = await newsService.list({
         search,
         sort,
@@ -56,7 +63,11 @@ const [previews, setPreviews] = useState([]);
       console.error(err);
       alert("Failed to load news");
     } finally {
-      setLoading(false);
+      if (isSearch) {
+        setSearchLoading(false);
+      } else {
+        setLoading(false);
+      }
     }
   };
 
@@ -65,9 +76,29 @@ const [previews, setPreviews] = useState([]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sort, order]);
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    loadNews(1);
+  // Debounced search effect
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (search !== undefined) {
+        loadNews(1, true); // Pass true to indicate this is a search
+      }
+    }, 300); // Reduced debounce time for better UX
+
+    return () => clearTimeout(timeoutId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search]);
+
+  const handleSearchSubmit = (searchTerm = null) => {
+    // If called with a string (from debounced search), use it
+    // If called with an event (from form submit), prevent default and use current search
+    if (typeof searchTerm === 'string') {
+      loadNews(1);
+    } else if (searchTerm?.preventDefault) {
+      searchTerm.preventDefault();
+      loadNews(1);
+    } else {
+      loadNews(1);
+    }
   };
 
 const handleImageChange = (e) => {
@@ -205,37 +236,12 @@ const handleImageChange = (e) => {
         <div className="flex flex-col items-end gap-2 text-xs">
           {viewMode === "list" && (
             <>
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-sm">
-                <Filter className="h-3.5 w-3.5 text-slate-400" />
-                <span className="text-slate-500">Sort by</span>
-                <select
-                  className="border-none bg-transparent text-slate-800 focus:outline-none cursor-pointer"
-                  value={sort}
-                  onChange={(e) => setSort(e.target.value)}
-                >
-                  <option value="event_date">Event date</option>
-                  <option value="created_at">Created at</option>
-                  <option value="title">Title</option>
-                </select>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOrder((o) => (o === "asc" ? "desc" : "asc"))
-                  }
-                  className="ml-1 rounded-full bg-slate-900 text-white px-2 py-0.5 text-[10px]"
-                >
-                  {order === "asc" ? "Oldest → Newest" : "Newest → Oldest"}
-                </button>
-              </div>
-              <p className="text-[10px] text-slate-400">
-                Total items: {pagination.total || 0}
-              </p>
               <button
                 type="button"
                 onClick={handleAddNew}
-                className="mt-1 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-red-600 px-4 py-1.5 text-[11px] font-semibold text-white shadow-md hover:brightness-110"
+                className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-[14px] cursor-pointer font-semibold text-white shadow-md hover:brightness-110"
               >
-                <Plus className="h-3.5 w-3.5" />
+                <Plus className="h-4 w-6" />
                 Add news
               </button>
             </>
@@ -259,6 +265,7 @@ const handleImageChange = (e) => {
         <NewsList
           news={news}
           loading={loading}
+          searchLoading={searchLoading}
           pagination={pagination}
           totalPages={totalPages}
           search={search}

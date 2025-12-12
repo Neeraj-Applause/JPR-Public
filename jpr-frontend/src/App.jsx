@@ -22,6 +22,7 @@
   import AdminHome from "./pages/dashboard/AdminHome.jsx";
   import ProtectedRoute from "./services/ProtectedRoute.jsx";
   import AdminNews from "./pages/dashboard/AdminNews.jsx";
+  import AdminPublications from "./pages/dashboard/AdminPublications.jsx";
 
 
 
@@ -59,7 +60,7 @@
       >
         <Route index element={<AdminHome />} />
         <Route path="news" element={<AdminNews />} />
-        {/* <Route path="publications" element={<AdminPublications />} /> */}
+        <Route path="publications" element={<AdminPublications />} />
         {/* <Route path="projects" element={<AdminProjects />} /> */}
         {/* <Route path="careers" element={<AdminCareers />} /> */}
         {/* <Route path="contact-messages" element={<AdminContactMessages />} /> */}

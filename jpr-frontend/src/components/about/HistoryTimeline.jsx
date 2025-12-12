@@ -15,14 +15,14 @@ const milestones = [
     year: "2006",
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
-      "As India crossed 100,000 annual road fatalities, JP Research India Pvt. Ltd. was founded by Mrs. Jeya Padmanaban to address the lack of in-depth crash data. From the outset, JPRI focused on automotive safety workshops and initiating scientific crash investigations in partnership with agencies and manufacturers.",
+      "As India recorded over 100,000 road fatalities, need for evidence based, data driven interventions was strongly felt to reduce the accidents/fatalities. Ms Jeya Padmanaban, leading Statistician and professions in automotive safety took the initiative to set-up JP Research India in 2006 with the focus on conducting scientific crash investigations and data driven analytics to promote evidence-based policy interventions.",
     image: image1,
   },
   {
     year: "2008",
     title: "Crash investigations – the journey begins",
     description:
-      "After several unsuccessful attempts to start crash investigations with government agencies and OEMs, JPRI independently launched its first on-site crash investigation pilot with the support of Tamil Nadu Police on a national highway near Chennai. The success of this project led to a second, two-year pilot in Coimbatore Rural District, deepening insights into human, vehicle and infrastructure factors.",
+      "After several discussions and engagements with the concerned agencies, JPRI independently launched  its first on-site crash investigation pilot with the support of Tamil Nadu Police on a national highway near Chennai. The success of this project led to a second, two-year pilot in Coimbatore Rural District, deepening insights into human, vehicle and infrastructure factors.",
     image: crash,
   },
   {
@@ -81,12 +81,11 @@ export default function HistoryTimeline() {
           </h2>
 
           <p className="mt-2 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
-            JP Research India is a wholly owned subsidiary of JP Research, Inc.
-            (USA), a leading statistical, engineering research and data analysis
-            firm specializing in automotive safety. Since 2006, JPRI has worked
-            with government bodies, manufacturers and organizations to build
-            awareness, collect in-depth crash data and advance evidence-based
-            road safety in India.
+            JP Research India, a wholly owned subsidy of JP Research Inc (USA)
+            is a leading crash investigation organization in India. Data driven
+            insights leading to understanding of the contributing factors to a
+            crash and evidence-based decision/policy promotion form the core of
+            the activities focused towards improving road safety in India.
           </p>
         </div>
 

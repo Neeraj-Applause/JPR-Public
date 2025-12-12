@@ -9,6 +9,77 @@ import banner4 from "../../assets/images/banners/banner4.JPG";
 import banner5 from "../../assets/images/banners/banner5.jpg";
 import banner6 from "../../assets/images/banners/banner6.png";
 import banner7 from "../../assets/images/banners/banner7.jpg";
+import banner8 from "../../assets/images/banners/banner8.jpg";
+import banner31 from "../../assets/images/banners/banner31.jpg";
+import banner32 from "../../assets/images/banners/banner32.jpg";
+
+/* BannerCollage — place this where you used BannerCollage previously */
+const BannerCollage = () => {
+  return (
+    <div className="w-full h-full relative flex items-center justify-center z-30">
+
+      {/* Visible gradient background using your brand colors */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(158,27,50,0.65) 0%, rgba(158,27,50,0.45) 100%)",
+          backdropFilter: "blur(6px)",
+        }}
+      />
+
+      <div className="relative w-full max-w-6xl px-6 py-10 flex items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+
+          {/* Left card */}
+          <motion.div
+            initial={{ rotate: -4, scale: 0.985 }}
+            whileHover={{ rotate: -1, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 150, damping: 18 }}
+            className="relative rounded-2xl overflow-hidden shadow-[0_28px_60px_rgba(2,6,23,0.5)] border border-white/6 bg-transparent"
+            style={{ transformOrigin: "center" }}
+          >
+            <img
+  src={banner31}
+  alt="Founder 1"
+  className="w-full h-[70vh] md:h-[78vh] object-cover object-top block"
+  draggable={false}
+/>
+
+            {/* subtle translucent overlay so text/dots remain readable,
+                but low enough opacity so the gradient shows around the cards */}
+            <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+            
+            {/* thin highlight edge to separate card from background */}
+            <div className="absolute top-4 left-4 right-4 h-[2px] bg-white/6 rounded" />
+          </motion.div>
+
+          {/* Right card overlapping slightly for depth */}
+          <motion.div
+            initial={{ rotate: 4, scale: 0.985 }}
+            whileHover={{ rotate: 1, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 150, damping: 18, delay: 0.02 }}
+            className="relative -mt-8 md:mt-6 rounded-2xl overflow-hidden shadow-[0_32px_70px_rgba(2,6,23,0.55)] border border-white/6 bg-transparent"
+            style={{ zIndex: 6 }}
+          >
+           <img
+  src={banner32}
+  alt="Founder 2"
+  className="w-full h-[70vh] md:h-[78vh] object-cover object-center block"
+  draggable={false}
+/>
+
+            <div className="absolute inset-0 bg-black/16 pointer-events-none" />
+            <div className="absolute bottom-4 left-6 text-white/40 text-xs pointer-events-none" />
+          </motion.div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 const slides = [
   {
@@ -21,7 +92,13 @@ const slides = [
     image: banner2,
     caption: "Crash analysis to identify contributing factors to a crash",
   },
-  { id: 2, image: banner3, caption: "Promoting data driven decision making" },
+  { 
+  id: 2, 
+  image: BannerCollage,   // <-- using collage instead of a static image
+  caption: "Promoting data driven decision making"
+},
+
+
   { id: 3, image: banner4, caption: "Awards & Recognitions" },
   {
     id: 5,
@@ -33,7 +110,16 @@ const slides = [
     image: banner7,
     caption: "Capacity building for Govt departments & traffic police",
   },
+  {
+    id: 7,
+    image: banner8,
+    caption: "Team Outing – JPRI team at Kutch-Gujarat – Nov 2025",
+  },
+
 ];
+
+
+
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -56,11 +142,16 @@ export default function Hero() {
     <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden bg-black">
       {/* Background Layer */}
       <div className="absolute inset-0">
-        <img
-          src={activeSlide.image}
-          alt="Hero Banner"
-          className="h-full w-full object-cover object-top"
-        />
+       {typeof activeSlide.image === "function" ? (
+  <activeSlide.image />
+) : (
+  <img
+    src={activeSlide.image}
+    alt="Hero Banner"
+    className="h-full w-full object-cover object-top"
+  />
+)}
+
 
         {/* Vignette + bottom-focused overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/6 to-black/6" />
