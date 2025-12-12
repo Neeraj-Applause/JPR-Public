@@ -13,68 +13,24 @@ import banner8 from "../../assets/images/banners/banner8.jpg";
 import banner31 from "../../assets/images/banners/banner31.jpg";
 import banner32 from "../../assets/images/banners/banner32.jpg";
 
-/* BannerCollage — place this where you used BannerCollage previously */
+// ✨ Collage for founders — sleek, clean, modern
 const BannerCollage = () => {
   return (
-    <div className="w-full h-full relative flex items-center justify-center z-30">
+    <div className="w-full h-full grid grid-cols-2 gap-0">
+      <div className="h-full w-full overflow-hidden">
+        <img
+          src={banner31}
+          alt="Founder 1"
+          className="h-full w-full object-cover object-top"
+        />
+      </div>
 
-      {/* Visible gradient background using your brand colors */}
-      <div
-        aria-hidden
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(158,27,50,0.65) 0%, rgba(158,27,50,0.45) 100%)",
-          backdropFilter: "blur(6px)",
-        }}
-      />
-
-      <div className="relative w-full max-w-6xl px-6 py-10 flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-
-          {/* Left card */}
-          <motion.div
-            initial={{ rotate: -4, scale: 0.985 }}
-            whileHover={{ rotate: -1, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 150, damping: 18 }}
-            className="relative rounded-2xl overflow-hidden shadow-[0_28px_60px_rgba(2,6,23,0.5)] border border-white/6 bg-transparent"
-            style={{ transformOrigin: "center" }}
-          >
-            <img
-  src={banner31}
-  alt="Founder 1"
-  className="w-full h-[70vh] md:h-[78vh] object-cover object-top block"
-  draggable={false}
-/>
-
-            {/* subtle translucent overlay so text/dots remain readable,
-                but low enough opacity so the gradient shows around the cards */}
-            <div className="absolute inset-0 bg-black/20 pointer-events-none" />
-            
-            {/* thin highlight edge to separate card from background */}
-            <div className="absolute top-4 left-4 right-4 h-[2px] bg-white/6 rounded" />
-          </motion.div>
-
-          {/* Right card overlapping slightly for depth */}
-          <motion.div
-            initial={{ rotate: 4, scale: 0.985 }}
-            whileHover={{ rotate: 1, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 150, damping: 18, delay: 0.02 }}
-            className="relative -mt-8 md:mt-6 rounded-2xl overflow-hidden shadow-[0_32px_70px_rgba(2,6,23,0.55)] border border-white/6 bg-transparent"
-            style={{ zIndex: 6 }}
-          >
-           <img
-  src={banner32}
-  alt="Founder 2"
-  className="w-full h-[70vh] md:h-[78vh] object-cover object-center block"
-  draggable={false}
-/>
-
-            <div className="absolute inset-0 bg-black/16 pointer-events-none" />
-            <div className="absolute bottom-4 left-6 text-white/40 text-xs pointer-events-none" />
-          </motion.div>
-
-        </div>
+      <div className="h-full w-full overflow-hidden">
+        <img
+          src={banner32}
+          alt="Founder 2"
+          className="h-full w-full object-cover object-center"
+        />
       </div>
     </div>
   );
