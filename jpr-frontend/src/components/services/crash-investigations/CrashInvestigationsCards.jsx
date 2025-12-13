@@ -13,7 +13,7 @@ export default function CrashInvestigationCards() {
       href: "/services/data-collection",
       gradient: "from-[#9F1F1F] to-[#D04B4B]",
       description:
-        "Structured on-site capture of scene, vehicle and human factors — measurements, photos and interviews to create reliable datasets.",
+        "Structured on-site investigation and capture of scene, vehicle and human factors — measurements, photos and interviews to create reliable datasets.",
     },
     {
       title: "Crash Reconstructions",
@@ -21,7 +21,7 @@ export default function CrashInvestigationCards() {
       href: "/services/crash-reconstructions",
       gradient: "from-[#2E6B6B] to-[#7FB9B9]",
       description:
-        "Physics-informed reconstructions combining vehicle damage, scene evidence and biomechanics to recreate event sequences.",
+        "Detailed crash reconstructions backed by scientific principles that combine vehicle damage, scene evidence and biomechanics to recreate event sequences.",
     },
     {
       title: "Injury Analysis",
@@ -29,7 +29,7 @@ export default function CrashInvestigationCards() {
       href: "/services/injury-analysis",
       gradient: "from-[#6B2E4A] to-[#B86A8C]",
       description:
-        "Forensic injury assessment linking occupant kinematics and contacts to injury causation for design, medical and legal use.",
+        "Forensic assessments of crash injuries linking human/occupant kinematics to vehicle evidence to understand injury causation for vehicle design, medical, and legal use.",
     },
   ];
 
@@ -51,7 +51,7 @@ export default function CrashInvestigationCards() {
             Our specialised services
           </h2>
           <p className="text-sm text-slate-600 max-w-2xl">
-            Quick overview — click to learn more about our scientific crash investigation capabilities.
+            Click to learn more about our scientific crash investigation capabilities.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function CrashInvestigationCards() {
                   <span className="text-xs font-medium text-slate-400">{idx === 0 ? "Core" : idx === 1 ? "Analytical" : "Forensic"}</span>
                 </div>
 
-                <p className="mt-2 text-sm text-slate-600 leading-snug line-clamp-3">
+                <p className="mt-2 text-sm text-slate-600 leading-snug line-clamp-5">
                   {card.description}
                 </p>
 

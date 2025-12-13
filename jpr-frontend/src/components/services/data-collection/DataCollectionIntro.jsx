@@ -5,7 +5,7 @@ import illustration from "../../../assets/images/services/data-collection-illust
 // ↑ use your uploaded illustration file
 
 export default function DataCollectionIntro() {
-  const content = `A crash involves the participation of 3 factors – human, vehicle and a specific environment (infrastructure). An accurate understanding of the crash occurrence demands identifying the failures in each of these three factors over 3 time phases – Pre Crash, Crash and Post Crash. JPRI’s in-depth crash data collection methodology covers detailed vehicle inspection, crash scene inspection and witness/victim interviews for identification of evidence across all the three factors and phases, documented in the form of photographs, measurements and data forms.`;
+  const content = `A crash involves the participation of 3 contributors – human, vehicle and a specific environment (infrastructure). An accurate understanding of the crash occurrence not just demands identifying the failures in each of these three contributors, but also over three disntinct time phases – Pre Crash, Crash and Post Crash. JPRI’s in-depth crash data collection methodology covers detailed vehicle inspection, crash scene inspection and witness/victim interviews for identification of evidence across all the three contributors and phases, documented using proprietary tools for reproducibility.`;
 
   return (
     <section className="py-12 bg-gradient-to-b from-white via-slate-50 to-white">
@@ -52,20 +52,10 @@ export default function DataCollectionIntro() {
 
               {/* Paragraph */}
               <article className="prose prose-slate mx-auto max-w-none">
-                <p className="text-sm md:text-base text-slate-700 leading-relaxed first-letter:text-5xl first-letter:font-extrabold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
+                <p className="text-sm md:text-base text-slate-700 leading-relaxed first-letter:text-5xl first-letter:font-extrabold first-letter:text-primary first-letter:mr-3 first-letter:float-left text-justify">
                   {content}
                 </p>
               </article>
-
-              {/* CTA */}
-              <div className="mt-6">
-                <a
-                  href="#contact"
-                  className="text-sm text-primary/90 font-medium hover:underline"
-                >
-                  Contact our data team
-                </a>
-              </div>
 
             </div>
           </div>

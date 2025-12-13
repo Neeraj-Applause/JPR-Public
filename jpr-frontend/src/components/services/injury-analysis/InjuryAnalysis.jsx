@@ -10,10 +10,10 @@ export default function InjuryAnalysis() {
     <main className="bg-white text-slate-900">
       <InjuryAnalysisHero />
       <InjuryOverview />
-      <InjuryProcess />
+      {/* <InjuryProcess /> */}
       <InjuryExpertise />
-      <InjuryCapabilities />
-      <InjuryCTA />
+      {/* <InjuryCapabilities />
+      <InjuryCTA /> */}
     </main>
   );
 }

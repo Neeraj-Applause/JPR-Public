@@ -18,12 +18,12 @@ export default function DataAnalyticsIntro() {
             </h2>
 
             <p className="text-slate-700 text-lg leading-relaxed prose max-w-none">
-              What gets measured, gets managed. Aimed at assisting manufacturers,
-              local authorities and any stakeholders of road safety in making
-              informed decisions, the Data Analytics division of JPRI focuses on
-              addressing specific research questions with the availability of over
-              <strong> 4,000 in-depth accidents collected across India</strong> and
-              other relevant datasets.
+              What gets measured, gets managed. Aimed at assisting
+              manufacturers, local authorities and any stakeholders of road
+              safety in making informed decisions, the Data Analytics division
+              of JPRI focuses on addressing specific research questions with the
+              availability of over <strong>9,000  in-depth accidents collected across
+              India</strong> and other relevant datasets.
             </p>
 
             {/* subtle visual divider */}
@@ -52,15 +52,18 @@ export default function DataAnalyticsIntro() {
                   </div>
 
                   <div className="mt-1 flex items-baseline gap-3">
-                    <div className="text-3xl font-bold text-slate-900">4,000+</div>
-                    <div className="text-sm text-slate-500">in-depth cases across India</div>
+                    <div className="text-3xl font-bold text-slate-900">
+                      9,000+
+                    </div>
+                    <div className="text-sm text-slate-500">
+                      in-depth cases across India
+                    </div>
                   </div>
                 </div>
               </div>
 
               <p className="mt-4 text-sm text-slate-600">
-                Robust, field-collected crash records combined with domain expertise
-                — crafted to answer product, policy and safety strategy questions.
+                Robust, field-collected crash records combined with domain expertise — crafted to answer product, policy and safety strategy questions.
               </p>
 
               <div className="mt-6 flex items-center gap-3">

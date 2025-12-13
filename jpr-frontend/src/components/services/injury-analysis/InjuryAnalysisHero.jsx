@@ -28,8 +28,7 @@ export default function InjuryAnalysisHero() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-200 max-w-md">
-            Systematic extraction, severity scaling, and source correlation of human injuries from real-world crashes.
-          </p>
+A detailed process of understanding, systematic extraction, severity scaling, and source determination of human injuries from real-world crashes.          </p>
         </motion.div>
       </div>
     </section>

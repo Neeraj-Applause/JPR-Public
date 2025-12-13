@@ -19,7 +19,7 @@ const CARDS = [
     title: "Crash Scene inspection",
     image: sceneImg,
     lines: [
-      "Inspection involves identifying any traces left on the road as a result of the crash, understanding the available road geometry, road furniture, markings and signage, and finally, measuring and mapping the complete crash scene to create a to-scale scene diagram."
+      "Detailed on-site inspection that involves identifying any traces left on the road as a result of the crash, understanding the existing road geometry, road furniture, markings and signage, and finally, measuring and mapping the complete crash scene to create a to-scale scene diagram."
     ]
   },
   {
@@ -27,7 +27,7 @@ const CARDS = [
     title: "Vehicle inspection",
     image: vehicleImg,
     lines: [
-      "Inspection covers mapping and measuring the external damages on the vehicle, inspection of interiors to document safety system availability / usage, measure the integrity of the passenger compartment and occupant contacts resulting in injuries."
+      "Detailed vehicle inspections that map and measure the external damages on the vehicle, check for vehicle system failures, document safety system availability / usage along with the passenger compartment integrity, occupant contacts resulting in injuries, and many other vehicle-related details."
     ]
   },
   {
@@ -35,7 +35,7 @@ const CARDS = [
     title: "Victim/Witness interviews",
     image: interviewImg,
     lines: [
-      "Interviews focus on questions targeted at extracting the pre-crash situations, sequence of events and any relevant information related to the crash. Witness/victim statements are subjective and data from such interviews are always validated against the evidences from vehicle and crash scene inspection."
+      "Case-specific interviews focussing on questions targeted at extracting the pre-crash situations, sequence of events and any relevant information related to the crash. Witness/victim statements are subjective and data from such interviews are always validated against the evidence from vehicle and crash scene inspection."
     ]
   }
 ];
@@ -47,7 +47,7 @@ export default function DataCollectionCards() {
         <div className="mb-6">
           <h3 className="text-lg md:text-2xl font-semibold text-slate-900">Data collection components</h3>
           <p className="mt-2 text-sm text-slate-600 max-w-2xl">
-            Practical on-site activities that together produce robust, evidence-led datasets.
+            Practical on-site activities that produce robust, evidence-led datasets.
           </p>
         </div>
 

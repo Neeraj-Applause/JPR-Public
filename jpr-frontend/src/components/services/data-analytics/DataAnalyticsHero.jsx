@@ -35,7 +35,7 @@ export default function DataAnalyticsHero() {
                 </a>
               </div>
             </div> */}
-     
+
            {/* TOP-RIGHT RASSI LOGO (desktop only) */}
            {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
              <div
@@ -72,8 +72,7 @@ export default function DataAnalyticsHero() {
 
           {/* Subtext */}
           <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
-            Turning over 4,000 in-depth crash cases into insights that guide  
-            manufacturers, authorities, and safety stakeholders.
+            Turning over 9,000 in-depth crash cases into insights that guide manufacturers, authorities, and safety stakeholders.
           </p>
         </motion.div>
       </div>

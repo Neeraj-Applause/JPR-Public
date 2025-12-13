@@ -9,12 +9,10 @@ export default function InjuryOverview() {
           </h2>
 
           <p className="text-slate-700 leading-relaxed text-justify">
-            A systematic process involving the extraction of injury data from medical reports of crash victims, determination of injury severity using global injury scaling techniques, and correlation of each injury with a specific injury source in a crash such as vehicle components or roadside objects.
-          </p>
+A systematic process involving the extraction of injury data from medical reports of crash victims, determination of injury severity using globally accepted injury scaling techniques, and correlation of each injury with a specific injury source in a crash such as vehicle components or roadside objects.          </p>
 
           <p className="text-slate-700 leading-relaxed text-justify">
-            Each injury is carefully mapped to vehicle interiors like windshields, A-pillars, bull bars, as well as road infrastructure including trees, guardrails, concrete barriers, and fixed objects.
-          </p>
+Each injury is carefully mapped to vehicle components such as windshields, A-pillars, bull bars, as well as road infrastructure including trees, guardrails, concrete barriers, and fixed objects.          </p>
         </div>
 
         <div className="bg-white shadow-xl rounded-2xl p-8 border border-slate-200">
@@ -22,7 +20,7 @@ export default function InjuryOverview() {
             <li>✔ Medical Report Data Extraction</li>
             <li>✔ Injury Severity Scaling (AIS)</li>
             <li>✔ Injury Source Correlation</li>
-            <li>✔ Vehicle & Road Object Mapping</li>
+            <li>✔ Source (Vehicle or Road Object) Mapping</li>
             <li>✔ Biomechanics Interpretation</li>
           </ul>
         </div>

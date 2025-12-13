@@ -66,16 +66,18 @@ export default function DataCollectionHero() {
           {/* Main heading at bottom */}
           <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
             <span className="bg-primary bg-clip-text text-transparent">
-              Robust crash data collection
+              Robust Crash Data Collection
             </span>{" "}
-            for evidence-led safety interventions.
+            For Evidence-led Safety Interventions.
           </h1>
 
           {/* Short caption */}
           <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
-            Accurate, repeatable data collection is the foundation of credible crash investigation and safety
-            interventions. Our methodology combines careful scene work, vehicle examination and targeted interviews to
-            record the facts precisely.
+            Accurate & reproducible data collection is the foundation of
+            credible crash investigation and safety interventions. Our
+            methodology combines careful scene examinations, vehicle
+            examination, and case-specific victim/witness interviews to record
+            the facts precisely.
           </p>
         </motion.div>
       </div>

@@ -19,7 +19,7 @@ export default function CrashInvestigationsSection() {
           className="space-y-3 text-center"
         >
           <p className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
-            Crash Investigations
+            Case-specific Crash Investigations
           </p>
 
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
@@ -27,8 +27,9 @@ export default function CrashInvestigationsSection() {
           </h2>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-600">
-            Detailed, evidence-based crash investigations that support safer
-            vehicles, safer roads, and better-informed decisions.
+            Detailed, evidence-based crash investigations that support trained
+            operators, safer vehicles, safer forgiving roads, and
+            better-informed decisions.
           </p>
         </motion.div>
 
@@ -49,12 +50,13 @@ export default function CrashInvestigationsSection() {
               <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 Forensic Crash Investigations
               </h3>
-              <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700">
+              <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700 text-justify">
                 Be it a quick consultation to understand an accident or
-                full-fledged investigations to reconstruct and understand injury
-                causation, we deliver easily understandable and evidence-based
-                explanations of the sequence of events leading up to any road
-                traffic accident.
+                full-fledged investigations to reconstruct and understand crash
+                contributors, JPRI delivers easily understandable and
+                evidence-based explanations of the sequence of events leading up
+                to any road traffic accident to encourage informed decision
+                making and prevent recurrence.
               </p>
             </div>
           </motion.article>
@@ -74,11 +76,11 @@ export default function CrashInvestigationsSection() {
               <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                 Special Crash Investigations
               </h3>
-              <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700">
-                The intent of such crash investigations is to examine unique
-                real-world crashes across India and perform detailed, timely
-                examinations that help the safety community improve vehicle
-                safety systems and highway engineering.
+              <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700 text-justify">
+                Case-specific and timely crash investigations to examine unique
+                real-world crashes across India to help the clients undertake
+                India-specific improvements such as vehicle safety system design
+                and road engineering.
               </p>
             </div>
           </motion.article>

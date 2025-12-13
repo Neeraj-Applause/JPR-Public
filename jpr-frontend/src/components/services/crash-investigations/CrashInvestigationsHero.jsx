@@ -49,8 +49,7 @@ export default function CrashInvestigationsHero() {
 
           {/* Short caption */}
           <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
-            Scientific reconstruction and high-fidelity crash data to power
-            safer vehicles, infrastructure, and policy.
+           In-depth crash investigations and analysis to identify all accident contributors and estimate root causes to get a holistic view of the accident.
           </p>
         </motion.div>
       </div>

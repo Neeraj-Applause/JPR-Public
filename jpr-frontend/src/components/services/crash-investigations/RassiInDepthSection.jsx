@@ -35,15 +35,15 @@ export default function RassiInDepthSection() {
             {/* Minimal stat strip */}
             <div className="mt-4 grid grid-cols-3 gap-3 text-center text-xs text-slate-600 bg-transparent">
               <div className="space-y-0.5">
-                <p className="font-bold text-primary">3,750+</p>
-                <p className="leading-snug">Accidents</p>
+                <p className="font-bold text-primary">9000+</p>
+                <p className="leading-snug">In-depth Crash Investigations</p>
               </div>
               <div className="space-y-0.5">
-                <p className="font-bold text-secondary">7+ yrs</p>
-                <p className="leading-snug">Data period</p>
+                <p className="font-bold text-secondary">15+ yrs</p>
+                <p className="leading-snug">of crash data</p>
               </div>
               <div className="space-y-0.5">
-                <p className="font-bold text-primary">India</p>
+                <p className="font-bold text-primary">Across India</p>
                 <p className="leading-snug">Coverage</p>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function RassiInDepthSection() {
           {/* Eyebrow label */}
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium tracking-[0.16em] text-primary uppercase">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-secondary" />
-            In-depth crash investigations
+            In-depth Crash Investigations
           </div>
 
           <div className="space-y-3">
@@ -72,27 +72,30 @@ export default function RassiInDepthSection() {
               for India
             </h2>
 
-            <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
+            <p className="text-sm leading-relaxed text-slate-700 sm:text-base text-justify">
               JPRI has developed and successfully established an indigenous
               in-depth accident database with data collected scientifically by
               well-trained crash investigators. The database, Road Accident
               Sampling System-India (RASSI), is a repository of accident data of
-              over 3,750 accidents investigated across India over a period of 7
+              over 9000 accidents investigated across India over a period of 15+
               years.
             </p>
 
-            <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
-              The Road Accident Sampling System – India is a pioneering Indian
-              initiative aimed at collecting in-depth scientific road accident
-              data, through on-site crash investigations, that will enable the
-              government, industry and other road safety stakeholders to plan
-              and execute data-driven road safety strategies for safer Indian
-              roads.
+            <p className="text-sm leading-relaxed text-slate-700 sm:text-base text-justify">
+               The Road Accident Sampling System – India is a pioneering
+              Indian initiative aimed at collecting in-depth scientific road
+              accident data, through on-site crash investigations, that will
+              enable the government, industry and other road safety stakeholders
+              to plan and execute data-driven road safety strategies for safer
+              Indian roads.
             </p>
           </div>
 
           {/* CTA */}
           <div className="space-y-3 pt-2">
+             <p className="text-xs leading-relaxed text-slate-500 sm:text-sm">
+              Learn more about RASSI and its activities, members and achievements.
+            </p>
             <a
               href="https://www.rassi.org.in"
               target="_blank"
@@ -103,10 +106,7 @@ export default function RassiInDepthSection() {
               <ExternalLink className="h-4 w-4" />
             </a>
 
-            <p className="text-xs leading-relaxed text-slate-500 sm:text-sm">
-              Learn more about RASSI and its activities, members and
-              achievements.
-            </p>
+           
           </div>
         </motion.div>
       </div>

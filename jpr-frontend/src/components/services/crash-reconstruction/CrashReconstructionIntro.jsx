@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
  * - Modern, sleek, minimal UI
  */
 export default function CrashReconstructionIntro() {
-  const content1 = `A systematic process of evaluating the evidences obtained from vehicle and crash scene examination, as well as data from victim/witness interviews, and applying accepted physical principles and laws, to determine the collision sequence, calculate vehicle speeds, and ascertain the causes for the crash occurrence.`;
+  const content1 = `A systematic process of evaluating the evidence obtained from vehicle and crash scene examination, as well as data from victim/witness interviews, and applying accepted physical principles and laws, to determine the collision sequence, calculate vehicle speeds, and ascertain the causes for the crash occurrence.`;
 
-  const content2 = `Reconstruction requires good quality crash data collection. Like solving a jigsaw puzzle, JPRI Crash Reconstructionists put together the crash data and the evidence collected, and determine the crash sequence by employing physics and mechanics calculations. JPRI Crash Reconstructionists also use an accident reconstruction software, PC-Crash, for creating for 3D simulations (not animations) for a better understanding and visualization of crashes.`;
+  const content2 = `Good quality and detailed crash data is the cornerstone of any crash reconstruction. Like solving a jigsaw puzzle, JPRI Crash Reconstructionists put together the crash data and the evidence collected, and determine the crash sequence by employing physics and mechanics calculations. JPRI Crash Reconstructionists use an accident reconstruction software, PC-Crash, for creating for 3D simulations backed by scientific principles (unlike animations) for a better understanding and visualization of crashes.`;
 
   return (
     <section className="py-12 bg-gradient-to-b from-white via-slate-50 to-white">
@@ -53,20 +53,16 @@ export default function CrashReconstructionIntro() {
 
               <article className="prose prose-slate mx-auto max-w-none">
                 {/* drop-cap style (first letter visually emphasized) */}
-                <p className="text-sm md:text-base text-slate-700 leading-relaxed first-letter:text-5xl first-letter:font-extrabold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
+                <p className="text-sm md:text-base text-slate-700 leading-relaxed first-letter:text-5xl first-letter:font-extrabold first-letter:text-primary first-letter:mr-3 first-letter:float-left text-justify">
                   {content1}
                 </p>
 
-                <p className="mt-4 text-sm md:text-base text-slate-700 leading-relaxed">
+                <p className="mt-4 text-sm md:text-base text-slate-700 leading-relaxed text-justify">
                   {content2}
                 </p>
               </article>
 
               <div className="mt-6 flex items-center gap-4">
-
-                <a href="#contact" className="text-sm text-primary/90 font-medium hover:underline">
-                  Contact reconstruction team
-                </a>
               </div>
             </div>
           </div>

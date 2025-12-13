@@ -18,12 +18,8 @@ export default function CrashInvestigationsExpertise() {
   ];
 
   return (
-    <section
-      id="expertise"
-      className="relative bg-white py-12 text-slate-900"
-    >
+    <section id="expertise" className="relative bg-white py-12 text-slate-900">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-6 lg:flex-row lg:items-start lg:gap-20 lg:px-10">
-
         {/* LEFT TEXT SIDE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,8 +36,8 @@ export default function CrashInvestigationsExpertise() {
 
           {/* Heading */}
           <h2 className="text-3xl font-semibold sm:text-4xl">
-            Crash investigations built to{" "}
-            <span className="text-primary font-bold">global standards.</span>
+            Crash Investigations Meeting{" "}
+            <span className="text-primary font-bold">Global Standards.</span>
           </h2>
 
           {/* Paragraph */}
@@ -49,8 +45,8 @@ export default function CrashInvestigationsExpertise() {
             As pioneers in scientific crash investigations in India and having
             established a successful working model of in-depth accident database
             on par with other international databases, the JPRI Crash
-            Investigations Division is well positioned and equipped in delivering
-            the following services.
+            Investigations Division is well positioned and equipped to deliver
+            insights across various crash investigation services
           </p>
         </motion.div>
 
@@ -81,7 +77,6 @@ export default function CrashInvestigationsExpertise() {
                 <h3 className="text-base font-semibold text-slate-900">
                   {label}
                 </h3>
-
               </div>
             </motion.div>
           ))}

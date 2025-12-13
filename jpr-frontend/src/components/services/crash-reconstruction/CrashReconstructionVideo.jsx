@@ -64,7 +64,7 @@ export default function CrashReconstructionVideo() {
         <div className="mb-6">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">Crash Reconstruction Videos</h2>
           <p className="mt-2 text-sm text-slate-600 max-w-2xl">
-            Learn our approach to reconstruction — select a video to play inline.
+            Check these sample crash reconstruction videos to understand approach to reconstruction and crash analysis.
           </p>
         </div>
 
