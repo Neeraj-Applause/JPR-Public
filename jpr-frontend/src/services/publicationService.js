@@ -38,6 +38,11 @@ const publicationService = {
     const res = await api.delete(`/publications/${id}`);
     return res.data;
   },
+
+  async getFocusAreas() {
+  const res = await api.get("/publications/focus-areas");
+  return res.data;
+},
 };
 
 export default publicationService;

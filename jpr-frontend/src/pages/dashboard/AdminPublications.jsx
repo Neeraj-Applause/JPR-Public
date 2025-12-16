@@ -1,7 +1,7 @@
 // src/pages/dashboard/AdminPublications.jsx
 import { useEffect, useState } from "react";
 import { Filter, Plus, ArrowLeft } from "lucide-react";
-import publicationService from "../../services/publicationService";
+import publicationAdminService from "../../services/admin/publicationAdminService";
 import PublicationForm from "../../components/dashboard/publications/PublicationForm";
 import PublicationList from "../../components/dashboard/publications/PublicationList";
 
@@ -49,7 +49,7 @@ const AdminPublications = () => {
         setLoading(true);
       }
 
-      const res = await publicationService.list({
+      const res = await publicationAdminService.list({
         search,
         sort,
         order,
@@ -176,10 +176,10 @@ const AdminPublications = () => {
 
     try {
       if (editingId) {
-        await publicationService.update(editingId, payload);
+        await publicationAdminService.update(editingId, payload);
         alert("Publication updated successfully!");
       } else {
-        await publicationService.create(payload);
+        await publicationAdminService.create(payload);
         alert("Publication created successfully!");
       }
 
@@ -201,7 +201,7 @@ const AdminPublications = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this publication?")) return;
     try {
-      await publicationService.remove(id);
+      await publicationAdminService.remove(id);
       await loadPublications(pagination.page);
     } catch (err) {
       console.error(err);

@@ -16,6 +16,9 @@
   import ScrollToTop from "./components/ScrollToTop.jsx";
   import InjuryAnalysisPage from "./pages/services/InjuryAnalysisPage.jsx";
   import NewsPage from "./pages/NewsPage.jsx";
+  import PublicationsPage from "./pages/PublicationsPage.jsx";
+  import ProjectsPage from "./pages/ProjectsPage.jsx";
+  import ContactPage from "./pages/ContactPage.jsx";
 
   import AdminLogin from "./pages/dashboard/AdminLogin.jsx";
   import DashboardLayout from "./components/layout/dashboard/Layout.jsx";
@@ -23,6 +26,8 @@
   import ProtectedRoute from "./services/ProtectedRoute.jsx";
   import AdminNews from "./pages/dashboard/AdminNews.jsx";
   import AdminPublications from "./pages/dashboard/AdminPublications.jsx";
+  import AdminProjects from "./pages/dashboard/AdminProjects.jsx";
+  import AdminContactMessages from "./pages/dashboard/AdminContact.jsx";
 
 
 
@@ -45,6 +50,9 @@
       <Route path='/leadership/:slug' element={<div className='container-fluid font-inter'><LeadershipDetailPage /></div>} />
       <Route path='/services/injury-analysis' element={<div className='container-fluid font-inter'><InjuryAnalysisPage /></div>} />
       <Route path='/news' element={<div className='container-fluid font-inter'><NewsPage /></div>} />
+      <Route path='/publications' element={<div className='container-fluid font-inter'><PublicationsPage /></div>} />
+      <Route path='/projects' element={<div className='container-fluid font-inter'><ProjectsPage /></div>} />
+      <Route path='/contact' element={<div className='container-fluid font-inter'><ContactPage /></div>} />
 
       {/* Admin login without container */}
       <Route path="/admin/login" element={<AdminLogin />} />
@@ -61,9 +69,9 @@
         <Route index element={<AdminHome />} />
         <Route path="news" element={<AdminNews />} />
         <Route path="publications" element={<AdminPublications />} />
-        {/* <Route path="projects" element={<AdminProjects />} /> */}
+        <Route path="projects" element={<AdminProjects />} />
         {/* <Route path="careers" element={<AdminCareers />} /> */}
-        {/* <Route path="contact-messages" element={<AdminContactMessages />} /> */}
+        <Route path="contact-messages" element={<AdminContactMessages />} />
       </Route>
     </Routes>
       </>

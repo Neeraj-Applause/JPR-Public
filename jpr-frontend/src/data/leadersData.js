@@ -42,7 +42,7 @@ He also carries over 07 years of experience at “National Institute of Smart Go
 His continuous quest for being current in the field has seen him progressively acquiring formal qualifications in Business Administration, Cyber Security and Big Data Analytics.`
   },
   {
-    slug: "mr-murtuza-painter",
+    slug: "mr-murtuza-shabbir-painter",
     name: "Mr Murtuza Shabbir Painter",
     role: "Project Manager – RASSI Division, JPRI",
     photo: leader4,

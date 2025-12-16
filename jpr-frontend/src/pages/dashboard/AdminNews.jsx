@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Filter, Plus, ArrowLeft } from "lucide-react";
-import newsService from "../../services/newsService";
+import newsAdminService from "../../services/admin/newsAdminService";
 import NewsForm from "../../components/dashboard/news/NewsForm";
 import NewsList from "../../components/dashboard/news/NewsList";
 
@@ -50,7 +50,7 @@ const [previews, setPreviews] = useState([]);
         setLoading(true);
       }
       
-      const res = await newsService.list({
+      const res = await newsAdminService.list({
         search,
         sort,
         order,
@@ -176,10 +176,10 @@ const handleImageChange = (e) => {
 
   try {
     if (editingId) {
-      await newsService.updateMultipart(editingId, formData);
+       await newsAdminService.updateMultipart(editingId, formData);
       alert("News updated successfully!");
     } else {
-      await newsService.createMultipart(formData);
+       await newsAdminService.createMultipart(formData);
       alert("News created successfully!");
     }
 
@@ -197,7 +197,7 @@ const handleImageChange = (e) => {
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this news item?")) return;
     try {
-      await newsService.remove(id);
+      await newsAdminService.remove(id);
       await loadNews(pagination.page);
     } catch (err) {
       console.error(err);
