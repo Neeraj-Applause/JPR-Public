@@ -142,20 +142,39 @@ const PublicationForm = ({
         <div className="grid grid-cols-[minmax(0,1.6fr)_minmax(0,0.8fr)] gap-3 items-end">
           <div className="space-y-1.5">
             <label className="block text-xs font-medium text-slate-700 flex items-center gap-1.5">
-              <LinkIcon className="h-3.5 w-3.5 text-slate-500" />
-              External link / PDF URL
+              <FileText className="h-3.5 w-3.5 text-slate-500" />
+              Upload PDF
             </label>
-            <input
-              type="url"
-              name="link"
-              value={form.link}
-              onChange={onChange}
-              placeholder="https://example.com/publication.pdf"
-              className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm bg-slate-50/40 focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary/60"
-            />
-            <p className="text-[10px] text-slate-400">
-              Optional. Link to external journal page or downloadable PDF.
-            </p>
+
+<input
+  type="file"
+  name="pdf"                 // ✅ REQUIRED
+  accept="application/pdf"
+  onChange={onChange}        // ✅ let handler work normally
+  className="w-full text-xs file:mr-3 file:rounded-lg file:border-0
+    file:bg-slate-100 file:px-3 file:py-1.5
+    file:text-slate-700 hover:file:bg-slate-200"
+/>
+
+            {form.pdf && (
+              <p className="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-1 rounded">
+                ✓ Selected: {form.pdf.name} ({Math.round(form.pdf.size / 1024)} KB)
+              </p>
+            )}
+            {!form.pdf && form.existing_pdf_path && (
+              <div className="text-[10px] text-blue-600 bg-blue-50 px-2 py-1 rounded flex items-center justify-between">
+                <span>📄 Current PDF attached</span>
+                <a 
+                  href={form.existing_pdf_path} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-700 hover:underline"
+                >
+                  View
+                </a>
+              </div>
+            )}
+            <p className="text-[10px] text-slate-400">PDF only. Max 10MB. {form.existing_pdf_path ? "Upload new file to replace existing PDF." : ""}</p>
           </div>
 
           <div className="space-y-1.5">
@@ -219,5 +238,5 @@ const PublicationForm = ({
     </div>
   );
 };
-    
+
 export default PublicationForm;

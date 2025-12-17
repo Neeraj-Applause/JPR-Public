@@ -42,3 +42,50 @@
 /* 4) (Optional) import your extra CSS files AFTER Tailwind so they can override */
 @import "./styles/global.css";
 @import "./styles/variable.css";
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.45s ease-out forwards;
+}
+
+/* ===== Sleek Custom Scrollbar ===== */
+.sleek-scrollbar {
+  scrollbar-width: thin;               /* Firefox */
+  scrollbar-color: #c1c7d0 transparent; /* thumb | track */
+}
+
+/* Chrome / Edge / Safari */
+.sleek-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sleek-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sleek-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.5); /* slate-400 */
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.sleek-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.8);
+}
+
+/* Optional: hide scrollbar until hover */
+.sleek-scrollbar:not(:hover)::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.3);
+}
+
+

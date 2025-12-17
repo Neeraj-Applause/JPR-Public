@@ -1,11 +1,11 @@
 import {
   BookOpen,
   FileText,
-  CalendarDays,
   TrendingUp,
   ArrowRight,
-  Filter,
   Sparkles,
+  BarChart3,
+  Target,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import publicationService from "../../services/publicationService";
@@ -20,7 +20,13 @@ export default function PublicationsHero() {
   async function loadFocusAreas() {
     try {
       const res = await publicationService.getFocusAreas();
-      setFocusAreas(res);
+      // Calculate progress percentages for visual representation
+      const maxTotal = Math.max(...res.map(item => item.total));
+      const areasWithProgress = res.map(item => ({
+        ...item,
+        progress: (item.total / maxTotal) * 100
+      }));
+      setFocusAreas(areasWithProgress);
     } catch (err) {
       console.error("Failed to load focus areas", err);
     }
@@ -74,114 +80,67 @@ export default function PublicationsHero() {
                 studies that drive the evolution of road safety practices.
               </p>
             </div>
-
-            {/* Compact stats */}
-            <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:border-primary/50 transition-all duration-300">
-                <div className="flex items-center gap-1.5 mb-1">
-                  <TrendingUp className="h-3.5 w-3.5 text-primary" />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider">
-                    Publications
-                  </span>
-                </div>
-                <p className="text-xl font-bold">250+</p>
-                <p className="text-[10px] text-white/60">Peer-reviewed</p>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:border-primary/50 transition-all duration-300">
-                <div className="flex items-center gap-1.5 mb-1">
-                  <CalendarDays className="h-3.5 w-3.5 text-secondary" />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider">
-                    Years
-                  </span>
-                </div>
-                <p className="text-xl font-bold">15+</p>
-                <p className="text-[10px] text-white/60">Of Research</p>
-              </div>
-
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10 hover:border-primary/50 transition-all duration-300">
-                <div className="flex items-center gap-1.5 mb-1">
-                  <Filter className="h-3.5 w-3.5 text-accent" />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider">
-                    Topics
-                  </span>
-                </div>
-                <p className="text-xl font-bold">8+</p>
-                <p className="text-[10px] text-white/60">Focus Areas</p>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-wrap items-center gap-3 pt-4">
-              <button className="group bg-gradient-to-r from-primary to-secondary text-white px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 text-sm">
-                Explore Publications
-                <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-              </button>
-
-              <div className="text-sm text-white/70">
-                <span className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm rounded-lg px-3 py-2 text-xs">
-                  <FileText className="h-3.5 w-3.5" />
-                  <span>Filter by Type, Year & Topic</span>
-                </span>
-              </div>
-            </div>
           </div>
 
-          {/* Right card - Compact */}
-          <div className="relative">
+          {/* Right section - Professional & Compact */}
+          <div className="space-y-4">
+            {/* Main Analytics Card */}
             <div className="relative group">
-              {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300" />
-
-              {/* Main card */}
-              <div className="relative bg-gray-900/60 backdrop-blur-xl rounded-xl border border-white/10 p-6 shadow-xl">
-                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-primary to-secondary rounded-full p-1.5 shadow-lg">
-                  <FileText className="h-4 w-4" />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-300" />
+              
+              <div className="relative bg-white/15 backdrop-blur-xl rounded-2xl border border-white/20 p-5 shadow-xl">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-gradient-to-br from-primary to-secondary rounded-lg shadow-sm">
+                      <BarChart3 className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold text-white">Research Portfolio</h3>
+                      <p className="text-xs text-white/70">Publication analytics</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-xl font-bold text-white">
+                      {focusAreas.reduce((sum, item) => sum + item.total, 0)}
+                    </div>
+                    <div className="text-xs text-white/70 uppercase tracking-wide">Total</div>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-bold mb-1">
-                      Research Focus Areas
-                    </h3>
-                    <p className="text-white/70 text-sm">
-                      Specialized areas shaping road safety innovation
-                    </p>
-                  </div>
-                  <div className="space-y-3">
-                    {focusAreas.length === 0 ? (
-                      <p className="text-xs text-white/60">
-                        Loading research focus areas…
-                      </p>
-                    ) : (
-                      focusAreas.map((item, index) => (
-                        <div key={index} className="space-y-1.5">
-                          <div className="flex justify-between text-xs">
-                            <span>{item.title}</span>
-                            <span className="text-primary font-medium">
-                              {item.progress}%
-                            </span>
-                          </div>
-
-                          <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-700"
+                {/* Focus Areas */}
+                <div className="space-y-3">
+                  {focusAreas.length === 0 ? (
+                    <div className="flex items-center justify-center py-4">
+                      <div className="flex items-center gap-2 text-white/60">
+                        <div className="w-3 h-3 border border-white/30 border-t-white rounded-full animate-spin" />
+                        <span className="text-xs">Loading data...</span>
+                      </div>
+                    </div>
+                  ) : (
+                    focusAreas.slice(0, 3).map((item, index) => (
+                      <div key={index} className="flex items-center justify-between py-2.5 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-200 group/item">
+                        <div className="flex items-center gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-primary to-secondary group-hover/item:scale-125 transition-transform" />
+                          <span className="text-sm text-white font-medium">{item.type}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="w-14 h-1 bg-white/15 rounded-full overflow-hidden">
+                            <div 
+                              className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-700 ease-out"
                               style={{ width: `${item.progress}%` }}
                             />
                           </div>
+                          <span className="text-sm text-white font-semibold min-w-[1.5rem] text-right tabular-nums">{item.total}</span>
                         </div>
-                      ))
-                    )}
-                  </div>
-
-                  <div className="pt-3 border-t border-white/10">
-                    <p className="text-xs text-white/60">
-                      Insights from latest research
-                    </p>
-                  </div>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
       </div>

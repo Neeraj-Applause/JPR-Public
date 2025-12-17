@@ -156,17 +156,18 @@ const PublicationList = ({
                           </span>
                         </span>
                       )}
-                      {item.link && (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1 text-primary hover:underline"
-                        >
-                          <LinkIcon className="h-3 w-3" />
-                          View link
-                        </a>
-                      )}
+                     {item.pdf_path && (
+  <a
+    href={item.pdf_path}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-1 text-primary hover:underline"
+  >
+    <FileText className="h-3 w-3" />
+    View PDF
+  </a>
+)}
+
                     </div>
                   </div>
 

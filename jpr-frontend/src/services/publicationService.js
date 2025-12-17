@@ -43,6 +43,11 @@ const publicationService = {
   const res = await api.get("/publications/focus-areas");
   return res.data;
 },
+
+async getTypeCounts() {
+  const res = await api.get("/publications/type-counts");
+  return res.data;
+},
 };
 
 export default publicationService;

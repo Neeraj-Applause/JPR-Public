@@ -253,6 +253,23 @@ export default function NewsMainSection() {
     });
   };
 
+  const yearGroups = useMemo(() => {
+    const groups = {};
+
+    years.forEach((year) => {
+      const decade = Math.floor(year / 10) * 10;
+      if (!groups[decade]) groups[decade] = [];
+      groups[decade].push(year);
+    });
+
+    return Object.entries(groups)
+      .sort((a, b) => b[0] - a[0]) // latest decade first
+      .map(([decade, yrs]) => ({
+        decade,
+        years: yrs.sort((a, b) => b - a),
+      }));
+  }, [years]);
+
   const closeImageModal = () => {
     setSelectedImage(null);
   };
@@ -310,33 +327,43 @@ export default function NewsMainSection() {
         {/* Controls row */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* Year filter pills */}
-          <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
-            <span className="text-slate-500 mr-1">Filter by year:</span>
-            <button
-              type="button"
-              onClick={() => setYearFilter("all")}
-              className={`rounded-full px-3 py-1 border text-xs sm:text-sm transition ${
-                yearFilter === "all"
-                  ? "bg-primary text-white border-primary shadow-sm"
-                  : "bg-white text-slate-700 border-slate-200 hover:bg-slate-100"
-              }`}
+          <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
+            <span className="text-slate-500">Filter by year:</span>
+
+            {/* Dropdown */}
+            <select
+              value={yearFilter}
+              onChange={(e) => setYearFilter(e.target.value)}
+              className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm
+             focus:outline-none focus:ring-2 focus:ring-primary/40"
             >
-              All
-            </button>
-            {years.map((year) => (
-              <button
-                key={year}
-                type="button"
-                onClick={() => setYearFilter(year)}
-                className={`rounded-full px-3 py-1 border text-xs sm:text-sm transition ${
-                  yearFilter === year
-                    ? "bg-primary text-white border-primary shadow-sm"
-                    : "bg-white text-slate-700 border-slate-200 hover:bg-slate-100"
-                }`}
-              >
-                {year}
-              </button>
-            ))}
+              <option value="all">All years</option>
+
+              {years.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+
+            {/* Quick recent years */}
+            <div className="hidden sm:flex items-center gap-2 ml-2">
+              {years.slice(0, 3).map((year) => (
+                <button
+                  key={year}
+                  type="button"
+                  onClick={() => setYearFilter(year)}
+                  className={`rounded-full px-3 py-1 border transition
+          ${
+            String(yearFilter) === String(year)
+              ? "bg-primary text-white border-primary shadow-sm"
+              : "bg-white text-slate-700 border-slate-200 hover:bg-slate-100"
+          }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Search box */}
@@ -410,29 +437,28 @@ export default function NewsMainSection() {
             </button>
 
             {/* Navigation arrows (only show if multiple images) */}
-            {selectedImage.allImages &&
-              selectedImage.allImages.length > 1 && (
-                <>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigateImage("prev");
-                    }}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
-                  >
-                    <ChevronLeft className="h-6 w-6" />
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigateImage("next");
-                    }}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
-                  >
-                    <ChevronRight className="h-6 w-6" />
-                  </button>
-                </>
-              )}
+            {selectedImage.allImages && selectedImage.allImages.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage("prev");
+                  }}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigateImage("next");
+                  }}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </>
+            )}
 
             <img
               src={selectedImage.url}

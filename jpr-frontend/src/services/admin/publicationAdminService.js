@@ -12,15 +12,19 @@ const publicationAdminService = {
     return res.data;
   },
 
-  async create(payload) {
-    const res = await api.post("/admin/publications", payload);
-    return res.data;
-  },
+async create(data) {
+  const res = await api.post("/admin/publications", data, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return res.data;
+},
 
-  async update(id, payload) {
-    const res = await api.put(`/admin/publications/${id}`, payload);
-    return res.data;
-  },
+async update(id, data) {
+  const res = await api.put(`/admin/publications/${id}`, data, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return res.data;
+},
 
   async remove(id) {
     const res = await api.delete(`/admin/publications/${id}`);

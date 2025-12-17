@@ -2,7 +2,7 @@ import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
 export default function PublicationCard({ publication }) {
-  const { type, title, highlight, pub_date, authors, abstract, link } =
+  const { type, title, highlight, pub_date, authors, abstract, link, pdf_path } =
     publication;
 
   const [expanded, setExpanded] = useState(false);
@@ -17,7 +17,7 @@ export default function PublicationCard({ publication }) {
   };
 
   return (
-    <article className="group relative flex gap-6 py-6">
+    <article className="group relative flex gap-6 py-2">
       {/* Vertical strip */}
       <div className="relative">
         <span className="absolute left-0 top-1 h-full w-[3px] rounded-full bg-primary transition-all group-hover:bg-secondary" />
@@ -27,7 +27,7 @@ export default function PublicationCard({ publication }) {
       <div className="flex-1 space-y-3">
         {/* Type + date */}
         <div className="flex flex-wrap items-center gap-3 text-xs">
-          <span className="rounded-full bg-secondary/10 px-3 py-1 font-semibold uppercase tracking-wide text-secondary">
+          <span className="rounded-full bg-secondary/10 px-2 py-1 font-semibold uppercase tracking-wide text-secondary">
             {type}
           </span>
           {pub_date && (
@@ -36,16 +36,16 @@ export default function PublicationCard({ publication }) {
         </div>
 
         {/* Title */}
-        <h2 className="text-xl font-semibold leading-snug text-slate-900 group-hover:text-primary transition-colors">
+        <h2 className="text-xl font-semibold leading-snug text-secondary group-hover:text-primary transition-colors">
           {title}
         </h2>
 
         {/* Authors */}
-        {authors && <p className="text-sm text-slate-600">{authors}</p>}
+        {authors && <p className="text-sm text-secondary-600">{authors}</p>}
 
         {/* Highlight */}
         {highlight && (
-          <p className="text-sm font-medium text-slate-700">{highlight}</p>
+          <p className="text-sm font-medium text-secondary-700">{highlight}</p>
         )}
 
         {/* Abstract */}
@@ -75,14 +75,14 @@ export default function PublicationCard({ publication }) {
         </div>
 
         {/* CTA */}
-        {link && (
+        {(pdf_path || link) && (
           <a
-            href={link}
+            href={pdf_path || link}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
-            View publication
+            {pdf_path ? "View PDF" : "View publication"}
             <ExternalLink className="h-4 w-4" />
           </a>
         )}
