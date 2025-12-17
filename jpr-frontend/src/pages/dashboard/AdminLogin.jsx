@@ -5,8 +5,9 @@ import adminBg from "../../assets/dashboard/login-bg.jpg";
 import Logo from "../../assets/logos/logo.png";
 
 const AdminLogin = () => {
-  const [email, setEmail] = useState("admin@example.com");
-  const [password, setPassword] = useState("AdminPassword123");
+
+  const [email, setEmail] = useState("admin@jpresearch.in");
+  const [password, setPassword] = useState("Admin@123");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
