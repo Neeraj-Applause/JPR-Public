@@ -1,7 +1,7 @@
 // src/components/services/CrashInvestigationCards.jsx
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import image1 from "../../../assets/images/services/crash-cards/data-collection.jpg";
+import image1 from "../../../assets/images/services/crash-cards/data-collection.png";
 import image2 from "../../../assets/images/services/crash-cards/crash-reconstruction.jpg";
 import image3 from "../../../assets/images/services/crash-cards/injury-analysis.jpg";
 
