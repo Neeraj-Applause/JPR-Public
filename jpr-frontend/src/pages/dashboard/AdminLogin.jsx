@@ -152,7 +152,7 @@ const AdminLogin = () => {
             </p>
           </form>
         </div>
-      </div>    
+      </div>
     </div>
   );
 };
