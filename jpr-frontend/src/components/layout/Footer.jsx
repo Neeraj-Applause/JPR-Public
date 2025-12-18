@@ -25,14 +25,14 @@ export default function Footer() {
           "
         >
           {[
-            ["About Us", "/"],
+            ["About Us", "/about"],
             ["Services", "/"],
             ["Publications", "/"],
-            ["News & Events", "/"],
-            ["Projects", "/"],
-            ["Employee Login", "/"],
-            ["Contact Us", "/"],
-            ["Privacy Policy", "/"],
+            ["News & Events", "/news"],
+            ["Projects", "/projects"],
+            ["Employee Login", "/employee-login"],
+            ["Contact Us", "/contact"],
+            ["Privacy Policy", "/privacy-policy"],
           ].map(([label, link]) => (
             <a
               key={label}
