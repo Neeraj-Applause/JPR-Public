@@ -99,7 +99,7 @@ function NewsCard({ item, index, onImageClick }) {
 
           {/* Full content */}
           {mainText && (
-            <p className="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed text-justify">
               {mainText}
             </p>
           )}

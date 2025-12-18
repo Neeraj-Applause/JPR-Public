@@ -49,7 +49,7 @@ export default function PublicationCard({ publication }) {
         )}
 
         {/* Abstract */}
-        <div className="max-w-3xl text-slate-700 text-sm leading-relaxed">
+        <div className="max-w-3xl text-slate-700 text-sm leading-relaxed text-justify">
           <p>
             {expanded
               ? abstract
