@@ -8,7 +8,6 @@ import e3image1 from "../../assets/images/events/event3.jpg";
 import e3image2 from "../../assets/images/events/event31.jpg";
 import { useNavigate } from "react-router-dom";
 
-
 const events = [
   {
     id: 1,
@@ -17,10 +16,7 @@ const events = [
     location: "Indianapolis, USA",
     tag: "Conference",
     icon: CalendarDays,
-    images: [
-      e1image1,
-      e1image2,
-    ],
+    images: [e1image1, e1image2],
     description:
       "JPRI represented RASSI at the 69th AAAM Conference held in Indianapolis, USA, from 7–10 October 2025. Ms. Jeya Padmanaban (President & Founder) and Mr. Pradeep Jaswani (COO, JPRI) attended. The LMIC panel, represented by JPRI/Pradeep, highlighted the work being done under the RASSI initiative, including methodologies related to crash investigation, reconstruction, injury analysis, and the use of RASSI data by members and policymakers (BNCAP).",
   },
@@ -31,11 +27,9 @@ const events = [
     location: "Srinagar, India",
     tag: "Training",
     icon: CalendarDays,
-    images: [
-      e2image1,
-    ],
+    images: [e2image1],
     description:
-      'Mr. Sanjay Baladaniya, Senior Automotive Injury Analyst at JP Research India Pvt. Ltd. (JPRI), conducted a training session on “Scientific Crash Investigations” in Srinagar on 26 September 2025. Organized by the Asian Institute of Transport Development (AITD), New Delhi, the training emphasized accurate crash data collection, on-scene investigation methodology, vehicle speed estimation, and classification of crash causation factors and injuries using the Haddon Matrix.',
+      "Mr. Sanjay Baladaniya, Senior Automotive Injury Analyst at JP Research India Pvt. Ltd. (JPRI), conducted a training session on “Scientific Crash Investigations” in Srinagar on 26 September 2025. Organized by the Asian Institute of Transport Development (AITD), New Delhi, the training emphasized accurate crash data collection, on-scene investigation methodology, vehicle speed estimation, and classification of crash causation factors and injuries using the Haddon Matrix.",
   },
   {
     id: 3,
@@ -45,10 +39,7 @@ const events = [
     location: "Bengaluru, India",
     tag: "Awareness Program",
     icon: MapPin,
-    images: [
-      e3image1,
-      e3image2,
-    ],
+    images: [e3image1, e3image2],
     description:
       "Mr. Sanjay Baladaniya, Senior Automotive Injury Analyst at JPRI, conducted a series of road safety awareness sessions for school children and bus drivers in Bengaluru from 18–23 August 2025. The week-long program was organized by the Safety Research Foundation as part of Bosch’s BRACE (Road Safety Awareness and Community Engagement) initiative. Sessions were conducted across multiple schools, focusing on safe road-crossing practices, correct use of helmets and seat belts, and the impact of vision obstruction in heavy vehicles.",
   },
@@ -69,7 +60,7 @@ function EventCard({ event }) {
 
   const currentImage = event.images[activeImageIndex];
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -182,11 +173,9 @@ function EventCard({ event }) {
   );
 }
 
-
 export default function ConferencesEventsSection() {
   return (
-   <section className="py-12 text-white relative bg-primary">
-
+    <section className="py-12 text-white relative bg-primary">
       {/* Section Title */}
       <div className="max-w-6xl mx-auto px-4 text-center mb-12">
         <motion.h2
@@ -197,8 +186,8 @@ export default function ConferencesEventsSection() {
           Conferences & Events
         </motion.h2>
         <div className="mt-3 mb-4 flex justify-center">
-            <span className="h-[3px] w-24 bg-white rounded-full" />
-          </div>
+          <span className="h-[3px] w-24 bg-white rounded-full" />
+        </div>
       </div>
 
       {/* Cards Grid */}
@@ -210,15 +199,14 @@ export default function ConferencesEventsSection() {
 
       {/* CTA Button */}
       <div className="text-center mt-14">
-      <motion.button
-  whileHover={{ scale: 1.05, y: -2 }}
-  whileTap={{ scale: 0.97 }}
-  onClick={() => navigate("/news")}
-  className="px-7 py-3 bg-white text-secondary cursor-pointer rounded-xl hover:bg-secondary/70 transition hover:text-white"
->
-  View All Events
-</motion.button>
-
+        <motion.button
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => navigate("/news")}
+          className="px-7 py-3 bg-white text-secondary cursor-pointer rounded-xl hover:bg-secondary/70 transition hover:text-white"
+        >
+          View All Events
+        </motion.button>
       </div>
     </section>
   );

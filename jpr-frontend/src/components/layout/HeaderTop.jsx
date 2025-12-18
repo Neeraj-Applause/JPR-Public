@@ -25,7 +25,6 @@ const menuItems = [
   { label: "News", href: "/news" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
-  { label: "Careers", href: "/careers" },
   { label: "Employee Login", href: "/admin/login" },
 ];
 
@@ -66,7 +65,7 @@ export default function HeaderTop() {
 
         {/* RIGHT red wedge - solid color */}
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 w-[230px]"
+          className="pointer-events-none absolute inset-y-0 right-0 w-[250px]"
           style={{
             clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0 100%)",
             backgroundColor: "#9e1b32",
@@ -85,118 +84,120 @@ export default function HeaderTop() {
             <img
               src={JPLogo}
               alt="JP Research"
-              className="h-8 sm:h-10 md:h-14 w-auto object-contain"
+              className="h-10 sm:h-10 md:h-16 lg:h-16 w-auto object-contain"
             />
           </button>
 
-{/* CENTER: Desktop navigation */}
-<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:flex">
-  <nav className="flex items-center gap-6" aria-label="Main navigation">
-    {menuItems.map((item) => {
-      const active = isItemActive(item);
-      const hasChildren = !!item.children?.length;
+          {/* CENTER: Desktop navigation */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:flex">
+            <nav
+              className="flex items-center gap-6"
+              aria-label="Main navigation"
+            >
+              {menuItems.map((item) => {
+                const active = isItemActive(item);
+                const hasChildren = !!item.children?.length;
 
-      if (!hasChildren) {
-        return (
-          <button
-            key={item.label}
-            onClick={() => goTo(item.href)}
-            onMouseEnter={() => setHoveredItem(item.label)}
-            onMouseLeave={() => setHoveredItem(null)}
-            className={`relative px-1 py-1.5 text-[14px] tracking-wide whitespace-nowrap transition-all duration-200
+                if (!hasChildren) {
+                  return (
+                    <button
+                      key={item.label}
+                      onClick={() => goTo(item.href)}
+                      onMouseEnter={() => setHoveredItem(item.label)}
+                      onMouseLeave={() => setHoveredItem(null)}
+                      className={`relative px-1 py-1.5 text-[14px] tracking-wide whitespace-nowrap transition-all duration-200
               cursor-pointer bg-transparent
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
               ${active ? "text-white" : "text-slate-100"}`}
-          >
-            {item.label}
+                    >
+                      {item.label}
 
-            {/* Underline: animated from left on hover / active */}
-            <span
-              className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary origin-left
+                      {/* Underline: animated from left on hover / active */}
+                      <span
+                        className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary origin-left
                 transition-transform duration-200
                 ${
                   active || hoveredItem === item.label
                     ? "scale-x-100"
                     : "scale-x-0"
                 }`}
-            />
-          </button>
-        );
-      }
+                      />
+                    </button>
+                  );
+                }
 
-      // SERVICES DROPDOWN (desktop)
-      return (
-        <div
-          key={item.label}
-          className="relative"
-          onMouseEnter={() => setDesktopServicesOpen(true)}
-          onMouseLeave={() => setDesktopServicesOpen(false)}
-        >
-          <button
-            onClick={() => setDesktopServicesOpen((prev) => !prev)}
-            onMouseEnter={() => setHoveredItem(item.label)}
-            onMouseLeave={() => setHoveredItem(null)}
-            className={`relative flex items-center gap-1 px-1 py-1.5 text-[14px] tracking-wide whitespace-nowrap cursor-pointer transition-all duration-200
+                // SERVICES DROPDOWN (desktop)
+                return (
+                  <div
+                    key={item.label}
+                    className="relative"
+                    onMouseEnter={() => setDesktopServicesOpen(true)}
+                    onMouseLeave={() => setDesktopServicesOpen(false)}
+                  >
+                    <button
+                      onClick={() => setDesktopServicesOpen((prev) => !prev)}
+                      onMouseEnter={() => setHoveredItem(item.label)}
+                      onMouseLeave={() => setHoveredItem(null)}
+                      className={`relative flex items-center gap-1 px-1 py-1.5 text-[14px] tracking-wide whitespace-nowrap cursor-pointer transition-all duration-200
               bg-transparent
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40
               ${active ? "text-white" : "text-slate-100"}`}
-            aria-haspopup="true"
-            aria-expanded={desktopServicesOpen}
-          >
-            <span>{item.label}</span>
-            <ChevronDown
-              className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                desktopServicesOpen ? "rotate-180" : ""
-              }`}
-            />
+                      aria-haspopup="true"
+                      aria-expanded={desktopServicesOpen}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                          desktopServicesOpen ? "rotate-180" : ""
+                        }`}
+                      />
 
-            {/* Underline: animated from left on hover / active */}
-            <span
-              className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary origin-left
+                      {/* Underline: animated from left on hover / active */}
+                      <span
+                        className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary origin-left
                 transition-transform duration-200
                 ${
                   active || hoveredItem === item.label
                     ? "scale-x-100"
                     : "scale-x-0"
                 }`}
-            />
-          </button>
+                      />
+                    </button>
 
-          {/* Dropdown (unchanged) */}
-          <div
-            className={`absolute left-0 top-full z-50 min-w-[220px] max-w-xs origin-top-left rounded-xl border border-slate-700 bg-secondary px-2 py-2 shadow-xl shadow-black/40 backdrop-blur-xl transition-all duration-200
+                    {/* Dropdown (unchanged) */}
+                    <div
+                      className={`absolute left-0 top-full z-50 min-w-[220px] max-w-xs origin-top-left rounded-xl border border-slate-700 bg-secondary px-2 py-2 shadow-xl shadow-black/40 backdrop-blur-xl transition-all duration-200
               ${
                 desktopServicesOpen
                   ? "pointer-events-auto translate-y-0 opacity-100"
                   : "pointer-events-none -translate-y-1 opacity-0"
               }`}
-          >
-            <div className="flex flex-col gap-1">
-              {item.children.map((child) => {
-                const childActive = location.pathname === child.href;
-                return (
-                  <button
-                    key={child.label}
-                    onClick={() => goTo(child.href)}
-                    className={`group flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-[14px] font-medium transition-all duration-200
+                    >
+                      <div className="flex flex-col gap-1">
+                        {item.children.map((child) => {
+                          const childActive = location.pathname === child.href;
+                          return (
+                            <button
+                              key={child.label}
+                              onClick={() => goTo(child.href)}
+                              className={`group flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-[14px] font-medium transition-all duration-200
                       ${
                         childActive
                           ? "text-primary"
                           : "text-slate-100 hover:text-primary hover:bg-secondary"
                       }`}
-                  >
-                    {child.label}
-                  </button>
+                            >
+                              {child.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 );
               })}
-            </div>
+            </nav>
           </div>
-        </div>
-      );
-    })}
-  </nav>
-</div>
-
 
           {/* RIGHT: Rassi logo + Mobile menu toggle */}
           <div className="relative z-10 flex items-center gap-2 sm:gap-3">
@@ -209,7 +210,7 @@ export default function HeaderTop() {
               <img
                 src={RassiLogo}
                 alt="RASSI"
-                className="h-6 sm:h-8 md:h-12 w-auto object-contain"
+                className="h-8 sm:h-8 md:h-14 w-auto object-contain"
               />
             </a>
 

@@ -33,7 +33,7 @@ export default function AboutSection() {
                 us through the contact given below for any queries.{" "}
               </p>
 
-              <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
+              {/* <p className="text-sm sm:text-base md:text-[15px] text-[#333] leading-relaxed [text-align:justify]">
                 JP Research India is a wholly owned subsidiary of JP Research
                 Inc., a California, USA based company and can be reached at{" "}
                 <a
@@ -45,7 +45,7 @@ export default function AboutSection() {
                   jpresearch.com
                 </a>
                 .
-              </p>
+              </p> */}
 
               <button
                 onClick={() => navigate("/about")}
