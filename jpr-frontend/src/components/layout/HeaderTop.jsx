@@ -25,7 +25,7 @@ const menuItems = [
   { label: "News", href: "/news" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
-  { label: "Employee Login", href: "/admin/login" },
+  { label: "Employee Login", href: "/" },
 ];
 
 export default function HeaderTop() {
