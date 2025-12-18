@@ -161,18 +161,6 @@ function NewsCard({ item, index, onImageClick }) {
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
-
-                  {/* Dots indicator */}
-                  <div className="absolute bottom-3 right-3 flex gap-1">
-                    {imagesArray.map((_, dotIndex) => (
-                      <span
-                        key={dotIndex}
-                        className={`h-1.5 w-1.5 rounded-full bg-white/50 ${
-                          dotIndex === activeIndex ? "scale-110 bg-white" : ""
-                        } transition-all`}
-                      />
-                    ))}
-                  </div>
                 </>
               )}
             </div>
@@ -463,7 +451,7 @@ export default function NewsMainSection() {
             <img
               src={selectedImage.url}
               alt={selectedImage.title}
-              className="max-w-full max-h-full object-contain rounded-lg"
+              className="max-w-full max-h-full object-contain rounded-md"
               onClick={(e) => e.stopPropagation()}
             />
 
