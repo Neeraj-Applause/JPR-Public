@@ -6,6 +6,8 @@ import e1image2 from "../../assets/images/events/event11.jpg";
 import e2image1 from "../../assets/images/events/event2.png";
 import e3image1 from "../../assets/images/events/event3.jpg";
 import e3image2 from "../../assets/images/events/event31.jpg";
+import { useNavigate } from "react-router-dom";
+
 
 const events = [
   {
@@ -66,6 +68,8 @@ function EventCard({ event }) {
   };
 
   const currentImage = event.images[activeImageIndex];
+
+   const navigate = useNavigate();
 
   return (
     <motion.div
@@ -206,13 +210,15 @@ export default function ConferencesEventsSection() {
 
       {/* CTA Button */}
       <div className="text-center mt-14">
-        <motion.button
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.97 }}
-          className="px-7 py-3 bg-white text-secondary cursor-pointer rounded-xl hover:bg-secondary/70 transition hover:text-white"
-        >
-          View All Events
-        </motion.button>
+      <motion.button
+  whileHover={{ scale: 1.05, y: -2 }}
+  whileTap={{ scale: 0.97 }}
+  onClick={() => navigate("/news")}
+  className="px-7 py-3 bg-white text-secondary cursor-pointer rounded-xl hover:bg-secondary/70 transition hover:text-white"
+>
+  View All Events
+</motion.button>
+
       </div>
     </section>
   );
