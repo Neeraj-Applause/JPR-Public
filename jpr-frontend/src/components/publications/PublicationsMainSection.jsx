@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import publicationService from "../../services/publicationService";
+import { getPublications, getPublicationTypeCounts } from "../../services/dataService";
 import PublicationCard from "./PublicationCard";
 
 const TYPES = ["All", "Technical Paper", "Research Report", "Presentation"];
@@ -19,7 +19,7 @@ export default function PublicationsMainSection() {
 
   async function loadCounts() {
     try {
-      const data = await publicationService.getTypeCounts();
+      const data = await getPublicationTypeCounts();
       setTypeCounts(data);
     } catch (err) {
       console.error("Error loading type counts", err);
@@ -35,7 +35,7 @@ export default function PublicationsMainSection() {
   async function loadPublications() {
     setLoading(true);
     try {
-      const res = await publicationService.list({
+      const res = await getPublications({
         published: 1,
         sort: "pub_date",
         order: "desc",

@@ -1,0 +1,37 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f8fafc"/>
+  <rect x="50" y="50" width="700" height="500" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- Crash scene illustration -->
+  <rect x="150" y="200" width="120" height="60" fill="#ef4444" opacity="0.3" rx="8"/>
+  <rect x="300" y="220" width="100" height="50" fill="#3b82f6" opacity="0.3" rx="6"/>
+  <rect x="450" y="180" width="150" height="80" fill="#f59e0b" opacity="0.2" rx="10"/>
+  
+  <!-- Investigation markers -->
+  <circle cx="200" cy="300" r="8" fill="#dc2626"/>
+  <text x="200" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#dc2626">A</text>
+  
+  <circle cx="350" cy="320" r="8" fill="#dc2626"/>
+  <text x="350" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#dc2626">B</text>
+  
+  <circle cx="500" cy="290" r="8" fill="#dc2626"/>
+  <text x="500" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#dc2626">C</text>
+  
+  <!-- Measurement lines -->
+  <line x1="200" y1="350" x2="350" y2="350" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="275" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">45.2m</text>
+  
+  <text x="400" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#374151">
+    Crash Investigation
+  </text>
+  <text x="400" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    Forensic Analysis & Reconstruction
+  </text>
+  
+  <text x="400" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+    Multi-Vehicle Collision Analysis
+  </text>
+  <text x="400" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+    Evidence Collection & Documentation
+  </text>
+</svg>

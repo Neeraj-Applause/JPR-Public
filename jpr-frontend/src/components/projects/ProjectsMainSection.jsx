@@ -1,13 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import projectService from "../../services/projectService";
+import { getProjects, getProjectsByCategory } from "../../services/dataService";
 import ProjectCard from "./ProjectCard";
 
 const CATEGORIES = [
   "All",
   "Crash Investigation",
   "Data Analytics",
-  "Road Safety Engineering",
-  "Training",
 ];
 
 export default function ProjectsMainSection() {
@@ -26,10 +24,9 @@ export default function ProjectsMainSection() {
   async function loadProjects() {
     setLoading(true);
     try {
-      const res =
-        activeCategory === "All"
-          ? await projectService.list({ published: 1 })
-          : await projectService.getByCategory(activeCategory);
+      const res = activeCategory === "All"
+        ? await getProjects({ published: 1 })
+        : await getProjectsByCategory(activeCategory);
 
       setItems(res.data || res);
     } catch (err) {

@@ -8,7 +8,7 @@ import {
   Target,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import publicationService from "../../services/publicationService";
+import { getPublicationFocusAreas } from "../../services/dataService";
 
 export default function PublicationsHero() {
   const [focusAreas, setFocusAreas] = useState([]);
@@ -19,7 +19,7 @@ export default function PublicationsHero() {
 
   async function loadFocusAreas() {
     try {
-      const res = await publicationService.getFocusAreas();
+      const res = await getPublicationFocusAreas();
       // Calculate progress percentages for visual representation
       const maxTotal = Math.max(...res.map(item => item.total));
       const areasWithProgress = res.map(item => ({

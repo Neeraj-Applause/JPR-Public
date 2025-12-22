@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Send, Loader2, Mail, User, MessageSquare } from "lucide-react";
-import contactService from "../../services/contactService";
+import { submitContactForm } from "../../services/dataService";
 
 const emptyForm = {
   name: "",
@@ -25,7 +25,7 @@ export default function ContactMainSection() {
     setSuccess(false);
 
     try {
-      await contactService.submit(form);
+      await submitContactForm(form);
       setSuccess(true);
       setForm(emptyForm);
     } catch (err) {

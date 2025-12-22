@@ -9,7 +9,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import newsService from "../../services/newsService";
+import { getNews } from "../../services/dataService";
 
 function formatDate(dateStr) {
   if (!dateStr) return "Date not specified";
@@ -183,7 +183,7 @@ export default function NewsMainSection() {
     try {
       setLoading(true);
       setError("");
-      const res = await newsService.list({
+      const res = await getNews({
         sort: "event_date",
         order: "desc",
         page: 1,

@@ -1,0 +1,39 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f1f5f9"/>
+  <rect x="50" y="50" width="700" height="500" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- 3D scanning equipment illustration -->
+  <rect x="300" y="250" width="40" height="80" fill="#1f2937" rx="4"/>
+  <rect x="310" y="240" width="20" height="20" fill="#3b82f6" rx="2"/>
+  <circle cx="320" cy="250" r="3" fill="#ef4444"/>
+  
+  <!-- Scan lines -->
+  <line x1="340" y1="260" x2="500" y2="200" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  <line x1="340" y1="270" x2="480" y2="220" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  <line x1="340" y1="280" x2="460" y2="240" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  <line x1="340" y1="290" x2="520" y2="260" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Vehicle outline -->
+  <rect x="450" y="200" width="100" height="50" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="3,3"/>
+  
+  <!-- Data points -->
+  <circle cx="460" cy="210" r="2" fill="#10b981"/>
+  <circle cx="480" cy="220" r="2" fill="#10b981"/>
+  <circle cx="500" cy="230" r="2" fill="#10b981"/>
+  <circle cx="520" cy="240" r="2" fill="#10b981"/>
+  <circle cx="540" cy="250" r="2" fill="#10b981"/>
+  
+  <text x="400" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#374151">
+    3D Laser Scanning
+  </text>
+  <text x="400" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7280">
+    Advanced Documentation Technology
+  </text>
+  
+  <text x="400" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+    Precise Scene Documentation
+  </text>
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#9ca3af">
+    Millimeter Accuracy Measurements
+  </text>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f1f5f9"/>
+  <rect x="50" y="50" width="700" height="500" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="400" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#64748b">
+    Conference Presentation
+  </text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">
+    International Road Safety Conference 2024
+  </text>
+  <circle cx="400" cy="380" r="30" fill="#3b82f6" opacity="0.3"/>
+  <text x="400" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">
+    JPR
+  </text>
+</svg>

@@ -1,0 +1,16 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f9fafb"/>
+  <rect x="50" y="50" width="700" height="500" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="400" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#64748b">
+    Annual Safety Report
+  </text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8">
+    2023 Analysis Results
+  </text>
+  <rect x="350" y="350" width="100" height="8" fill="#8b5cf6" opacity="0.6" rx="4"/>
+  <rect x="350" y="365" width="80" height="8" fill="#8b5cf6" opacity="0.4" rx="4"/>
+  <rect x="350" y="380" width="120" height="8" fill="#8b5cf6" opacity="0.5" rx="4"/>
+  <text x="400" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7c3aed">
+    Report
+  </text>
+</svg>
