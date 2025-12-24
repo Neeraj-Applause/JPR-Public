@@ -48,9 +48,7 @@ export default function CrashInvestigationsHero() {
 
 {/* Short caption */}
 <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
-  In-depth crash investigations and analysis to identify contributing
-  factors across pre-, during-, and post-crash phases, using the
-  scientifically acknowledged Haddon Matrix approach.
+  In depth crash investigations and analysis to identify contributing factors for pre, during and post-crash using scientifically acknowledged ‘Haddon matrix’ approach.
 </p>
 
         </motion.div>
