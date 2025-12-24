@@ -36,7 +36,7 @@ export default function DataAnalyticsAdvisory() {
             </h2>
 
             <p className="mt-4 text-slate-700 text-base leading-relaxed max-w-3xl">
-Equipped with data on nearly 4,000 accidents across India, we are data-wealthy and well experienced in helping the government agencies and automotive manufacturers and equipment manufacturers with insightful information on addressing questions like, “Is my product useful for the market?”, “Will this technology help in addressing the intended problem?”, “What are the top-ranking problems in road safety to be addressed?”            </p>
+Equipped with data on nearly 9000+ accidents across India, we are data-wealthy and well experienced in helping the government agencies and automotive manufacturers and equipment manufacturers with insightful information on addressing questions like, “Is my product useful for the market?”, “Will this technology help in addressing the intended problem?”, “What are the top-ranking problems in road safety to be addressed?”            </p>
 
             <ul className="mt-6 space-y-3 max-w-3xl">
               <li className="flex items-start gap-3 text-secondary">

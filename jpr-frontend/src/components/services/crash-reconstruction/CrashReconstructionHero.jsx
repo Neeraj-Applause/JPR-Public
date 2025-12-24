@@ -71,7 +71,7 @@ export default function CrashReconstructionHero() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
+<p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
             Accurate reconstructions using 2D/3D simulations, vehicle dynamics and evidence-based modelling for deeper crash understanding.
           </p>
         </motion.div>

@@ -72,7 +72,8 @@ export default function DataCollectionHero() {
           </h1>
 
           {/* Short caption */}
-          <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
+        <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+
             Accurate & reproducible data collection is the foundation of
             credible crash investigation and safety interventions. Our
             methodology combines careful scene examinations, vehicle

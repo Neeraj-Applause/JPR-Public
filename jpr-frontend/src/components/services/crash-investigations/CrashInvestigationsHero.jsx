@@ -24,7 +24,6 @@ export default function CrashInvestigationsHero() {
         <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
       </div>
 
-
       {/* Content bottom-aligned */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
         <motion.div
@@ -39,18 +38,21 @@ export default function CrashInvestigationsHero() {
             Crash Investigations
           </div>
 
-          {/* Main heading at bottom */}
-          <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
-            <span className="bg-primary bg-clip-text text-transparent">
-              Crash investigations
-            </span>{" "}
-            for safer Indian roads.
-          </h1>
+        {/* Main heading at bottom */}
+<h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
+  <span className="bg-primary bg-clip-text text-transparent">
+    Crash investigations
+  </span>{" "}
+  for safer Indian roads.
+</h1>
 
-          {/* Short caption */}
-          <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
-           In-depth crash investigations and analysis to identify all accident contributors and estimate root causes to get a holistic view of the accident.
-          </p>
+{/* Short caption */}
+<p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+  In-depth crash investigations and analysis to identify contributing
+  factors across pre-, during-, and post-crash phases, using the
+  scientifically acknowledged Haddon Matrix approach.
+</p>
+
         </motion.div>
       </div>
     </section>

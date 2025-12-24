@@ -6,9 +6,9 @@ import image3 from "../../assets/images/history/2010.png";
 import image4 from "../../assets/images/history/today.png";
 import crash from "../../assets/images/history/crash.jpg";
 import group from "../../assets/images/history/group.JPG";
-import image5 from "../../assets/images/history/2011-2016.png";
 import image6 from "../../assets/images/history/2016-onwards.png";
 import map from "../../assets/images/history/map.png";
+import image7 from "../../assets/images/history/2011-2016.jpeg";
 
 const milestones = [
   {
@@ -37,13 +37,13 @@ const milestones = [
     title: "Furthering Indian Road Safety Research Through Strategic Expansion",
     description:
       "Through the RASSI project, JPRI expands its in-depth crash investigation and road safety research activities to different regions of the country including Maharashtra, Gujarat, West Bengal, and Rajasthan. Road safety research extended to different road scenarios such as Expressways & Urban regions in both Metro and Tier 1 cities.",
-    image: map,
+    image: image7,
   },
   {
     year: "2016 onwards",
     title: "Expanding Services and Community Strengthening",
     description:
-      "Using the niche expertise developed through years of researching thousands of Indian road crashes, JPRI expanded its services to other domains including special crash investigations for government & non-government agencies, road safety engineering, and capacity building sessions for police & other government officials on in-depth crash investigations.",
+      "Using the niche experience developed through the years of on-site research for a large number of Indian road crashes, JPRI expanded its services to other domains including special crash investigations for government & non-government agencies, road safety engineering, and capacity building sessions for police & other government officials on in-depth crash investigations.",
     image: image6,
   },
   {

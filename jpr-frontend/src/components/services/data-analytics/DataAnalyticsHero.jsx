@@ -71,7 +71,7 @@ export default function DataAnalyticsHero() {
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base text-slate-200/90 max-w-md">
+         <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
             Turning over 9,000 in-depth crash cases into insights that guide manufacturers, authorities, and safety stakeholders.
           </p>
         </motion.div>

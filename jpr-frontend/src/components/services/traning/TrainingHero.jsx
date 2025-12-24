@@ -72,9 +72,8 @@ export default function TrainingHero() {
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base text-slate-200/90 max-w-lg">
-        The training division focuses on creating well trained professionals in the field of road safety, providing training on accident data collection, crash reconstruction, injury analysis and data analysis.
-          </p>
+<p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+JPRI supports training for Police & Government officials (RTO, Transport Department etc) towards capacity building in the domain of road safety. Real life examples and situations are part of intensive training modules delivered by well qualified and expert researchers of JPRI.          </p>
         </motion.div>
       </div>
     </section>
