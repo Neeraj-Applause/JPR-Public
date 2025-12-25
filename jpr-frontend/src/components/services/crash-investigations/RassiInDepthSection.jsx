@@ -97,12 +97,12 @@ export default function RassiInDepthSection() {
               Learn more about RASSI and its activities, members and achievements.
             </p>
             <a
-              href="https://www.rassi.org.in"
+              href="https://www.rassi.in"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-secondary bg-white text-primary px-4 py-2 text-sm font-medium transition hover:border-primary/40 hover:bg-primary/50 hover:text-secondary"
             >
-              <span>Visit www.rassi.org.in</span>
+              <span>Visit www.rassi.in</span>
               <ExternalLink className="h-4 w-4" />
             </a>
 
