@@ -48,19 +48,11 @@ export default function RoadSafetySummary({ illustrationSrc = null }) {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
-              Safety of the road users is a fundamental right.
+              Promoting Safer Road Infrastructure
             </h2>
 
-            <p className="text-slate-700 text-base md:text-lg leading-relaxed">
-              Safety of the road users is to be considered fundamental right
-              from design stage of road construction. Once built, existing roads
-              require periodic assessments and upgrades to upkeep the safety
-              record. JPRI’s approaches the safety assessments backed by a
-              profound understanding of the influence of underlying three
-              factors of road ecosystem: <strong>Human</strong>,{" "}
-              <strong>Vehicle</strong> and <strong>Infrastructure</strong>. The
-              team includes qualified Transport Engineers and Planners advised
-              by international experts.
+            <p className="text-slate-700 text-base md:text-lg leading-relaxed text-justify">
+             Once built, existing road infrastructure requires periodic assessments and upgrades to upkeep the safety record. JPRI’s approaches the safety assessments backed by a profound understanding of road crashes and the influence of underlying three factors of road ecosystem: Human, Vehicle, and Infrastructure. JPRI’s Road Safety Engineering team includes qualified Transport Engineers and Auditors advised by international experts.
             </p>
 
             <div className="mt-6 flex items-center gap-4">
@@ -71,13 +63,6 @@ export default function RoadSafetySummary({ illustrationSrc = null }) {
                 Explore services
                 <ArrowRight className="w-4 h-4" />
               </button>
-
-              <a
-                href="#contact"
-                className="text-sm text-primary/90 font-medium hover:underline"
-              >
-                Contact our experts
-              </a>
             </div>
           </div>
 

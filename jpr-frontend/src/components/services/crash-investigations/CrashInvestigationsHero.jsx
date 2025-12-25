@@ -38,19 +38,20 @@ export default function CrashInvestigationsHero() {
             Crash Investigations
           </div>
 
-        {/* Main heading at bottom */}
-<h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
-  <span className="bg-primary bg-clip-text text-transparent">
-    Crash investigations
-  </span>{" "}
-  for safer Indian roads.
-</h1>
+          {/* Main heading at bottom */}
+          <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
+            <span className="bg-primary bg-clip-text text-transparent">
+              Crash investigations
+            </span>{" "}
+            for safer Indian roads.
+          </h1>
 
-{/* Short caption */}
-<p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
-  In depth crash investigations and analysis to identify contributing factors for pre, during and post-crash using scientifically acknowledged ‘Haddon matrix’ approach.
-</p>
-
+          {/* Short caption */}
+          <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+            In depth crash investigations and analysis to identify contributing
+            factors for pre, during and post-crash using scientifically
+            acknowledged ‘Haddon matrix’ approach.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -4,6 +4,8 @@ import * as Lucide from "lucide-react";
 import before from "../../../assets/images/services/road-safety/before.png";
 import after from "../../../assets/images/services/road-safety/after.png";
 import blackspot from "../../../assets/images/services/road-safety/blackspot.png";
+import picture1 from "../../../assets/images/services/road-safety/picture1.png";
+import picture2 from "../../../assets/images/services/road-safety/picture2.jpg"
 
 // Vertical stacked pill panel + content card
 const ITEMS = [
@@ -12,25 +14,19 @@ const ITEMS = [
     title: "Road Safety Audits",
     icon: "Target",
     // exact content you provided (kept unchanged)
-    content: `Road Safety Audit is a formal procedure for identifying potential safety related conflicts for a new road development or an existing road, reported by an independent, qualified team. The RSA projects help identify the safety issues and thereby providing cost-effective countermeasures to solve the identified safety problem and further implemented by the designer or the client. Following are the objectives of Road Safety Audit:
+    content: `A Road Safety Audit (RSA) is a formal procedure for identifying potential road user safety related conflicts for new roads or an existing road, reported by an independent, qualified team. JPRI Road Safety Audits help identify the safety issues and thereby providing cost-effective countermeasures to solve the identified safety problem and further implemented by the designer or the client. JPRI Road Safety Audits are designed with the following objectives:
 
 • Mitigating the likelihood of crashes;
 • Ensuring that, if a crash occurs, the likelihood of the injury is minimized;
 • Ensuring that safety related design criteria have been met;
 • Enhance consideration for the safety of all categories of road users`,
-    bullets: [
-      "Mitigating the likelihood of crashes",
-      "Ensuring that, if a crash occurs, the likelihood of the injury is minimized",
-      "Ensuring that safety-related design criteria have been met",
-      "Enhancing consideration for the safety of all categories of road users",
-    ],
   },
-  { id: "blackspot", title: "Blackspot identification", icon: "MapPin", content: `From defining a blackspot based on crash data and developing cost-effective countermeasures conforming to local standards, our blackspot identification strategy leverages accident research and experienced transport engineers to prioritize and plan targeted interventions.`, bullets: ["Data-driven location identification", "Low-cost proven countermeasures", "Priority ranking and implementation roadmaps"] },
-  { id: "junction", title: "Junction assessment", icon: "Layout", content: `We offer a comprehensive study of junctions for improving the layout, installation of road furniture and signal faces for a smoother and safer traffic flow. The findings and recommendations take into consideration the local conditions of the intersection with respect to traffic and pedestrian volume, social activities, informal markets and other parameters.`, bullets: ["Geometry and sightline checks", "Conflict point reduction", "Pedestrian & cyclist facility improvements"] },
-  { id: "parking", title: "Parking layout", icon: "GitBranch", content: `From the design of layout to capacity checks, blind-spot counter measures and treating potential conflict zones, our services can help make your parking lot safer for all users and informative.`, bullets: ["Circulation & entry/exit optimization", "Visibility and signage improvements", "Safe pedestrian connections"] },
-  { id: "swept", title: "Swept path analysis", icon: "Truck", content: `Be it confined parking spaces or open highways, Manoeuvrability of vehicles is an important factor in the safety of traffic movement. We offer analysis of swept path of any vehicle type and provide a 3D rendering for easy understanding.`, bullets: ["Large-vehicle path checks", "Design refinements for turning radii", "Clearances for kerbs and obstructions"] },
+  { id: "blackspot", title: "Blackspot identification", icon: "MapPin", content: `From identifying an accident blackspot based on crash data to developing cost-effective countermeasures conforming to local standards, our blackspot identification strategy leverages accident research and experienced road safety engineers to prioritize and plan targeted interventions.`, },
+  { id: "junction", title: "Junction/Intersection assessments", icon: "Layout", content: `JPRI provides a comprehensive study of junctions including traffic studies, improving the layout, traffic signal plans, installation of road furniture for a smoother and safer traffic flow. The findings and recommendations take into consideration the local conditions with respect to traffic and pedestrian volume, social activities, informal markets and other parameters.`, },
+  { id: "parking", title: "Traffic safety assessments for upcoming projects", icon: "GitBranch", content: `Planning of new infrastructure often attracts more traffic. Knowing the impact of this increased traffic helps authorities and other involved stake holders to plan accordingly for the increased flow, to reduce travel times and enhance safety of users despite the traffic. Traffic safety assessments focusses on the safety conflicts at such new developments and aims to reduce or eliminate the risk right from design stage. This is particularly important for establishments involving high motor traffic such as public parking spaces, hotel premises, shopping complexes, apartments and mixed use developments. We are experienced in identifying such conflicts for quick and cost effective resolutions. Our expertise includes all infrastructure facilities such as mixed use developments, paper processing plants, hotels and any such built-up developments.`, },
   { id: "safety", title: "Traffic safety assessments", icon: "Activity", content: `Planning of new infrastructure often attracts more traffic. Knowing the impact of this increased traffic helps authorities and other involved stake holders to plan accordingly for the increased flow, to reduce travel times and enhance safety of users despite the traffic. Traffic safety assessments focusses on the safety conflicts at such new developments and aims to reduce or eliminate the risk right from design stage. This is particularly important for establishments involving high motor traffic such as public parking spaces, hotel premises, shopping complexes, apartments and mixed use developments. We are experienced in identifying such conflicts for quick and cost effective resolutions. Our expertise includes all infrastructure facilities such as mixed use developments, paper processing plants, hotels and any such built-up developments.`, bullets: ["Crash pattern and severity analysis", "Field observational studies", "Prioritized engineering remedies"] },
-  { id: "signals", title: "Traffic signal plans", icon: "SignalTower", content: `Traffic signal plans play a significant role in safety and transport planning. With experience in working on dedicated software we offer signal optimisation, traffic signal coordination and in developing new signal plans for decreased waiting and queue build-up conforming to the local standards.`, bullets: ["Warrant & phasing review", "Detection and coordination checks", "Pedestrian signal and crossing safety"] },
+  { id: "swept", title: "Traffic Movement and Safety Studies", icon: "MapPin", content: `From the evaluation of design layouts to capacity checks, blind-spot counter measures, and treating potential conflict zones, our services can help make your premises and parking areas more efficient and safer for all users.`, },
+
 ];
 
 // If you have distinct before/after files, replace these two paths with the correct ones.
@@ -180,25 +176,33 @@ export default function RoadSafetyServicesInteractive() {
 
                     {/* If RSA is active, show before/after images */}
                     {active.id === "rsa" && (
-                      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
-                        {/* BEFORE */}
+                      <div className="mt-6">
                         <figure className="flex flex-col items-center">
-                          <figcaption className="mb-2 text-xs font-semibold text-slate-700">BEFORE (2016)</figcaption>
-                          <img
-                            src={RSA_IMAGES[0]}
-                            alt="Before - Road Safety Audit example (2016)"
-                            className="w-full rounded-md border border-gray-100 object-cover"
-                          />
-                        </figure>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start mb-3">
+                            {/* BEFORE */}
+                            <div className="flex flex-col items-center">
+                              <div className="mb-2 text-xs font-semibold text-slate-700"></div>
+                              <img
+                                src={RSA_IMAGES[0]}
+                                alt="Before - Road Safety Audit example (2016)"
+                                className="w-full rounded-md border border-gray-100 object-cover"
+                              />
+                            </div>
 
-                        {/* AFTER */}
-                        <figure className="flex flex-col items-center">
-                          <figcaption className="mb-2 text-xs font-semibold text-slate-700">AFTER (2017)</figcaption>
-                          <img
-                            src={RSA_IMAGES[1]}
-                            alt="After - Road Safety Audit example (2017)"
-                            className="w-full rounded-md border border-gray-100 object-cover"
-                          />
+                            {/* AFTER */}
+                            <div className="flex flex-col items-center">
+                              <div className="mb-2 text-xs font-semibold text-slate-700"></div>
+                              <img
+                                src={RSA_IMAGES[1]}
+                                alt="After - Road Safety Audit example (2017)"
+                                className="w-full rounded-md border border-gray-100 object-cover"
+                              />
+                            </div>
+                          </div>
+                          
+                          <figcaption className="text-sm text-slate-700 leading-relaxed text-center">
+                            <span className="font-semibold text-slate-800">JPRI road safety audit results:</span> Based on a detailed audit on the Mumbai Pune Expressway, JPRI observed high fatalities due to concrete structure collisions, and guardrails of sufficient runout length were recommended. This led a to a considerable reduction of fatalities due to similar road infrastructure issues in the subsequent years
+                          </figcaption>
                         </figure>
                       </div>
                     )}
@@ -206,12 +210,35 @@ export default function RoadSafetyServicesInteractive() {
                     {active.id === "blackspot" && (
                       <div className="mt-6">
                         <figure className="flex flex-col items-start gap-3">
-                          <figcaption className="text-sm font-semibold text-slate-800 mb-2">
-                            Blackspot identification (map)
-                          </figcaption>
                           <img
                             src={blackspot}
                             alt="Blackspot identification map"
+                            className="w-full rounded-md border border-gray-100 object-contain"
+                          />
+                        </figure>
+                      </div>
+                    )}
+                    
+                    {/* Junction/Intersection assessments image */}
+                    {active.id === "junction" && (
+                      <div className="mt-6">
+                        <figure className="flex flex-col items-start gap-3">
+                          <img
+                            src={picture1}
+                            alt="Junction/Intersection assessment"
+                            className="w-full rounded-md border border-gray-100 object-contain"
+                          />
+                        </figure>
+                      </div>
+                    )}
+                    
+                    {/* Traffic safety assessments for upcoming projects image */}
+                    {active.id === "parking" && (
+                      <div className="mt-6">
+                        <figure className="flex flex-col items-start gap-3">
+                          <img
+                            src={picture2}
+                            alt="Traffic safety assessment for upcoming projects"
                             className="w-full rounded-md border border-gray-100 object-contain"
                           />
                         </figure>
