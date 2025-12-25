@@ -4,8 +4,8 @@ import * as Lucide from "lucide-react";
 import before from "../../../assets/images/services/road-safety/before.png";
 import after from "../../../assets/images/services/road-safety/after.png";
 import blackspot from "../../../assets/images/services/road-safety/blackspot.png";
-import picture1 from "../../../assets/images/services/road-safety/picture1.png";
-import picture2 from "../../../assets/images/services/road-safety/picture2.jpg"
+import picture1 from "../../../assets/images/services/road-safety/image1.png";
+import picture2 from "../../../assets/images/services/road-safety/image2.jpg"
 
 // Vertical stacked pill panel + content card
 const ITEMS = [
