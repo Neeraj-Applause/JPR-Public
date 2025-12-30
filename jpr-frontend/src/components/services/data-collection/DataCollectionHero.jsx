@@ -1,6 +1,6 @@
 // src/components/services/data-collection/DataCollectionHero.jsx
 import { motion } from "framer-motion";
-import heroImg from "../../../assets/images/services/data-collection-hero.png";
+import heroImg from "../../../assets/images/services/data-collection-hero.jpg";
 import logo from "../../../assets/logos/logo.png";
 import logo2 from "../../../assets/logos/rassi.png";
 
@@ -15,7 +15,7 @@ export default function DataCollectionHero() {
         <img
           src={heroImg}
           alt="Data collection and crash investigation"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
         />
 
         {/* Very subtle global vignette to keep image visible */}

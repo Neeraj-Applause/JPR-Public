@@ -1,9 +1,9 @@
 // src/components/services/data-collection/DataCollectionCards.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import sceneImg from "../../../assets/images/services/data-collection/data-collection-scene.png";
-import vehicleImg from "../../../assets/images/services/data-collection/data-collection-vehicle.png";
-import interviewImg from "../../../assets/images/services/data-collection/data-collection-interview.png";
+import sceneImg from "../../../assets/images/services/data-collection/crash-scene-inspection.jpg";
+import vehicleImg from "../../../assets/images/services/data-collection/vehicle-inspection.jpeg";
+import interviewImg from "../../../assets/images/services/data-collection/victim-interview.jpg";
 
 /**
  * DataCollectionCards (Modern · Sleek · Simple)
