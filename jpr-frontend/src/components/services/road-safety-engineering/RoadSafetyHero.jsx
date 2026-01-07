@@ -24,8 +24,8 @@ export default function RoadSafetyHero() {
         <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
       </div>
 
-     {/* TOP-LEFT LOGO (desktop only) */}
-           {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
+      {/* TOP-LEFT LOGO (desktop only) */}
+      {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
              <div
                className="flex items-center gap-3 px-4 py-4 rounded-2xl
                     bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -35,9 +35,9 @@ export default function RoadSafetyHero() {
                </a>
              </div>
            </div> */}
-     
-           {/* TOP-RIGHT RASSI LOGO (desktop only) */}
-           {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
+
+      {/* TOP-RIGHT RASSI LOGO (desktop only) */}
+      {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
              <div
                className="flex items-center gap-3 px-4 py-4 rounded-2xl
                     bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -71,8 +71,11 @@ export default function RoadSafetyHero() {
           </h1>
 
           {/* Subtext */}
-<p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
-           Comprehensive road safety audits, blackspot identification & assessment, design reviews to analytical reports suggesting short & long term countermeasures with an aim to reduce crashes and fatalities.
+          <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+            Comprehensive road safety audits, blackspot identification &
+            assessment, design reviews to analytical reports suggesting short &
+            long term countermeasures with an aim to reduce crashes and
+            fatalities.
           </p>
         </motion.div>
       </div>

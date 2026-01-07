@@ -3,26 +3,61 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Users, Truck, Map, ArrowRight } from "lucide-react";
 import intro from "../../../assets/images/services/road-safety/intro.png";
-import intro1 from "../../../assets/images/services/road-safety/intro1.png";
+import intro1 from "../../../assets/images/services/road-safety/intro1.jpg";
 import intro2 from "../../../assets/images/services/road-safety/intro2.png";
+import intro3 from "../../../assets/images/services/road-safety/intro3.png";
 
 export default function RoadSafetySummary({ illustrationSrc = null }) {
   const pillars = [
-    { title: "Human", subtitle: "Behaviour & road-user interaction", icon: Users },
-    { title: "Vehicle", subtitle: "Vehicle performance & protection", icon: Truck },
-    { title: "Infrastructure", subtitle: "Design, geometry & maintenance", icon: Map },
+    {
+      title: "Human",
+      subtitle: "Behaviour & road-user interaction",
+      icon: Users,
+    },
+    {
+      title: "Vehicle",
+      subtitle: "Vehicle performance & protection",
+      icon: Truck,
+    },
+    {
+      title: "Infrastructure",
+      subtitle: "Design, geometry & maintenance",
+      icon: Map,
+    },
+  ];
+
+  /* 🔹 Slides with captions */
+  const slides = [
+    {
+      src: intro,
+      caption: "Intersection redesign for increased safety",
+    },
+    {
+      src: intro1,
+      caption:
+        "Collaboration with government and private partners for safer roads",
+    },
+    {
+      src: intro2,
+      caption:
+        "Identifying road safety issues and recommending safe interventions",
+    },
+    {
+      src: intro3,
+      caption: "On-site data collection including road mapping and speed data",
+    },
   ];
 
   // If illustrationSrc is passed, don't cycle — use only that
   const slideshowImages = illustrationSrc
-    ? [illustrationSrc]
-    : [intro, intro1, intro2];
+    ? [{ src: illustrationSrc, caption: "" }]
+    : slides;
 
   const [index, setIndex] = useState(0);
 
   // Loop through images every 4 seconds
   useEffect(() => {
-    if (slideshowImages.length === 1) return; // skip slideshow
+    if (slideshowImages.length === 1) return;
     const interval = setInterval(() => {
       setIndex((i) => (i + 1) % slideshowImages.length);
     }, 4000);
@@ -52,7 +87,14 @@ export default function RoadSafetySummary({ illustrationSrc = null }) {
             </h2>
 
             <p className="text-slate-700 text-base md:text-lg leading-relaxed text-justify">
-             Once built, existing road infrastructure requires periodic assessments and upgrades to upkeep the safety record. JPRI’s approaches the safety assessments backed by a profound understanding of road crashes and the influence of underlying three factors of road ecosystem: Human, Vehicle, and Infrastructure. JPRI’s Road Safety Engineering team includes qualified Transport Engineers and Auditors advised by international experts.
+              Once built, existing road infrastructure requires periodic
+              assessments and upgrades to upkeep the safety record. JPRI’s
+              approaches the safety assessments backed by a profound
+              understanding of road crashes and the influence of underlying
+              three factors of road ecosystem: Human, Vehicle, and
+              Infrastructure. JPRI’s Road Safety Engineering team includes
+              qualified Transport Engineers and Auditors advised by
+              international experts.
             </p>
 
             <div className="mt-6 flex items-center gap-4">
@@ -60,37 +102,63 @@ export default function RoadSafetySummary({ illustrationSrc = null }) {
                 type="button"
                 className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-sm hover:shadow transition"
               >
-                Explore services
+                Explore Services
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
-          {/* RIGHT SIDE — IMAGE SLIDESHOW */}
-          <div className="order-1 md:order-2 flex flex-col gap-5 items-stretch">
-            <div className="rounded-2xl border border-slate-100 bg-white shadow-sm p-6 flex flex-col gap-6">
-
-              <div className="flex justify-center relative h-72">
+          {/* RIGHT SIDE — IMAGE SLIDESHOW (UPDATED) */}
+          <div className="order-1 md:order-2 flex flex-col gap-5 items-stretch mt-10">
+            <div className="bg-slate-50">
+              <div className="relative h-80 md:h-96">
                 <AnimatePresence mode="wait">
-                  <motion.img
-                    key={slideshowImages[index]}
-                    src={slideshowImages[index]}
-                    alt="Road safety illustration"
-                    className="h-72 object-contain absolute inset-0 mx-auto"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8 }}
-                  />
-                </AnimatePresence>
-              </div>
+                  <motion.div
+                    key={slideshowImages[index].src}
+                    className="absolute inset-0 flex flex-col items-center"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  >
+                    {/* Image */}
+                    <img
+                      src={slideshowImages[index].src}
+                      alt={slideshowImages[index].caption}
+                      className="
+                                 w-full
+                                 h-64 md:h-72
+                                 object-fit
+                                 rounded-2xl
+                                 shadow-xl
+                                 transition-transform duration-300
+                                 hover:-translate-y-1
+                                "
+                    />
 
+                    {/* Caption */}
+                    <p className="mt-4 px-6 text-sm md:text-base text-slate-700 text-center leading-snug">
+                      {slideshowImages[index].caption}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Progress indicators */}
+                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-2">
+                  {slideshowImages.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`h-1.5 w-6 rounded-full transition-all ${
+                        i === index ? "bg-primary" : "bg-slate-300"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* MICRO NOTE */}
-            <div className="text-xs text-slate-500">
-
-            </div>
+            <div className="text-xs text-slate-500"></div>
           </div>
         </motion.div>
       </div>
