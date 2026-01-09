@@ -150,7 +150,7 @@ const DataAnalyticsMethods = () => {
   const highlighted = autoActive ? segments[autoIdx].label : hovered;
 
   return (
-    <section className="py-4 bg-gradient-to-bl from-white to-blue-50 overflow-x-hidden px-4">
+    <section className="py-4 pb-16 bg-gradient-to-bl from-white to-blue-50 overflow-x-hidden px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
