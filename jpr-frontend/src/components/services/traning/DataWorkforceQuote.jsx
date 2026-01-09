@@ -56,13 +56,14 @@ export default function DataWorkforceQuote() {
           </div>
 
           {/* Footer note */}
-          <div className="mt-6 pt-4 border-t border-slate-200">
-            <p className="text-sm text-slate-600 max-w-lg">
-              <strong className="text-slate-900">Build capability.</strong>{" "}
-              Invest in a trained workforce and you make your data work — turning
-              insight into measurable impact.
-            </p>
-          </div>
+         <div className="mt-6 pt-4 border-t border-slate-200">
+ <p className="text-sm text-slate-600 max-w-full md:whitespace-nowrap md:overflow-hidden md:text-ellipsis">
+    <strong className="text-slate-900">Build capability.</strong>{" "}
+    Invest in a trained workforce and you make your data work — turning
+    insight into measurable impact.
+  </p>
+</div>
+
         </motion.div>
       </div>
     </section>
