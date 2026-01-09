@@ -24,8 +24,8 @@ export default function DataAnalyticsHero() {
         <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
       </div>
 
-     {/* TOP-LEFT LOGO (desktop only) */}
-            {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
+      {/* TOP-LEFT LOGO (desktop only) */}
+      {/* <div className="hidden md:flex absolute top-6 left-6 z-30">
               <div
                 className="flex items-center gap-3 px-4 py-4 rounded-2xl
                       bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -36,8 +36,8 @@ export default function DataAnalyticsHero() {
               </div>
             </div> */}
 
-           {/* TOP-RIGHT RASSI LOGO (desktop only) */}
-           {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
+      {/* TOP-RIGHT RASSI LOGO (desktop only) */}
+      {/* <div className="hidden md:flex absolute top-6 right-6 z-30">
              <div
                className="flex items-center gap-3 px-4 py-4 rounded-2xl
                     bg-white/8 backdrop-blur-md border border-white/10 shadow-sm"
@@ -64,15 +64,22 @@ export default function DataAnalyticsHero() {
 
           {/* Main heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
-            <span className="bg-primary bg-clip-text text-transparent">
-              Data-driven analytics
-            </span>{" "}
+            <span
+  className="
+    bg-gradient-to-r from-red-600 via-red-500 to-red-600
+    bg-clip-text text-transparent
+    drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]
+  "
+>
+  Data-driven analytics
+</span>{" "}
             empowering safer roads.
           </h1>
 
           {/* Subtext */}
-         <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
-            Turning over 9,000 in-depth crash cases into insights that guide manufacturers, authorities, and safety stakeholders.
+          <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+            Turning over 9,000 in-depth crash cases into insights that guide
+            manufacturers, authorities, and safety stakeholders.
           </p>
         </motion.div>
       </div>

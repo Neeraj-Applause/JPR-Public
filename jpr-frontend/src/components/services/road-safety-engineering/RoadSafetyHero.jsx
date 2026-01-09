@@ -64,9 +64,18 @@ export default function RoadSafetyHero() {
 
           {/* Main heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
-            <span className="bg-primary bg-clip-text text-transparent">
+            {/* <span className="bg-primary bg-clip-text text-transparent">
               Engineering safer roads
-            </span>{" "}
+            </span> */}
+                         <span
+  className="
+    bg-gradient-to-r from-red-600 via-red-500 to-red-600
+    bg-clip-text text-transparent
+    drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]
+  "
+>
+  Engineering safer roads
+</span>{" "}
             through evidence-based solutions.
           </h1>
 
