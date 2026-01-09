@@ -44,7 +44,7 @@ export default function DataWorkforceQuote() {
                   className="flex items-start gap-3"
                 >
                   <div className="mt-1 text-slate-400">
-                    <Icon size={16} />
+                    <Icon size={19} />
                   </div>
 
                   <p className="text-base md:text-lg font-medium text-slate-900 leading-relaxed">
