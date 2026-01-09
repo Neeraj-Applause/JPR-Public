@@ -65,14 +65,14 @@ export default function DataAnalyticsHero() {
           {/* Main heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold leading-tight">
             <span
-  className="
-    bg-gradient-to-r from-red-600 via-red-500 to-red-600
-    bg-clip-text text-transparent
-    drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]
-  "
->
-  Data-driven analytics
-</span>{" "}
+              className="
+                 bg-primary-strong
+                 bg-clip-text text-transparent
+                 drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]
+                        "
+            >
+              Data-driven analytics
+            </span>{" "}
             empowering safer roads.
           </h1>
 

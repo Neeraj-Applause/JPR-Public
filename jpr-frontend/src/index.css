@@ -7,6 +7,7 @@
 @theme {
   --color-primary: #9e1b32;
   --color-secondary: #201D1E;
+  --color-primary-strong: #ff3b5c;
 
   /* Tailwind font tokens */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;         /* Proxima Nova-ish */

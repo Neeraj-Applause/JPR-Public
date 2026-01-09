@@ -26,7 +26,7 @@ export default function InjuryAnalysisHero() {
             {/* <span className="text-primary">Scientific Injury Analysis</span> */}
              <span
   className="
-    bg-gradient-to-r from-red-600 via-red-500 to-red-600
+    bg-primary-strong
     bg-clip-text text-transparent
     drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]
   "
