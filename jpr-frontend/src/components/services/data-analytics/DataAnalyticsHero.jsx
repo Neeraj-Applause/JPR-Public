@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImg from "../../../assets/images/services/data-hero.jpg";
+import heroImg from "../../../assets/images/services/data-hero.png";
 import logo from "../../../assets/logos/logo.png";
 import logo2 from "../../../assets/logos/rassi.png";
 
