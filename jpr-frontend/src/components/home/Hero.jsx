@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
-import banner1 from "../../assets/images/banners/banner1.jpg";
+import banner1 from "../../assets/images/banners/home-slider.jpg";
+
 import banner2 from "../../assets/images/banners/banner2.png";
 import banner3 from "../../assets/images/banners/banner3.jpg";
 import banner4 from "../../assets/images/banners/banner4.JPG";
