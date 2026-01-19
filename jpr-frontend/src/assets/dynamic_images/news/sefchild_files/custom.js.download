@@ -1,0 +1,11 @@
+jQuery(document).ready(function($){
+
+ $(function() {
+    $(".scroll-down").click (function() {
+      $('html, body').animate({scrollTop: $("#wrapper").offset().top-30 }, 'slow');
+      return false;
+    });
+  });
+
+});
+

@@ -108,19 +108,19 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-[40%] md:h-[35%] lg:h-[30%] bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
       </div>
 
-     {/* Caption block (bottom-aligned) */}
-{activeSlide.caption && (
-  <div className="relative z-30">
-    <div className="relative mx-auto flex min-h-[55vh] md:min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="space-y-4 max-w-2xl text-left"  // <-- ensures left alignment
-      >
-        <h2 className="font-semibold leading-tight text-left">
-          <span
-            className="
+      {/* Caption block (bottom-aligned) */}
+      {activeSlide.caption && (
+        <div className="relative z-30">
+          <div className="relative mx-auto flex min-h-[55vh] md:min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="space-y-4 max-w-2xl text-left" // <-- ensures left alignment
+            >
+              <h2 className="font-semibold leading-tight text-left">
+                <span
+                  className="
               block
               text-white
               whitespace-nowrap
@@ -132,17 +132,16 @@ export default function Hero() {
               lg:text-2xl       /* larger on big screens */
               xl:text-3xl       /* optional: extra large screens */
             "
-          >
-            {activeSlide.caption}
-          </span>
-        </h2>
+                >
+                  {activeSlide.caption}
+                </span>
+              </h2>
 
-        <p className="text-sm text-slate-200/90 max-w-md"></p>
-      </motion.div>
-    </div>
-  </div>
-)}
-
+              <p className="text-sm text-slate-200/90 max-w-md"></p>
+            </motion.div>
+          </div>
+        </div>
+      )}
 
       {/* Dots */}
       <div className="absolute bottom-8 sm:bottom-10 left-6 sm:left-10 flex gap-3 z-40">
