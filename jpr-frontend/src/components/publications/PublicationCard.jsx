@@ -9,7 +9,17 @@ export default function PublicationCard({ publication }) {
 
   const formatDate = (date) => {
     if (!date) return "";
+    
+    // Check if date is in dd-mm-yyyy format
+    if (date.match(/^\d{2}-\d{2}-\d{4}$/)) {
+      const [day, month, year] = date.split('-');
+      return `${day}/${month}/${year}`;
+    }
+    
+    // Otherwise parse as standard date format (yyyy-mm-dd or other)
     const d = new Date(date);
+    if (isNaN(d.getTime())) return ""; // Return empty if invalid date
+    
     const day = String(d.getDate()).padStart(2, "0");
     const month = String(d.getMonth() + 1).padStart(2, "0");
     const year = d.getFullYear();

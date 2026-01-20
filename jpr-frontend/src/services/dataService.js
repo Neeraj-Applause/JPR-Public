@@ -15,7 +15,19 @@ import careerService from './careerService';
 import contactService from './contactService';
 
 // Helper function to simulate API response structure for static data
-const createApiResponse = (data, page = 1, limit = 10) => {
+const createApiResponse = (data, page = 1, limit = null) => {
+  // If no limit is specified, return all data
+  if (!limit) {
+    return {
+      data: data,
+      pagination: {
+        page: 1,
+        limit: data.length,
+        total: data.length
+      }
+    };
+  }
+  
   const startIndex = (page - 1) * limit;
   const endIndex = startIndex + limit;
   const paginatedData = data.slice(startIndex, endIndex);
@@ -75,14 +87,28 @@ const filterAndSortData = (data, params = {}) => {
   const sortField = params.sort || 'created_at';
   const sortOrder = params.order === 'asc' ? 1 : -1;
   
+  // Helper function to parse dates in multiple formats
+  const parseDate = (dateStr) => {
+    if (!dateStr) return new Date(0);
+    
+    // Check if date is in dd-mm-yyyy format
+    if (typeof dateStr === 'string' && dateStr.match(/^\d{2}-\d{2}-\d{4}$/)) {
+      const [day, month, year] = dateStr.split('-');
+      return new Date(`${year}-${month}-${day}`);
+    }
+    
+    // Otherwise parse as standard date format
+    return new Date(dateStr);
+  };
+  
   filteredData.sort((a, b) => {
     let aVal = a[sortField];
     let bVal = b[sortField];
     
     // Handle date fields
     if (sortField.includes('date') || sortField === 'created_at' || sortField === 'updated_at') {
-      aVal = new Date(aVal || 0);
-      bVal = new Date(bVal || 0);
+      aVal = parseDate(aVal);
+      bVal = parseDate(bVal);
     }
     
     // Handle string fields

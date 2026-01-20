@@ -37,11 +37,11 @@ export default function ContactHero() {
           <div className="flex flex-wrap gap-5 pt-2 text-sm text-white/80">
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-white/60" />
-              info@jpresearch.com
+              contact@jpri.in
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-white/60" />
-              +91-962-636-2633
+              +91 70 6602 7860
             </div>
           </div>
 
