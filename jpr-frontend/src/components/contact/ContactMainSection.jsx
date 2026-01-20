@@ -146,7 +146,7 @@ export default function ContactMainSection() {
         <div className="pt-4 border-t text-sm text-slate-500">
           Prefer email? Reach us at{" "}
           <span className="font-medium text-slate-700">
-            info@jpresearch.com
+           contact@jpri.in
           </span>
         </div>
       </div>
