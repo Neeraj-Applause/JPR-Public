@@ -13,6 +13,7 @@ import banner7 from "../../assets/images/banners/banner7.jpg";
 import banner8 from "../../assets/images/banners/banner8.jpg";
 import banner31 from "../../assets/images/banners/banner31.jpg";
 import banner32 from "../../assets/images/banners/banner32.jpg";
+import banner9 from "../../assets/images/banners/banner9.jpg";
 
 // ✨ Collage for founders — sleek, clean, modern
 const BannerCollage = () => {
@@ -55,6 +56,7 @@ const slides = [
   },
 
   { id: 3, image: banner4, caption: "Awards & Recognitions" },
+  { id: 4, image: banner9, caption: "Road Safety Excellence Award - Govt of Uttarakhand" },
   {
     id: 5,
     image: banner6,

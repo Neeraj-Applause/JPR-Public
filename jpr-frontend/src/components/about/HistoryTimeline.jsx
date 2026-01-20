@@ -1,5 +1,6 @@
 // src/components/about/HistoryTimeline.jsx
-import { Clock3 } from "lucide-react";
+import { Clock3, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 import image1 from "../../assets/images/history/2006.png";
 import image2 from "../../assets/images/history/2008.png";
 import image3 from "../../assets/images/history/2010.png";
@@ -9,6 +10,8 @@ import group from "../../assets/images/history/group.JPG";
 import image6 from "../../assets/images/history/2016-onwards.png";
 import map from "../../assets/images/history/map.png";
 import image7 from "../../assets/images/history/2011-2016.jpeg";
+import start from "../../assets/images/history/start.jfif";
+import start_2006 from "../../assets/images/history/start_2006.jfif";
 
 const milestones = [
   {
@@ -16,7 +19,7 @@ const milestones = [
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
       "As India recorded over 100,000 road fatalities, need for evidence based, data driven interventions was strongly felt to reduce the accidents/fatalities. Ms Jeya Padmanaban, leading Statistician and professions in automotive safety took the initiative to set-up JP Research India in 2006 with the focus on conducting scientific crash investigations and data driven analytics to promote evidence-based policy interventions.",
-    image: image1,
+    image: [start, start_2006], // Multiple images for 2006
   },
   {
     year: "2008",
@@ -54,6 +57,97 @@ const milestones = [
     image: image4,
   },
 ];
+
+// Image Slideshow Component
+function ImageSlideshow({ images, title, year }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hasMultipleImages = Array.isArray(images) && images.length > 1;
+
+  // Auto-play slideshow
+  useEffect(() => {
+    if (!hasMultipleImages) return;
+
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        setActiveIndex((prev) => (prev + 1) % images.length);
+      }
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [hasMultipleImages, isHovered, images.length]);
+
+  const goToImage = (index) => {
+    const total = images.length;
+    const next = ((index % total) + total) % total;
+    setActiveIndex(next);
+  };
+
+  if (!hasMultipleImages) {
+    // Single image - render directly
+    const singleImage = Array.isArray(images) ? images[0] : images;
+    return (
+      <img
+        src={singleImage}
+        alt={title}
+        className={`w-full object-contain ${
+          year === "Today" ? "h-96 sm:h-[22rem]" : year === "2016 onwards" ? "h-88" : "h-80"
+        }`}
+      />
+    );
+  }
+
+  // Multiple images - render slideshow
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img
+        src={images[activeIndex]}
+        alt={`${title} ${activeIndex + 1}`}
+        className="w-full h-auto object-contain transition-opacity duration-500"
+      />
+
+      {/* Navigation Arrows */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-2">
+        <button
+          type="button"
+          onClick={() => goToImage(activeIndex - 1)}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-950/60 border border-white/10 text-white hover:bg-primary hover:text-slate-950 transition"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => goToImage(activeIndex + 1)}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-950/60 border border-white/10 text-white hover:bg-primary hover:text-slate-950 transition"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => goToImage(idx)}
+            className={`h-2 w-2 rounded-full transition-all ${
+              idx === activeIndex
+                ? "bg-primary w-4"
+                : "bg-white/40 hover:bg-white/70"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function HistoryTimeline() {
   return (
@@ -144,15 +238,7 @@ export default function HistoryTimeline() {
                       {/* Image side */}
                       <div className="hidden md:flex md:w-1/2 md:pl-10 md:ml-auto items-center justify-center">
                         <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className={`w-full object-contain transition-all duration-300 ${
-                              item.year === "2016 onwards"
-                                ? "h-88 rounded-2xl backdrop-blur-md" // bigger image for 2016 onwards
-                                : "h-72" // default size
-                            }`}
-                          />
+                          <ImageSlideshow images={item.image} title={item.title} year={item.year} />
                         </div>
                       </div>
                     </>
@@ -162,15 +248,7 @@ export default function HistoryTimeline() {
                       {/* Image side */}
                       <div className="hidden md:flex md:w-1/2 md:pr-10 md:mr-auto items-center justify-center">
                         <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className={`w-full object-contain ${
-                              item.year === "Today"
-                                ? "h-96 sm:h-[22rem]"
-                                : "h-80"
-                            }`}
-                          />
+                          <ImageSlideshow images={item.image} title={item.title} year={item.year} />
                         </div>
                       </div>
 

@@ -13,7 +13,7 @@ export default function Footer() {
         "
       >
         {/* Logo */}
-        <div className="flex-shrink-0 flex justify-center md:justify-start ml-12">
+        <div className="flex-shrink-0 flex justify-center md:justify-start">
           <img src={footerLogo} alt="JPRI Logo" className="w-28" />
         </div>
 
@@ -21,18 +21,18 @@ export default function Footer() {
         <nav
           className="
             flex flex-wrap justify-center md:justify-end
-            gap-x-6 gap-y-2 text-sm font-medium
+            gap-x-12 gap-y-2 text-sm font-medium
           "
         >
           {[
-            ["About Us", "/about"],
-            ["Services", "/"],
-            ["Publications", "/"],
-            ["News & Events", "/news"],
+            ["Home", "/"],
+            ["About", "/about"],
+            ["Services", "/services/crash-investigations"],
+            ["Publications", "/publications"],
+            ["News", "/news"],
             ["Projects", "/projects"],
+            ["Contact", "/contact"],
             ["Employee Login", "/employee-login"],
-            ["Contact Us", "/contact"],
-            ["Privacy Policy", "/privacy-policy"],
           ].map(([label, link]) => (
             <a
               key={label}

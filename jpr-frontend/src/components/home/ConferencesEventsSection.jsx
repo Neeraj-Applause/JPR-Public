@@ -49,6 +49,7 @@ function EventCard({ event }) {
   const Icon = event.icon;
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const hasMultipleImages = event.images && event.images.length > 1;
 
@@ -57,6 +58,19 @@ function EventCard({ event }) {
     const next = ((index % total) + total) % total;
     setActiveImageIndex(next);
   };
+
+  // Auto-play slideshow
+  useState(() => {
+    if (!hasMultipleImages) return;
+
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        setActiveImageIndex((prev) => (prev + 1) % event.images.length);
+      }
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [hasMultipleImages, isHovered, event.images.length]);
 
   const currentImage = event.images[activeImageIndex];
 

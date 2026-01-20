@@ -1,7 +1,7 @@
 // src/pages/services/DataAnalyticsAdvisory.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import advisoryImg from "../../../assets/images/services/safety-advisory.png"; // update path if needed
+import advisoryImg from "../../../assets/images/services/safety_advisory.png"; // update path if needed
 
 export default function DataAnalyticsAdvisory() {
   return (
