@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getProjects, getProjectsByCategory } from "../../services/dataService";
+import { getProjects, getProjectsByCategory, getProjectCategoryCounts } from "../../services/dataService";
 import ProjectCard from "./ProjectCard";
 
 const CATEGORIES = [
   "All",
+  "Road Safety Engineering",
   "Crash Investigation",
   "Data Analytics",
+  "Training",
 ];
 
 export default function ProjectsMainSection() {
@@ -14,8 +16,22 @@ export default function ProjectsMainSection() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [search, setSearch] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const [categoryCounts, setCategoryCounts] = useState({});
 
   const scrollRef = useRef(null);
+
+  useEffect(() => {
+    loadCounts();
+  }, []);
+
+  async function loadCounts() {
+    try {
+      const data = await getProjectCategoryCounts();
+      setCategoryCounts(data);
+    } catch (err) {
+      console.error("Error loading category counts", err);
+    }
+  }
 
   useEffect(() => {
     loadProjects();
@@ -117,6 +133,16 @@ export default function ProjectsMainSection() {
                       }`}
                   >
                     <span>{cat}</span>
+                    <span
+                      className={`text-xs px-2 py-0.5 rounded-full
+                        ${
+                          activeCategory === cat
+                            ? "bg-white/20 text-white"
+                            : "bg-white text-slate-600"
+                        }`}
+                    >
+                      {categoryCounts?.[cat] ?? 0}
+                    </span>
                   </button>
                 ))}
               </div>

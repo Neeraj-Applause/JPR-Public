@@ -266,6 +266,24 @@ export const getProjectsByCategory = async (category) => {
   return { data: categoryData };
 };
 
+export const getProjectCategoryCounts = async () => {
+  if (isBackendEnabled()) {
+    // Assuming there might be a method for this in the future
+    const response = await fetch(`${projectService.baseURL}/projects/category-counts`);
+    return await response.json();
+  }
+  
+  const counts = { All: 0 };
+  const publishedProjects = projectsData.filter(project => project.is_published === 1);
+  
+  publishedProjects.forEach(project => {
+    counts[project.category] = (counts[project.category] || 0) + 1;
+    counts.All += 1;
+  });
+  
+  return counts;
+};
+
 // Careers data service
 export const getCareers = async (params = {}) => {
   if (isBackendEnabled()) {
@@ -330,6 +348,7 @@ const dataService = {
   getProjects,
   getProjectById,
   getProjectsByCategory,
+  getProjectCategoryCounts,
   
   // Careers
   getCareers,
