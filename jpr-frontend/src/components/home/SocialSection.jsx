@@ -6,10 +6,10 @@ import twitterIcon from "../../assets/icons/social/x.svg";
 import linkedinIcon from "../../assets/icons/social/linkedIn.svg";
 
 const socials = [
-  { id: 1, name: "YouTube", icon: youtubeIcon, href: "#" },
+  { id: 1, name: "YouTube", icon: youtubeIcon, href: "https://www.youtube.com/@jpresearchindpvtltd1289" },
   { id: 2, name: "Facebook", icon: facebookIcon, href: "https://www.facebook.com/profile.php?id=100066643505081" },
-  { id: 4, name: "Twitter", icon: twitterIcon, href: "#" },
-  { id: 5, name: "LinkedIn", icon: linkedinIcon, href: "#" },
+  { id: 4, name: "Twitter", icon: twitterIcon, href: "https://x.com/JPR_IND" },
+  { id: 5, name: "LinkedIn", icon: linkedinIcon, href: "https://in.linkedin.com/company/jp-research-india-private-limited" },
 ];
 
 export default function SocialSection() {

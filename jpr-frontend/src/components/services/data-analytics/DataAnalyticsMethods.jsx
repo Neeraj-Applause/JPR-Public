@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import ImpactLogo from "../../../assets/logos/logo.png";
-import advisoryImg from "../../../assets/images/services/data-advisory.jpg";
+import advisoryImg from "../../../assets/images/services/data-analytics.jfif";
 
 const primary = "#A01E21";
 const secondary = "#201D1E";

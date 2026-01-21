@@ -302,7 +302,193 @@ export const projectsData = [
   is_published: 1,
   created_at: "2015-01-01T10:00:00Z",
   updated_at: "2026-01-01T10:00:00Z"
-}
+},
+
+//Trainhing Programs
+{
+  id: 27,
+  period: "2019",
+  project_title: "Capacity building training program for police officers of Chandigarh police",
+  client: " Society of Indian Automobile Manufacturers",
+  location: "Chandigarh, India",
+  summary: "3-day training program on crash investigation for a group of 25 police officers.",
+  category: "Training",
+  is_published: 1,
+  created_at: "2019-01-01T10:00:00Z",
+  updated_at: "2019-01-01T10:00:00Z"
+},
+
+
+{
+  id: 28,
+  period: "2019",
+  project_title: "Consultancy services for Traffic Management and Road Safety Enforcement",
+  client: " Kerala State Transport Project (World Bank)",
+  location: "Thiruvananthapuram, Kerala, India",
+  summary: "Police reported accident data collection from 9 police stations, data analysis and reporting. Training program on crash investigation as part of a 2-day training program on data-led enforcement.",
+  category: "Training",
+  is_published: 1,
+  created_at: "2019-01-01T10:00:00Z",
+  updated_at: "2019-01-01T10:00:00Z"
+},
+{
+  id: 29,
+  period: "2018",
+  project_title: "Capacity building training program for police officers of Punjab police",
+  client: "Mr. Navdeep Asija, Traffic Advisor, Punjab Government",
+  location: "Phillaur, India",
+  summary: "3-day workshop on crash investigation for a group of 35 police officers.",
+  category: "Training",
+  is_published: 1,
+  created_at: "2018-01-01T10:00:00Z",
+  updated_at: "2018-01-01T10:00:00Z"
+},
+{
+  id: 30,
+  period: "2018",
+  project_title: "Capacity building training program for police officers of Rajasthan state police",
+  client: " Mrs. Prerna Arora Singh, Centre for Road Safety, Sardar Patel University of Police",
+  location: "Jaipur, India",
+  summary: "Preparation of training materials and conducting a 1-week workshop for a total of 196 police officers over a period of 3 months.",
+  category: "Training",
+  is_published: 1,
+  created_at: "2018-01-01T10:00:00Z",
+  updated_at: "2018-01-01T10:00:00Z"
+},
+{
+  id: 31,
+  period: "2017",
+  project_title: "Haryana Vision Zero",
+  client: " WRI India",
+  location: "Gurgaon, India",
+  summary: "1-day training program on crash investigation and data collection for the Road Safety Associates of Haryana Vision Zero project",
+  category: "Training",
+  is_published: 1,
+  created_at: "2017-01-01T10:00:00Z",
+  updated_at: "2017-01-01T10:00:00Z"
+},
+{
+  id: 32,
+  period: "2016",
+  project_title: "BEST Crash Data Coding Workshop",
+  client: " WRI India",
+  location: "Mumbai, India",
+  summary: "Training program on crash investigation and data collection for the Accident Investigators of BEST Metropolitan Bus Service.",
+  category: "Training",
+  is_published: 1,
+  created_at: "2016-01-01T10:00:00Z",
+  updated_at: "2016-01-01T10:00:00Z"
+},
+{
+  id: 33,
+  period: "2015",
+  project_title: "Gurgaon Police Training",
+  client: "WRI India",
+  location: "Gurgaon, India",
+  summary: "Creation of standardized road traffic accident data collection form for the police. This was followed by a training program for Gurgaon Traffic Polic",
+  category:"Training",
+  is_published: 1,
+  created_at: "2015-01-01T10:00:00Z",
+  updated_at: "2015-01-01T10:00:00Z"
+},
+{
+  "id": 34,
+  "period": "2023-2025",
+  "project_title": "National Database - Fatal Road Crash System (NDFRCS)",
+  "client": "TRIPC (IIT Delhi)",
+  "location": "Pune, India",
+  "summary": "The National Database on Fatal Road Crash System (NDFRCS) is India’s harmonized, digitized, and open-access database on fatal road crashes. It is a joint initiative of the Transport Research and Injury Prevention Center (TRIPC), IIT Delhi, and JP Research India Pvt. Ltd., supported by automotive industry partners (NDFRCS Members). The project was started to solve the problem of fragmented and inconsistent road crash data in India. It uses First Information Reports (FIRs) from the CCTNS system and converts them into a standardized and structured database for research and policy use. In its first phase, the project covered fatal road crash data from ten states for the years 2019, 2021, and 2022. The aim is to support research, policymaking, and road safety planning by providing reliable and uniform fatal crash data. The NDFRCS project brings together academia, research organizations, and industry to build a long-term system for understanding crash patterns and improving road safety across India.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2023-01-01T10:00:00Z",
+  "updated_at": "2025-01-01T10:00:00Z"
+},
+{
+  "id": 35,
+  "period": "2023-2025",
+  "project_title": "Analysis Of Post Impact Tyre Failure Accidents, Analysis of Accidents Due to Tyre Failure",
+  "client": "Indian Tyre Technical Advisory Committee (ITTAC)",
+  "location": "Pune, India",
+  "summary": "This project focuses on study of Analysis of post impact tyre failure accidents and Analysis of Accidents due to Tyre Failure. Each case is analyzed using crash details, vehicle type (hatchback, sedan, SUV, truck, bus, or LCV), and road structure. The study includes road surface type, time, day and month of accident, and vehicle characteristics such as age, kilometers driven, and whether the vehicle is private or commercial. Tyre-specific factors like pressure (PSI), tread depth, damage area (tread, sidewall, shoulder, bead), tyre size, make, ISI marking, and country of manufacture are examined. Tyre conditions are compared with manufacturer standards, and safety recommendations are provided not only for the damaged tyre but also for all other tyres of the vehicle to improve overall road safety.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2025-01-01T10:00:00Z",
+  "updated_at": "2025-01-01T10:00:00Z"
+},
+{
+  "id": 36,
+  "period": "2024",
+  "project_title": "Crashes Involving Two-Wheeler Fatalities From RASSI Database",
+  "client": "Honda India Limited",
+  "location": "Pune, India",
+  "summary": "This project focuses on selected two-wheeler (M2W) crash cases, which are carefully chosen and presented scenario-wise in a well-structured and systematic format. Each case is analyzed in detail using real accident data. The study includes high-quality vehicle photographs, crash scene diagrams, and rendered crash simulation videos to clearly explain how each accident occurred. These visual elements help in better understanding the crash dynamics, impact points, and injury outcomes.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2024-01-01T10:00:00Z",
+  "updated_at": "2024-01-01T10:00:00Z"
+},
+{
+  "id": 37,
+  "period": "2019",
+  "project_title": "Consultancy services for Traffic Management and Road Safety Enforcement",
+  "client": "Kerala State Transport Project (World Bank)",
+  "location": "Thiruvananthapuram, Kerala, India",
+  "summary": "Police reported accident data collection from 9 police stations, data analysis and reporting. Training program on crash investigation as part of a 2-day training program on data-led enforcement.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2019-01-01T10:00:00Z",
+  "updated_at": "2019-01-01T10:00:00Z"
+},
+{
+  "id": 38,
+  "period": "2017-2022",
+  "project_title": "Comprehensive Vehicle Safety Defect Analysis Projects",
+  "client": "JPR Inc. (US)",
+  "location": "Pune, India",
+  "summary": "Conducted data analysis across multiple vehicle-related projects. Worked in various areas, including identifying manufacturing defects such as broken windshields and issues with self-braking systems using front radar data. Analyzed large datasets to detect patterns and support quality control improvements. In addition to manufacturing defect analysis, contributed to projects such as identifying vehicle models with smart key features, analyzing safety and technology adoption trends, and studying cases related to carbon monoxide intoxication deaths linked to vehicles. These projects involved cleaning and processing raw data, identifying critical patterns, and generating insights to support safety evaluation, product improvement, and regulatory reporting.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2017-01-01T10:00:00Z",
+  "updated_at": "2022-12-31T10:00:00Z"
+},
+{
+  "id": 39,
+  "period": "2015",
+  "project_title": "Road and Traffic Safety Scenario in India",
+  "client": "Nissan",
+  "location": "Chennai, India",
+  "summary": "Data-driven workshop on road safety in India for vehicle engineers in Japan.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2015-01-01T10:00:00Z",
+  "updated_at": "2015-01-01T10:00:00Z"
+},
+{
+  "id": 40,
+  "period": "2014 - Present",
+  "project_title": "RASSI: Data Customization",
+  "client": "RASSI",
+  "location": "Pune, India",
+  "summary": "Collaborating with colleagues to address client concerns by providing customized data sets. Tasks include filtering, merging, and applying conditions to meet specific requests. Ensuring data accuracy and integrity throughout the process and maintaining clear communication with team members to deliver optimal solutions.",
+  "category": "Data Analytics",
+  "is_published": 1,
+  "created_at": "2014-01-01T10:00:00Z",
+  "updated_at": "2014-01-01T10:00:00Z"
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ];
