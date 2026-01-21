@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImg from "../../../assets/images/services/road-safety-hero.jfif";
+import heroImg from "../../../assets/images/services/road_safety_hero.jpg";
 import logo from "../../../assets/logos/logo.png";
 import logo2 from "../../../assets/logos/rassi.png";
 

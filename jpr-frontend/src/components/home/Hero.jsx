@@ -4,13 +4,13 @@ import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 import banner1 from "../../assets/images/banners/home-slider.jpg";
 
-import banner2 from "../../assets/images/banners/banner2.png";
+import banner2 from "../../assets/images/banners/banner2.jpg";
 import banner3 from "../../assets/images/banners/banner3.jpg";
 import banner4 from "../../assets/images/banners/banner4.JPG";
 import banner5 from "../../assets/images/banners/banner5.jpg";
 import banner6 from "../../assets/images/banners/banner6.png";
 import banner7 from "../../assets/images/banners/banner7.jpg";
-import banner8 from "../../assets/images/banners/banner8.jpg";
+import banner8 from "../../assets/images/banners/banner8.jpeg";
 import banner31 from "../../assets/images/banners/banner31.jpg";
 import banner32 from "../../assets/images/banners/banner32.jpg";
 import banner9 from "../../assets/images/banners/banner9.jpg";
