@@ -237,7 +237,35 @@ export const getProjects = async (params = {}) => {
     return await projectService.list(params);
   }
   
-  const filteredData = filterAndSortData(projectsData, params);
+  let filteredData = filterAndSortData(projectsData, params);
+  
+  // Custom sorting for projects by period (ongoing first, then by year descending)
+  filteredData.sort((a, b) => {
+    const periodA = a.period || "";
+    const periodB = b.period || "";
+    
+    // Check if period contains "present" or "ongoing"
+    const aIsOngoing = periodA.toLowerCase().includes("present") || periodA.toLowerCase().includes("ongoing");
+    const bIsOngoing = periodB.toLowerCase().includes("present") || periodB.toLowerCase().includes("ongoing");
+    
+    // Ongoing projects come first
+    if (aIsOngoing && !bIsOngoing) return -1;
+    if (!aIsOngoing && bIsOngoing) return 1;
+    
+    // Extract the latest year from period (e.g., "2023-24" -> 2024, "2025" -> 2025)
+    const extractYear = (period) => {
+      const years = period.match(/\d{4}/g);
+      if (!years || years.length === 0) return 0;
+      return Math.max(...years.map(y => parseInt(y)));
+    };
+    
+    const yearA = extractYear(periodA);
+    const yearB = extractYear(periodB);
+    
+    // Sort by year descending (latest first)
+    return yearB - yearA;
+  });
+  
   return createApiResponse(filteredData, params.page, params.limit);
 };
 
@@ -261,6 +289,33 @@ export const getProjectsByCategory = async (category) => {
   const categoryData = projectsData.filter(project => {
     if (!project.category) return false;
     return project.category === category;
+  });
+  
+  // Sort by period: ongoing first, then by year descending
+  categoryData.sort((a, b) => {
+    const periodA = a.period || "";
+    const periodB = b.period || "";
+    
+    // Check if period contains "present" or "ongoing"
+    const aIsOngoing = periodA.toLowerCase().includes("present") || periodA.toLowerCase().includes("ongoing");
+    const bIsOngoing = periodB.toLowerCase().includes("present") || periodB.toLowerCase().includes("ongoing");
+    
+    // Ongoing projects come first
+    if (aIsOngoing && !bIsOngoing) return -1;
+    if (!aIsOngoing && bIsOngoing) return 1;
+    
+    // Extract the latest year from period (e.g., "2023-24" -> 2024, "2025" -> 2025)
+    const extractYear = (period) => {
+      const years = period.match(/\d{4}/g);
+      if (!years || years.length === 0) return 0;
+      return Math.max(...years.map(y => parseInt(y)));
+    };
+    
+    const yearA = extractYear(periodA);
+    const yearB = extractYear(periodB);
+    
+    // Sort by year descending (latest first)
+    return yearB - yearA;
   });
   
   return { data: categoryData };

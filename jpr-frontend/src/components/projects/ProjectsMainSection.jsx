@@ -41,7 +41,7 @@ export default function ProjectsMainSection() {
     setLoading(true);
     try {
       const res = activeCategory === "All"
-        ? await getProjects({ published: 1 })
+        ? await getProjects({ published: 1, sort: "created_at", order: "desc" })
         : await getProjectsByCategory(activeCategory);
 
       setItems(res.data || res);
