@@ -307,46 +307,48 @@ export const projectsData = [
 //Trainhing Programs
 {
   id: 27,
-  period: "2015",
-  project_title: "Gurgaon Police Training",
-  client: "WRI India",
-  location: "Gurgaon",
-  summary: "Creation of standardized road traffic accident data collection form for the police. This was followed by a training program for Gurgaon Traffic Police.",
+  period: "2019",
+  project_title: "Capacity building training program for police officers of Chandigarh police",
+  client: " Society of Indian Automobile Manufacturers",
+  location: "Chandigarh, India",
+  summary: "3-day training program on crash investigation for a group of 25 police officers.",
   category: "Training",
   is_published: 1,
-  created_at: "2015-01-01T10:00:00Z",
-  updated_at: "2015-01-01T10:00:00Z"
+  created_at: "2019-01-01T10:00:00Z",
+  updated_at: "2019-01-01T10:00:00Z"
 },
+
+
 {
   id: 28,
-  period: "2016",
-  project_title: "BEST Crash Data Coding Workshop",
-  client: "WRI India",
-  location: "Mumbai",
-  summary: "Training program on crash investigation and data collection for the Accident Investigators of BEST Metropolitan Bus Service.",
+  period: "2019",
+  project_title: "Consultancy services for Traffic Management and Road Safety Enforcement",
+  client: " Kerala State Transport Project (World Bank)",
+  location: "Thiruvananthapuram, Kerala, India",
+  summary: "Police reported accident data collection from 9 police stations, data analysis and reporting. Training program on crash investigation as part of a 2-day training program on data-led enforcement.",
   category: "Training",
   is_published: 1,
-  created_at: "2016-01-01T10:00:00Z",
-  updated_at: "2016-01-01T10:00:00Z"
+  created_at: "2019-01-01T10:00:00Z",
+  updated_at: "2019-01-01T10:00:00Z"
 },
 {
   id: 29,
-  period: "2017",
-  project_title: "Haryana Vision Zero",
-  client: "WRI India",
-  location: "Gurgaon",
-  summary: "1-day training program on crash investigation and data collection for the Road Safety Associates of Haryana Vision Zero project.",
+  period: "2018",
+  project_title: "Capacity building training program for police officers of Punjab police",
+  client: "Mr. Navdeep Asija, Traffic Advisor, Punjab Government",
+  location: "Phillaur, India",
+  summary: "3-day workshop on crash investigation for a group of 35 police officers.",
   category: "Training",
   is_published: 1,
-  created_at: "2017-01-01T10:00:00Z",
-  updated_at: "2017-01-01T10:00:00Z"
+  created_at: "2018-01-01T10:00:00Z",
+  updated_at: "2018-01-01T10:00:00Z"
 },
 {
   id: 30,
   period: "2018",
-  project_title: "Capacity building training program for police officers of Rajasthan state police.",
-  client: "Mrs. Prerna Arora Singh, Centre for Road Safety, Sardar Patel University of Police",
-  location: "Jaipur",
+  project_title: "Capacity building training program for police officers of Rajasthan state police",
+  client: " Mrs. Prerna Arora Singh, Centre for Road Safety, Sardar Patel University of Police",
+  location: "Jaipur, India",
   summary: "Preparation of training materials and conducting a 1-week workshop for a total of 196 police officers over a period of 3 months.",
   category: "Training",
   is_published: 1,
@@ -355,253 +357,40 @@ export const projectsData = [
 },
 {
   id: 31,
-  period: "2018",
-  project_title: "Capacity building training program for police officers of Punjab police.",
-  client: "Mr. Navdeep Asija, Traffic Advisor, Punjab Government",
-  location: "Phillaur, Punjab",
-  summary: "3-day workshop on crash investigation for a group of 35 police officers",
+  period: "2017",
+  project_title: "Haryana Vision Zero",
+  client: " WRI India",
+  location: "Gurgaon, India",
+  summary: "1-day training program on crash investigation and data collection for the Road Safety Associates of Haryana Vision Zero project",
   category: "Training",
   is_published: 1,
-  created_at: "2018-01-01T10:00:00Z",
-  updated_at: "2018-01-01T10:00:00Z"
+  created_at: "2017-01-01T10:00:00Z",
+  updated_at: "2017-01-01T10:00:00Z"
 },
 {
   id: 32,
-  period: "2019",
-  project_title: "Consultancy services for Traffic Management and Road Safety Enforcement",
-  client: "Kerala State Transport Project (World Bank)",
-  location: "Thiruvananthapuram, Kerala",
-  summary: "Police reported accident data collection from 9 police stations, data analysis and reporting. Training program on crash investigation as part of a 2-day training program on data-led enforcement.",
+  period: "2016",
+  project_title: "BEST Crash Data Coding Workshop",
+  client: " WRI India",
+  location: "Mumbai, India",
+  summary: "Training program on crash investigation and data collection for the Accident Investigators of BEST Metropolitan Bus Service.",
   category: "Training",
   is_published: 1,
-  created_at: "2019-01-01T10:00:00Z",
-  updated_at: "2019-01-01T10:00:00Z"
+  created_at: "2016-01-01T10:00:00Z",
+  updated_at: "2016-01-01T10:00:00Z"
 },
 {
   id: 33,
-  period: "2019",
-  project_title: "Capacity building training program for police officers of Chandigarh police.",
-  client: "Society of Indian Automobile Manufacturers",
-  location: "Chandigarh",
-  summary: "3-day training program on crash investigation for a group of 25 police officers.",
-  category: "Training",
+  period: "2015",
+  project_title: "Gurgaon Police Training",
+  client: "WRI India",
+  location: "Gurgaon, India",
+  summary: "Creation of standardized road traffic accident data collection form for the police. This was followed by a training program for Gurgaon Traffic Polic",
+  category:"Training",
   is_published: 1,
-  created_at: "2019-01-01T10:00:00Z",
-  updated_at: "2019-01-01T10:00:00Z"
+  created_at: "2015-01-01T10:00:00Z",
+  updated_at: "2015-01-01T10:00:00Z"
 },
-{
-  id: 55,
-  period: "2019",
-  project_title: "Road Accident Investigation process",
-  client: "Maharashtra Police",
-  location: "Thane",
-  summary: "1-day training program on road accident investigation process & methods for 40 police officers",
-  category: "Training",
-  is_published: 1,
-  created_at: "2019-01-01T10:00:00Z",
-  updated_at: "2019-01-01T10:00:00Z"
-},
-{
-  id: 56,
-  period: "2019- 2025",
-  project_title: "Training on Scientific crash investigation, data collection and crash data analysis",
-  client: "Asian Institute of Transport Development (AITD)",
-  location: "Various cities across India",
-  summary: "1-day training program for Police, Transport, road engineers and PWD officers on scientific crash investigation, data collection and crash data analysis. Over 800 participants attended the training.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2019-01-01T10:00:00Z",
-  updated_at: "2019-01-01T10:00:00Z"
-},
-
-
-{
-  id: 41,
-  period: "2021-2022",
-  project_title: "Forensic Crash Investigation & Analysis",
-  client: "Gujarat Road Safety Authority (GUJROSA)",
-  location: "Gandhinagar",
-  summary: "1-day training program on Forensic Crash Investigation & Analysis for newly recruited Police officers.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2021-01-01T10:00:00Z",
-  updated_at: "2021-01-01T10:00:00Z"
-},
-{
-  id: 42,
-  period: "2021-2023",
-  project_title: "Crash Investigation and reconstruction",
-  client: "Saradar Vallabhbhai Patel National Police Academy (SVPNPA)",
-  location: "Hyderabad",
-  summary: "1-day or 3-days training program for senior police officers on the topic of crash investigation and data collection. Over 220 IPS police officers trained.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2021-01-01T10:00:00Z",
-  updated_at: "2021-01-01T10:00:00Z"
-},
-{
-  id: 43,
-  period: "2021-2023",
-  project_title: "Crash Investigation & Analysis",
-  client: "Centre for Police Research (CPR)",
-  location: "Pune",
-  summary: "1-day training program for Police officers on scientific crash investigation, data collection and crash data analysis. Over 100 participants attended the training.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2021-01-01T10:00:00Z",
-  updated_at: "2021-01-01T10:00:00Z"
-},
-{
-  id: 44,
-  period: "2022",
-  project_title: "Investigation of Road Traffic Accidents",
-  client: "Tamilnadu police",
-  location: "Coimbatore",
-  summary: "1-day training program on road accident investigation process & methods for 40 police officers",
-  category: "Training",
-  is_published: 1,
-  created_at: "2022-01-01T10:00:00Z",
-  updated_at: "2022-01-01T10:00:00Z"
-},
-{
-  id: 45,
-  period: "2022-2023",
-  project_title: "Detailed training on crash investigation",
-  client: "Odisha Police & transport department",
-  location: "Various Districts across Odisha",
-  summary: "2-day training program involving practical and classroom session on crash investigation for police and transport officers. The training was conducted in three phases during 2 years and over 800 officers attended.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2022-01-01T10:00:00Z",
-  updated_at: "2022-01-01T10:00:00Z"
-},
-{
-  id: 46,
-  period: "2023",
-  project_title: "Scientific Crash Investigation & Reconstruction",
-  client: "Andaman Police",
-  location: "Online",
-  summary: "1-day online training program for Andaman Police officers on subject of scientific crash investigation and reconstruction. 40 officers attended the training.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2023-01-01T10:00:00Z",
-  updated_at: "2023-01-01T10:00:00Z"
-},
-{
-  id: 47,
-  period: "2023-2024",
-  project_title: "Scientific crash investigation, reconstruction & analysis",
-  client: "Central Academy of Police Training (CAPT)",
-  location: "Bhopal, MP",
-  summary: "1-day or 3-day training program involving practical and classroom session on crash investigation for 160+ police and military police officers.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2023-01-01T10:00:00Z",
-  updated_at: "2023-01-01T10:00:00Z"
-},
-{
-  id: 48,
-  period: "2024",
-  project_title: "Capacity building program for TSRTC officer on road accident investigation process",
-  client: "Telangana state road transport corporation",
-  location: "Hyderabad",
-  summary: "2-day training program for TSRCTC officers on investigating accidents involving their bus and recoding accident data systematically. Over 150 officers across Telangana state attended the training.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2024-01-01T10:00:00Z",
-  updated_at: "2024-01-01T10:00:00Z"
-},
-{
-  id: 49,
-  period: "2024-2025",
-  project_title: "Investigation of road accidents using scientific methods",
-  client: "Jaipur police",
-  location: "Jaipur",
-  summary: "1-day classroom training program for Jaipur police officers on scientific methods of investigating road traffic accidents.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2024-01-01T10:00:00Z",
-  updated_at: "2024-01-01T10:00:00Z"
-},
-{
-  id: 50,
-  period: "2024-2025",
-  project_title: "Scientific Road Crash Investigation",
-  client: "Central Institute of Road Transport (CIRT)",
-  location: "Pune",
-  summary: "1-day training program for road transport officers (RTOs) on the topic of crash investigation and data collection. Over 100 RTOs.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2024-01-01T10:00:00Z",
-  updated_at: "2024-01-01T10:00:00Z"
-},
-{
-  id: 51,
-  period: "2025",
-  project_title: "Scientific Crash Investigation & Analysis",
-  client: "Bhandara Police, Maharashtra",
-  location: "Bhandara, Maharashtra",
-  summary: "1-day classroom training program for Bhandara police officers on scientific methods of investigating road traffic accidents and analysis of the crash data. Over 100 officers attended the training.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2025-01-01T10:00:00Z",
-  updated_at: "2025-01-01T10:00:00Z"
-},
-{
-  id: 52,
-  period: "2025-2026",
-  project_title: "Road safety awareness & Scientific crash investigation",
-  client: "Transport Department- Uttarakhand",
-  location: "Dehradun",
-  summary: "1-day training program on Road Safety Awareness and scientific crash investigation for Bus drivers, transport & PWD officers.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2025-01-01T10:00:00Z",
-  updated_at: "2025-01-01T10:00:00Z"
-},
-{
-  id: 53,
-  period: "2025- Ongoing",
-  project_title: "Road Safety Awareness Program for School students",
-  client: "Safety Research Foundation for BRACE Project",
-  location: "Bengaluru",
-  summary: "Road safety awareness sessions of school students of grade 7 to 9 across multiple schools in Bangaluru for Bosch’s BRACE project executed by Safety Research Foundation.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2025-01-01T10:00:00Z",
-  updated_at: "2025-01-01T10:00:00Z"
-},
-{
-  id: 54,
-  period: "2025- Ongoing",
-  project_title: "Safe driving practices for School bus drivers",
-  client: "Safety Research Foundation for BRACE Project",
-  location: "Bengaluru",
-  summary: "Road safety awareness and safe driving practices for School bus drivers across various schools in Bengaluru for Bosch’s BRACE project executed by Safety Research Foundation.",
-  category: "Training",
-  is_published: 1,
-  created_at: "2025-01-01T10:00:00Z",
-  updated_at: "2025-01-01T10:00:00Z"
-},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {
   "id": 34,
   "period": "2023-2025",

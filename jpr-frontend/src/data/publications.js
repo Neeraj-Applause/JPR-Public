@@ -3,7 +3,24 @@ import pdf1 from "../assets/pdfs/publications/JP_MDRA_Observation Study Report_1
 
 export const publicationsData = [
   {
-    id: 1,
+  id: 1,
+  type: "Technical Paper",
+  title: "Pre-Crash Characteristics of Motorized Two-Wheeler Crashes on Indian Roads",
+  highlight: "Pre-crash behavior and characteristics of motorized two-wheeler crashes on Indian roads.",
+  conference: "Symposium on International Automotive Technology (SIAT)",
+  pub_date: "2022-07-01",
+  authors: "Govardhan, R., Jeya Padmanaban & V. Jethwa",
+  abstract: "Govardhan, R., Padmanaban, J., and Jethwa, V., published a paper titled \"Pre-Crash Characteristics of Motorized Two-Wheeler Crashes on Indian Roads\" as part of the SAE International publication in the SIAT conference proceedings.",
+  publisher: "SAE International",
+  link: "",
+  is_published: 1,
+  created_at: "2002-07-01T10:00:00Z",
+  updated_at: "2002-07-01T10:00:00Z",
+  pdf_path: null
+}
+,
+  {
+    id: 2,
     type: "Technical Paper",
     title: "Traffic Injury Prevention Online Journal, July 2022.",
     highlight: "Factors influencing injury severity to belted drivers in car crashes in India.",
@@ -17,7 +34,7 @@ export const publicationsData = [
     pdf_path: null
   },
   {
-    id: 2,
+    id: 3,
     type: "Technical Paper",
     title: "AAAM’s 64th Annual Scientific Conference.",
     highlight: "CHARACTERISTICS OF PEDESTRIAN INJURIES CAUSED DUE TO IMPACTS WITH POWERED TWO WHEELERS IN INDIA.",
