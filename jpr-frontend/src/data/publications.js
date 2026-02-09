@@ -8,7 +8,7 @@ export const publicationsData = [
   title: "Pre-Crash Characteristics of Motorized Two-Wheeler Crashes on Indian Roads",
   highlight: "Pre-crash behavior and characteristics of motorized two-wheeler crashes on Indian roads.",
   conference: "Symposium on International Automotive Technology (SIAT)",
-  pub_date: "2022-07-01",
+  pub_date: "2026-01-01",
   authors: "Govardhan, R., Jeya Padmanaban & V. Jethwa",
   abstract: "Govardhan, R., Padmanaban, J., and Jethwa, V., published a paper titled \"Pre-Crash Characteristics of Motorized Two-Wheeler Crashes on Indian Roads\" as part of the SAE International publication in the SIAT conference proceedings.",
   publisher: "SAE International",
