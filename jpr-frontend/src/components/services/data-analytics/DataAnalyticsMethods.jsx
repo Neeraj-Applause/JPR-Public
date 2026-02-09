@@ -170,13 +170,17 @@ const DataAnalyticsMethods = () => {
             </div>
 
             <p className="mt-6 text-gray-700 text-md leading-relaxed">
-              The results of analyzing a dataset is only as good and robust as
-              the method and quality of the data collected.
+               In-depth road safety data analytics using Python, R, and SAS, covering both structured and unstructured crash datasets
+Leveraging automation and AI for digitization of manual accident records such as police accident reports.
+Processing of in-depth accident reconstruction to provide usable and actionable pre-crash data.
+Development of interactive dashboards for real-time visualizations and continuous accident trend monitoring.
+Identification of high-risk locations (black spots) through frequency, severity, exposure, and spatial pattern analysis.
             </p>
 
             <p className="mt-4 text-gray-600 text-base leading-relaxed">
-              We assist anybody interested in collecting road safety data with
-              an aim of making our journeys safer.
+           Accident trend analysis, examining collision types, road geometry, traffic movements, time-of-day, environmental conditions, and year-wise, location-wise, and severity-wise trends to understand evolving crash characteristics.
+Vulnerable Road User (VRU), focused analysis, with detailed assessment of contributing factors affecting pedestrians, bicyclists, and motorcyclists, aimed at identifying risk patterns and safety improvement opportunities.
+Advanced AI and Machine Learning–supported analytical analysis for deep learning to uncover complex patterns, relationships, and insights within crash data.
             </p>
           </div>
         </motion.div>

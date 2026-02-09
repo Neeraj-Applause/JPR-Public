@@ -475,6 +475,18 @@ export const projectsData = [
   "created_at": "2014-01-01T10:00:00Z",
   "updated_at": "2014-01-01T10:00:00Z"
 },
+{
+  "id": 41,
+  "period": "2025",
+  "project_title": "Traffic safety and HSE audit for 5 toll plazas on client project roads",
+  "client": "Maple Highways",
+  "location": "Maharashtra, Karnataka, Chhattisgarh, Odisha, West Bengal",
+  "summary": "Safety assessment of multiple toll plazas to check for occupational safety of toll personnel and safe movement of road users entering the toll plaza premises.",
+  "category": "Road Safety Engineering",
+  "is_published": 1,
+  "created_at": "2025-01-01T10:00:00Z",
+  "updated_at": "2025-01-01T10:00:00Z"
+}
 
 
 
