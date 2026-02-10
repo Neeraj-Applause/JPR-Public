@@ -1,7 +1,19 @@
 // Static projects data - mirrors the database structure
 export const projectsData = [
+  {
+  "id": 1,
+  "period": "2025",
+  "project_title": "Traffic safety and HSE audit for 5 toll plazas on client project roads",
+  "client": "Maple Highways",
+  "location": "Maharashtra, Karnataka, Chhattisgarh, Odisha, West Bengal",
+  "summary": "Safety assessment of multiple toll plazas to check for occupational safety of toll personnel and safe movement of road users entering the toll plaza premises.",
+  "category":"Road Safety Engineering",
+  "is_published": 1,
+  "created_at": "2025-01-01T10:00:00Z",
+  "updated_at": "2025-01-01T10:00:00Z"
+},
 {
-  id: 1,
+  id: 2,
   period: "2025",
   project_title: "Road Safety Audit on Balliwala Flyover, Ballupur Flyover, ISBT Flyover and Herbertpur section",
   client: "Transport Commissioner Uttarakhand",
@@ -13,7 +25,7 @@ export const projectsData = [
   updated_at: "2025-01-01T10:00:00Z"
 },
 {
-  id: 2,
+  id: 3,
   period: "2025",
   project_title: "School Zone Safety Audits for 5 schools",
   client: " Safety Research Foundation",
@@ -25,7 +37,7 @@ export const projectsData = [
   updated_at: "2025-01-01T10:00:00Z"
 },
 {
-  id: 3,
+  id: 4,
   period: "2024",
   project_title: "Traffic Analysis at Bhel Chowk and Ghanta Ghar Chowk",
   client: "Transport Commissioner Uttarakhand",
@@ -37,7 +49,7 @@ export const projectsData = [
   updated_at: "2024-01-01T10:00:00Z"
 },
 {
-  id: 4,
+  id: 5,
   period: "2023-24",
   project_title: "Traffic safety and HSE audit and post audit for 35 toll plazas on client project roads.",
   client: " Maple Highways",
@@ -49,7 +61,7 @@ export const projectsData = [
   updated_at: "2024-01-01T10:00:00Z"
 },
 {
-  id: 5,
+  id: 6,
   period: "2022",
   project_title: "Road Safety Audit of 13 Intersections",
   client: " United Way Mumbai",
@@ -475,33 +487,6 @@ export const projectsData = [
   "created_at": "2014-01-01T10:00:00Z",
   "updated_at": "2014-01-01T10:00:00Z"
 },
-{
-  "id": 41,
-  "period": "2025",
-  "project_title": "Traffic safety and HSE audit for 5 toll plazas on client project roads",
-  "client": "Maple Highways",
-  "location": "Maharashtra, Karnataka, Chhattisgarh, Odisha, West Bengal",
-  "summary": "Safety assessment of multiple toll plazas to check for occupational safety of toll personnel and safe movement of road users entering the toll plaza premises.",
-  "category": "Road Safety Engineering",
-  "is_published": 1,
-  "created_at": "2025-01-01T10:00:00Z",
-  "updated_at": "2025-01-01T10:00:00Z"
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ];
 
