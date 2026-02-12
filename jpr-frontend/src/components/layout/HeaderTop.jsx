@@ -180,7 +180,7 @@ export default function HeaderTop() {
                             <button
                               key={child.label}
                               onClick={() => goTo(child.href)}
-                              className={`group flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-[14px] font-medium transition-all duration-200
+                              className={`group flex w-full items-center gap-3 rounded-md px-3 py-2 text-left text-[14px] font-medium transition-all duration-200 cursor-pointer
                       ${
                         childActive
                           ? "text-primary"
