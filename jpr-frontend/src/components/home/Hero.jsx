@@ -76,16 +76,27 @@ const slides = [
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const goTo = (index) => {
+    if (isTransitioning) return; // Prevent rapid changes
+    
     const total = slides.length;
-    setActiveIndex(((index % total) + total) % total);
+    const newIndex = ((index % total) + total) % total;
+    
+    if (newIndex !== activeIndex) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setActiveIndex(newIndex);
+        setIsTransitioning(false);
+      }, 800); // Transition duration
+    }
   };
 
   useEffect(() => {
     const timer = setInterval(() => {
       goTo(activeIndex + 1);
-    }, 8000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [activeIndex]);
 
@@ -95,29 +106,43 @@ export default function Hero() {
     <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-screen overflow-hidden bg-black">
       {/* Background Layer */}
       <div className="absolute inset-0">
-        {typeof activeSlide.image === "function" ? (
-          <activeSlide.image />
-        ) : (
-          <img
-            src={activeSlide.image}
-            alt="Hero Banner"
-            className="h-full w-full object-cover object-top"
-          />
-        )}
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`h-full w-full absolute inset-0 transition-all duration-1000 ease-in-out ${
+              index === activeIndex
+                ? "opacity-100 translate-x-0"
+                : index < activeIndex
+                  ? "opacity-0 -translate-x-full"
+                  : "opacity-0 translate-x-full"
+            }`}
+          >
+            {typeof slide.image === "function" ? (
+              <slide.image />
+            ) : (
+              <img
+                src={slide.image}
+                alt="Hero Banner"
+                className="h-full w-full object-cover object-top"
+              />
+            )}
+          </div>
+        ))}
+      </div>
 
         {/* Vignette + bottom-focused overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/6 to-black/6" />
         <div className="absolute inset-x-0 bottom-0 h-[40%] md:h-[35%] lg:h-[30%] bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
-      </div>
 
       {/* Caption block (bottom-aligned) */}
       {activeSlide.caption && (
         <div className="relative z-30">
           <div className="relative mx-auto flex min-h-[55vh] md:min-h-screen max-w-7xl items-end px-6 pb-10 lg:px-12 lg:pb-14">
             <motion.div
+              key={activeIndex} // Force re-render on slide change
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.2, delay: isTransitioning ? 0.2 : 0 }}
               className="space-y-4 max-w-2xl text-left" // <-- ensures left alignment
             >
               <h2 className="font-semibold leading-tight text-left">

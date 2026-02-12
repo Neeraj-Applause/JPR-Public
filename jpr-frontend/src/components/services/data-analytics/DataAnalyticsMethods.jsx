@@ -151,58 +151,47 @@ const DataAnalyticsMethods = () => {
 
   return (
     <section className="py-4 pb-16 bg-gradient-to-bl from-white to-blue-50 overflow-x-hidden px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+      <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-left"
+          className="max-w-6xl mx-auto"
         >
-          <div className="max-w-lg bg-white/60 backdrop-blur-sm ml-12 rounded-2xl p-8 border border-primary/10 shadow-md">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0"></div>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary leading-tight">
-                  Data analysis expertise
-                </h2>
-                <div className="mt-3 h-0.5 w-100 bg-primary rounded-full" />
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-primary/10 shadow-md">
+            {/* Centered Heading */}
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary leading-tight">
+                Data analysis expertise
+              </h2>
+              <div className="mt-3 h-0.5 w-100 bg-primary rounded-full mx-auto" />
+            </div>
+
+            {/* Content with Image and Text */}
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              {/* Image on left */}
+              <div className="w-full md:w-2/5 flex-shrink-0">
+                <div className="relative rounded-xl overflow-hidden border border-primary">
+                  <img
+                    src={advisoryImg}
+                    alt="Data analytics expertise"
+                    className="w-full h-64 md:h-80 object-cover transform transition-transform duration-400 ease-out hover:scale-102"
+                  />
+                </div>
+              </div>
+
+              {/* Text on right - wraps under image on mobile */}
+              <div className="w-full md:w-3/5 text-center md:text-left">
+                <p className="text-gray-700 text-md leading-relaxed mb-4">
+                   Advanced road safety analytics using Python, R, and SAS on structured and unstructured crash datasets. AI-driven digitization and automation of manual accident records, including police accident reports. In-depth accident reconstruction analysis to generate actionable pre-crash and causation insights. Development of interactive, real-time dashboards for continuous accident trend monitoring.
+                </p>
+
+                <p className="text-gray-600 text-base leading-relaxed">
+              Black spot identification using frequency, severity, exposure, and spatial pattern analysis. Accident trend analysis across collision types, road geometry, traffic movements, time-of-day, environmental conditions, and year/location-wise severity patterns. Vulnerable Road User (VRU) analysis covering pedestrians, bicyclists, and motorcyclists to identify key risk factors and targeted safety improvement opportunities. AI & Machine Learning–driven analytics, including deep learning, to uncover complex patterns, relationships, and hidden insights in crash data.
+                </p>
               </div>
             </div>
-
-            <p className="mt-6 text-gray-700 text-md leading-relaxed">
-               In-depth road safety data analytics using Python, R, and SAS, covering both structured and unstructured crash datasets
-Leveraging automation and AI for digitization of manual accident records such as police accident reports.
-Processing of in-depth accident reconstruction to provide usable and actionable pre-crash data.
-Development of interactive dashboards for real-time visualizations and continuous accident trend monitoring.
-Identification of high-risk locations (black spots) through frequency, severity, exposure, and spatial pattern analysis.
-            </p>
-
-            <p className="mt-4 text-gray-600 text-base leading-relaxed">
-           Accident trend analysis, examining collision types, road geometry, traffic movements, time-of-day, environmental conditions, and year-wise, location-wise, and severity-wise trends to understand evolving crash characteristics.
-Vulnerable Road User (VRU), focused analysis, with detailed assessment of contributing factors affecting pedestrians, bicyclists, and motorcyclists, aimed at identifying risk patterns and safety improvement opportunities.
-Advanced AI and Machine Learning–supported analytical analysis for deep learning to uncover complex patterns, relationships, and insights within crash data.
-            </p>
           </div>
         </motion.div>
-
-        {/* Left: Image Card (replacing donut diagram) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center w-full"
-        >
-          <div className="w-full max-w-[90vw] md:max-w-[420px] mx-auto">
-            <div className="relative rounded-xl overflow-hidden border border-primary">
-              <img
-                src={advisoryImg}
-                alt="Automotive safety advisory"
-                className="w-full h-[320px] object-cover transform transition-transform duration-400 ease-out hover:scale-102"
-              />
-            </div>
-          </div>
-        </motion.div>
-      </div>
     </section>
   );
 };

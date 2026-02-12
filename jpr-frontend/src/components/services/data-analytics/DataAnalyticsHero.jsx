@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImg from "../../../assets/images/services/training/data-hero4.jpg";
+import heroImg from "../../../assets/images/services/training/data-hero5.png";
 import logo from "../../../assets/logos/logo.png";
 import logo2 from "../../../assets/logos/rassi.png";
 
@@ -14,7 +14,8 @@ export default function DataAnalyticsHero() {
         <img
           src={heroImg}
           alt="Data analytics and road safety insights"
-          className="h-full w-full object-fit"
+          className="absolute inset-0 w-full object-cover"
+          style={{ objectPosition: 'top center', marginTop: '30px' }}
         />
 
         {/* Soft vignette for clarity */}
