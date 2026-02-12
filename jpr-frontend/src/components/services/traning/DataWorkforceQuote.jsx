@@ -76,7 +76,7 @@ export default function DataWorkforceQuote() {
           </div>
 
           {/* Steps */}
-          <div className="space-y-4">
+          <div className="space-y-1">
             {steps.map((s, idx) => {
               const Icon = s.icon;
               return (
@@ -92,7 +92,7 @@ export default function DataWorkforceQuote() {
                     <Icon size={19} />
                   </div>
 
-                  <p className="text-base md:text-lg font-medium leading-relaxed" style={{ color: '#9e1b32' }}>
+                  <p className="text-sm font-medium leading-relaxed" style={{ color: '#9e1b32' }}>
                     {s.text}
                   </p>
                 </motion.div>
@@ -109,13 +109,13 @@ export default function DataWorkforceQuote() {
             className="mt-12"
           >
             <div 
-              className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50"
+              className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-48"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               <div 
                 className="flex gap-2 p-4 transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${scrollPosition * 200}px)` }}
+                style={{ transform: `translateX(-${scrollPosition * 232}px)` }}
               >
                 {duplicatedImages.map((image, index) => (
                   <motion.div
@@ -130,14 +130,14 @@ export default function DataWorkforceQuote() {
                     <img
                       src={image}
                       alt={`Training photo ${(index % galleryImages.length) + 1}`}
-                      className="w-48 h-32 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+                      className="w-56 h-40 object-cover rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:scale-130"
                     />
                   </motion.div>
                 ))}
               </div>
               
               {/* Auto-scroll indicator */}
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+              <div className="absolute top-50 left-1/2 -translate-x-1/2 flex gap-1">
                 {galleryImages.slice(0, 8).map((_, index) => (
                   <div
                     key={index}
