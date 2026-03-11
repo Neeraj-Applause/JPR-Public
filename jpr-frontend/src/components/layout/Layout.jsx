@@ -1,6 +1,7 @@
 // src/components/layout/Layout.jsx
 import Footer from "./Footer";
 import HeaderTop from "./HeaderTop";
+import GoogleTranslate from "../common/GoogleTranslate";
 
 const Layout = ({ children }) => {
   return (
@@ -15,6 +16,9 @@ const Layout = ({ children }) => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Google Translate Floating Button */}
+      <GoogleTranslate />
     </div>
   );
 };

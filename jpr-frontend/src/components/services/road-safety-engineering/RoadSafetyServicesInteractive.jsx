@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import * as Lucide from "lucide-react";
 import before from "../../../assets/images/services/road-safety/before.png";
 import after from "../../../assets/images/services/road-safety/after.png";
-import blackspot from "../../../assets/images/services/road-safety/blackspot.png";
-import picture1 from "../../../assets/images/services/road-safety/image1.png";
-import picture2 from "../../../assets/images/services/road-safety/image2.jpg"
+import blackspot from "../../../assets/images/services/road-safety/blackspot-new.png";
+import junctionImage from "../../../assets/images/services/road-safety/junction-new.png";
+import trafficSafetyImage from "../../../assets/images/services/road-safety/traffic-safety-new.png";
 import RoadGun from "../../../assets/images/services/road-safety/RoadGun.jpg"
 
 
@@ -225,7 +225,7 @@ export default function RoadSafetyServicesInteractive() {
                       <div className="mt-6">
                         <figure className="flex flex-col items-start gap-3">
                           <img
-                            src={picture1}
+                            src={junctionImage}
                             alt="Junction/Intersection assessment"
                             className="w-full rounded-md border border-gray-100 object-contain"
                           />
@@ -238,7 +238,7 @@ export default function RoadSafetyServicesInteractive() {
                       <div className="mt-6">
                         <figure className="flex flex-col items-start gap-3">
                           <img
-                            src={picture2}
+                            src={trafficSafetyImage}
                             alt="Traffic safety assessment for upcoming projects"
                             className="w-full rounded-md border border-gray-100 object-contain"
                           />
