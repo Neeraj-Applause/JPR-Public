@@ -23,7 +23,17 @@ export default function CrashInvestigationsSection() {
           </p>
 
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-            Forensic &amp; Special Crash Investigations
+            <a 
+              href="#forensic-crash-investigations"
+              className="cursor-pointer hover:text-primary transition-colors duration-200"
+            >
+              Forensic
+            </a> &amp; <a 
+              href="#forensic-crash-investigations"
+              className="cursor-pointer hover:text-primary transition-colors duration-200"
+            >
+              Special
+            </a> Crash Investigations
           </h2>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-600">

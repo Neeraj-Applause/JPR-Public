@@ -15,6 +15,17 @@ export default function PublicationsMainSection() {
 
   useEffect(() => {
     loadCounts();
+    
+    // Listen for filter events from hero section
+    const handleFilterEvent = (event) => {
+      setActiveType(event.detail.type);
+    };
+    
+    window.addEventListener('setPublicationFilter', handleFilterEvent);
+    
+    return () => {
+      window.removeEventListener('setPublicationFilter', handleFilterEvent);
+    };
   }, []);
 
   async function loadCounts() {
@@ -64,7 +75,7 @@ export default function PublicationsMainSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-8">
+    <section id="publications-main" className="max-w-7xl mx-auto px-4 py-8">
       <div className="grid grid-cols-12 gap-8">
         {/* LEFT — Cards */}
         <div className="col-span-12 lg:col-span-9">

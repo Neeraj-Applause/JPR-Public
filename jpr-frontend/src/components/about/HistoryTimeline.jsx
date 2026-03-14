@@ -7,7 +7,7 @@ import image3 from "../../assets/images/history/2010.png";
 import image4 from "../../assets/images/history/today.png";
 import crash from "../../assets/images/history/crash.jpg";
 import group from "../../assets/images/history/group.JPG";
-import image6 from "../../assets/images/history/2016-onwards.png";
+import image6 from "../../assets/images/history/2016-onwards.jpg";
 import map from "../../assets/images/history/map.png";
 import image7 from "../../assets/images/history/2011-2016.jpeg";
 import start from "../../assets/images/history/start.jfif";
@@ -87,28 +87,46 @@ function ImageSlideshow({ images, title, year }) {
   if (!hasMultipleImages) {
     // Single image - render directly
     const singleImage = Array.isArray(images) ? images[0] : images;
+    
     return (
-      <img
-        src={singleImage}
-        alt={title}
-        className={`w-full object-contain ${
-          year === "Today" ? "h-96 sm:h-[22rem]" : year === "2016 onwards" ? "h-88" : "h-80"
-        }`}
-      />
+      <div 
+        className="rounded-2xl overflow-hidden" 
+        style={{ 
+          borderRadius: '1rem',
+          clipPath: 'inset(0 round 1rem)',
+          WebkitClipPath: 'inset(0 round 1rem)'
+        }}
+      >
+        <img
+          src={singleImage}
+          alt={title}
+          className={`w-full object-cover ${
+            year === "Today" ? "h-[24rem] sm:h-[24rem]" : year === "2016 onwards" ? "h-88" : "h-80"
+          }`}
+          style={{
+            borderRadius: '1rem',
+            display: 'block',
+            clipPath: 'inset(0 round 1rem)',
+            WebkitClipPath: 'inset(0 round 1rem)'
+          }}
+        />
+      </div>
     );
   }
 
   // Multiple images - render slideshow
   return (
     <div
-      className="relative"
+      className="relative rounded-2xl overflow-hidden"
+      style={{ borderRadius: '1rem', maxHeight: '320px' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
         src={images[activeIndex]}
         alt={`${title} ${activeIndex + 1}`}
-        className="w-full h-auto object-contain transition-opacity duration-500"
+        className="w-full object-cover transition-opacity duration-500"
+        style={{ height: '320px' }}
       />
 
       {/* Navigation Arrows */}
@@ -231,13 +249,18 @@ export default function HistoryTimeline() {
                             {item.description}
                           </p>
 
+                          {/* Mobile image display */}
+                          <div className="mt-4 md:hidden bg-white/80 backdrop-blur-md p-2">
+                            <ImageSlideshow images={item.image} title={item.title} year={item.year} />
+                          </div>
+
                           <div className="pointer-events-none absolute inset-x-6 bottom-0 h-1 rounded-t-full bg-gradient-to-r from-primary/40 via-red-400/40 to-primary/40 opacity-70" />
                         </article>
                       </div>
 
                       {/* Image side */}
                       <div className="hidden md:flex md:w-1/2 md:pl-10 md:ml-auto items-center justify-center">
-                        <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
+                        <div className="bg-white/80 backdrop-blur-md p-2">
                           <ImageSlideshow images={item.image} title={item.title} year={item.year} />
                         </div>
                       </div>
@@ -247,7 +270,7 @@ export default function HistoryTimeline() {
                     <>
                       {/* Image side */}
                       <div className="hidden md:flex md:w-1/2 md:pr-10 md:mr-auto items-center justify-center">
-                        <div className="rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md">
+                        <div className="bg-white/80 backdrop-blur-md p-2">
                           <ImageSlideshow images={item.image} title={item.title} year={item.year} />
                         </div>
                       </div>

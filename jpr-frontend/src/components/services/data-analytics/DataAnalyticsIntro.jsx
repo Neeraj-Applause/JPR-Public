@@ -22,7 +22,7 @@ export default function DataAnalyticsIntro() {
               manufacturers, local authorities and any stakeholders of road
               safety in making informed decisions, the Data Analytics division
               of JPRI focuses on addressing specific research questions with the
-              availability of over <strong>9,000  in-depth accidents collected across
+              availability of over <strong>9000+ accidents collected across
               India</strong> and other relevant datasets.
             </p>
 

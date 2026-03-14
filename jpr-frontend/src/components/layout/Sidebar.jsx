@@ -49,7 +49,7 @@ const menuItems = [
   { icon: BookOpenCheck, label: "Publications", href: "/publications" },
   { icon: FiCalendar, label: "News", href: "/news" },
   { icon: FolderOpenDot, label: "Projects", href: "/projects" },
-  { icon: PhoneCall, label: "Contact", href: "/contact" },
+  { icon: PhoneCall, label: "Contact Us", href: "/contact" },
   { icon: FiLogOut, label: "Login", href: "/login" },
 ];
 

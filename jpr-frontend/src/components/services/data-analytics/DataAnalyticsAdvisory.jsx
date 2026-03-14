@@ -39,25 +39,22 @@ export default function DataAnalyticsAdvisory() {
               Equipped with data on nearly 9000+ accidents across India, we are
               data-wealthy and well experienced in helping the government
               agencies and automotive manufacturers and equipment manufacturers
-              with insightful information on addressing questions like, “Is my
-              product useful for the market?”, “Will this technology help in
-              addressing the intended problem?”, “What are the top-ranking
-              problems in road safety to be addressed?”{" "}
+              with insightful information on addressing road safety questions.
             </p>
 
             <ul className="mt-6 space-y-3 max-w-3xl">
               <li className="flex items-start gap-3 text-secondary">
                 <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                “Is my product useful for the market?”
+                "Is my product useful for the market?"
               </li>
               <li className="flex items-start gap-3 text-secondary">
                 <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                “Will this technology help in addressing the intended problem?”
+                "Will this technology help in addressing the intended problem?"
               </li>
               <li className="flex items-start gap-3 text-secondary">
                 <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                “What are the top-ranking problems in road safety to be
-                addressed?”
+                "What are the top-ranking problems in road safety to be
+                addressed?"
               </li>
             </ul>
           </motion.div>

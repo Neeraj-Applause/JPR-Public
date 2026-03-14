@@ -51,7 +51,7 @@ export default function CrashInvestigationCards() {
             Our specialised services
           </h2>
           <p className="text-sm text-slate-600 max-w-2xl">
-            Click to learn more about our scientific crash investigation capabilities.
+            Click to know more about our scientific crash investigation capabilities.
           </p>
         </div>
 
@@ -85,24 +85,19 @@ export default function CrashInvestigationCards() {
               <div className="px-4 py-3">
                 <div className="flex items-center justify-between gap-3">
                   <h3 className="text-sm font-semibold text-slate-900">{card.title}</h3>
-                  <span className="text-xs font-medium text-slate-400">{idx === 0 ? "Core" : idx === 1 ? "Analytical" : "Forensic"}</span>
                 </div>
 
                 <p className="mt-2 text-sm text-slate-600 leading-snug line-clamp-5">
                   {card.description}
                 </p>
 
-                <div className="mt-3 flex items-center justify-between">
+                <div className="mt-3 flex items-center justify-start">
                   <div className="text-sm font-semibold text-primary inline-flex items-center gap-2">
-                    Learn more
+                    Know more
                     <span className="transition-transform duration-150 group-hover:translate-x-1">
                       <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
-
-                  <span className="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-0.5 text-xs font-semibold text-slate-700">
-                    View
-                  </span>
                 </div>
               </div>
             </a>

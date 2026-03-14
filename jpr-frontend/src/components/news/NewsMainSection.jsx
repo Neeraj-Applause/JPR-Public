@@ -24,6 +24,8 @@ function formatDate(dateStr) {
 
 // Single news card with alternating layout + inline carousel
 function NewsCard({ item, index, onImageClick }) {
+  console.log('NewsCard rendered for:', item.title);
+  
   // Prepare images array (images[] first, then fallback to image_url if needed)
   let imagesArray = Array.isArray(item.images)
     ? item.images.filter((img) => img && img !== null)
@@ -63,16 +65,61 @@ function NewsCard({ item, index, onImageClick }) {
       : "md:flex-row-reverse"
     : "md:flex-col";
 
+  // Function to format content with automatic bullet points for double line breaks
+  const formatContentWithBullets = (content) => {
+    console.log('formatContentWithBullets called with:', content?.substring(0, 100) + '...');
+    
+    if (!content) return null;
+    
+    // Check if content contains double line breaks
+    const hasDoubleLineBreaks = content.includes('\n\n');
+    console.log('Has double line breaks:', hasDoubleLineBreaks);
+    
+    if (hasDoubleLineBreaks) {
+      // Split content by double line breaks
+      const paragraphs = content
+        .split('\n\n')
+        .map(p => p.trim())
+        .filter(p => p.length > 0);
+      
+      console.log('Paragraphs after split:', paragraphs.length, paragraphs);
+      
+      if (paragraphs.length > 1) {
+        console.log('Rendering as bullets!');
+        return (
+          <div className="space-y-3">
+            <ul className="space-y-4">
+              {paragraphs.map((paragraph, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="inline-block w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <span className="text-sm text-slate-700 leading-relaxed text-justify">{paragraph}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+    }
+    
+    console.log('Rendering as regular paragraph');
+    // Otherwise, display as regular paragraph
+    return (
+      <p className="text-sm text-slate-700 leading-relaxed text-justify">
+        {content}
+      </p>
+    );
+  };
+
   const mainText =
     item.content && item.content.trim().length > 0
       ? item.content
       : item.summary || "";
 
   return (
-    <li className="rounded-3xl border border-slate-100 bg-gradient-to-br from-slate-50 to-slate-100/70 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 p-4 sm:p-5">
-      <div className={`flex flex-col ${layoutClass} gap-4 md:gap-6`}>
+    <li className="rounded-2xl border border-slate-200/60 bg-white shadow-sm hover:shadow-md transition-all duration-300 p-5 sm:p-6">
+      <div className={`flex flex-col ${layoutClass} gap-5 md:gap-6 items-start`}>
         {/* Text side */}
-        <div className={hasImages ? "md:w-1/2 space-y-3" : "w-full space-y-3"}>
+        <div className={hasImages ? "md:w-1/2 space-y-4" : "w-full space-y-4"}>
           <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-500">
             <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 text-primary px-2 py-0.5">
               <Calendar className="h-3 w-3" />
@@ -86,30 +133,28 @@ function NewsCard({ item, index, onImageClick }) {
             )}
           </div>
 
-          <h3 className="text-base sm:text-lg font-semibold text-slate-900 tracking-tight">
+          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 tracking-tight leading-tight">
             {item.title}
           </h3>
 
           {/* Optional summary as intro line */}
           {item.summary && item.summary !== mainText && (
-            <p className="text-xs sm:text-sm text-slate-500 line-clamp-2">
+            <p className="text-sm text-slate-600 leading-relaxed">
               {item.summary}
             </p>
           )}
 
           {/* Full content */}
-          {mainText && (
-            <p className="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed text-justify">
-              {mainText}
-            </p>
-          )}
+          <div className="prose prose-sm max-w-none">
+            {mainText && formatContentWithBullets(mainText)}
+          </div>
         </div>
 
         {/* Image side (carousel) */}
         {hasImages && (
-          <div className="md:w-1/2 relative">
+          <div className="md:w-1/2 w-full">
             <div
-              className="group relative h-52 sm:h-64 md:h-full w-full overflow-hidden rounded-2xl bg-slate-900/80 cursor-pointer"
+              className="group relative h-64 sm:h-72 md:h-80 w-full overflow-hidden rounded-xl bg-slate-900/80 cursor-pointer"
               onClick={() =>
                 onImageClick(imagesArray[activeIndex], imagesArray, activeIndex)
               }
@@ -310,8 +355,8 @@ export default function NewsMainSection() {
   }, [selectedImage]);
 
   return (
-    <section className="w-full bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100 py-10 sm:py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-6">
+    <section className="w-full bg-white py-8 sm:py-12">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Controls row */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* Year filter pills */}
@@ -388,7 +433,7 @@ export default function NewsMainSection() {
               No news found for the selected filters.
             </p>
           ) : (
-            <ul className="space-y-5 sm:space-y-6">
+            <ul className="space-y-8 sm:space-y-10">
               {filteredNews.map((item, index) => (
                 <NewsCard
                   key={item.id}

@@ -54,7 +54,12 @@ export default function CrashInvestigationsHero() {
 
           {/* Short caption */}
           <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
-            In depth crash investigations and analysis to identify contributing
+            <a 
+              href="#in-depth-crash-investigations"
+              className="cursor-pointer hover:text-primary transition-colors duration-200 underline decoration-primary/50 hover:decoration-primary"
+            >
+              In depth crash investigations
+            </a> and analysis to identify contributing
             factors for pre, during and post-crash using scientifically
             acknowledged ‘Haddon matrix’ approach.
           </p>

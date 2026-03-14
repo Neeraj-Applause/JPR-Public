@@ -41,12 +41,12 @@ const CARDS = [
     image: image4,
     lines: ["Research centers", "Setting up crash database", "Injury correlation", "Vehicle damage assessments"],
   },
-  {
-    id: "crash-tests",
-    title: "Crash tests",
-    image: image5,
-    lines: ["Live crash tests", "Accident data collection", "Crash reconstruction"],
-  },
+  // {
+  //   id: "crash-tests",
+  //   title: "Crash tests",
+  //   image: image5,
+  //   lines: ["Live crash tests", "Accident data collection", "Crash reconstruction"],
+  // },
 ];
 
 export default function TrainingCards() {
@@ -81,11 +81,6 @@ export default function TrainingCards() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-                <div className="absolute left-4 bottom-3">
-                  <span className="inline-block px-2 py-1 rounded-md bg-white/90 text-xs font-semibold text-primary/90 shadow-sm">
-                    {card.title.split("\n")[0]}
-                  </span>
-                </div>
               </div>
 
               {/* compact body */}

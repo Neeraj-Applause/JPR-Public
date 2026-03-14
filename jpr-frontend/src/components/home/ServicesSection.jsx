@@ -1,7 +1,9 @@
-  import crashIcon from "../../assets/icons/our_services/Crash_Investigation.svg";
-  import roadIcon from "../../assets/icons/our_services/Road_Safety_Engineering.svg";
-  import dataIcon from "../../assets/icons/our_services/Data_Analytics.svg";
-  import trainingIcon from "../../assets/icons/our_services/Training.svg";
+  // Import service images
+  import crashImage from "../../assets/images/our_services/crash_investigation.jpg";
+  import dataImage from "../../assets/images/our_services/data_analytics.jpg";
+  import roadImage from "../../assets/images/our_services/road_safety.jpg";
+  import trainingImage from "../../assets/images/our_services/training.jpg";
+  
   import { useNavigate } from "react-router-dom";
 
   export default function ServicesSection() {
@@ -13,7 +15,7 @@
         title: "Crash Investigation",
         description:
           "Expert in-depth analysis of road traffic crashes using scientific principles and proprietary methodologies.",
-        icon: crashIcon,
+        image: crashImage,
         path: "/services/crash-investigations",
       },
       {
@@ -21,7 +23,7 @@
         title: "Road Safety Engineering",
         description:
           "Comprehensive services including road safety audits, blackspot studies/assessments, traffic speed/volume studies, toll-plaza safety assessments etc. towards building and promoting safer road infrastructure",
-        icon: roadIcon,
+        image: roadImage,
         path: "/services/road-safety-engineering",
       },
       {
@@ -29,7 +31,7 @@
         title: "Data Analytics",
         description:
           "Advanced data analytics to identify crash patterns/trends, contributing factors, efficacy of safety systems etc. to promote data driven interventions for policy makers, automotive manufacturers and other stakeholders.",
-        icon: dataIcon,
+        image: dataImage,
         path: "/services/data-analytics",
       },
       {
@@ -37,7 +39,7 @@
         title: "Training",
         description:
           "Detailed training programs and workshops on crash investigations, crash analysis, and road safety engineering.",
-        icon: trainingIcon,
+        image: trainingImage,
         path: "/services/training",
       },
     ];
@@ -59,18 +61,18 @@
           </div>
 
           {/* Cards */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ id, title, description, icon, path }) => (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {services.map(({ id, title, description, image, path }) => (
               <article
                 key={id}
                 onClick={() => navigate(path)}
                 className="
-                  group bg-white rounded-2xl border border-[#e3e3e3]
-                  px-6 py-6 flex flex-col justify-between h-full
-                  shadow-[0_8px_18px_rgba(0,0,0,0.20)]
-                  transition-all duration-300
-                  hover:bg-primary hover:shadow-[0_18px_40px_rgba(0,0,0,0.28)]
-                  hover:-translate-y-1 cursor-pointer
+                  group bg-white rounded-3xl border border-slate-200/60
+                  overflow-hidden flex flex-col h-full
+                  shadow-lg hover:shadow-2xl
+                  transition-all duration-500 ease-out
+                  hover:-translate-y-2 cursor-pointer
+                  transform-gpu
                 "
                 role="button"
                 tabIndex={0}
@@ -78,63 +80,45 @@
                   if (e.key === "Enter" || e.key === " ") navigate(path);
                 }}
               >
-                <div>
-                  {/* Icon Circle */}
-                  <div
-                    className="
-                      h-18 w-18 rounded-full bg-[#f9e9e9]
-                      flex items-center justify-center mb-5
-                      transition-all duration-300
-                      group-hover:bg-white
-                    "
-                  >
-                    <img
-                      src={icon}
-                      alt={title}
-                      className="h-12 w-12 transition-all duration-300"
-                    />
-                  </div>
+                {/* Image Header - Reduced height */}
+                <div className="relative h-36 overflow-hidden">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                </div>
 
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow">
                   {/* Title */}
-                  <h3
-                    className="
-                      text-md font-semibold mb-2 text-[#111]
-                      transition-all duration-300
-                      group-hover:text-white
-                    "
-                  >
+                  <h3 className="text-lg font-bold mb-3 text-slate-900 group-hover:text-primary transition-colors duration-300">
                     {title}
                   </h3>
 
                   {/* Description */}
-           <p
-  className="
-    text-sm leading-relaxed text-[#555]
-    transition-all duration-300
-    group-hover:text-white/90
-  "
-  style={{ textAlign: "left", textWrap: "balance" }}
->
-  {description}
-</p>
+                  <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
+                    {description}
+                  </p>
 
-
-
+                  {/* Learn More Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(path);
+                    }}
+                    className="
+                      inline-flex items-center gap-2 text-sm font-semibold text-primary
+                      hover:text-primary/80 transition-all duration-300
+                      group-hover:gap-3
+                    "
+                  >
+                    Learn More 
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </button>
                 </div>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation(); // prevents card click from firing twice
-                    navigate(path);
-                  }}
-                  className="
-                    mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary
-                    transition-all duration-300
-                    group-hover:text-white cursor-pointer
-                  "
-                >
-                  Learn More →
-                </button>
               </article>
             ))}
           </div>

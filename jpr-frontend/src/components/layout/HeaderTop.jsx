@@ -24,7 +24,7 @@ const menuItems = [
   { label: "Publications", href: "/publications" },
   { label: "News", href: "/news" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
   { label: "Employee Login", href: "/employee-login" },
 ];
 
@@ -64,13 +64,13 @@ export default function HeaderTop() {
         />
 
         {/* RIGHT red wedge - solid color */}
-        <div
+        {/* <div
           className="pointer-events-none absolute inset-y-0 right-0 w-[250px]"
           style={{
             clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0 100%)",
             backgroundColor: "#9e1b32",
           }}
-        />
+        /> */}
 
         {/* Actual header content sits above stripes */}
         <div className="relative flex h-full w-full items-center justify-between px-2 sm:px-6 md:px-8 lg:px-12">
@@ -201,7 +201,7 @@ export default function HeaderTop() {
 
           {/* RIGHT: Rassi logo + Mobile menu toggle */}
           <div className="relative z-10 flex items-center gap-2 sm:gap-3">
-            <a
+            {/* <a
               href="https://www.rassi.in/"
               target="_blank"
               rel="noopener noreferrer"
@@ -212,7 +212,7 @@ export default function HeaderTop() {
                 alt="RASSI"
                 className="h-8 sm:h-8 md:h-14 w-auto object-contain"
               />
-            </a>
+            </a> */}
 
             {/* Mobile menu button */}
             <button

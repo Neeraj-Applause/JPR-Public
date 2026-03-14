@@ -6,14 +6,17 @@ export default function CrashInvestigationsExpertise() {
     {
       label: "In-depth Crash Investigations",
       icon: Activity,
+      href: "#in-depth-crash-investigations"
     },
     {
-      label: "Forensic Crash Investigations",
+      label: "Forensic Crash Investigations", 
       icon: FileText,
+      href: "#forensic-crash-investigations"
     },
     {
       label: "Special Crash Investigations",
       icon: AlertTriangle,
+      href: "#forensic-crash-investigations"
     },
   ];
 
@@ -58,27 +61,28 @@ export default function CrashInvestigationsExpertise() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="grid w-full max-w-xl gap-6"
         >
-          {expertiseItems.map(({ label, icon: Icon }, index) => (
-            <motion.div
+          {expertiseItems.map(({ label, icon: Icon, href }, index) => (
+            <motion.a
               key={label}
+              href={href}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.45, delay: index * 0.1 }}
-              className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md"
+              className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-primary/40 cursor-pointer group"
             >
               {/* Icon */}
-              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                 <Icon className="h-5 w-5" />
               </div>
 
               {/* Text */}
               <div className="space-y-1">
-                <h3 className="text-base font-semibold text-slate-900">
+                <h3 className="text-base font-semibold text-slate-900 group-hover:text-primary transition-colors">
                   {label}
                 </h3>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>

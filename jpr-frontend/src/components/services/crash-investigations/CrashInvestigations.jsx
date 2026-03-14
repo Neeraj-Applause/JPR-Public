@@ -11,8 +11,8 @@ export default function CrashInvestigations() {
       <CrashInvestigationsHero />
       <CrashInvestigationsExpertise />
       <RassiInDepthSection />
-      <CrashInvestigationsDetails />
       <CrashInvestigationCards />
+      <CrashInvestigationsDetails />
     </main>
   );
 }

@@ -32,6 +32,18 @@ export default function PublicationsHero() {
     }
   }
 
+  const handleFocusAreaClick = (type) => {
+    // Scroll to the publications section and trigger filter
+    const publicationsSection = document.querySelector('#publications-main');
+    if (publicationsSection) {
+      publicationsSection.scrollIntoView({ behavior: 'smooth' });
+      // Dispatch custom event to set the filter
+      window.dispatchEvent(new CustomEvent('setPublicationFilter', { 
+        detail: { type } 
+      }));
+    }
+  };
+
   return (
     <section className="relative isolate overflow-hidden bg-gradient-to-br from-gray-900 via-primary to-gray-950 text-white">
       {/* Simplified background */}
@@ -119,7 +131,11 @@ export default function PublicationsHero() {
                     </div>
                   ) : (
                     focusAreas.slice(0, 3).map((item, index) => (
-                      <div key={index} className="flex items-center justify-between py-2.5 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-200 group/item">
+                      <button
+                        key={index}
+                        onClick={() => handleFocusAreaClick(item.type)}
+                        className="flex items-center justify-between py-2.5 px-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-200 group/item cursor-pointer w-full"
+                      >
                         <div className="flex items-center gap-3">
                           <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-primary to-secondary group-hover/item:scale-125 transition-transform" />
                           <span className="text-sm text-white font-medium">{item.type}</span>
@@ -133,7 +149,7 @@ export default function PublicationsHero() {
                           </div>
                           <span className="text-sm text-white font-semibold min-w-[1.5rem] text-right tabular-nums">{item.total}</span>
                         </div>
-                      </div>
+                      </button>
                     ))
                   )}
                 </div>
