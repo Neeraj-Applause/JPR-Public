@@ -16,7 +16,7 @@ export default function CrashInvestigationsExpertise() {
     {
       label: "Special Crash Investigations",
       icon: AlertTriangle,
-      href: "#forensic-crash-investigations"
+      href: "#special-crash-investigations"
     },
   ];
 

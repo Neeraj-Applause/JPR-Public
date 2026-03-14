@@ -8,7 +8,7 @@ export default function InjuryExpertise() {
         </h2>
 
         <p className="text-slate-700 leading-relaxed text-justify">
-          JPRI Injury Research Specialists possess strong expertise in occupant and pedestrian kinematics, human injury tolerances, and injury mechanisms. Our specialists have received certified training in Abbreviated Injury Scale (AIS) Coding Techniques by the Association for Advancement of Automotive Medicine (AAAM), Chicago, USA.
+          JPRI Injury Research Specialists leverage occupant and pedestrian kinematics, injury data, and crash evidence to map and correlate injuries using globally recognized Abbreviated Injury Scale (AIS) coding techniques. Our specialists have received certified training in AIS Coding Techniques by the Association for Advancement of Automotive Medicine (AAAM), Chicago, USA. The team integrates biomechanical analysis with vehicle and roadside injury sources to provide precise, evidence-based insights.
         </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 pt-6">

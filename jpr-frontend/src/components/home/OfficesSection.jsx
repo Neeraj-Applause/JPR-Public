@@ -20,6 +20,7 @@ const offices = [
     phones: ["0 422 352 9616", "+91 96 2636 2633"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 11.0168, lng: 76.9558 },
   },
   {
     id: "pune",
@@ -33,6 +34,7 @@ const offices = [
     phones: ["+91 70 6602 7860", "+91 88 0694 3991"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 18.5679, lng: 73.8009 },
   },
   {
     id: "ahmedabad",
@@ -45,6 +47,7 @@ const offices = [
     phones: ["+91 79 4007 7715 / 16"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 23.0225, lng: 72.5714 },
   },
   {
     id: "kolkata",
@@ -58,6 +61,7 @@ const offices = [
     phones: ["+91 70 4463 9376"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 22.5726, lng: 88.3639 },
   },
   {
     id: "jaipur",
@@ -71,6 +75,7 @@ const offices = [
     phones: ["+91 96 3648 6449"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 26.9124, lng: 75.7873 },
   },
   {
     id: "nagpur",
@@ -84,6 +89,7 @@ const offices = [
     phones: ["+91 7066027007"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 21.1458, lng: 79.0882 },
   },
   {
     id: "dehradun",
@@ -98,6 +104,7 @@ const offices = [
     phones: ["+91 9054514953"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 30.3165, lng: 78.0322 },
   },
   {
     id: "dindigul",
@@ -111,6 +118,7 @@ const offices = [
     phones: ["+91 96 2636 2633"],
     website: "www.jpri.in",
     email: "contact@jpri.in",
+    coordinates: { lat: 10.3673, lng: 77.9803 },
   },
 ];
 
@@ -187,7 +195,16 @@ export default function OfficesSection() {
                       >
                         {/* Address */}
                         <div className="flex items-start gap-2 max-w-md lg:max-w-lg">
-                          <MapPin className="mt-0.5 text-primary" size={18} />
+                          <button
+                            onClick={() => {
+                              const googleMapsUrl = `https://www.google.com/maps?q=${office.coordinates.lat},${office.coordinates.lng}`;
+                              window.open(googleMapsUrl, '_blank');
+                            }}
+                            className="mt-0.5 text-primary hover:text-primary/80 transition-colors cursor-pointer"
+                            title="Open in Google Maps"
+                          >
+                            <MapPin size={18} />
+                          </button>
                           <div className="leading-relaxed">
                             {office.addressLines.map((line) => (
                               <p key={line}>{line}</p>

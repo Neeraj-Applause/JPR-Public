@@ -58,10 +58,8 @@ export default function CrashInvestigationsHero() {
               href="#in-depth-crash-investigations"
               className="cursor-pointer hover:text-primary transition-colors duration-200 underline decoration-primary/50 hover:decoration-primary"
             >
-              In depth crash investigations
-            </a> and analysis to identify contributing
-            factors for pre, during and post-crash using scientifically
-            acknowledged ‘Haddon matrix’ approach.
+              In depth scientific crash investigations
+            </a> and data-driven analysis to identify contributing factors pre-crash, crash & post-crash, using the scientifically acknowledged ‘Haddon Matrix’ approach.
           </p>
         </motion.div>
       </div>

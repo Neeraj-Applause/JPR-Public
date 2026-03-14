@@ -14,7 +14,7 @@
         id: 1,
         title: "Crash Investigation",
         description:
-          "Expert in-depth analysis of road traffic crashes using scientific principles and proprietary methodologies.",
+          "Scientific and expert crash investigation using established and proprietary methodologies to identify causes and contributing factors, generating evidence-based insights for safer vehicles and roads.",
         image: crashImage,
         path: "/services/crash-investigations",
       },
