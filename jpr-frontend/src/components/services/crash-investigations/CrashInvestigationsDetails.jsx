@@ -3,6 +3,7 @@ import forensicImage from "../../../assets/images/services/Case-specific-Crash-I
 import vehicleFireImage from "../../../assets/images/services/Case-specific-Crash-Investigations/vehicleEvFire.jpg";
 import specialImage from "../../../assets/images/services/Case-specific-Crash-Investigations/SpecialCI.jpg";
 
+
 export default function CrashInvestigationsSection() {
   return (
     <>
