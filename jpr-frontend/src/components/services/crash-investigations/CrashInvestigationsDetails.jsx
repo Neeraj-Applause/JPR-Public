@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import forensicImage from "../../../assets/images/services/Case-specific-Crash-Investigations/ForensicCI.jpg";
-import vehicleFireImage from "../../../assets/images/services/Case-specific-Crash-Investigations/vehicleEVFire.jpg";
+import vehicleFireImage from "../../../assets/images/services/Case-specific-Crash-Investigations/vehicleEvFire.jpg";
 import specialImage from "../../../assets/images/services/Case-specific-Crash-Investigations/SpecialCI.jpg";
 
 export default function CrashInvestigationsSection() {
