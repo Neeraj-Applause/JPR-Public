@@ -48,7 +48,7 @@ export const publicationsData = [
     pdf_path: null
   },
   {
-    id: 3,
+    id: 70,
     type: "Technical Paper",
     title: "2020 IRCOBI Europe Conference, Online session.",
     highlight: "EFFECTIVENESS OF TRUCK REAR UNDERRUN PROTECTION DEVICES FOR REDUCING PASSENGER CAR FATALITIES AND SERIOUS INJURIES IN INDIA.",

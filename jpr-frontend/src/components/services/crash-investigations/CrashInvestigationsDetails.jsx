@@ -113,8 +113,8 @@ export default function CrashInvestigationsSection() {
               className="space-y-6 lg:order-2"
             >
               <div className="space-y-4">
-                <p className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-orange-600" />
+                <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   Case-specific Crash Investigations
                 </p>
 
@@ -163,8 +163,8 @@ export default function CrashInvestigationsSection() {
               className="space-y-6"
             >
               <div className="space-y-4">
-                <p className="inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
-                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                <p className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   Case-specific Crash Investigations
                 </p>
 

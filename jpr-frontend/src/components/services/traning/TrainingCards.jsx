@@ -19,13 +19,13 @@ import image5 from "../../../assets/images/services/training/crash-test.jpg";
 const CARDS = [
   {
     id: "crash-investigation",
-    title: "Crash\nInvestigation",
+    title: "Crash Investigation",
     image: image1,
     lines: ["Scene inspection", "Vehicle inspection", "Accident photography"],
   },
   {
     id: "crash-reconstruction",
-    title: "Crash\nreconstruction",
+    title: "Crash reconstruction",
     image: image2,
     lines: ["2D and 3D simulation", "Hand calculations and software validation using PC Crash"],
   },
@@ -85,7 +85,7 @@ export default function TrainingCards() {
 
               {/* compact body */}
               <div className="p-4 md:p-5 flex-1 flex flex-col">
-                <h3 className="text-sm font-semibold text-slate-900 leading-snug whitespace-pre-line">
+                <h3 className="text-sm font-semibold text-slate-900 leading-snug">
                   {card.title}
                 </h3>
 
