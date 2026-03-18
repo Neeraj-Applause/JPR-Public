@@ -47,8 +47,6 @@ export default function CrashReconstructionIntro() {
                     Crash reconstruction
                   </span>
                 </div>
-
-                <div className="text-xs text-slate-500">Physics • Simulation • Evidence</div>
               </div>
 
               <article className="prose prose-slate mx-auto max-w-none">

@@ -20,7 +20,7 @@ const VIDEOS = [
   { id: "0ZBlJ3ickdc", title: "Crash Reconstruction — Overview" },
   { id: "WvFCHN2xUIs", title: "2D/3D Simulation Walkthrough" },
   { id: "QNDNq92BmUU", title: "Vehicle Dynamics & Calculations" },
-  { id: "clxo-gapJzY&t", title: "Evidence Gathering & Scene Mapping" },
+  { id: "clxo-gapJzY", title: "Evidence Gathering & Scene Mapping" },
 ];
 
 export default function CrashReconstructionVideo() {

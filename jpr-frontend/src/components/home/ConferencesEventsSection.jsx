@@ -188,6 +188,8 @@ function EventCard({ event }) {
 }
 
 export default function ConferencesEventsSection() {
+  const navigate = useNavigate();
+  
   return (
     <section className="py-12 text-white relative bg-primary">
       {/* Section Title */}

@@ -1,22 +1,27 @@
 import { motion } from "framer-motion";
-import { Activity, FileText, AlertTriangle } from "lucide-react";
+import { Activity, FileText, AlertTriangle, Flame } from "lucide-react";
 
 export default function CrashInvestigationsExpertise() {
   const expertiseItems = [
     {
       label: "In-depth Crash Investigations",
       icon: Activity,
-      href: "#in-depth-crash-investigations"
+      href: "#in-depth-crash-investigations",
     },
     {
-      label: "Forensic Crash Investigations", 
+      label: "Forensic Crash Investigations",
       icon: FileText,
-      href: "#forensic-crash-investigations"
+      href: "#forensic-crash-investigations",
+    },
+     {
+      label: "Vehicle/EV Fire Investigations",
+      icon: Flame,
+      href: "#vehicle-fire-investigations",
     },
     {
       label: "Special Crash Investigations",
       icon: AlertTriangle,
-      href: "#special-crash-investigations"
+      href: "#special-crash-investigations",
     },
   ];
 
@@ -69,7 +74,7 @@ export default function CrashInvestigationsExpertise() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.45, delay: index * 0.1 }}
-              className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-primary/40 cursor-pointer group"
+              className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md hover:border-primary/40 cursor-pointer group"
             >
               {/* Icon */}
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">

@@ -62,6 +62,10 @@ import seftybus2 from '../assets/dynamic_images/news/seftybusbangalore2.jpg';
 import traficpollice1 from '../assets/dynamic_images/news/Trafficpollice1.png';
 import traficpollice2 from '../assets/dynamic_images/news/Trafficpollice2.png';
 
+import annual2026 from '../assets/dynamic_images/news/RASSI Annual-Consortium-Meeting.png'
+import annual20262 from '../assets/dynamic_images/news/RASSI Annual-Consortium-Meeting2.png'
+import annual20263 from '../assets/dynamic_images/news/RASSI Annual-Consortium-Meeting3.png'
+
 
 
 
@@ -1104,6 +1108,18 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
   created_at: "2015-12-31T10:00:00Z",
   updated_at: "2015-12-31T10:00:00Z",
   images: []
+},
+{ 
+  id: 87,
+  title: "16th RASSI Annual Consortium Meeting ",
+  summary: "",
+  content: " The 16th Annual RASSI Consortium Meeting was held in Pune in February 2026. Members shared findings and discussed how the RASSI database supports data-driven decisions to improve vehicle safety in India. The two-day meeting included member-only sessions on the first day focusing on database advancements and modern technologies such as ADAS, followed by sessions on the second day for prospective members to demonstrate the value of the RASSI database for India-specific conditions.",
+  category: "",
+  event_date: "2026-02-01",
+  image_url: null,
+  created_at: "2026-03-18T10:00:00Z",
+  updated_at: "2026-03-18T10:00:00Z",
+  images: [annual2026, annual20262, annual20263]
 },
 
 {

@@ -110,7 +110,7 @@ export default function LeadershipPreview() {
 
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-                Leadership Team
+                Meet Our Team
               </h2>
             </div>
           </div>

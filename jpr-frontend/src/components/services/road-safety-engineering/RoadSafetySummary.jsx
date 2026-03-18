@@ -96,16 +96,6 @@ export default function RoadSafetySummary({ illustrationSrc = null }) {
               qualified Transport Engineers and Auditors advised by
               international experts.
             </p>
-
-            <div className="mt-6 flex items-center gap-4">
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-sm hover:shadow transition"
-              >
-                Explore Services
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
 
           {/* RIGHT SIDE — IMAGE SLIDESHOW (UPDATED) */}

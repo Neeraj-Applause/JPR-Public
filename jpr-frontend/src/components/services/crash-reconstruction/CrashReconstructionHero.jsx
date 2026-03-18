@@ -68,20 +68,22 @@ export default function CrashReconstructionHero() {
               Crash reconstruction
             </span> */}
             <span
-  className="
+              className="
     bg-primary-strong
     bg-clip-text text-transparent
     drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]
   "
->
-   Crash Reconstruction
-</span>{" "}
-            powered by science & simulation.
+            >
+              Crash Reconstructions
+            </span>{" "}
+            powered by evidence and scientific simulations.
           </h1>
 
           {/* Subheading */}
-<p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
-            Accurate reconstructions using 2D/3D simulations, vehicle dynamics and evidence-based modelling for deeper crash understanding.
+          <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+            Accurate reconstructions using 2D/3D simulations, vehicle dynamics
+            and evidence-based modelling for deeper understanding of crash
+            events.{" "}
           </p>
         </motion.div>
       </div>
