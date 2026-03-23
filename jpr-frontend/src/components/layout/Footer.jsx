@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="text-center">
             <p className="text-sm text-slate-400">
-              © 2025 JP Research India Pvt. Ltd. All rights reserved.
+              © 2026 JP Research India Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>
