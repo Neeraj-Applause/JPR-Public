@@ -16,9 +16,22 @@ function formatDate(dateStr) {
   const d = new Date(dateStr);
   if (Number.isNaN(d.getTime())) return dateStr;
   return d.toLocaleDateString("en-IN", {
-    day: "2-digit",
     month: "short",
     year: "numeric",
+  });
+}
+
+function formatOrdinalTitle(title) {
+  if (!title) return "";
+
+  const parts = title.split(/(\d+)(st|nd|rd|th)/g);
+
+  return parts.map((part, index) => {
+    if (["st", "nd", "rd", "th"].includes(part)) {
+      return <sup key={`sup-${index}`}>{part}</sup>;
+    }
+
+    return <span key={`text-${index}`}>{part}</span>;
   });
 }
 
@@ -134,7 +147,7 @@ function NewsCard({ item, index, onImageClick }) {
           </div>
 
           <h3 className="text-lg sm:text-xl font-semibold text-slate-900 tracking-tight leading-tight">
-            {item.title}
+            {formatOrdinalTitle(item.title)}
           </h3>
 
           {/* Optional summary as intro line */}

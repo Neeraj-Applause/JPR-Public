@@ -35,26 +35,41 @@ export default function DataAnalyticsAdvisory() {
               Automotive safety advisory
             </h2>
 
-            <p className="mt-4 text-slate-700 text-base leading-relaxed max-w-3xl">
+            <p className="mt-4 max-w-3xl text-justify text-base leading-relaxed text-slate-900">
               Equipped with data on nearly 9000+ accidents across India, we are
               data-wealthy and well experienced in helping the government
               agencies and automotive manufacturers and equipment manufacturers
               with insightful information on addressing road safety questions.
             </p>
 
-            <ul className="mt-6 space-y-3 max-w-3xl">
-              <li className="flex items-start gap-3 text-secondary">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                "Is my product useful for the market?"
+            <ul className="mt-6 max-w-2xl space-y-4">
+              <li className="flex items-start gap-3 text-slate-900">
+                <span className="mt-2 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                <span
+                  className="block max-w-md flex-1 leading-relaxed"
+                  style={{ textAlign: "justify", textJustify: "inter-word" }}
+                >
+                  "Is my product useful for the market?"
+                </span>
               </li>
-              <li className="flex items-start gap-3 text-secondary">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                "Will this technology help in addressing the intended problem?"
+              <li className="flex items-start gap-3 text-slate-900">
+                <span className="mt-2 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                <span
+                  className="block max-w-md flex-1 leading-relaxed"
+                  style={{ textAlign: "justify", textJustify: "inter-word" }}
+                >
+                  "Will this technology help in addressing the intended problem?"
+                </span>
               </li>
-              <li className="flex items-start gap-3 text-secondary">
-                <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" />
-                "What are the top-ranking problems in road safety to be
-                addressed?"
+              <li className="flex items-start gap-3 text-slate-900">
+                <span className="mt-2 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                <span
+                  className="block max-w-md flex-1 leading-relaxed"
+                  style={{ textAlign: "justify", textJustify: "inter-word" }}
+                >
+                  "What are the top-ranking problems in road safety to be
+                  addressed?"
+                </span>
               </li>
             </ul>
           </motion.div>

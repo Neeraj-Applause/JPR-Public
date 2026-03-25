@@ -74,7 +74,7 @@ export default function CrashInvestigationsExpertise() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.45, delay: index * 0.1 }}
-              className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md hover:border-primary/40 cursor-pointer group"
+              className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:shadow-md hover:border-primary/40 cursor-pointer group"
             >
               {/* Icon */}
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
@@ -82,8 +82,8 @@ export default function CrashInvestigationsExpertise() {
               </div>
 
               {/* Text */}
-              <div className="space-y-1">
-                <h3 className="text-base font-semibold text-slate-900 group-hover:text-primary transition-colors">
+              <div className="flex min-h-10 items-center">
+                <h3 className="text-base font-semibold leading-tight text-slate-900 transition-colors group-hover:text-primary">
                   {label}
                 </h3>
               </div>

@@ -30,6 +30,11 @@ export default function DataWorkforceQuote() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [previewImage, setPreviewImage] = useState(null);
+  const IMAGES_PER_FRAME = 3;
+  const IMAGE_WIDTH = 224;
+  const IMAGE_GAP = 16;
+  const FRAME_PADDING = 16;
+  const SLIDE_WIDTH = IMAGE_WIDTH + IMAGE_GAP;
   
   const steps = [
     { key: 1, icon: CheckCircle, text: "Problems need to be solved," },
@@ -49,7 +54,7 @@ export default function DataWorkforceQuote() {
   useEffect(() => {
     if (!isPaused) {
       const interval = setInterval(() => {
-        setScrollPosition((prev) => (prev + 1) % galleryImages.length);
+        setScrollPosition((prev) => (prev + 4) % galleryImages.length);
       }, 3000); // Change image every 3 seconds
 
       return () => clearInterval(interval);
@@ -109,13 +114,14 @@ export default function DataWorkforceQuote() {
             className="mt-12"
           >
             <div 
-              className="relative overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-48"
+              className="relative mx-auto box-border overflow-hidden rounded-xl border border-slate-200 bg-slate-50 h-48 p-4"
+              style={{ width: `${(IMAGE_WIDTH * IMAGES_PER_FRAME) + (IMAGE_GAP * (IMAGES_PER_FRAME - 1)) + (FRAME_PADDING * 2)}px` }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
               <div 
-                className="flex gap-2 p-4 transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${scrollPosition * 232}px)` }}
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ gap: `${IMAGE_GAP}px`, transform: `translateX(-${scrollPosition * SLIDE_WIDTH}px)` }}
               >
                 {duplicatedImages.map((image, index) => (
                   <motion.div
@@ -138,11 +144,11 @@ export default function DataWorkforceQuote() {
               
               {/* Auto-scroll indicator */}
               <div className="absolute top-50 left-1/2 -translate-x-1/2 flex gap-1">
-                {galleryImages.slice(0, 8).map((_, index) => (
+                {galleryImages.slice(0, 6).map((_, index) => (
                   <div
                     key={index}
                     className={`h-1 w-8 rounded-full transition-all duration-300 ${
-                      index === scrollPosition % 8
+                      index === Math.floor(scrollPosition / 4) % 6
                         ? "bg-primary"
                         : "bg-slate-300"
                     }`}
@@ -188,7 +194,7 @@ export default function DataWorkforceQuote() {
 
           {/* Footer note */}
          <div className="mt-8 pt-4 border-t border-slate-200">
- <p className="text-sm text-slate-600 max-w-full md:whitespace-nowrap md:overflow-hidden md:text-ellipsis">
+ <p className="text-center text-sm text-slate-600 max-w-full md:whitespace-nowrap md:overflow-hidden md:text-ellipsis">
     <strong className="text-slate-900">Build capability.</strong>{" "}
     Invest in a trained workforce and you make your data work — turning
     insight into measurable impact.

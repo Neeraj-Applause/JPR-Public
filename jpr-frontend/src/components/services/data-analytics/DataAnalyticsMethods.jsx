@@ -181,7 +181,7 @@ const DataAnalyticsMethods = () => {
 
               {/* Text on right - wraps under image on mobile */}
               <div className="w-full md:w-3/5 text-center md:text-left">
-                <p className="text-gray-600 text-md leading-relaxed mt-2 text-justify">
+                <p className="mt-2 text-justify text-md leading-relaxed text-gray-600">
                                Advanced road safety analytics using Python, R, and SAS on structured and unstructured crash datasets. AI-driven digitization and automation of manual accident records, including police accident reports. In-depth accident reconstruction analysis to generate actionable pre-crash and causation insights. Development of interactive, real-time dashboards for continuous accident trend monitoring.
                    <br></br>       Black spot identification using frequency, severity, exposure, and spatial pattern analysis. Accident trend analysis across collision types, road geometry, traffic movements, time-of-day, environmental conditions, and year/location-wise severity patterns. Vulnerable Road User (VRU) analysis covering pedestrians, bicyclists, and motorcyclists to identify key risk factors and targeted safety improvement opportunities. AI & Machine Learning–driven analytics, including deep learning, to uncover complex patterns, relationships, and hidden insights in crash data.
                 </p>

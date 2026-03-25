@@ -323,7 +323,7 @@ export const newsData = [
   "summary": "",
   "content": "JPRI delivered a dialogue on the topic “Road Map for reducing casualties in Road\naccidents by 50%” on the “World Day of Remembrance for Road Traffic Victims” at Ahmedabad.\nThis session was organised by The Rotary Club of Ahmedabad Supreme and Active Traffic\nConsultative Committee (ATCC).",
   "category": "",
-  "event_date": "2021-11-01",
+  "event_date": "2021-11-21",
   "image_url": null,
   "created_at": "2021-11-02T10:00:00Z",
   "updated_at": "2021-11-02T10:00:00Z",
@@ -965,7 +965,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 25,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": "",
   "content": "December 2016: Mr. Jigar Soni, Crash Investigator, gave a presentation on “Crash investigation” to government school teachers at Rajasthan Police Academy, Jaipur on 7 December 2016.\n\nDecember 2016: Mr. Milind Takate, Crash Investigator, gave a presentation on “Investigation of Traffic Accident Cases” at Maharashtra Police Training Academy, Nashik on 2 December 2016.\n\nDecember 2016: Mr. Rohan Govardhan, Crash Investigator, gave a presentation on “Crash Investigation” at the Orientation Conference for Motor Vehicle Inspectors held at Rajasthan Police Academy, Jaipur on 1 December 2016.",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-12-01",
@@ -978,7 +978,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 77,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": " ",
   "content": "November 2016: Mr. Ravishankar Rajaraman, JPRI Technical Director and Chairman-RASSI Technical Steering Committee, gave a presentation on “Road Safety – Indian Experience” at the TESS Conference on 4 November 2016 in New Delhi. The conference was organized by the Automotive Tyre Manufacturer’s Association (ATMA) and Indian Tyre Technical Advisory Committee (ITTAC). The presentation focused on road safety status in Indian cities, highways, and expressways based on on-site crash investigation data and provided inputs to tyre manufacturers on reducing fatalities and mitigating injuries.\n\nNovember 2016: A Mercedes Benz article by Mr. Parthiv Shah mentioned RASSI.",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-11-01",
@@ -990,7 +990,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 78,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": "",
   "content": "October 2016: RASSI opened its fifth centre, Jaipur, with effect from October 2016",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-10-01",
@@ -1003,7 +1003,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 79,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": " ",
   "content": "September 2016: Mr. Yuvaraj, Injury Team Lead, gave a presentation on “Road Safety Awareness” at Deffree Engineering Pvt Ltd, Coimbatore, Tamil Nadu.",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-09-04",
@@ -1015,7 +1015,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 80,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": " ",
   "content": "August 2016: Tata Motors Limited joined the RASSI Consortium.",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-08-01",
@@ -1027,7 +1027,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 81,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": " ",
   "content": "6 to 23 July 2016: JP Research India Pvt. Ltd. conducted the “1st All India Crash Investigation Training Program” at MK Residency, Coimbatore. The training was attended by newly inducted crash investigators from all JPRI branch offices across India.",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-07-06",
@@ -1039,7 +1039,7 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 {
   "id": 82,
   "title": " ",
-  "summary": "A record of JP Research India Pvt. Ltd. presentations, trainings, consortium developments, and road safety initiatives conducted during 2016.",
+  "summary": " ",
   "content": "18 March 2016: The 6th RASSI Annual Consortium Meeting was conducted in Kolkata.",
   "category": "Road Safety & Accident Research",
   "event_date": "2016-03-18",
@@ -1111,11 +1111,11 @@ Mr. Vaishnav Jethwa and Mr. Unmit Parmar conducted a “Road Safety Awareness Pr
 },
 { 
   id: 87,
-  title: "16th RASSI Annual Consortium Meeting ",
+  title: "16th  RASSI Annual Consortium Meeting ",
   summary: "",
   content: " The 16th Annual RASSI Consortium Meeting was held in Pune in February 2026. Members shared findings and discussed how the RASSI database supports data-driven decisions to improve vehicle safety in India. The two-day meeting included member-only sessions on the first day focusing on database advancements and modern technologies such as ADAS, followed by sessions on the second day for prospective members to demonstrate the value of the RASSI database for India-specific conditions.",
   category: "",
-  event_date: "2026-02-01",
+  event_date: "2026-02-25",
   image_url: null,
   created_at: "2026-03-18T10:00:00Z",
   updated_at: "2026-03-18T10:00:00Z",

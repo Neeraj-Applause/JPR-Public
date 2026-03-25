@@ -32,7 +32,7 @@ export default function Footer() {
                 ["Publications", "/publications"],
                 ["News", "/news"],
                 ["Projects", "/projects"],
-                ["Contact", "/contact"],
+                ["Contact Us", "/contact"],
                 ["Employee Login", "/employee-login"],
               ].map(([label, link]) => (
                 <a

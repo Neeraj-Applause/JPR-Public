@@ -17,7 +17,7 @@ export default function DataAnalyticsIntro() {
               Data-Driven Insights for Road Safety
             </h2>
 
-            <p className="text-slate-700 text-lg leading-relaxed prose max-w-none">
+            <p className="max-w-none text-justify text-lg leading-relaxed text-slate-700 prose">
               What gets measured, gets managed. Aimed at assisting
               manufacturers, local authorities and any stakeholders of road
               safety in making informed decisions, the Data Analytics division
@@ -62,7 +62,7 @@ export default function DataAnalyticsIntro() {
                 </div>
               </div>
 
-              <p className="mt-4 text-sm text-slate-600">
+              <p className="mt-4 text-justify text-sm text-slate-600">
                 Robust, field-collected crash records combined with domain expertise — crafted to answer product, policy and safety strategy questions.
               </p>
 

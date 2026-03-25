@@ -41,7 +41,7 @@ export default function ContactHero() {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-white/60" />
-              +91 70 6602 7860
+              +917066027860
             </div>
           </div>
 

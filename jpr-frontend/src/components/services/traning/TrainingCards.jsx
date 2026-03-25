@@ -5,7 +5,6 @@ import image1 from "../../../assets/images/services/training/crash-investigation
 import image2 from "../../../assets/images/services/training/crash-reconstruction.jpg";
 import image3 from "../../../assets/images/services/training/injury-analysis.jpg";
 import image4 from "../../../assets/images/services/training/capacity-building.jpg";
-import image5 from "../../../assets/images/services/training/crash-test.jpg";
 
 /**
  * TrainingCards (Compact · Modern · Sleek)
@@ -24,11 +23,15 @@ const CARDS = [
     lines: ["Scene inspection", "Vehicle inspection", "Accident photography"],
   },
   {
-    id: "crash-reconstruction",
-    title: "Crash reconstruction",
-    image: image2,
-    lines: ["2D and 3D simulation", "Hand calculations and software validation using PC Crash"],
-  },
+  id: "crash-reconstruction",
+  title: "Crash reconstruction",
+  image: image2,
+  lines: [
+    "Speed calculations through simulations using scientific principles",
+    "Determine the crash sequence of events",
+    "3D accident reconstructions using PC-Crash"
+  ],
+},
   {
     id: "injury-analysis",
     title: "Injury analysis",
@@ -53,8 +56,8 @@ export default function TrainingCards() {
   return (
     <section className="py-10 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-6 flex items-center justify-between gap-6">
-          <div>
+        <div className="mb-6 flex justify-center">
+          <div className="text-center">
             <h2 className="text-xl md:text-2xl font-extrabold text-slate-900 leading-tight">Training modules</h2>
             <p className="mt-1 text-sm md:text-base text-slate-600 max-w-xl">
               Practical courses and hands-on modules designed for professionals working in crash investigation,
@@ -63,7 +66,7 @@ export default function TrainingCards() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 justify-center gap-6 md:grid-cols-2">
           {CARDS.map((card, idx) => (
             <motion.article
               key={card.id}
@@ -71,7 +74,7 @@ export default function TrainingCards() {
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ translateY: -8, boxShadow: "0 18px 40px rgba(16,24,40,0.08)" }}
               transition={{ duration: 0.36, delay: idx * 0.04 }}
-              className="group bg-white rounded-xl overflow-hidden flex flex-col"
+              className="group mx-auto flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white"
             >
               {/* image with subtle overlay and zoom on hover */}
               <div className="relative h-36 overflow-hidden">
@@ -91,8 +94,8 @@ export default function TrainingCards() {
 
                 <ul className="mt-3 text-sm text-slate-700 space-y-2 flex-1">
                   {card.lines.map((line, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="mt-1 inline-block h-2 w-2 rounded-full bg-primary" aria-hidden />
+                    <li key={i} className="flex items-center gap-3">
+                      <span className="inline-block h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" aria-hidden />
                       <span className="leading-relaxed">{line}</span>
                     </li>
                   ))}

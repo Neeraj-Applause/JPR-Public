@@ -86,7 +86,7 @@ export default function RoadSafetySummary({ illustrationSrc = null }) {
               Promoting Safer Road Infrastructure
             </h2>
 
-            <p className="text-slate-700 text-base md:text-lg leading-relaxed text-justify">
+            <p className="text-justify text-base leading-relaxed text-slate-700 md:text-lg">
               Once built, existing road infrastructure requires periodic
               assessments and upgrades to upkeep the safety record. JPRI’s
               approaches the safety assessments backed by a profound

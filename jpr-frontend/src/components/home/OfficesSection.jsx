@@ -137,6 +137,8 @@ export default function OfficesSection() {
   const [openId, setOpenId] = useState("coimbatore");
   const [selectedOffice, setSelectedOffice] = useState(null);
 
+  const formatPhoneNumber = (phone) => phone.replace(/\s+/g, "");
+
   const toggleOffice = (id) => {
     setOpenId((current) => (current === id ? null : id));
   };
@@ -240,7 +242,7 @@ export default function OfficesSection() {
                             {office.phones?.map((ph) => (
                               <a
                                 key={ph}
-                                href={`tel:${ph.replace(/\s+/g, "")}`}
+                                href={`tel:${formatPhoneNumber(ph)}`}
                                 className="
                                   text-primary
                                   hover:underline
@@ -248,7 +250,7 @@ export default function OfficesSection() {
                                   transition
                                 "
                               >
-                                {ph}
+                                {formatPhoneNumber(ph)}
                               </a>
                             ))}
                           </div>
@@ -376,10 +378,10 @@ export default function OfficesSection() {
                         {selectedOffice.phones?.map((ph, index) => (
                           <a
                             key={index}
-                            href={`tel:${ph.replace(/\s+/g, "")}`}
+                            href={`tel:${formatPhoneNumber(ph)}`}
                             className="text-primary hover:underline hover:text-primary/80 transition"
                           >
-                            {ph}
+                            {formatPhoneNumber(ph)}
                           </a>
                         ))}
                       </div>

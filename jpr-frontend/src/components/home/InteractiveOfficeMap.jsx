@@ -144,6 +144,8 @@ export default function InteractiveOfficeMap() {
   const [selectedOffice, setSelectedOffice] = useState(null);
   const mapRef = useRef(null);
 
+  const formatPhoneNumber = (phone) => phone.replace(/\s+/g, "");
+
   const closeModal = () => {
     setSelectedOffice(null);
   };
@@ -274,7 +276,7 @@ export default function InteractiveOfficeMap() {
                       </p>
                       <div className="flex items-center gap-2 text-xs text-primary">
                         <Phone size={12} />
-                        <span>{office.phones[0]}</span>
+                        <span>{formatPhoneNumber(office.phones[0])}</span>
                       </div>
                     </div>
                   </div>
@@ -336,10 +338,10 @@ export default function InteractiveOfficeMap() {
                         {selectedOffice.phones?.map((ph, index) => (
                           <a
                             key={index}
-                            href={`tel:${ph.replace(/\s+/g, "")}`}
+                            href={`tel:${formatPhoneNumber(ph)}`}
                             className="text-primary hover:underline hover:text-primary/80 transition"
                           >
-                            {ph}
+                            {formatPhoneNumber(ph)}
                           </a>
                         ))}
                       </div>

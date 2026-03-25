@@ -71,6 +71,36 @@ export default function RoadSafetyServicesInteractive() {
 
   const active = ITEMS[activeIdx];
 
+  const renderContent = (content) => {
+    if (!content) return null;
+
+    const sections = content.split("\n\n");
+    const intro = sections[0]?.trim();
+    const bulletLines = sections
+      .slice(1)
+      .flatMap((section) => section.split("\n"))
+      .map((line) => line.replace(/^â€¢\s*/, "").trim())
+      .filter(Boolean);
+
+    if (bulletLines.length === 0) {
+      return <p className="text-justify">{content}</p>;
+    }
+
+    return (
+      <div className="space-y-4">
+        {intro ? <p className="text-justify">{intro}</p> : null}
+        <ul className="space-y-3 pl-1">
+          {bulletLines.map((line) => (
+            <li key={line} className="flex items-start gap-3">
+              <span className="mt-2 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+              <span className="text-justify leading-relaxed">{line}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   function Icon({ name, className = "w-4 h-4" }) {
     const C = Lucide[name];
     if (C) return <C className={className} />;
@@ -171,8 +201,8 @@ export default function RoadSafetyServicesInteractive() {
                     </div>
 
                     {/* Keep the content exactly as provided for RSA (or the default content otherwise) */}
-                    <div className="mt-4 text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
-                      {active.content}
+                    <div className="mt-4 text-sm leading-relaxed text-slate-700">
+                      {renderContent(active.content)}
                     </div>
 
                     {/* If RSA is active, show before/after images */}
@@ -201,7 +231,7 @@ export default function RoadSafetyServicesInteractive() {
                             </div>
                           </div>
                           
-                          <figcaption className="text-sm text-slate-700 leading-relaxed text-center">
+                          <figcaption className="text-sm text-justify leading-relaxed text-slate-700">
                             <span className="font-semibold text-slate-800">JPRI road safety audit results:</span> Based on a detailed audit on the Mumbai Pune Expressway, JPRI observed high fatalities due to concrete structure collisions, and guardrails of sufficient runout length were recommended. This led a to a considerable reduction of fatalities due to similar road infrastructure issues in the subsequent years
                           </figcaption>
                         </figure>

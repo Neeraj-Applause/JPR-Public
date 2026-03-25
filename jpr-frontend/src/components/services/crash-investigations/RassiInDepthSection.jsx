@@ -66,9 +66,7 @@ export default function RassiInDepthSection() {
 
           <div className="space-y-3">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                In-depth Crash Investigation
-              </span>{" "}
+              <span className="text-slate-900">In-depth Crash Investigation</span>{" "}
               for India
             </h2>
 
