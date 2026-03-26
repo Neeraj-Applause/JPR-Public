@@ -77,7 +77,7 @@ export default function TrainingCards() {
               className="group mx-auto flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white"
             >
               {/* image with subtle overlay and zoom on hover */}
-              <div className="relative h-36 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title.replace("\n", " ")}
@@ -94,7 +94,7 @@ export default function TrainingCards() {
 
                 <ul className="mt-3 text-sm text-slate-700 space-y-2 flex-1">
                   {card.lines.map((line, i) => (
-                    <li key={i} className="flex items-center gap-3">
+                    <li key={i} className="flex items-center gap-3 whitespace-nowrap">
                       <span className="inline-block h-2.5 w-2.5 flex-shrink-0 rounded-full bg-primary" aria-hidden />
                       <span className="leading-relaxed">{line}</span>
                     </li>

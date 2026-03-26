@@ -45,11 +45,11 @@ export default function CrashInvestigationsExpertise() {
           {/* Heading */}
           <h2 className="text-3xl font-semibold sm:text-4xl">
             Crash Investigations Meeting{" "}
-            <span className="text-primary font-bold">Global Standards.</span>
+            <span>Global Standards.</span>
           </h2>
 
           {/* Paragraph */}
-          <p className="text-base leading-relaxed text-slate-600">
+          <p className="text-base leading-relaxed text-slate-600 text-justify">
             As pioneers in scientific crash investigations in India and having
             established a successful working model of in-depth accident database
             on par with other international databases, the JPRI Crash
