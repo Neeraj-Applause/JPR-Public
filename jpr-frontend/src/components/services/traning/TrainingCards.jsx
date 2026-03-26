@@ -27,7 +27,7 @@ const CARDS = [
   title: "Crash reconstruction",
   image: image2,
   lines: [
-    "Speed calculations through simulations using scientific principles",
+    "Speed calculations using scientific simulations",
     "Determine the crash sequence of events",
     "3D accident reconstructions using PC-Crash"
   ],
@@ -77,7 +77,7 @@ export default function TrainingCards() {
               className="group mx-auto flex w-full max-w-md flex-col overflow-hidden rounded-xl bg-white"
             >
               {/* image with subtle overlay and zoom on hover */}
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title.replace("\n", " ")}
