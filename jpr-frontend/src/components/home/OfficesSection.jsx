@@ -53,7 +53,7 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
     coordinates: { lat: 23.0225, lng: 72.5714 },
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.123!2d72.5714!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1647123456789!5m2!1sen!2sin"
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.9332084436296!2d72.567546!3d23.038419200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b537a6c0ccb%3A0xecfe0b6b4fa6e0eb!2sJP%20Research%20India%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1774585183776!5m2!1sen!2sin"
   },
   {
     id: "kolkata",
@@ -68,7 +68,7 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
     coordinates: { lat: 22.5726, lng: 88.3639 },
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.410123706661!2d88.3579223250775!3d22.56375927949805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277880cfadea5%3A0x6f8beccb018e3b82!2sCorner%20Desk!5e0!3m2!1sen!2sin!4v1774000041270!5m2!1sen!2sin"
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7004.208556396003!2d88.3591743!3d22.5639287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277199b47f6eb%3A0xa6657b24351560b8!2sJP%20Research%20India%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1774585261267!5m2!1sen!2sin"
   },
   {
     id: "jaipur",
@@ -83,7 +83,7 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
     coordinates: { lat: 26.9124, lng: 75.7873 },
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.6448586147203!2d75.79939757522442!3d26.914763926645985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db427b161f277%3A0x8e4b77e89c22be7c!2sJP%20Research%20India%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1774001454126!5m2!1sen!2sin"
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.6164763410384!2d75.8019439!3d26.914733199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db427b161f277%3A0x8e4b77e89c22be7c!2sJP%20Research%20India%20Pvt.%20Ltd.!5e1!3m2!1sen!2sin!4v1774585224699!5m2!1sen!2sin"
   },
   {
     id: "nagpur",
@@ -98,7 +98,7 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
     coordinates: { lat: 21.1458, lng: 79.0882 },
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.489414391287!2d79.05687187924529!3d21.13291283037307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c060f1126245%3A0xb44ffd1d120d8ff5!2sW%20High%20Ct%20Rd%2C%20Shankar%20Nagar%2C%20East%20Shankar%20Nagar%2C%20Ramdaspeth%2C%20Nagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1774002594370!5m2!1sen!2sin"
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3537.3669558679558!2d79.058107!3d21.1323372!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1507ea27423%3A0x73425b76a200288b!2sJP%20Research%20India%20Pvt.%20Ltd.!5e1!3m2!1sen!2sin!4v1774585125754!5m2!1sen!2sin"
   },
   {
     id: "dehradun",
@@ -114,7 +114,7 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
     coordinates: { lat: 30.3165, lng: 78.0322 },
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.0757554705383!2d78.0982150753584!3d30.37720667475778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d78d9546f921%3A0x4ba198b9fcf58bdf!2sTransport%20Commissioner%20Office%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1774002682639!5m2!1sen!2sin"
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d817.943385269647!2d78.1003753!3d30.376943!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908d78d9546f921%3A0x4ba198b9fcf58bdf!2sTransport%20Commissioner%20Office%2C%20Uttarakhand!5e1!3m2!1sen!2sin!4v1774585302947!5m2!1sen!2sin"
   },
   {
     id: "dindigul",
