@@ -50,7 +50,7 @@ export default function NeedHelpSection() {
                     <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <PhoneCall className="h-4 w-4" />
                     </span>
-                    <span>+91 70 6602 7860</span>
+                   <a href="tel:+917066027860">+91 7066027860</a>
                   </a>
 
                   <a
