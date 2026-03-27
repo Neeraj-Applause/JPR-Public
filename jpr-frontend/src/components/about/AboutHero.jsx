@@ -135,11 +135,10 @@ export default function AboutHero() {
 
                 <div className="rounded-xl bg-white/15 px-3 py-2 shadow">
                   <p className="tracking-wide text-white/55 text-[11px]">
-                    Partner Organizations
+                    Core expertise
                   </p>
                   <p className="mt-1 text-[11px] font-medium text-white">
-                    Government, Automotive OEMs, Insurance, Road Infrastructure
-                    agencies
+                    Pioneering Scientific Crash Investigations in India
                   </p>
                 </div>
               </div>
