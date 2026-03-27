@@ -145,7 +145,7 @@ export default function RoadSafetyServicesInteractive() {
                     <span className="flex items-center justify-center bg-white rounded-full p-1 border border-gray-100">
                       <Icon name={it.icon} className="w-4 h-4 text-primary" />
                     </span>
-                    <span className={`text-justify text-sm font-medium ${isActive ? "text-primary" : "text-slate-800"}`}>
+                    <span className={`text-left text-sm font-medium ${isActive ? "text-primary" : "text-slate-800"}`}>
                       {it.title}
                     </span>
                   </button>
@@ -169,7 +169,7 @@ export default function RoadSafetyServicesInteractive() {
                       }`}
                     >
                       <Icon name={it.icon} className="w-3.5 h-3.5 text-primary" />
-                      <span className="truncate text-justify">{it.title}</span>
+                      <span className="truncate text-left">{it.title}</span>
                     </button>
                   );
                 })}
@@ -195,7 +195,7 @@ export default function RoadSafetyServicesInteractive() {
                         <Icon name={active.icon} className="w-5 h-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-justify text-lg md:text-xl font-semibold text-slate-900">{active.title}</h3>
+                        <h3 className="text-left text-lg md:text-xl font-semibold text-slate-900">{active.title}</h3>
                         <p className="text-sm text-slate-500">{active.bullets?.slice(0, 2).join(" • ")}</p>
                       </div>
                     </div>

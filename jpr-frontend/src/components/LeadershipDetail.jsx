@@ -140,7 +140,7 @@ export default function LeadershipDetail() {
                 {leader.bio
                   .split("\n")
                   .map((para, idx) =>
-                    para.trim() ? <p key={idx}>{para}</p> : <br key={idx} />
+                    para.trim() ? <p key={idx} className="text-justify" style={{ textAlignLast: 'left', hyphens: 'auto' }}>{para}</p> : <br key={idx} />
                   )}
               </article>
             </div>
