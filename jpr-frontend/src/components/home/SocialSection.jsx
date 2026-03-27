@@ -7,28 +7,28 @@ const socials = [
     id: 1, 
     name: "YouTube", 
     icon: FaYoutube, 
-    href: "https://www.youtube.com/@jpresearchindpvtltd1289",
+    href: "#",
     color: "#FF0000" // YouTube red
   },
   { 
     id: 2, 
     name: "Facebook", 
     icon: FaFacebook, 
-    href: "https://www.facebook.com/profile.php?id=100066643505081",
+    href: "#",
     color: "#1877F2" // Facebook blue
   },
   { 
     id: 4, 
     name: "X", 
     icon: FaXTwitter, 
-    href: "https://x.com/JPR_IND",
+    href: "#",
     color: "#000000" // X (Twitter) black
   },
   { 
     id: 5, 
     name: "LinkedIn", 
     icon: FaLinkedin, 
-    href: "https://in.linkedin.com/company/jp-research-india-private-limited",
+    href: "#",
     color: "#0A66C2" // LinkedIn blue
   },
 ];
@@ -47,7 +47,7 @@ export default function SocialSection() {
             <span className="h-[3px] w-24 bg-primary rounded-full" />
           </div>
           <div className="text-sm sm:text-base text-[#555]">
-            Our Social Handles
+           Our Social Handles(Working on it, will update soon)
           </div>
         </div>
 

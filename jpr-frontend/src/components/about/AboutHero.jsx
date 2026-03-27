@@ -120,7 +120,7 @@ export default function AboutHero() {
                     Research covering
                   </p>
                   <p className="mt-1 text-base font-semibold text-white">
-                    ~20 years
+                    ~15 years
                   </p>
                 </div>
 

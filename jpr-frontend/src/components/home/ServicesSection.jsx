@@ -46,7 +46,7 @@
 
     return (
       <section className="w-full bg-[#f5f5f5] py-8">
-        <div className="max-w-6xl mx-auto px-6 lg:px-0">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Heading */}
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-primary">
@@ -94,7 +94,7 @@
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
                   {/* Title */}
-                  <h3 className="text-lg font-bold mb-3 text-slate-900 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-lg font-bold mb-3 text-slate-900 group-hover:text-primary transition-colors duration-300 whitespace-nowrap overflow-hidden text-ellipsis">
                     {title}
                   </h3>
 
