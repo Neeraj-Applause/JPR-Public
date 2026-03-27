@@ -139,6 +139,29 @@ export default function OfficesSection() {
 
   const formatPhoneNumber = (phone) => phone.replace(/\s+/g, "");
 
+  // Function to get correct Google Maps URL for each office
+  const getCorrectMapsUrl = (office) => {
+    // For offices with specific place IDs or known locations, use direct search
+    const officeSearchQueries = {
+      'coimbatore': 'JP Research India Pvt Ltd, 95, Chinnasamy Road, New Siddapudur, Coimbatore',
+      'pune': 'JP Research India Pvt Ltd, Office No.504, Seasons Business Square, Aundh, Pune',
+      'ahmedabad': 'JP Research India Pvt Ltd, 33, Kalindi Complex, Navrangpura, Ahmedabad',
+      'kolkata': 'Corner Desk, Raja Subodh Mullick Square, Kolkata',
+      'jaipur': 'JP Research India Pvt Ltd, Malviya Marg, C Scheme, Jaipur',
+      'nagpur': 'JP Research India Pvt Ltd, Shrija Enclave, Shankar Nagar, Nagpur',
+      'dehradun': 'Transport Commissioner Office, Sahastradhara road, Dehradun',
+      'dindigul': 'Malligai Nagar, Dindigul'
+    };
+
+    const searchQuery = officeSearchQueries[office.id];
+    if (searchQuery) {
+      return `https://www.google.com/maps/search/${encodeURIComponent(searchQuery)}`;
+    }
+    
+    // Fallback to coordinates if no specific search query
+    return `https://www.google.com/maps?q=${office.coordinates.lat},${office.coordinates.lng}`;
+  };
+
   const toggleOffice = (id) => {
     setOpenId((current) => (current === id ? null : id));
   };
@@ -356,7 +379,7 @@ export default function OfficesSection() {
                     <div className="flex items-start gap-3">
                       <button
                         onClick={() => {
-                          const googleMapsUrl = `https://www.google.com/maps?q=${selectedOffice.coordinates.lat},${selectedOffice.coordinates.lng}`;
+                          const googleMapsUrl = getCorrectMapsUrl(selectedOffice);
                           window.open(googleMapsUrl, '_blank');
                         }}
                         className="mt-0.5 text-primary hover:text-primary/80 transition-colors cursor-pointer"
