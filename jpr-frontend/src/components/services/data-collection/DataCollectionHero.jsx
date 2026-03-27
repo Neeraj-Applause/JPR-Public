@@ -82,7 +82,7 @@ export default function DataCollectionHero() {
           </h1>
 
           {/* Short caption */}
-        <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+        <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl text-justify">
 
             Accurate & reproducible data collection is the foundation of
             credible crash investigation and safety interventions. Our

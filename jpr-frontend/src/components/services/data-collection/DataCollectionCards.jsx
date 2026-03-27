@@ -86,7 +86,7 @@ export default function DataCollectionCards() {
               </div>
 
               <div className="px-5 pt-8 pb-6 flex-1 flex flex-col">
-                <p className="text-sm text-slate-700 leading-relaxed break-words">
+                <p className="text-sm text-slate-700 leading-relaxed break-words text-justify">
                   {c.lines[0]}
                 </p>
               </div>

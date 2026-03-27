@@ -99,7 +99,7 @@
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow">
+                  <p className="text-sm leading-relaxed text-slate-600 mb-6 flex-grow text-justify" style={{ textAlignLast: 'left', hyphens: 'auto', wordSpacing: 'normal' }}>
                     {description}
                   </p>
 

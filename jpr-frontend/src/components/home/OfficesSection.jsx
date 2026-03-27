@@ -129,7 +129,7 @@ const offices = [
     website: "www.jpri.in",
     email: "contact@jpri.in",
     coordinates: { lat: 10.3673, lng: 77.9803 },
-    embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20971.3937404987!2d77.96500179473851!3d10.392308315835372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00aa785cdc8acb%3A0x8aec88786a511a0a!2sMalligai%20Nagar%2C%20Dindigul%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1774002857682!5m2!1sen!2sin"
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d245.27729710340478!2d77.98513204717364!3d10.38684355940107!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1774590757057!5m2!1sen!2sin"
   },
 ];
 
@@ -230,7 +230,7 @@ export default function OfficesSection() {
                           <MapPin className="mt-0.5 text-primary" size={18} />
                           <div className="leading-relaxed">
                             {office.addressLines.map((line) => (
-                              <p key={line}>{line}</p>
+                              <p key={line} className="text-justify">{line}</p>
                             ))}
                           </div>
                         </div>
@@ -366,7 +366,7 @@ export default function OfficesSection() {
                       </button>
                       <div className="text-sm text-slate-600 leading-relaxed">
                         {selectedOffice.addressLines.map((line, index) => (
-                          <p key={index}>{line}</p>
+                          <p key={index} className="text-justify">{line}</p>
                         ))}
                       </div>
                     </div>

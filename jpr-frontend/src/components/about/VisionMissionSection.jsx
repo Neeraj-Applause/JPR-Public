@@ -46,8 +46,8 @@ export default function VisionMissionSection() {
                 <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                   Vision
                 </h3>
-                <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700">
-                  To be a world-renowned traffic safety research and training center that focuses on conducting traffic safety research, capacity building and disseminating competent and scientifically analyzed data to help individuals and organizations make everyone’s journeys safer.
+                <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700 text-justify">
+                  To be a world-renowned traffic safety research and training center that focuses on conducting traffic safety research, capacity building and disseminating competent and scientifically analyzed data to help individuals and organizations make everyone's journeys safer.
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@ export default function VisionMissionSection() {
                 <h3 className="text-base sm:text-lg font-semibold text-slate-900">
                   Mission
                 </h3>
-                <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700">
+                <p className="text-sm sm:text-[15px] leading-relaxed text-slate-700 text-justify">
                   To conduct traffic safety research activities with an unbiased, scientific, evidence-based and data-driven approach that provides high-quality data, insights and cost-effective solutions, enabling our customers to achieve a quantifiable return on investment in terms of lives saved and injuries mitigated.
                 </p>
               </div>

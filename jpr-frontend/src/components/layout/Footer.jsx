@@ -1,6 +1,13 @@
 import footerDesign from "../../assets/images/home/footer_design.png";
 import footerLogo from "../../assets/logos/footer_logo.png";
 
+const serviceCategories = [
+  { label: "Crash Investigations", href: "/services/crash-investigations" },
+  { label: "Data Analytics", href: "/services/data-analytics" },
+  { label: "Road Safety Engineering", href: "/services/road-safety-engineering" },
+  { label: "Training", href: "/services/training" },
+];
+
 export default function Footer() {
   return (
     <footer className="w-full bg-[#1D252A] text-white relative overflow-hidden">
@@ -28,21 +35,55 @@ export default function Footer() {
               {[
                 ["Home", "/"],
                 ["About", "/about"],
-                ["Services", "/services/crash-investigations"],
+              ].map(([label, link]) => (
+                <div key={label} className="relative group">
+                  <a
+                    href={link}
+                    className="text-sm font-medium text-slate-300 hover:text-white transition-all duration-200 block"
+                  >
+                    {label}
+                  </a>
+                </div>
+              ))}
+              
+              {/* Services with always-visible sub-links */}
+              <div className="flex flex-col items-start relative group">
+                <a
+                  href="/services/crash-investigations"
+                  className="text-sm font-medium text-slate-300 hover:text-white transition-all duration-200 block"
+                >
+                  Services
+                </a>
+                
+                {/* Sub-links - always visible */}
+                <div className="mt-2 flex flex-col gap-1.5">
+                  {serviceCategories.map((category) => (
+                    <a
+                      key={category.label}
+                      href={category.href}
+                      className="text-xs text-slate-400 hover:text-slate-200 transition-colors duration-200"
+                    >
+                      {category.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {[
                 ["Publications", "/publications"],
                 ["News", "/news"],
                 ["Projects", "/projects"],
                 ["Contact Us", "/contact"],
                 ["Employee Login", "/employee-login"],
               ].map(([label, link]) => (
-                <a
-                  key={label}
-                  href={link}
-                  className="text-sm font-medium text-slate-300 hover:text-white underline-offset-4 transition-all duration-200 relative group"
-                >
-                  {label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                </a>
+                <div key={label} className="relative group">
+                  <a
+                    href={link}
+                    className="text-sm font-medium text-slate-300 hover:text-white transition-all duration-200 block"
+                  >
+                    {label}
+                  </a>
+                </div>
               ))}
             </nav>
           </div>

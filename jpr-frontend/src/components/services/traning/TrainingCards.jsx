@@ -59,7 +59,7 @@ export default function TrainingCards() {
         <div className="mb-6 flex justify-center">
           <div className="text-center">
             <h2 className="text-xl md:text-2xl font-extrabold text-slate-900 leading-tight">Training modules</h2>
-            <p className="mt-1 text-sm md:text-base text-slate-600 max-w-xl">
+            <p className="mt-1 text-sm md:text-base text-slate-600 max-w-xl text-justify">
               Practical courses and hands-on modules designed for professionals working in crash investigation,
               reconstruction and road safety.
             </p>

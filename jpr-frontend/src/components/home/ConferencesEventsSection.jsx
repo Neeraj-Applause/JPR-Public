@@ -168,7 +168,7 @@ function EventCard({ event }) {
         </h3>
 
         <p
-          className={`text-[13px] text-secondary leading-relaxed transition-all ${
+          className={`text-[13px] text-secondary leading-relaxed transition-all text-justify ${
             expanded ? "" : "line-clamp-3"
           }`}
         >

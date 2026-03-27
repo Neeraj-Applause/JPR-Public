@@ -87,7 +87,7 @@ export default function CrashInvestigationCards() {
                   <h3 className="text-sm font-semibold text-slate-900">{card.title}</h3>
                 </div>
 
-                <p className="mt-2 text-sm text-slate-600 leading-snug line-clamp-5">
+                <p className="mt-2 text-sm text-slate-600 leading-snug line-clamp-5 text-justify">
                   {card.description}
                 </p>
 

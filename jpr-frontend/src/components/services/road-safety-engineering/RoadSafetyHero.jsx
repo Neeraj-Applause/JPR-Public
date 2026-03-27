@@ -80,7 +80,7 @@ export default function RoadSafetyHero() {
           </h1>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl">
+          <p className="text-sm sm:text-base text-slate-200/90 max-w-md lg:max-w-xl text-justify">
             Comprehensive road safety audits, blackspot identification &
             assessment, design reviews to analytical reports suggesting short &
             long term countermeasures with an aim to reduce crashes and

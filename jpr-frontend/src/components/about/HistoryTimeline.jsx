@@ -18,42 +18,54 @@ const milestones = [
     year: "2006",
     title: "Establishment of JP Research India Pvt. Ltd.",
     description:
-      "As India recorded over 100,000 road fatalities, need for evidence based, data driven interventions was strongly felt to reduce the accidents/fatalities. Ms Jeya Padmanaban, leading Statistician and professions in automotive safety took the initiative to set-up JP Research India in 2006 with the focus on conducting scientific crash investigations and data driven analytics to promote evidence-based policy interventions.",
+      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
+        As India recorded over 100,000 road fatalities, need for evidence based, data driven interventions was strongly felt to reduce the accidents/fatalities. Ms Jeya Padmanaban, leading Statistician and professions in automotive safety took the initiative to set-up JP Research India in 2006 with the focus on conducting scientific crash investigations and data driven analytics to promote evidence-based policy interventions.
+      </p>,
     image: [start, start_2006], // Multiple images for 2006
   },
   {
     year: "2008",
     title: "Crash investigations – the journey begins",
     description:
-      "After several discussions and engagements with the concerned agencies, JPRI independently launched  its first on-site crash investigation pilot with the support of Tamil Nadu Police on a national highway near Chennai. The success of this project led to a second, two-year pilot in Coimbatore Rural District, deepening insights into human, vehicle and infrastructure factors.",
+      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
+        After several discussions and engagements with the concerned agencies, JPRI independently launched  its first on-site crash investigation pilot with the support of Tamil Nadu Police on a national highway near Chennai. The success of this project led to a second, two-year pilot in Coimbatore Rural District, deepening insights into human, vehicle and infrastructure factors.
+      </p>,
     image: crash,
   },
   {
     year: "2010",
     title: "Head Office established in Coimbatore, Tamil Nadu",
     description:
-      "JPRI set up its India headquarters in Coimbatore to conduct continuous on-site crash investigations. Today, the company operates branches across India, collecting in-depth crash data on highways, towns and cities, and publishing its findings in national and international conferences through the RASSI Consortium public–private partnership model.",
+      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
+        JPRI set up its India headquarters in Coimbatore to conduct continuous on-site crash investigations. Today, the company operates branches across India, collecting in-depth crash data on highways, towns and cities, and publishing its findings in national and international conferences through the RASSI Consortium public–private partnership model.
+      </p>,
     image: group,
   },
   {
     year: "2011 to 2016",
     title: "Furthering Indian Road Safety Research Through Strategic Expansion",
     description:
-      "Through the RASSI project, JPRI expands its in-depth crash investigation and road safety research activities to different regions of the country including Maharashtra, Gujarat, West Bengal, and Rajasthan. Road safety research extended to different road scenarios such as Expressways & Urban regions in both Metro and Tier 1 cities.",
+      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
+        Through the RASSI project, JPRI expands its in-depth crash investigation and road safety research activities to different regions of the country including Maharashtra, Gujarat, West Bengal, and Rajasthan. Road safety research extended to different road scenarios such as Expressways & Urban regions in both Metro and Tier 1 cities.
+      </p>,
     image: image7,
   },
   {
     year: "2016 onwards",
     title: "Expanding Services and Community Strengthening",
     description:
-      "Using the niche experience developed through the years of on-site research for a large number of Indian road crashes, JPRI expanded its services to other domains including special crash investigations for government & non-government agencies, road safety engineering, and capacity building sessions for police & other government officials on in-depth crash investigations.",
+      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
+        Using the niche experience developed through the years of on-site research for a large number of Indian road crashes, JPRI expanded its services to other domains including special crash investigations for government & non-government agencies, road safety engineering, and capacity building sessions for police & other government officials on in-depth crash investigations.
+      </p>,
     image: image6,
   },
   {
     year: "Today",
     title: "Our journey continues… towards safer Indian roads",
     description:
-      "JPRI now leads forensic crash investigations, road safety engineering, data analytics and capacity building initiatives. Working with governments, NGOs, OEMs and other stakeholders, we provide technical assistance and cost-effective safety solutions, while sharing insights through conferences, meetings and media to drive evidence-based decision making.",
+      <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
+        JPRI now leads forensic crash investigations, road safety engineering, data analytics and capacity building initiatives. Working with governments, NGOs, OEMs and other stakeholders, we provide technical assistance and cost-effective safety solutions, while sharing insights through conferences, meetings and media to drive evidence-based decision making.
+      </p>,
     image: image4,
   },
 ];
@@ -192,12 +204,8 @@ export default function HistoryTimeline() {
             JP Research India’s journey till today
           </h2>
 
-          <p className="mt-2 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed">
-            JP Research India, a wholly owned subsidy of JP Research Inc (USA)
-            is a leading crash investigation organization in India. Data driven
-            insights leading to understanding of the contributing factors to a
-            crash and evidence-based decision/policy promotion form the core of
-            the activities focused towards improving road safety in India.
+          <p className="mt-2 max-w-3xl text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
+            JP Research India, a wholly owned subsidy of JP Research Inc (USA) is a leading crash investigation organization in India. Data driven insights leading to understanding of the contributing factors to a crash and evidence-based decision/policy promotion form the core of the activities focused towards improving road safety in India.
           </p>
         </div>
 

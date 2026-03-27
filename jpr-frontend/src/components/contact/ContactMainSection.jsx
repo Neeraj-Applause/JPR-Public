@@ -44,8 +44,8 @@ export default function ContactMainSection() {
           <h2 className="text-xl font-semibold text-slate-900">
             Get in touch
           </h2>
-          <p className="text-sm text-slate-500">
-            Share your enquiry and our team will respond shortly.
+          <p className="text-sm text-slate-500 text-justify">
+            Please feel free to contact us to discuss your requirement. We will get back to you at the earliest, or you can reach us directly on the details.
           </p>
         </div>
 
@@ -136,7 +136,7 @@ export default function ContactMainSection() {
           How we can help
         </h3>
 
-        <ul className="space-y-3 text-sm text-slate-600">
+        <ul className="space-y-3 text-sm text-slate-600 text-justify">
           <li>• Road safety audits & crash investigation</li>
           <li>• Data-driven policy & analytics</li>
           <li>• Training & capacity building</li>
